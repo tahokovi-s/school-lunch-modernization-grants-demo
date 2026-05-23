@@ -6,9 +6,9 @@ const modules = [
     tag: "Setup",
     duration: "10 min",
     body: [
-      "Participants do not need a project folder yet. The first job is to make sure the tools are installed, authenticated, and ready to run in a terminal.",
-      "Use this module as a setup clinic. Plan names and usage limits change, so phrase the requirement as access to Codex plus Claude Code, with ChatGPT Plus or higher and Claude Pro or higher as the usual individual starting points.",
-      "The sendable email in docs/session_invitation_email.md includes current reference links and a short pre-session checklist."
+      "You do not need a project folder yet. Start by making sure the tools are installed, authenticated, and ready to run in a terminal.",
+      "Plan names and usage limits change, so use the linked product pages as the source of truth. For individual users, ChatGPT Plus or higher and Claude Pro or higher are the usual starting points for this workshop.",
+      "The setup email template in docs/session_invitation_email.md includes current reference links and a short preparation checklist."
     ],
     commands: [
       "open docs/session_invitation_email.md",
@@ -17,8 +17,8 @@ const modules = [
       "git --version && python3 --version"
     ],
     prompts: [
-      "I am setting up for a coding-agent research workflow seminar. Check whether Codex is installed and tell me the next setup step without changing files.",
-      "I am setting up Claude Code for a workshop. Check the installation/authentication state and explain any issue in beginner-friendly language."
+      "Check whether Codex is installed and authenticated. Do not change files; just explain the next setup step.",
+      "Check whether Claude Code is installed and authenticated. Do not change files; explain any issue in beginner-friendly language."
     ],
     checks: [
       "Codex opens and is signed in.",
@@ -33,9 +33,9 @@ const modules = [
     tag: "Skills",
     duration: "8 min",
     body: [
-      "Skills are reusable instructions, scripts, and resources that help Codex perform a workflow reliably. This is the moment to show that agents can be customized rather than only prompted from scratch.",
-      "OpenAI maintains the official openai/skills catalog on GitHub. During the live session, show /skills, then use $skill-installer to list curated skills. If the room is ready, install one lightweight example and restart Codex.",
-      "This sets up a habit the participants can reuse later: ask what capabilities are available before asking the agent to do a specialized task."
+      "Skills are reusable instructions, scripts, and resources that help Codex perform a workflow reliably. This module demonstrates how agents can be customized rather than only prompted from scratch.",
+      "OpenAI maintains the official openai/skills catalog on GitHub. Run /skills to see what is already available, then use $skill-installer to list curated skills.",
+      "The optional install prompt shows how a skill can be added from the official catalog. After installing a skill, restart Codex before relying on it."
     ],
     commands: [
       "open https://github.com/openai/skills",
@@ -47,8 +47,8 @@ const modules = [
       "$skill-installer install https://github.com/openai/skills/tree/main/skills/.experimental/create-plan"
     ],
     checks: [
-      "Participants have seen the /skills menu.",
-      "Participants understand $skill-name explicit invocation.",
+      "The /skills menu has been opened.",
+      "$skill-name explicit invocation is clear.",
       "The official openai/skills catalog has been identified."
     ]
   },
@@ -60,8 +60,8 @@ const modules = [
     duration: "6 min",
     body: [
       "Now move from setup into the fictional research task. Open the PI email and treat it like a real RA request.",
-      "The seminar framing is: a predoc receives a messy but plausible handoff about transferable film production tax credits, asks Codex to restate the task, then turns that brief into an auditable workflow.",
-      "Emphasize that the policy, productions, companies, and data are fictional. The workflow habits are the real teaching object."
+      "The workflow starts with a messy but plausible handoff about transferable film production tax credits. Ask Codex to restate the task, then turn that brief into an auditable workflow.",
+      "The policy, productions, companies, and data are fictional. The transferable lesson is how to guide an agent through research work with checks and judgment."
     ],
     commands: [
       "open docs/intro_email.md",
@@ -69,12 +69,12 @@ const modules = [
     ],
     prompts: [
       "Read docs/intro_email.md. Summarize the research objective, raw inputs, expected output, and judgment calls in a concise RA brief.",
-      "Before writing code, tell me what could go wrong when matching companies across these files."
+      "Before writing code, identify what could go wrong when matching companies across these files."
     ],
     checks: [
-      "Audience understands the buyer-side company-year panel goal.",
+      "The buyer-side company-year panel goal is clear.",
       "Codex has been asked to summarize before coding.",
-      "Fictional-data boundary has been stated out loud."
+      "The fictional-data boundary is clear."
     ]
   },
   {
@@ -99,7 +99,7 @@ const modules = [
     checks: [
       "Company name variants have been noticed.",
       "Ambiguous film-finance parties have been identified before classification.",
-      "The class understands why audits matter."
+      "The audit motivation is clear."
     ]
   },
   {
@@ -119,7 +119,7 @@ const modules = [
     ],
     prompts: [
       "Review src/classify_legacy_film_deal_parties.py. Explain the rule order and whether any terms should be safer or more conservative.",
-      "Read audits/legacy_film_party_classification_audit.md and tell me which rows require human judgment."
+      "Read audits/legacy_film_party_classification_audit.md and identify which rows require human judgment."
     ],
     checks: [
       "Classification rules are visible in code.",
@@ -144,7 +144,7 @@ const modules = [
     ],
     prompts: [
       "Read src/build_company_year_panel.py and explain how company aliases are matched.",
-      "Inspect data/processed/company_year_panel.csv and give me three sanity checks before I use it in analysis."
+      "Inspect data/processed/company_year_panel.csv and provide three sanity checks before using it in analysis."
     ],
     checks: [
       "Panel has one row per company-year.",
