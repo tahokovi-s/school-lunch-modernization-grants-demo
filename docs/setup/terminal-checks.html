@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terminal Checks Guide | STAX Coding Agent Training</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body class="setup-page">
+    <main class="setup-shell">
+      <section class="setup-header" aria-labelledby="pageTitle">
+        <a class="back-link" href="../guide.html?v=20260523-setup-guides">Back to setup checklist</a>
+        <p class="eyebrow">Setup guide</p>
+        <h1 id="pageTitle">Terminal Version Checks</h1>
+        <p class="setup-intro">A terminal is just a text box for your computer. You type one command, press Enter or Return, and read what comes back. For this workshop, the goal is only to confirm that four commands print version numbers.</p>
+      </section>
+
+      <div class="setup-content">
+        <section class="setup-section">
+          <h2>The Four Checks</h2>
+          <p>Run each command one at a time. After each one, press Enter or Return.</p>
+          <div class="command-list">
+            <code>codex --version</code>
+            <code>claude --version</code>
+            <code>git --version</code>
+            <code>python3 --version</code>
+          </div>
+          <p class="success-box">Success means each command prints some kind of version number. The exact numbers do not need to match anyone else's.</p>
+        </section>
+
+        <section class="setup-section">
+          <h2>If You Are On macOS</h2>
+          <ol class="step-list">
+            <li>Open <strong>Spotlight Search</strong> with Command-Space.</li>
+            <li>Type <strong>Terminal</strong>, then press Return.</li>
+            <li>Click inside the Terminal window.</li>
+            <li>Copy the first command from this page, paste it into Terminal, and press Return.</li>
+            <li>Repeat for the other three commands.</li>
+          </ol>
+        </section>
+
+        <section class="setup-section">
+          <h2>If You Are On Windows</h2>
+          <ol class="step-list">
+            <li>Open the Start menu.</li>
+            <li>Type <strong>PowerShell</strong>, then open <strong>Windows PowerShell</strong>.</li>
+            <li>Click inside the PowerShell window.</li>
+            <li>Copy the first command from this page, paste it into PowerShell, and press Enter.</li>
+            <li>Repeat for the other three commands.</li>
+          </ol>
+        </section>
+
+        <section class="setup-section">
+          <h2>If Something Says Not Found</h2>
+          <ul class="plain-list">
+            <li><code>codex</code> not found: open the Codex setup guide from the checklist.</li>
+            <li><code>claude</code> not found: open the Claude Code setup guide from the checklist.</li>
+            <li><code>git</code> not found: install Git from the official Git page.</li>
+            <li><code>python3</code> not found: install Python from the official Python page. On Windows, also try <code>python --version</code>; if that works, mention it during setup.</li>
+          </ul>
+          <div class="link-row">
+            <a class="link-button" href="https://git-scm.com/downloads">Install Git</a>
+            <a class="link-button" href="https://www.python.org/downloads/">Install Python</a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

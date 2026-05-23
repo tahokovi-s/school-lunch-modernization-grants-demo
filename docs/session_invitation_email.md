@@ -10,10 +10,10 @@ The workshop shows how to use coding agents for a realistic predoc-style researc
 
 ## Setup Checklist
 
-- [ ] Codex is installed, opens, and is signed in.
-- [ ] Claude Code is installed, opens, and is signed in.
-- [ ] Paid or institutional access is available for Codex and Claude Code.
-- [ ] These terminal checks print versions:
+- [ ] Codex is installed, opens, and is signed in. Setup help: `docs/setup/codex.html`
+- [ ] Claude Code is installed, opens, and is signed in. Setup help: `docs/setup/claude-code.html`
+- [ ] Paid or institutional access is available for Codex and Claude Code. Setup help: `docs/setup/access.html`
+- [ ] These terminal checks print versions. Setup help: `docs/setup/terminal-checks.html`
 
   ```bash
   codex --version
@@ -22,8 +22,10 @@ The workshop shows how to use coding agents for a realistic predoc-style researc
   python3 --version
   ```
 
-- [ ] The `/skills` menu opens inside Codex.
+- [ ] The `/skills` menu opens inside Codex. Setup help: `docs/setup/skills.html`
 - [ ] No project folder has been created yet. That happens during the session.
+
+The public training guide has a "Guide" button next to each checklist item for step-by-step help on macOS and Windows.
 
 ## Please Install Or Confirm Access
 

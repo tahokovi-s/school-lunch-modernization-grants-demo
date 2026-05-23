@@ -21,11 +21,31 @@ const modules = [
       "Check my coding-agent setup. Ask me for the output of codex --version, claude --version, git --version, and python3 --version, then tell me what is missing. Do not change files."
     ],
     checks: [
-      "Codex is installed, opens, and is signed in.",
-      "Claude Code is installed, opens, and is signed in.",
-      "Paid or institutional access is available for Codex and Claude Code.",
-      "The terminal prints versions for Codex, Claude Code, Git, and Python 3.",
-      "/skills opens inside Codex."
+      {
+        text: "Codex is installed, opens, and is signed in.",
+        guideHref: "setup/codex.html",
+        guideLabel: "Codex guide"
+      },
+      {
+        text: "Claude Code is installed, opens, and is signed in.",
+        guideHref: "setup/claude-code.html",
+        guideLabel: "Claude guide"
+      },
+      {
+        text: "Paid or institutional access is available for Codex and Claude Code.",
+        guideHref: "setup/access.html",
+        guideLabel: "Access guide"
+      },
+      {
+        text: "The terminal prints versions for Codex, Claude Code, Git, and Python 3.",
+        guideHref: "setup/terminal-checks.html",
+        guideLabel: "Terminal guide"
+      },
+      {
+        text: "/skills opens inside Codex.",
+        guideHref: "setup/skills.html",
+        guideLabel: "Skills guide"
+      }
     ]
   },
   {
@@ -271,21 +291,26 @@ function renderChecklist(module) {
   container.innerHTML = "";
 
   module.checks.forEach((check, index) => {
-    const item = document.createElement("label");
-    item.className = "check-item";
+    const checkText = typeof check === "string" ? check : check.text;
+    const guideHref = typeof check === "string" ? "" : check.guideHref;
+    const guideLabel = typeof check === "string" ? "" : check.guideLabel || "Guide";
     const itemKey = `${module.id}:${index}`;
-    item.innerHTML = `
-      <input type="checkbox" ${progress[itemKey] ? "checked" : ""}>
-      <span>${escapeHtml(check)}</span>
+    const inputId = `${module.id}-check-${index}`;
+    const row = document.createElement("div");
+    row.className = "check-item";
+    row.innerHTML = `
+      <input id="${escapeHtml(inputId)}" type="checkbox" ${progress[itemKey] ? "checked" : ""}>
+      <label for="${escapeHtml(inputId)}">${escapeHtml(checkText)}</label>
+      ${guideHref ? `<a class="guide-button" href="${escapeHtml(guideHref)}">${escapeHtml(guideLabel)}</a>` : ""}
     `;
-    item.querySelector("input").addEventListener("change", (event) => {
+    row.querySelector("input").addEventListener("change", (event) => {
       const nextProgress = loadProgress();
       nextProgress[itemKey] = event.currentTarget.checked;
       nextProgress[module.id] = module.checks.every((_, checkIndex) => nextProgress[`${module.id}:${checkIndex}`]);
       saveProgress(nextProgress);
       renderNav();
     });
-    container.appendChild(item);
+    container.appendChild(row);
   });
 }
 
