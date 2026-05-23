@@ -10,20 +10,11 @@ The workshop shows how to use coding agents for a realistic predoc-style researc
 
 ## Setup Checklist
 
-- [ ] Codex is installed, opens, and is signed in. Setup help: `docs/setup/codex.html`
-- [ ] After Codex works, use the official OpenAI skills repo to add selected skills to Global Codex settings. Setup help: `docs/setup/skills.html`
-- [ ] Claude Code is installed, opens, and is signed in. Setup help: `docs/setup/claude-code.html`
+- [ ] The Codex app is installed, opens, and is signed in. Setup help: `docs/setup/codex.html`
+- [ ] Codex has been asked to install only the selected workshop skills from the official OpenAI skills repo. Setup help: `docs/setup/skills.html`
+- [ ] The Claude Code app is installed, opens, and is signed in. Setup help: `docs/setup/claude-code.html`
 - [ ] Paid or institutional access is available for Codex and Claude Code. Setup help: `docs/setup/access.html`
-- [ ] These terminal checks print versions. Setup help: `docs/setup/terminal-checks.html`
-
-  ```bash
-  codex --version
-  claude --version
-  git --version
-  python3 --version
-  ```
-
-- [ ] No project folder has been created yet. That happens during the session.
+- [ ] No project folder has been created yet. Setup help: `docs/setup/no-project-folder.html`
 
 The public training guide has a "Guide" button next to each checklist item for step-by-step help on macOS and Windows.
 
@@ -31,63 +22,45 @@ The public training guide has a "Guide" button next to each checklist item for s
 
 1. Codex
 
-   Codex is OpenAI's coding agent. Please make sure Codex launches and is signed in with a ChatGPT plan that includes Codex access. ChatGPT Plus is currently listed at $20/month, and OpenAI's Codex docs say Plus, Pro, Business, Edu, and Enterprise plans include Codex. Check the current pages before subscribing:
+   Codex is OpenAI's coding agent. Please make sure the Codex app launches and is signed in with a ChatGPT account that includes Codex access. Plan names and limits change, so check the current pages before subscribing:
 
-   - Codex CLI docs: https://developers.openai.com/codex/cli
-   - ChatGPT Plus help page: https://help.openai.com/en/articles/6950777-chatgpt-plus-.eps
+   - Codex app page: https://openai.com/codex/
    - ChatGPT pricing: https://chatgpt.com/pricing
-
-   Quick check:
-
-   ```bash
-   codex --version
-   ```
 
 2. Claude Code
 
-   Claude Code is Anthropic's coding agent. Please make sure it launches and is signed in with Claude Pro, Max, Team, Enterprise, Console, or equivalent institutional access. Claude's plan guide currently lists Pro at $20/month in the US, and Claude Code docs say the free Claude.ai plan does not include Claude Code access.
+   Claude Code is Anthropic's coding agent. Please make sure the Claude Code desktop app launches and is signed in with an account that includes Claude Code access. Check the current pages before subscribing:
 
-   - Claude Code install docs: https://code.claude.com/docs/en/installation
+   - Claude Code desktop guide: https://code.claude.com/docs/en/desktop-quickstart
    - Claude plan guide: https://support.claude.com/en/articles/11049762-choose-a-claude-plan
-   - Using Claude Code with Pro or Max: https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan
-
-   Quick checks:
-
-   ```bash
-   claude --version
-   claude doctor
-   ```
-
-3. Git and Python
-
-   Please make sure these commands work:
-
-   ```bash
-   git --version
-   python3 --version
-   ```
 
 ## After Codex Is Installed: Skills Warm-Up
 
-During the workshop, Codex skills will be used with `/skills` and `$skill-name` prompts. After Codex is installed and signed in, use the official OpenAI skills catalog:
+During the workshop, Codex skills will be used with `/skills` and `$skill-name` prompts. After the Codex app is installed and signed in, use the official OpenAI skills catalog:
 
 ```text
 https://github.com/openai/skills
 ```
 
-To preview the skill-install flow without installing anything, ask Codex:
+The selected workshop skills are:
+
+- `define-goal`
+- `openai-docs`
+- `pdf`
+- `jupyter-notebook`
+
+Copy this into Codex:
 
 ```text
-Use https://github.com/openai/skills as the official skills catalog. List skills that may help this workshop. Do not install anything yet. First explain what you would add to my Global Codex settings and wait for my confirmation.
+Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available.
 ```
 
-An optional live exercise may install one lightweight example skill and restart Codex so everyone can see how skills change the agent's behavior.
+If Codex says one of these skills is already built in or already installed, that is fine. Do not install extra skills to compensate.
 
 ## What To Bring
 
-- A laptop where command-line tools can be installed.
-- Codex and Claude Code logged in.
-- A terminal open.
+- A laptop with the Codex app and Claude Code app installed.
+- Codex and Claude Code signed in.
 - No project folder needed before Thursday.
 
 If any setup step fails, the first block of the session includes time for setup help.

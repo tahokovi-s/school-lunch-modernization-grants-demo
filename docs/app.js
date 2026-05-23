@@ -2,37 +2,36 @@ const modules = [
   {
     id: "setup",
     title: "Before Thursday: Setup Checklist",
-    step: "Confirm basics before Thursday",
+    step: "Confirm the apps before Thursday",
     tag: "Setup",
     duration: "5 min",
     body: [
-      "Complete this checklist before Thursday, May 28, 2026. No project folder is needed before the session."
+      "Complete this checklist before Thursday, May 28, 2026. This workshop starts in the Codex and Claude Code apps, so participants do not need to run command-line checks or create a project folder ahead of time."
     ],
     checkTitle: "Before Thursday Checklist",
-    commandTitle: "Terminal Checks",
-    promptTitle: "Optional Agent Check",
+    commandTitle: "Open Before Thursday",
+    promptTitle: "Copy Into Codex",
     commands: [
-      "codex --version",
-      "claude --version",
-      "git --version",
-      "python3 --version"
+      "Open the Codex app and sign in.",
+      "Open the Claude Code app and sign in.",
+      "Keep https://github.com/openai/skills handy as the official skills source."
     ],
     prompts: [
-      "Check my coding-agent setup. Ask me for the output of codex --version, claude --version, git --version, and python3 --version, then tell me what is missing. Do not change files."
+      "Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available."
     ],
     checks: [
       {
-        text: "Codex is installed, opens, and is signed in.",
+        text: "The Codex app is installed, opens, and is signed in.",
         guideHref: "setup/codex.html",
         guideLabel: "Codex guide"
       },
       {
-        text: "After Codex works, use the official OpenAI skills repo to add selected skills to Global Codex settings.",
+        text: "Codex has been asked to install only the selected workshop skills from the official OpenAI skills repo.",
         guideHref: "setup/skills.html",
         guideLabel: "Skills guide"
       },
       {
-        text: "Claude Code is installed, opens, and is signed in.",
+        text: "The Claude Code app is installed, opens, and is signed in.",
         guideHref: "setup/claude-code.html",
         guideLabel: "Claude guide"
       },
@@ -42,36 +41,39 @@ const modules = [
         guideLabel: "Access guide"
       },
       {
-        text: "The terminal prints versions for Codex, Claude Code, Git, and Python 3.",
-        guideHref: "setup/terminal-checks.html",
-        guideLabel: "Terminal guide"
+        text: "No project folder has been created yet; the folder will be made during the live session.",
+        guideHref: "setup/no-project-folder.html",
+        guideLabel: "Folder guide"
       }
     ]
   },
   {
     id: "skills",
-    title: "Skills Warm-Up",
-    step: "Add skills after Codex works",
+    title: "Install The Workshop Skills",
+    step: "Use only the selected set",
     tag: "Skills",
     duration: "8 min",
     body: [
       "Skills are reusable instructions, scripts, and resources that help Codex perform a workflow reliably. This module demonstrates how agents can be customized rather than only prompted from scratch.",
-      "OpenAI maintains the official openai/skills catalog on GitHub. After Codex is installed and signed in, give Codex that repo link and ask it to list relevant skills before installing anything.",
-      "The optional install prompt shows how Codex can add a selected skill to Global Codex settings. Ask Codex to explain the change first, then restart Codex before relying on the new skill."
+      "The official OpenAI skills catalog includes many skills for deployment, design, GitHub workflows, Notion, security, and media. For this introductory research workflow, install only four: define-goal, openai-docs, pdf, and jupyter-notebook.",
+      "The goal is a small, inspectable setup. Ask Codex to explain any user-level or Global settings change before it installs anything, then restart Codex before relying on the new skills."
     ],
+    commandTitle: "Reference Links",
+    promptTitle: "Copy Into Codex",
     commands: [
-      "open https://github.com/openai/skills",
-      "open https://developers.openai.com/codex/skills"
+      "https://github.com/openai/skills",
+      "https://developers.openai.com/codex/skills"
     ],
     prompts: [
       "/skills",
-      "Use https://github.com/openai/skills as the official skills catalog. List curated skills that might help this workshop. Do not install anything yet.",
-      "Explain what you would add to my Global Codex settings before installing any skill from https://github.com/openai/skills. Wait for my confirmation."
+      "Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available.",
+      "After I restart Codex, help me confirm that define-goal, openai-docs, pdf, and jupyter-notebook are available. Do not install or remove anything."
     ],
     checks: [
-      "Codex has opened after installation.",
-      "The official openai/skills repo link has been given to Codex.",
-      "Codex has explained any Global settings change before installing a skill."
+      "The selected skill names are define-goal, openai-docs, pdf, and jupyter-notebook.",
+      "Codex is told not to install any other skills.",
+      "Codex explains any user-level or Global settings change before installing skills.",
+      "Codex is restarted after any new skill install."
     ]
   },
   {
@@ -85,9 +87,10 @@ const modules = [
       "The workflow starts with a messy but plausible handoff about transferable film production tax credits. Ask Codex to restate the task, then turn that brief into an auditable workflow.",
       "The policy, productions, companies, and data are fictional. The transferable lesson is how to guide an agent through research work with checks and judgment."
     ],
+    commandTitle: "Open In The App",
     commands: [
-      "open docs/intro_email.md",
-      "sed -n '1,180p' docs/intro_email.md"
+      "docs/intro_email.md",
+      "Ask Codex or Claude Code to read the PI email before editing files."
     ],
     prompts: [
       "Read docs/intro_email.md. Summarize the research objective, raw inputs, expected output, and judgment calls in a concise RA brief.",
@@ -109,10 +112,11 @@ const modules = [
       "Inspect all three CSVs: film tax credit purchases, legacy film-finance deal parties, and the company directory. The teachable messiness is intentional: aliases, production roles, vendor roles, and ambiguous finance partners.",
       "This module shows why agents need grounded context. Good prompts point Codex to the data shape and ask it to inspect before generating assumptions."
     ],
+    commandTitle: "Ask The Agent To Inspect",
     commands: [
-      "python -c \"import pandas as pd; print(pd.read_csv('data/raw/company_directory.csv').head())\"",
-      "python -c \"import pandas as pd; print(pd.read_csv('data/raw/legacy_film_finance_deals.csv')[['deal_id','deal_year','party_name','party_role_raw']].head(12))\"",
-      "python -c \"import pandas as pd; print(pd.read_csv('data/raw/film_tax_credit_purchases.csv'))\""
+      "data/raw/company_directory.csv",
+      "data/raw/legacy_film_finance_deals.csv",
+      "data/raw/film_tax_credit_purchases.csv"
     ],
     prompts: [
       "Inspect data/raw/*.csv and list the columns, likely keys, obvious aliases, and rows that should not be auto-classified without review.",
@@ -134,10 +138,11 @@ const modules = [
       "The classification script deliberately uses keyword rules rather than an API call. That keeps the lesson focused on transparent, reviewable automation.",
       "The script writes both a processed CSV and an audit file. Ambiguous finance-partner rows are kept in the data but quarantined from the investor indicator."
     ],
+    commandTitle: "Ask The Agent To Run",
     commands: [
-      "python src/classify_legacy_film_deal_parties.py",
-      "sed -n '1,220p' audits/legacy_film_party_classification_audit.md",
-      "python -c \"import pandas as pd; print(pd.read_csv('data/processed/legacy_film_party_classifications.csv')[['deal_id','party_name','party_category','classification_reason']])\""
+      "Run src/classify_legacy_film_deal_parties.py from the app.",
+      "Open audits/legacy_film_party_classification_audit.md.",
+      "Inspect data/processed/legacy_film_party_classifications.csv."
     ],
     prompts: [
       "Review src/classify_legacy_film_deal_parties.py. Explain the rule order and whether any terms should be safer or more conservative.",
@@ -159,10 +164,11 @@ const modules = [
       "The panel builder reads the company directory, film tax credit purchases, and party classifications. It creates one company-year row for each fictional company from 2019 through 2024.",
       "The final variables are intentionally plain: company name, year, industry, revenue, buyer indicator, legacy investor indicator, and film credit amount."
     ],
+    commandTitle: "Ask The Agent To Run",
     commands: [
-      "python src/build_company_year_panel.py",
-      "python -c \"import pandas as pd; print(pd.read_csv('data/processed/company_year_panel.csv').head(18))\"",
-      "sed -n '1,220p' audits/build_company_year_panel_audit.md"
+      "Run src/build_company_year_panel.py from the app.",
+      "Inspect data/processed/company_year_panel.csv.",
+      "Open audits/build_company_year_panel_audit.md."
     ],
     prompts: [
       "Read src/build_company_year_panel.py and explain how company aliases are matched.",
@@ -184,10 +190,11 @@ const modules = [
       "The audit files are part of the output, not an afterthought. They show row counts, classification counts, unmatched names, and rows that should be reviewed by a human.",
       "End by turning the audit into a PI update. This makes the workflow feel like a real predoc handoff rather than just a code exercise."
     ],
+    commandTitle: "Open In The App",
     commands: [
-      "ls audits data/processed",
-      "sed -n '1,220p' audits/legacy_film_party_classification_audit.md",
-      "sed -n '1,220p' audits/build_company_year_panel_audit.md"
+      "audits/legacy_film_party_classification_audit.md",
+      "audits/build_company_year_panel_audit.md",
+      "data/processed/company_year_panel.csv"
     ],
     prompts: [
       "Based on the audit files, draft a short note to the PI explaining what is complete and what needs judgment.",
@@ -240,7 +247,6 @@ function renderNav() {
       <span class="module-index">${progress[module.id] ? "OK" : index + 1}</span>
       <span>
         <span class="module-name">${escapeHtml(module.title)}</span>
-        <span class="module-step">${escapeHtml(module.step)}</span>
       </span>
     `;
     button.addEventListener("click", () => {
@@ -320,7 +326,7 @@ function renderModule() {
   document.querySelector("#moduleDuration").textContent = module.duration;
   document.querySelector("#moduleTitle").textContent = module.title;
   document.querySelector("#checklistTitle").textContent = module.checkTitle || "Live Checklist";
-  document.querySelector("#commandTitle").textContent = module.commandTitle || "Run During The Demo";
+  document.querySelector("#commandTitle").textContent = module.commandTitle || "Agent Actions";
   document.querySelector("#promptTitle").textContent = module.promptTitle || "Prompt Snippets";
   document.querySelector("#moduleBody").innerHTML = module.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
   renderRows("#commandList", module.commands, "command-row");

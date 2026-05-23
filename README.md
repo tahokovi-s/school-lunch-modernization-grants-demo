@@ -12,18 +12,12 @@ No real project data, confidential records, or real firm financials are used.
 
 Ask participants to confirm:
 
-```bash
-codex --version
-claude --version
-git --version
-python3 --version
-```
+They should have app access to:
 
-They should have access to:
-
-- Codex through a ChatGPT plan that includes Codex, such as ChatGPT Plus or higher.
-- Claude Code through Claude Pro, Max, Team, Enterprise, Console, or equivalent institutional access.
-- Git and Python 3.
+- The Codex app, signed in with a ChatGPT account that includes Codex access.
+- The Claude Code app, signed in with Claude Pro, Max, Team, Enterprise, Console, or equivalent institutional access.
+- The selected Codex skills from the official OpenAI skills catalog: `define-goal`, `openai-docs`, `pdf`, and `jupyter-notebook`.
+- No project folder created yet.
 
 Plan names and usage limits change, so the email links to the current product docs and pricing pages.
 
@@ -49,6 +43,8 @@ python src/build_company_year_panel.py
 
 If pandas is already available, the two script commands are enough.
 
+Participants do not need to type these commands during the workshop. The live session is run from the Codex and Claude Code apps; these commands are included so instructors can verify the repo or so participants can reproduce the workflow later.
+
 ## Files To Inspect Live
 
 - `docs/session_invitation_email.md`: sendable setup email for participants.
@@ -61,8 +57,8 @@ If pandas is already available, the two script commands are enough.
 
 ## Expected Demo Flow
 
-1. Confirm participants have Codex, Claude Code, Git, and Python working.
-2. Demonstrate `/skills` and the official `openai/skills` catalog.
+1. Confirm participants have the Codex app and Claude Code app open and signed in.
+2. Demonstrate `/skills` and install only the selected skills from the official `openai/skills` catalog.
 3. Open the fictional PI email and ask Codex to summarize the assignment.
 4. Inspect the raw data before writing code.
 5. Run the film-finance party classification script and read the audit.
@@ -71,10 +67,10 @@ If pandas is already available, the two script commands are enough.
 
 ## Useful Current References
 
-- Codex CLI docs: `https://developers.openai.com/codex/cli`
+- Codex app page: `https://openai.com/codex/`
 - Codex skills docs: `https://developers.openai.com/codex/skills`
 - OpenAI skills catalog: `https://github.com/openai/skills`
-- Claude Code install docs: `https://code.claude.com/docs/en/installation`
+- Claude Code desktop guide: `https://code.claude.com/docs/en/desktop-quickstart`
 - Claude plan guide: `https://support.claude.com/en/articles/11049762-choose-a-claude-plan`
 
 ## GitHub Pages Publishing Note

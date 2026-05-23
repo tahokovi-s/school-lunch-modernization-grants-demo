@@ -6,38 +6,17 @@ This walkthrough mirrors the public training site. It starts with tool setup, th
 
 Before Thursday, May 28, 2026, participants should confirm:
 
-- Codex is installed, opens, and is signed in.
-- After Codex works, Codex has been given the official skills repo link and asked to explain any Global settings change before installing skills.
-- Claude Code is installed, opens, and is signed in.
+- The Codex app is installed, opens, and is signed in.
+- Codex has been asked to install only the selected workshop skills from the official OpenAI skills repo.
+- The Claude Code app is installed, opens, and is signed in.
 - Paid or institutional access is available for Codex and Claude Code.
 - No project folder has been created yet.
 
-Run:
-
-```bash
-codex --version
-claude --version
-git --version
-python3 --version
-```
-
-If Claude Code is installed but not authenticated, run:
-
-```bash
-claude
-```
-
-If Codex is installed but not authenticated, run:
-
-```bash
-codex
-```
-
-Plan names and limits change. The operational requirement for this workshop is access to Codex plus Claude Code, not a specific billing page screenshot.
+This session is app-only for participants. The operational requirement is access to the Codex app plus the Claude Code app, not a terminal screenshot.
 
 ## 1. Skills Warm-Up
 
-After Codex is installed and signed in, give it the official OpenAI skills repo link:
+After the Codex app is installed and signed in, give it the official OpenAI skills repo link:
 
 ```text
 https://github.com/openai/skills
@@ -48,34 +27,28 @@ Codex can use skills in two ways:
 - Explicit: mention a skill directly, such as `$skill-installer`.
 - Implicit: Codex selects a skill when the task matches the skill description.
 
-Ask Codex to list relevant skills before installing anything:
+Selected workshop skills:
+
+- `define-goal`
+- `openai-docs`
+- `pdf`
+- `jupyter-notebook`
+
+Ask Codex to install only that set:
 
 ```text
-Use https://github.com/openai/skills as the official skills catalog. List skills that may help this workshop. Do not install anything yet. First explain what you would add to my Global Codex settings and wait for my confirmation.
-```
-
-Optional live install after confirmation:
-
-```text
-Install only the selected skill from https://github.com/openai/skills, then tell me how to confirm it is available after restarting Codex.
+Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available.
 ```
 
 After installing a skill, restart Codex before relying on it.
 
 ## 2. Open The Repo And Site
 
-```bash
-cd hollywood-film-tax-credit-buyers-demo
-open docs/index.html
-```
-
-The welcome page links to the training guide. The site is served from `docs/`, the same folder GitHub Pages can publish later.
+Open the public GitHub Pages site in the browser. The welcome page links to the training guide, and the guide mirrors the sequence participants will follow side by side with Codex or Claude Code.
 
 ## 3. Read The PI Email
 
-```bash
-open docs/intro_email.md
-```
+In Codex or Claude Code, open `docs/intro_email.md`.
 
 Use this prompt:
 
@@ -87,29 +60,26 @@ A good agentic workflow starts by restating the assignment before writing code.
 
 ## 4. Inspect Raw Data
 
-```bash
-python -c "import pandas as pd; print(pd.read_csv('data/raw/company_directory.csv').head())"
-python -c "import pandas as pd; print(pd.read_csv('data/raw/legacy_film_finance_deals.csv')[['deal_id','deal_year','party_name','party_role_raw']].head(12))"
-python -c "import pandas as pd; print(pd.read_csv('data/raw/film_tax_credit_purchases.csv'))"
+Ask the agent to inspect the raw files:
+
+```text
+Inspect data/raw/company_directory.csv, data/raw/legacy_film_finance_deals.csv, and data/raw/film_tax_credit_purchases.csv. List the columns, likely keys, obvious aliases, and rows that should not be auto-classified without review.
 ```
 
 Look for company name variants, film-finance roles, and ambiguous strategic partners before running the classification script.
 
 ## 5. Classify Legacy Film-Finance Parties
 
-```bash
-python src/classify_legacy_film_deal_parties.py
-sed -n '1,220p' audits/legacy_film_party_classification_audit.md
+```text
+Run src/classify_legacy_film_deal_parties.py from the app, then open audits/legacy_film_party_classification_audit.md and explain which rows require human judgment.
 ```
 
 This script uses transparent keyword rules rather than a model call. That makes it easier to audit and teach.
 
 ## 6. Build The Company-Year Panel
 
-```bash
-python src/build_company_year_panel.py
-python -c "import pandas as pd; print(pd.read_csv('data/processed/company_year_panel.csv').head(18))"
-sed -n '1,220p' audits/build_company_year_panel_audit.md
+```text
+Run src/build_company_year_panel.py from the app, inspect data/processed/company_year_panel.csv, and open audits/build_company_year_panel_audit.md.
 ```
 
 The panel is analysis-ready but not judgment-free. The audit file is where the agent hands uncertainty back to the human.

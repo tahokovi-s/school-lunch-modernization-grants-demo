@@ -3,34 +3,45 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add Codex Skills Guide | STAX Coding Agent Training</title>
+    <title>Workshop Skills Guide | STAX Coding Agent Training</title>
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="../styles.css?v=20260523-skills-repo">
+    <link rel="stylesheet" href="../styles.css?v=20260523-app-skills">
   </head>
   <body class="setup-page">
     <main class="setup-shell">
       <section class="setup-header" aria-labelledby="pageTitle">
-        <a class="back-link" href="../guide.html?v=20260523-skills-repo">Back to setup checklist</a>
+        <a class="back-link" href="../guide.html?v=20260523-app-skills">Back to setup checklist</a>
         <p class="eyebrow">Setup guide</p>
-        <h1 id="pageTitle">Add Skills After Codex Works</h1>
-        <p class="setup-intro">Do this only after Codex is installed, opens, and is signed in. The goal is to give Codex the official OpenAI skills repository link, then ask Codex to help add only the skills needed for the workshop.</p>
+        <h1 id="pageTitle">Install Only The Workshop Skills</h1>
+        <p class="setup-intro">Do this only after the Codex app is installed, opens, and is signed in. The goal is to give Codex the official OpenAI skills repository link, then ask it to install only the small skill set used for this workshop.</p>
       </section>
 
       <div class="setup-content">
         <section class="setup-section">
           <h2>What Success Looks Like</h2>
-          <p>Codex should recognize the official skills catalog and explain what it would add before it changes your Global Codex settings.</p>
+          <p>Codex should recognize the official skills catalog, name the selected workshop skills, and explain what it would change before it modifies any user-level or Global Codex settings.</p>
           <div class="command-list">
             <code>https://github.com/openai/skills</code>
           </div>
-          <p class="success-box">Success means Codex can list relevant skills from the official repo, explain where they would be installed, and confirm that any selected skill is available after restart.</p>
+          <p class="success-box">Success means Codex installs only the selected workshop skills that are not already available, asks before changing settings, and tells you to restart Codex afterward.</p>
+        </section>
+
+        <section class="setup-section">
+          <h2>Selected Workshop Skills</h2>
+          <ul class="plain-list">
+            <li><strong>define-goal</strong>: turns a fuzzy research handoff into a concrete objective and success criteria.</li>
+            <li><strong>openai-docs</strong>: helps Codex use current OpenAI and Codex documentation when product details matter.</li>
+            <li><strong>pdf</strong>: helps with research papers, policy documents, scanned notices, and layout-sensitive PDFs.</li>
+            <li><strong>jupyter-notebook</strong>: helps scaffold or clean up exploratory notebooks for later empirical work.</li>
+          </ul>
+          <p class="help-box">The official repo includes many other skills. Do not install deployment, Figma, GitHub PR, Notion, security, media, or browser-automation skills for this workshop unless the facilitator explicitly asks.</p>
         </section>
 
         <section class="setup-section">
           <h2>Prompt To Give Codex</h2>
           <p>Copy this into Codex after Codex is already open:</p>
           <div class="command-list">
-            <code>Use https://github.com/openai/skills as the official skills catalog. List skills that may help this workshop. Do not install anything yet. First explain what you would add to my Global Codex settings and wait for my confirmation.</code>
+            <code>Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available.</code>
           </div>
           <p class="help-box">Only use skills from repositories you trust. For this workshop, use the official OpenAI repository above unless the facilitator gives a different link.</p>
         </section>
@@ -38,33 +49,30 @@
         <section class="setup-section">
           <h2>If You Are On macOS</h2>
           <ol class="step-list">
-            <li>Open Terminal.</li>
-            <li>Type <code>codex</code> and press Return.</li>
-            <li>Wait for Codex to open.</li>
+            <li>Open the Codex app.</li>
+            <li>Start a new Codex session with no project folder selected, unless the app requires one.</li>
             <li>Paste the prompt from this page into Codex.</li>
-            <li>Read Codex's explanation before allowing it to change Global Codex settings.</li>
-            <li>If you confirm an install, restart Codex afterward so the new skills are available.</li>
+            <li>Read Codex's explanation before allowing it to change user-level or Global Codex settings.</li>
+            <li>If you confirm an install, close and reopen Codex afterward so the new skills are available.</li>
           </ol>
         </section>
 
         <section class="setup-section">
           <h2>If You Are On Windows</h2>
           <ol class="step-list">
-            <li>Open PowerShell.</li>
-            <li>Type <code>codex</code> and press Enter.</li>
-            <li>Wait for Codex to open.</li>
+            <li>Open the Codex app from the Start menu.</li>
+            <li>Start a new Codex session with no project folder selected, unless the app requires one.</li>
             <li>Paste the prompt from this page into Codex.</li>
-            <li>Read Codex's explanation before allowing it to change Global Codex settings.</li>
-            <li>If you confirm an install, restart Codex afterward so the new skills are available.</li>
+            <li>Read Codex's explanation before allowing it to change user-level or Global Codex settings.</li>
+            <li>If you confirm an install, close and reopen Codex afterward so the new skills are available.</li>
           </ol>
         </section>
 
         <section class="setup-section">
-          <h2>If Codex Cannot Add Skills</h2>
+          <h2>If Codex Cannot Install A Skill</h2>
           <ol class="step-list">
-            <li>Run <code>codex --version</code> to confirm Codex is installed.</li>
-            <li>Open Codex again with <code>codex</code>.</li>
-            <li>Ask Codex to open or explain <code>/skills</code>.</li>
+            <li>Ask Codex to run <code>/skills</code> or open the skills picker inside the app.</li>
+            <li>Ask Codex whether any selected skill is already built in or already installed.</li>
             <li>If Codex says it cannot install skills, check the official Codex skills documentation.</li>
             <li>Bring the issue to the setup portion of the session if it still does not work.</li>
           </ol>

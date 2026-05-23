@@ -5,60 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Claude Code Setup Guide | STAX Coding Agent Training</title>
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="../styles.css?v=20260523-skills-repo">
+    <link rel="stylesheet" href="../styles.css?v=20260523-app-skills">
   </head>
   <body class="setup-page">
     <main class="setup-shell">
       <section class="setup-header" aria-labelledby="pageTitle">
-        <a class="back-link" href="../guide.html?v=20260523-skills-repo">Back to setup checklist</a>
+        <a class="back-link" href="../guide.html?v=20260523-app-skills">Back to setup checklist</a>
         <p class="eyebrow">Setup guide</p>
-        <h1 id="pageTitle">Claude Code Installed And Signed In</h1>
-        <p class="setup-intro">Use this page to confirm that Claude Code opens from a terminal and is connected to the Claude account you plan to use during the session.</p>
+        <h1 id="pageTitle">Claude Code App Installed And Signed In</h1>
+        <p class="setup-intro">Use this page to confirm that the Claude Code desktop app opens and is connected to the Claude account you plan to use during the session. No terminal or command-line check is required for this workshop.</p>
       </section>
 
       <div class="setup-content">
         <section class="setup-section">
           <h2>What Success Looks Like</h2>
-          <p>If Claude Code is ready, this command prints a version number instead of an error:</p>
-          <div class="command-list">
-            <code>claude --version</code>
-          </div>
-          <p class="success-box">A successful result may look like <code>2.1.89</code>, <code>claude 2.1.89</code>, or another version number. Any current version is fine for the workshop.</p>
+          <p>Claude Code is ready when the desktop app launches, shows you as signed in, and lets you open the Code workspace for a folder.</p>
+          <p class="success-box">Success means you can open Claude Code, reach the Code tab or coding workspace, and type a short message such as <code>Confirm you are ready for the STAX training. Do not change files.</code></p>
         </section>
 
         <section class="setup-section">
           <h2>If You Are On macOS</h2>
           <ol class="step-list">
-            <li>Open <strong>Spotlight Search</strong> with Command-Space.</li>
-            <li>Type <strong>Terminal</strong>, then press Return.</li>
-            <li>Copy <code>claude --version</code>, paste it into Terminal, and press Return.</li>
-            <li>If you see a version number, Claude Code is installed.</li>
-            <li>To confirm sign-in, type <code>claude</code> and press Return. Sign in with your Claude account if prompted.</li>
+            <li>Open the official Claude Code desktop guide using the link below.</li>
+            <li>Download the macOS desktop app from the official guide.</li>
+            <li>Open the installer and follow the prompts.</li>
+            <li>Launch Claude from the Applications folder, Launchpad, or Spotlight Search.</li>
+            <li>Sign in with the Claude account you will use for the workshop, then open the Code tab or coding workspace.</li>
           </ol>
         </section>
 
         <section class="setup-section">
           <h2>If You Are On Windows</h2>
           <ol class="step-list">
-            <li>Open the Start menu.</li>
-            <li>Type <strong>PowerShell</strong>, then open <strong>Windows PowerShell</strong>.</li>
-            <li>Copy <code>claude --version</code>, paste it into PowerShell, and press Enter.</li>
-            <li>If you see a version number, Claude Code is installed.</li>
-            <li>To confirm sign-in, type <code>claude</code> and press Enter. Sign in with your Claude account if prompted.</li>
+            <li>Open the official Claude Code desktop guide using the link below.</li>
+            <li>Download the Windows desktop app from the official guide.</li>
+            <li>Run the installer and open Claude from the Start menu.</li>
+            <li>Sign in with the Claude account you will use for the workshop.</li>
+            <li>Open the Code tab or coding workspace. If the app says the plan needs an upgrade, use the access guide.</li>
           </ol>
         </section>
 
         <section class="setup-section">
-          <h2>If The Command Is Not Found</h2>
-          <p>If the terminal says that <code>claude</code> is not recognized, Claude Code is probably not installed yet or the terminal cannot find it.</p>
+          <h2>If Claude Code Does Not Open</h2>
+          <p>Use the desktop app path for this workshop. The official docs also describe CLI options, but the live session will not ask participants to run terminal commands.</p>
           <ol class="step-list">
-            <li>Open the official Claude Code setup page.</li>
-            <li>Follow the instructions for macOS or Windows. On Windows, the official docs explain both native Windows and WSL options.</li>
-            <li>Close and reopen Terminal or PowerShell after installing.</li>
-            <li>Run <code>claude --version</code> again.</li>
+            <li>Confirm that you downloaded Claude Code from the official Claude Code desktop guide.</li>
+            <li>Close Claude and reopen it from Applications on macOS or the Start menu on Windows.</li>
+            <li>Confirm that the sign-in browser uses the same Claude account you plan to use during the workshop.</li>
+            <li>If the Code tab is blocked by plan access, open the access guide from the setup checklist.</li>
           </ol>
           <div class="link-row">
-            <a class="link-button" href="https://code.claude.com/docs/en/getting-started">Open Claude Code docs</a>
+            <a class="link-button" href="https://code.claude.com/docs/en/desktop-quickstart">Open Claude Code desktop guide</a>
             <a class="link-button" href="https://support.claude.com/en/articles/11145838-use-claude-code-with-your-pro-or-max-plan">Claude Code plan help</a>
           </div>
         </section>

@@ -239,7 +239,7 @@ code {
   grid-template-columns: 30px minmax(0, 1fr);
   gap: 10px;
   width: 100%;
-  min-height: 66px;
+  min-height: 54px;
   padding: 13px 15px;
   border: 0;
   background: #ffffff;
