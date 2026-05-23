@@ -61,7 +61,7 @@ cd hollywood-film-tax-credit-buyers-demo
 open docs/index.html
 ```
 
-The site is served from `docs/`, the same folder GitHub Pages can publish later.
+The welcome page links to the training guide. The site is served from `docs/`, the same folder GitHub Pages can publish later.
 
 ## 3. Read The PI Email
 

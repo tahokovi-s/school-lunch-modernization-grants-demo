@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Training Guide | STAX Coding Agent Training</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="title-block">
+        <p class="eyebrow">STAX Lab teaching demo</p>
+        <h1>STAX Coding Agent Training</h1>
+      </div>
+      <div class="slate" aria-hidden="true">
+        <div class="slate-stripes">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="slate-body">
+          <span>Scene 00</span>
+          <strong>Setup Call</strong>
+        </div>
+      </div>
+      <div class="repo-actions" aria-label="Quick commands">
+        <code>codex --version</code>
+        <code>claude --version</code>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="module-nav" aria-label="Training modules">
+        <div class="nav-heading">
+          <span>Modules</span>
+          <span id="progressCount">0/7</span>
+        </div>
+        <div id="moduleButtons" class="module-buttons"></div>
+      </aside>
+
+      <section class="module-panel" aria-live="polite">
+        <div class="module-meta">
+          <span id="moduleTag" class="tag">Handoff</span>
+          <span id="moduleDuration">6 min</span>
+        </div>
+        <h2 id="moduleTitle">Module</h2>
+        <div id="moduleBody" class="module-body"></div>
+
+        <section class="command-band">
+          <h3>Run During The Demo</h3>
+          <div id="commandList"></div>
+        </section>
+
+        <section class="prompt-band">
+          <h3>Prompt Snippets</h3>
+          <div id="promptList"></div>
+        </section>
+
+        <section class="checklist-band">
+          <h3>Live Checklist</h3>
+          <div id="checklist"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

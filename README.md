@@ -35,7 +35,7 @@ Open the interactive training guide:
 open docs/index.html
 ```
 
-The guide is a plain HTML/CSS/JavaScript site in `docs/`, so it can also be published with GitHub Pages from the `docs/` folder.
+The welcome page links to the module guide at `docs/guide.html`. The site is plain HTML/CSS/JavaScript in `docs/`, so it can also be published with GitHub Pages from the `docs/` folder.
 
 Then run the research workflow from the repo root:
 
