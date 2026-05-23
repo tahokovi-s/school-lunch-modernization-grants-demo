@@ -2,9 +2,30 @@
 
 This is a compact, fictional teaching repo for an introductory STAX Lab seminar on using Codex / Claude Code for agentic AI research workflows. The example is Python-first and simulates a realistic predoc assignment at the intersection of empirical accounting, tax, public finance, and entertainment finance.
 
-The scenario is fictional: a state film incentive program lets movie and streaming productions sell unused production tax credits to companies with enough tax capacity to use them. The research task is to build a buyer-side company-year panel showing which companies bought film tax credits and which companies previously participated in legacy film-finance deals.
+The session now starts before participants have a project folder. Use `docs/session_invitation_email.md` as the pre-session email, then use the interactive training guide during the live workshop.
+
+The research scenario is fictional: a state film incentive program lets movie and streaming productions sell unused production tax credits to companies with enough tax capacity to use them. The task is to build a buyer-side company-year panel showing which companies bought film tax credits and which companies previously participated in legacy film-finance deals.
 
 No real project data, confidential records, or real firm financials are used.
+
+## Before The Session
+
+Ask participants to confirm:
+
+```bash
+codex --version
+claude --version
+git --version
+python3 --version
+```
+
+They should have access to:
+
+- Codex through a ChatGPT plan that includes Codex, such as ChatGPT Plus or higher.
+- Claude Code through Claude Pro, Max, Team, Enterprise, Console, or equivalent institutional access.
+- Git and Python 3.
+
+Plan names and usage limits change, so the email links to the current product docs and pricing pages.
 
 ## How To Use This In The Seminar
 
@@ -30,6 +51,7 @@ If pandas is already available, the two script commands are enough.
 
 ## Files To Inspect Live
 
+- `docs/session_invitation_email.md`: sendable setup email for participants.
 - `docs/intro_email.md`: fictional PI handoff email.
 - `data/raw/`: small fictional raw data with company aliases, messy film-finance roles, and ambiguous cases.
 - `src/classify_legacy_film_deal_parties.py`: transparent rule-based classification.
@@ -39,11 +61,21 @@ If pandas is already available, the two script commands are enough.
 
 ## Expected Demo Flow
 
-1. Start with the PI email and ask Codex to summarize the assignment.
-2. Inspect the raw data before writing code.
-3. Run the film-finance party classification script and read the audit.
-4. Build the company-year panel and inspect the output.
-5. Use the audit files to discuss where human judgment belongs in agentic workflows.
+1. Confirm participants have Codex, Claude Code, Git, and Python working.
+2. Demonstrate `/skills` and the official `openai/skills` catalog.
+3. Open the fictional PI email and ask Codex to summarize the assignment.
+4. Inspect the raw data before writing code.
+5. Run the film-finance party classification script and read the audit.
+6. Build the company-year panel and inspect the output.
+7. Use the audit files to discuss where human judgment belongs in agentic workflows.
+
+## Useful Current References
+
+- Codex CLI docs: `https://developers.openai.com/codex/cli`
+- Codex skills docs: `https://developers.openai.com/codex/skills`
+- OpenAI skills catalog: `https://github.com/openai/skills`
+- Claude Code install docs: `https://code.claude.com/docs/en/installation`
+- Claude plan guide: `https://support.claude.com/en/articles/11049762-choose-a-claude-plan`
 
 ## GitHub Pages Publishing Note
 

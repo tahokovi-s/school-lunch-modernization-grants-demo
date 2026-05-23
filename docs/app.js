@@ -1,12 +1,65 @@
 const modules = [
   {
+    id: "setup",
+    title: "Before The Session: Install And Account Setup",
+    step: "Start before the repo exists",
+    tag: "Setup",
+    duration: "10 min",
+    body: [
+      "Participants do not need a project folder yet. The first job is to make sure the tools are installed, authenticated, and ready to run in a terminal.",
+      "Use this module as a setup clinic. Plan names and usage limits change, so phrase the requirement as access to Codex plus Claude Code, with ChatGPT Plus or higher and Claude Pro or higher as the usual individual starting points.",
+      "The sendable email in docs/session_invitation_email.md includes current reference links and a short pre-session checklist."
+    ],
+    commands: [
+      "open docs/session_invitation_email.md",
+      "codex --version",
+      "claude --version",
+      "git --version && python3 --version"
+    ],
+    prompts: [
+      "I am setting up for a coding-agent research workflow seminar. Check whether Codex is installed and tell me the next setup step without changing files.",
+      "I am setting up Claude Code for a workshop. Check the installation/authentication state and explain any issue in beginner-friendly language."
+    ],
+    checks: [
+      "Codex opens and is signed in.",
+      "Claude Code opens and is signed in.",
+      "Git and Python 3 are available."
+    ]
+  },
+  {
+    id: "skills",
+    title: "Skills Warm-Up",
+    step: "Use /skills before the project work",
+    tag: "Skills",
+    duration: "8 min",
+    body: [
+      "Skills are reusable instructions, scripts, and resources that help Codex perform a workflow reliably. This is the moment to show that agents can be customized rather than only prompted from scratch.",
+      "OpenAI maintains the official openai/skills catalog on GitHub. During the live session, show /skills, then use $skill-installer to list curated skills. If the room is ready, install one lightweight example and restart Codex.",
+      "This sets up a habit the participants can reuse later: ask what capabilities are available before asking the agent to do a specialized task."
+    ],
+    commands: [
+      "open https://github.com/openai/skills",
+      "open https://developers.openai.com/codex/skills"
+    ],
+    prompts: [
+      "/skills",
+      "$skill-installer list curated skills from the official openai/skills repository. Do not install anything yet.",
+      "$skill-installer install https://github.com/openai/skills/tree/main/skills/.experimental/create-plan"
+    ],
+    checks: [
+      "Participants have seen the /skills menu.",
+      "Participants understand $skill-name explicit invocation.",
+      "The official openai/skills catalog has been identified."
+    ]
+  },
+  {
     id: "handoff",
     title: "PI Email And Research Handoff",
     step: "Start from the assignment, not the code",
     tag: "Handoff",
     duration: "6 min",
     body: [
-      "Open the fictional PI email and treat it like a real RA request. The point is to make Codex reason from research context before asking it to write code.",
+      "Now move from setup into the fictional research task. Open the PI email and treat it like a real RA request.",
       "The seminar framing is: a predoc receives a messy but plausible handoff about transferable film production tax credits, asks Codex to restate the task, then turns that brief into an auditable workflow.",
       "Emphasize that the policy, productions, companies, and data are fictional. The workflow habits are the real teaching object."
     ],
@@ -101,13 +154,13 @@ const modules = [
   },
   {
     id: "audits",
-    title: "Audit Trails And Human Judgment",
+    title: "Audit Trails And PI Update",
     step: "Make uncertainty visible",
     tag: "Review",
     duration: "8 min",
     body: [
       "The audit files are part of the output, not an afterthought. They show row counts, classification counts, unmatched names, and rows that should be reviewed by a human.",
-      "This is the core agentic workflow habit: let the agent do repetitive work, but design outputs that make review cheap."
+      "End by turning the audit into a PI update. This makes the workflow feel like a real predoc handoff rather than just a code exercise."
     ],
     commands: [
       "ls audits data/processed",
@@ -116,42 +169,18 @@ const modules = [
     ],
     prompts: [
       "Based on the audit files, draft a short note to the PI explaining what is complete and what needs judgment.",
-      "Suggest one additional audit check we should add before scaling this workflow to real state film office, IPUMS, QCEW, and proprietary financial data."
+      "Create a concise seminar recap: what Codex did, what the human checked, and what would change with real state film office/IPUMS/QCEW/proprietary data."
     ],
     checks: [
       "Human review points are explicit.",
       "No ambiguous case is treated as confirmed investor participation.",
-      "The audience sees audits as research infrastructure."
-    ]
-  },
-  {
-    id: "script",
-    title: "Live Demo Prompts",
-    step: "Keep Codex and the guide side by side",
-    tag: "Demo",
-    duration: "6 min",
-    body: [
-      "This final module gives the instructor a compact path through the repo. Keep this site open beside Codex, click through modules, and paste the prompt snippets when the room is ready for the next step.",
-      "The goal is not to show perfect automation. The goal is to show how a research assistant can steer an agent, inspect outputs, and decide where judgment remains."
-    ],
-    commands: [
-      "open docs/live_demo_script.md",
-      "git status --short"
-    ],
-    prompts: [
-      "Create a concise seminar recap: what Codex did, what the human checked, and what would change with real state film office/IPUMS/QCEW/proprietary data.",
-      "Turn the audit findings into a three-bullet update email to the fictional PI."
-    ],
-    checks: [
-      "Every generated output has been inspected.",
-      "The demo ends with a human-readable PI update.",
-      "The class can name one workflow habit they can reuse."
+      "The demo ends with a human-readable PI update."
     ]
   }
 ];
 
 let activeModuleId = modules[0].id;
-const stateKey = "hollywood-film-tax-credit-demo-progress";
+const stateKey = "hollywood-film-tax-credit-demo-progress-v2";
 
 function loadProgress() {
   try {
@@ -186,7 +215,7 @@ function renderNav() {
     if (progress[module.id]) button.classList.add("done");
     button.type = "button";
     button.innerHTML = `
-      <span class="module-index">${progress[module.id] ? "Done" : index + 1}</span>
+      <span class="module-index">${progress[module.id] ? "OK" : index + 1}</span>
       <span>
         <span class="module-name">${escapeHtml(module.title)}</span>
         <span class="module-step">${escapeHtml(module.step)}</span>
