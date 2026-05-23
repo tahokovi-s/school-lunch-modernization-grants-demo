@@ -27,6 +27,11 @@ const modules = [
         guideLabel: "Codex guide"
       },
       {
+        text: "After Codex works, use the official OpenAI skills repo to add selected skills to Global Codex settings.",
+        guideHref: "setup/skills.html",
+        guideLabel: "Skills guide"
+      },
+      {
         text: "Claude Code is installed, opens, and is signed in.",
         guideHref: "setup/claude-code.html",
         guideLabel: "Claude guide"
@@ -40,24 +45,19 @@ const modules = [
         text: "The terminal prints versions for Codex, Claude Code, Git, and Python 3.",
         guideHref: "setup/terminal-checks.html",
         guideLabel: "Terminal guide"
-      },
-      {
-        text: "/skills opens inside Codex.",
-        guideHref: "setup/skills.html",
-        guideLabel: "Skills guide"
       }
     ]
   },
   {
     id: "skills",
     title: "Skills Warm-Up",
-    step: "Use /skills before the project work",
+    step: "Add skills after Codex works",
     tag: "Skills",
     duration: "8 min",
     body: [
       "Skills are reusable instructions, scripts, and resources that help Codex perform a workflow reliably. This module demonstrates how agents can be customized rather than only prompted from scratch.",
-      "OpenAI maintains the official openai/skills catalog on GitHub. Run /skills to see what is already available, then use $skill-installer to list curated skills.",
-      "The optional install prompt shows how a skill can be added from the official catalog. After installing a skill, restart Codex before relying on it."
+      "OpenAI maintains the official openai/skills catalog on GitHub. After Codex is installed and signed in, give Codex that repo link and ask it to list relevant skills before installing anything.",
+      "The optional install prompt shows how Codex can add a selected skill to Global Codex settings. Ask Codex to explain the change first, then restart Codex before relying on the new skill."
     ],
     commands: [
       "open https://github.com/openai/skills",
@@ -65,13 +65,13 @@ const modules = [
     ],
     prompts: [
       "/skills",
-      "$skill-installer list curated skills from the official openai/skills repository. Do not install anything yet.",
-      "$skill-installer install https://github.com/openai/skills/tree/main/skills/.experimental/create-plan"
+      "Use https://github.com/openai/skills as the official skills catalog. List curated skills that might help this workshop. Do not install anything yet.",
+      "Explain what you would add to my Global Codex settings before installing any skill from https://github.com/openai/skills. Wait for my confirmation."
     ],
     checks: [
-      "The /skills menu has been opened.",
-      "$skill-name explicit invocation is clear.",
-      "The official openai/skills catalog has been identified."
+      "Codex has opened after installation.",
+      "The official openai/skills repo link has been given to Codex.",
+      "Codex has explained any Global settings change before installing a skill."
     ]
   },
   {

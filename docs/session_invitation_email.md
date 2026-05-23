@@ -11,6 +11,7 @@ The workshop shows how to use coding agents for a realistic predoc-style researc
 ## Setup Checklist
 
 - [ ] Codex is installed, opens, and is signed in. Setup help: `docs/setup/codex.html`
+- [ ] After Codex works, use the official OpenAI skills repo to add selected skills to Global Codex settings. Setup help: `docs/setup/skills.html`
 - [ ] Claude Code is installed, opens, and is signed in. Setup help: `docs/setup/claude-code.html`
 - [ ] Paid or institutional access is available for Codex and Claude Code. Setup help: `docs/setup/access.html`
 - [ ] These terminal checks print versions. Setup help: `docs/setup/terminal-checks.html`
@@ -22,7 +23,6 @@ The workshop shows how to use coding agents for a realistic predoc-style researc
   python3 --version
   ```
 
-- [ ] The `/skills` menu opens inside Codex. Setup help: `docs/setup/skills.html`
 - [ ] No project folder has been created yet. That happens during the session.
 
 The public training guide has a "Guide" button next to each checklist item for step-by-step help on macOS and Windows.
@@ -67,22 +67,18 @@ The public training guide has a "Guide" button next to each checklist item for s
    python3 --version
    ```
 
-## Skills Warm-Up
+## After Codex Is Installed: Skills Warm-Up
 
-During the workshop, Codex skills will be used with `/skills` and `$skill-name` prompts. After Codex is installed, open Codex and try:
+During the workshop, Codex skills will be used with `/skills` and `$skill-name` prompts. After Codex is installed and signed in, use the official OpenAI skills catalog:
 
 ```text
-/skills
-```
-
-The workshop also uses OpenAI's official skills catalog:
-
 https://github.com/openai/skills
+```
 
 To preview the skill-install flow without installing anything, ask Codex:
 
 ```text
-$skill-installer list curated skills from the official openai/skills repository. Do not install anything yet.
+Use https://github.com/openai/skills as the official skills catalog. List skills that may help this workshop. Do not install anything yet. First explain what you would add to my Global Codex settings and wait for my confirmation.
 ```
 
 An optional live exercise may install one lightweight example skill and restart Codex so everyone can see how skills change the agent's behavior.

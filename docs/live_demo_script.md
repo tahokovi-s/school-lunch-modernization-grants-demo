@@ -7,9 +7,9 @@ This walkthrough mirrors the public training site. It starts with tool setup, th
 Before Thursday, May 28, 2026, participants should confirm:
 
 - Codex is installed, opens, and is signed in.
+- After Codex works, Codex has been given the official skills repo link and asked to explain any Global settings change before installing skills.
 - Claude Code is installed, opens, and is signed in.
 - Paid or institutional access is available for Codex and Claude Code.
-- `/skills` opens inside Codex.
 - No project folder has been created yet.
 
 Run:
@@ -37,10 +37,10 @@ Plan names and limits change. The operational requirement for this workshop is a
 
 ## 1. Skills Warm-Up
 
-In Codex, open the skills list:
+After Codex is installed and signed in, give it the official OpenAI skills repo link:
 
 ```text
-/skills
+https://github.com/openai/skills
 ```
 
 Codex can use skills in two ways:
@@ -48,16 +48,16 @@ Codex can use skills in two ways:
 - Explicit: mention a skill directly, such as `$skill-installer`.
 - Implicit: Codex selects a skill when the task matches the skill description.
 
-List skills from the official OpenAI skills catalog:
+Ask Codex to list relevant skills before installing anything:
 
 ```text
-$skill-installer list curated skills from the official openai/skills repository. Do not install anything yet.
+Use https://github.com/openai/skills as the official skills catalog. List skills that may help this workshop. Do not install anything yet. First explain what you would add to my Global Codex settings and wait for my confirmation.
 ```
 
-Optional live install:
+Optional live install after confirmation:
 
 ```text
-$skill-installer install https://github.com/openai/skills/tree/main/skills/.experimental/create-plan
+Install only the selected skill from https://github.com/openai/skills, then tell me how to confirm it is available after restarting Codex.
 ```
 
 After installing a skill, restart Codex before relying on it.
