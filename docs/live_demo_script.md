@@ -4,6 +4,14 @@ This walkthrough mirrors the public training site. It starts with tool setup, th
 
 ## 0. Setup Clinic
 
+Before Thursday, May 28, 2026, participants should confirm:
+
+- Codex is installed, opens, and is signed in.
+- Claude Code is installed, opens, and is signed in.
+- Paid or institutional access is available for Codex and Claude Code.
+- `/skills` opens inside Codex.
+- No project folder has been created yet.
+
 Run:
 
 ```bash

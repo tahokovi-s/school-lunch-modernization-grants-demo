@@ -1,29 +1,31 @@
 const modules = [
   {
     id: "setup",
-    title: "Before The Session: Install And Account Setup",
-    step: "Start before the repo exists",
+    title: "Before Thursday: Setup Checklist",
+    step: "Confirm basics before Thursday",
     tag: "Setup",
-    duration: "10 min",
+    duration: "5 min",
     body: [
-      "You do not need a project folder yet. Start by making sure the tools are installed, authenticated, and ready to run in a terminal.",
-      "Plan names and usage limits change, so use the linked product pages as the source of truth. For individual users, ChatGPT Plus or higher and Claude Pro or higher are the usual starting points for this workshop.",
-      "The setup email template in docs/session_invitation_email.md includes current reference links and a short preparation checklist."
+      "Complete this checklist before Thursday, May 28, 2026. No project folder is needed before the session."
     ],
+    checkTitle: "Before Thursday Checklist",
+    commandTitle: "Terminal Checks",
+    promptTitle: "Optional Agent Check",
     commands: [
-      "open docs/session_invitation_email.md",
       "codex --version",
       "claude --version",
-      "git --version && python3 --version"
+      "git --version",
+      "python3 --version"
     ],
     prompts: [
-      "Check whether Codex is installed and authenticated. Do not change files; just explain the next setup step.",
-      "Check whether Claude Code is installed and authenticated. Do not change files; explain any issue in beginner-friendly language."
+      "Check my coding-agent setup. Ask me for the output of codex --version, claude --version, git --version, and python3 --version, then tell me what is missing. Do not change files."
     ],
     checks: [
-      "Codex opens and is signed in.",
-      "Claude Code opens and is signed in.",
-      "Git and Python 3 are available."
+      "Codex is installed, opens, and is signed in.",
+      "Claude Code is installed, opens, and is signed in.",
+      "Paid or institutional access is available for Codex and Claude Code.",
+      "The terminal prints versions for Codex, Claude Code, Git, and Python 3.",
+      "/skills opens inside Codex."
     ]
   },
   {
@@ -292,6 +294,9 @@ function renderModule() {
   document.querySelector("#moduleTag").textContent = module.tag;
   document.querySelector("#moduleDuration").textContent = module.duration;
   document.querySelector("#moduleTitle").textContent = module.title;
+  document.querySelector("#checklistTitle").textContent = module.checkTitle || "Live Checklist";
+  document.querySelector("#commandTitle").textContent = module.commandTitle || "Run During The Demo";
+  document.querySelector("#promptTitle").textContent = module.promptTitle || "Prompt Snippets";
   document.querySelector("#moduleBody").innerHTML = module.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
   renderRows("#commandList", module.commands, "command-row");
   renderRows("#promptList", module.prompts, "prompt-row");
