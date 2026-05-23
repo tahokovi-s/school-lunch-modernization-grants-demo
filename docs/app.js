@@ -9,14 +9,8 @@ const modules = [
       "Complete this checklist before Thursday, May 28, 2026. This workshop starts in the Codex and Claude Code apps, so participants do not need to run command-line checks or create a project folder ahead of time."
     ],
     checkTitle: "Before Thursday Checklist",
-    commandTitle: "Open Before Thursday",
     promptTitle: "Copy Into Codex",
-    commands: [
-      "Confirm paid or institutional access for Codex and Claude Code.",
-      "Open the Codex app and sign in.",
-      "Open the Claude Code app and sign in.",
-      "Keep https://github.com/openai/skills handy as the official skills source."
-    ],
+    commands: [],
     prompts: [
       "Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available."
     ],
@@ -323,6 +317,8 @@ function renderChecklist(module) {
 
 function renderModule() {
   const module = modules.find((item) => item.id === activeModuleId) || modules[0];
+  const commands = module.commands || [];
+  const commandBand = document.querySelector(".command-band");
   document.querySelector("#moduleTag").textContent = module.tag;
   document.querySelector("#moduleDuration").textContent = module.duration;
   document.querySelector("#moduleTitle").textContent = module.title;
@@ -330,7 +326,12 @@ function renderModule() {
   document.querySelector("#commandTitle").textContent = module.commandTitle || "Agent Actions";
   document.querySelector("#promptTitle").textContent = module.promptTitle || "Prompt Snippets";
   document.querySelector("#moduleBody").innerHTML = module.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
-  renderRows("#commandList", module.commands, "command-row");
+  commandBand.hidden = commands.length === 0;
+  if (commands.length) {
+    renderRows("#commandList", commands, "command-row");
+  } else {
+    document.querySelector("#commandList").innerHTML = "";
+  }
   renderRows("#promptList", module.prompts, "prompt-row");
   renderChecklist(module);
 }
