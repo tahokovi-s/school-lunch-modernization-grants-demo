@@ -1,0 +1,34 @@
+deal_id,deal_year,project_name,party_name,party_role_raw,party_note
+D001,2019,Prairie Wind Tax Equity,SunRidge Developers,project developer and sponsor,Developer sold power into a long-term contract
+D001,2019,Prairie Wind Tax Equity,BlueWave Insurance,tax equity investor,Provided legacy clean-energy finance capital
+D001,2019,Prairie Wind Tax Equity,Meridian Bank,syndication lender and finance investor,Helped arrange and hold a portion of the financing
+D001,2019,Prairie Wind Tax Equity,Kell & Marsh Advisors,legal advisor,Outside counsel to the financing parties
+D001,2019,Prairie Wind Tax Equity,Harbor Retail Group,corporate offtaker,Customer bought electricity under a power purchase agreement
+D002,2020,Lakeview Solar Partnership,Aurora WindWorks,project developer,Developer owned the project company
+D002,2020,Lakeview Solar Partnership,Harbor Retail Holdings,power purchaser and customer,Commercial offtaker for the project
+D002,2020,Lakeview Solar Partnership,Atlas Steel Holdings,tax equity investor,Provided tax capacity for the legacy deal
+D002,2020,Lakeview Solar Partnership,Fieldstone Consulting,transaction advisor,Prepared market materials and closing checklist
+D003,2020,Metro Battery Lease,GreenPeak Renewables,project sponsor and developer,Developer managed construction
+D003,2020,Metro Battery Lease,Cobalt Cloud Services,data center customer/offtaker,Customer contracted for storage-backed power
+D003,2020,Metro Battery Lease,Vertex Components Inc.,equipment supplier and possible capital partner,Capacity unclear in source note
+D003,2020,Metro Battery Lease,Meridian National Bank,finance investor,Provided senior financing
+D004,2021,Redwood REC Facility,Redwood Utilities,utility project sponsor,Utility owned the project assets
+D004,2021,Redwood REC Facility,Blue Wave Insurance Co.,legacy finance investor,Provided capital through a legacy renewable finance structure
+D004,2021,Redwood REC Facility,Northstar Foods LLC,renewable energy customer,Customer purchased renewable credits
+D004,2021,Redwood REC Facility,Slate Harbor Advisors,financial advisor,Advisor on pricing and closing mechanics
+D005,2021,Inland Hydrogen Pilot,BrightLoop Energy,project developer,Developer for the hydrogen pilot
+D005,2021,Inland Hydrogen Pilot,Evergreen Capital Partners,capital partner,Relationship to tax capacity is unclear
+D005,2021,Inland Hydrogen Pilot,Pioneer Health Systems,anchor customer/offtaker,Customer signed a pilot procurement agreement
+D005,2021,Inland Hydrogen Pilot,Kell & Marsh Advisors,legal advisor,Counsel for project documentation
+D006,2022,GridEdge Storage Finance,SunRidge Solar Dev.,project developer,Developer for the storage portfolio
+D006,2022,GridEdge Storage Finance,Atlas Steel Hldgs.,finance investor,Provided legacy finance capital
+D006,2022,GridEdge Storage Finance,Cobalt Cloud Services,data center customer,Customer bought resilience services
+D006,2022,GridEdge Storage Finance,Meridian Bank NA,tax equity investor,Provided tax equity capital
+D007,2023,Saffron Solar Refinance,GreenPeak Renewables,project sponsor/developer,Refinancing of an existing solar asset
+D007,2023,Saffron Solar Refinance,Harbor Retail Group,strategy advisor,Advised developer on customer procurement strategy
+D007,2023,Saffron Solar Refinance,BlueWave Ins.,tax equity investor,Provided tax capacity for refinancing
+D007,2023,Saffron Solar Refinance,Redwood Utility Co.,power offtaker,Utility bought project output
+D008,2024,Community Solar Portfolio,BrightLoop Energy,project developer,Developer of community solar portfolio
+D008,2024,Community Solar Portfolio,Pioneer Health Sys.,anchor customer/offtaker,Healthcare system subscribed to a solar tranche
+D008,2024,Community Solar Portfolio,Canyon Bridge Partners,prospective credit buyer,Role not documented in closing memo
+D008,2024,Community Solar Portfolio,Fieldstone Consulting,transaction advisor,Advisor to the developer

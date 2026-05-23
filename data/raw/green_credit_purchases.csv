@@ -1,0 +1,10 @@
+purchase_id,purchase_year,buyer_name,seller_developer,credit_project,credit_amount_millions,source_note
+P001,2020,Meridian National Bank,GreenPeak Renewables,Forge Heat Recovery,5.8,Fictional purchase registry extract
+P002,2021,BlueWave Ins.,SunRidge Developers,Desert Sun Storage,12.4,Fictional purchase registry extract
+P003,2022,Harbor Retail Holdings,Aurora WindWorks,Rail Mesa Wind,8.8,Fictional purchase registry extract
+P004,2022,North Star Foods,SunRidge Solar Dev.,Valley Dairy Solar,4.5,Fictional purchase registry extract
+P005,2023,Vertex Components,GreenPeak Renewables,Forge Heat Recovery Expansion,16.2,Fictional purchase registry extract
+P006,2023,BlueWave Insurance,Aurora WindWorks,Coastal Wind Repower,9.1,Fictional purchase registry extract
+P007,2024,Cobalt Cloud Svcs,SunRidge Developers,Mesa Storage Phase II,22.0,Fictional purchase registry extract
+P008,2024,Atlas Steel Hldgs.,GreenPeak Renewables,Furnace Electrification,6.7,Fictional purchase registry extract
+P009,2024,Pioneer Health Sys.,BrightLoop Energy,Community Solar Portfolio,3.2,Fictional purchase registry extract

@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Generated during the live demo.
+data/processed/*.csv
+audits/*_audit.md
+outputs/*
+
+!data/processed/.gitkeep
+!outputs/.gitkeep
+!audits/README.md
