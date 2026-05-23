@@ -12,8 +12,7 @@ No real project data, confidential records, or real firm financials are used.
 
 Ask participants to confirm:
 
-They should have app access to:
-
+- Paid or institutional access is available for Codex and Claude Code.
 - The Codex app, signed in with a ChatGPT account that includes Codex access.
 - The Claude Code app, signed in with Claude Pro, Max, Team, Enterprise, Console, or equivalent institutional access.
 - The selected Codex skills from the official OpenAI skills catalog: `define-goal`, `openai-docs`, `pdf`, and `jupyter-notebook`.

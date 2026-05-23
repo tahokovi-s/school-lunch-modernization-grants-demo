@@ -10,10 +10,10 @@ The workshop shows how to use coding agents for a realistic predoc-style researc
 
 ## Setup Checklist
 
+- [ ] Paid or institutional access is available for Codex and Claude Code. Setup help: `docs/setup/access.html`
 - [ ] The Codex app is installed, opens, and is signed in. Setup help: `docs/setup/codex.html`
 - [ ] Codex has been asked to install only the selected workshop skills from the official OpenAI skills repo. Setup help: `docs/setup/skills.html`
 - [ ] The Claude Code app is installed, opens, and is signed in. Setup help: `docs/setup/claude-code.html`
-- [ ] Paid or institutional access is available for Codex and Claude Code. Setup help: `docs/setup/access.html`
 - [ ] No project folder has been created yet. Setup help: `docs/setup/no-project-folder.html`
 
 The public training guide has a "Guide" button next to each checklist item for step-by-step help on macOS and Windows.

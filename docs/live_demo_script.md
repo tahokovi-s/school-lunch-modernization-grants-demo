@@ -6,10 +6,10 @@ This walkthrough mirrors the public training site. It starts with tool setup, th
 
 Before Thursday, May 28, 2026, participants should confirm:
 
+- Paid or institutional access is available for Codex and Claude Code.
 - The Codex app is installed, opens, and is signed in.
 - Codex has been asked to install only the selected workshop skills from the official OpenAI skills repo.
 - The Claude Code app is installed, opens, and is signed in.
-- Paid or institutional access is available for Codex and Claude Code.
 - No project folder has been created yet.
 
 This session is app-only for participants. The operational requirement is access to the Codex app plus the Claude Code app, not a terminal screenshot.

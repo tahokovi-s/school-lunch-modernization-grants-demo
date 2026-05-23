@@ -12,6 +12,7 @@ const modules = [
     commandTitle: "Open Before Thursday",
     promptTitle: "Copy Into Codex",
     commands: [
+      "Confirm paid or institutional access for Codex and Claude Code.",
       "Open the Codex app and sign in.",
       "Open the Claude Code app and sign in.",
       "Keep https://github.com/openai/skills handy as the official skills source."
@@ -20,6 +21,11 @@ const modules = [
       "Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available."
     ],
     checks: [
+      {
+        text: "Paid or institutional access is available for Codex and Claude Code.",
+        guideHref: "setup/access.html",
+        guideLabel: "Access guide"
+      },
       {
         text: "The Codex app is installed, opens, and is signed in.",
         guideHref: "setup/codex.html",
@@ -34,11 +40,6 @@ const modules = [
         text: "The Claude Code app is installed, opens, and is signed in.",
         guideHref: "setup/claude-code.html",
         guideLabel: "Claude guide"
-      },
-      {
-        text: "Paid or institutional access is available for Codex and Claude Code.",
-        guideHref: "setup/access.html",
-        guideLabel: "Access guide"
       },
       {
         text: "No project folder has been created yet; the folder will be made during the live session.",
