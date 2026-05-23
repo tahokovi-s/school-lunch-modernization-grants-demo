@@ -2,14 +2,14 @@
 
 ## Framing
 
-Tell the room: "This is a fictional predoc assignment. The point is not the policy estimate. The point is how to steer a coding agent through a small, auditable research workflow."
+Tell the room: "This is a fictional predoc assignment. The point is not to estimate a film-incentive effect today. The point is how to steer a coding agent through a small, auditable research workflow."
 
 Keep this training site open on one side of the screen and Codex open on the other.
 
 ## 1. Open The Repo And Site
 
 ```bash
-cd green-credit-buyers-demo
+cd hollywood-film-tax-credit-buyers-demo
 open docs/index.html
 ```
 
@@ -32,28 +32,28 @@ Pause to point out that a good agentic workflow starts by restating the assignme
 ## 3. Inspect Raw Data
 
 ```bash
-python -c "import pandas as pd; print(pd.read_csv('data/raw/firm_directory.csv').head())"
-python -c "import pandas as pd; print(pd.read_csv('data/raw/legacy_energy_finance_deals.csv')[['deal_id','deal_year','party_name','party_role_raw']].head(12))"
-python -c "import pandas as pd; print(pd.read_csv('data/raw/green_credit_purchases.csv'))"
+python -c "import pandas as pd; print(pd.read_csv('data/raw/company_directory.csv').head())"
+python -c "import pandas as pd; print(pd.read_csv('data/raw/legacy_film_finance_deals.csv')[['deal_id','deal_year','party_name','party_role_raw']].head(12))"
+python -c "import pandas as pd; print(pd.read_csv('data/raw/film_tax_credit_purchases.csv'))"
 ```
 
-Ask the room what looks messy before running any code. Name variants and ambiguous party roles should come up.
+Ask the room what looks messy before running any code. Company name variants, film-finance roles, and ambiguous strategic partners should come up.
 
-## 4. Classify Legacy Deal Parties
+## 4. Classify Legacy Film-Finance Parties
 
 ```bash
-python src/classify_legacy_deal_parties.py
-sed -n '1,220p' audits/legacy_party_classification_audit.md
+python src/classify_legacy_film_deal_parties.py
+sed -n '1,220p' audits/legacy_film_party_classification_audit.md
 ```
 
 Explain that this script uses transparent keyword rules rather than a model call. That makes it easier to audit and teach.
 
-## 5. Build The Firm-Year Panel
+## 5. Build The Company-Year Panel
 
 ```bash
-python src/build_firm_year_panel.py
-python -c "import pandas as pd; print(pd.read_csv('data/processed/firm_year_panel.csv').head(18))"
-sed -n '1,220p' audits/build_firm_year_panel_audit.md
+python src/build_company_year_panel.py
+python -c "import pandas as pd; print(pd.read_csv('data/processed/company_year_panel.csv').head(18))"
+sed -n '1,220p' audits/build_company_year_panel_audit.md
 ```
 
 Point out that the panel is analysis-ready but not judgment-free. The audit file is where the agent hands uncertainty back to the human.

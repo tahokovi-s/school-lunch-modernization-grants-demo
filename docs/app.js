@@ -7,8 +7,8 @@ const modules = [
     duration: "6 min",
     body: [
       "Open the fictional PI email and treat it like a real RA request. The point is to make Codex reason from research context before asking it to write code.",
-      "The seminar framing is: a predoc receives a messy but plausible handoff, asks Codex to restate the task, then turns that brief into an auditable workflow.",
-      "Emphasize that the policy and data are fictional. The workflow habits are the real teaching object."
+      "The seminar framing is: a predoc receives a messy but plausible handoff about transferable film production tax credits, asks Codex to restate the task, then turns that brief into an auditable workflow.",
+      "Emphasize that the policy, productions, companies, and data are fictional. The workflow habits are the real teaching object."
     ],
     commands: [
       "open docs/intro_email.md",
@@ -16,10 +16,10 @@ const modules = [
     ],
     prompts: [
       "Read docs/intro_email.md. Summarize the research objective, raw inputs, expected output, and judgment calls in a concise RA brief.",
-      "Before writing code, tell me what could go wrong when matching firms across these files."
+      "Before writing code, tell me what could go wrong when matching companies across these files."
     ],
     checks: [
-      "Audience understands the buyer-side panel goal.",
+      "Audience understands the buyer-side company-year panel goal.",
       "Codex has been asked to summarize before coding.",
       "Fictional-data boundary has been stated out loud."
     ]
@@ -31,42 +31,42 @@ const modules = [
     tag: "Data",
     duration: "8 min",
     body: [
-      "Inspect all three CSVs: purchase records, legacy finance deal parties, and the firm directory. The teachable messiness is intentional: aliases, role ambiguity, and incomplete text descriptions.",
+      "Inspect all three CSVs: film tax credit purchases, legacy film-finance deal parties, and the company directory. The teachable messiness is intentional: aliases, production roles, vendor roles, and ambiguous finance partners.",
       "This module shows why agents need grounded context. Good prompts point Codex to the data shape and ask it to inspect before generating assumptions."
     ],
     commands: [
-      "python -c \"import pandas as pd; print(pd.read_csv('data/raw/firm_directory.csv').head())\"",
-      "python -c \"import pandas as pd; print(pd.read_csv('data/raw/legacy_energy_finance_deals.csv')[['deal_id','deal_year','party_name','party_role_raw']].head(12))\"",
-      "python -c \"import pandas as pd; print(pd.read_csv('data/raw/green_credit_purchases.csv'))\""
+      "python -c \"import pandas as pd; print(pd.read_csv('data/raw/company_directory.csv').head())\"",
+      "python -c \"import pandas as pd; print(pd.read_csv('data/raw/legacy_film_finance_deals.csv')[['deal_id','deal_year','party_name','party_role_raw']].head(12))\"",
+      "python -c \"import pandas as pd; print(pd.read_csv('data/raw/film_tax_credit_purchases.csv'))\""
     ],
     prompts: [
       "Inspect data/raw/*.csv and list the columns, likely keys, obvious aliases, and rows that should not be auto-classified without review.",
-      "Propose a conservative matching strategy for this fictional exercise."
+      "Propose a conservative matching strategy for this fictional film credit exercise."
     ],
     checks: [
-      "Name variants have been noticed.",
-      "Ambiguous legacy parties have been identified before classification.",
+      "Company name variants have been noticed.",
+      "Ambiguous film-finance parties have been identified before classification.",
       "The class understands why audits matter."
     ]
   },
   {
     id: "classification",
-    title: "Legacy Party Classification",
+    title: "Legacy Film-Finance Party Classification",
     step: "Use transparent rules first",
     tag: "Rules",
     duration: "10 min",
     body: [
       "The classification script deliberately uses keyword rules rather than an API call. That keeps the lesson focused on transparent, reviewable automation.",
-      "The script writes both a processed CSV and an audit file. Ambiguous rows are kept in the data but quarantined from the investor indicator."
+      "The script writes both a processed CSV and an audit file. Ambiguous finance-partner rows are kept in the data but quarantined from the investor indicator."
     ],
     commands: [
-      "python src/classify_legacy_deal_parties.py",
-      "sed -n '1,220p' audits/legacy_party_classification_audit.md",
-      "python -c \"import pandas as pd; print(pd.read_csv('data/processed/legacy_party_classifications.csv')[['deal_id','party_name','party_category','classification_reason']])\""
+      "python src/classify_legacy_film_deal_parties.py",
+      "sed -n '1,220p' audits/legacy_film_party_classification_audit.md",
+      "python -c \"import pandas as pd; print(pd.read_csv('data/processed/legacy_film_party_classifications.csv')[['deal_id','party_name','party_category','classification_reason']])\""
     ],
     prompts: [
-      "Review src/classify_legacy_deal_parties.py. Explain the rule order and whether any terms should be safer or more conservative.",
-      "Read audits/legacy_party_classification_audit.md and tell me which rows require human judgment."
+      "Review src/classify_legacy_film_deal_parties.py. Explain the rule order and whether any terms should be safer or more conservative.",
+      "Read audits/legacy_film_party_classification_audit.md and tell me which rows require human judgment."
     ],
     checks: [
       "Classification rules are visible in code.",
@@ -76,27 +76,27 @@ const modules = [
   },
   {
     id: "panel",
-    title: "Build The Firm-Year Panel",
+    title: "Build The Company-Year Panel",
     step: "Turn messy inputs into analysis-ready rows",
     tag: "Panel",
     duration: "10 min",
     body: [
-      "The panel builder reads the firm directory, green credit purchases, and party classifications. It creates one firm-year row for each fictional firm from 2019 through 2024.",
-      "The final variables are intentionally plain: firm name, year, industry, revenue, buyer indicator, legacy investor indicator, and credit amount."
+      "The panel builder reads the company directory, film tax credit purchases, and party classifications. It creates one company-year row for each fictional company from 2019 through 2024.",
+      "The final variables are intentionally plain: company name, year, industry, revenue, buyer indicator, legacy investor indicator, and film credit amount."
     ],
     commands: [
-      "python src/build_firm_year_panel.py",
-      "python -c \"import pandas as pd; print(pd.read_csv('data/processed/firm_year_panel.csv').head(18))\"",
-      "sed -n '1,220p' audits/build_firm_year_panel_audit.md"
+      "python src/build_company_year_panel.py",
+      "python -c \"import pandas as pd; print(pd.read_csv('data/processed/company_year_panel.csv').head(18))\"",
+      "sed -n '1,220p' audits/build_company_year_panel_audit.md"
     ],
     prompts: [
-      "Read src/build_firm_year_panel.py and explain how firm aliases are matched.",
-      "Inspect data/processed/firm_year_panel.csv and give me three sanity checks before I use it in analysis."
+      "Read src/build_company_year_panel.py and explain how company aliases are matched.",
+      "Inspect data/processed/company_year_panel.csv and give me three sanity checks before I use it in analysis."
     ],
     checks: [
-      "Panel has one row per firm-year.",
-      "Credit amounts are zero-filled when no purchase occurred.",
-      "LegacyFinanceInvestor is cumulative through the panel year."
+      "Panel has one row per company-year.",
+      "Film credit amounts are zero-filled when no purchase occurred.",
+      "LegacyFilmFinanceInvestor is cumulative through the panel year."
     ]
   },
   {
@@ -111,12 +111,12 @@ const modules = [
     ],
     commands: [
       "ls audits data/processed",
-      "sed -n '1,220p' audits/legacy_party_classification_audit.md",
-      "sed -n '1,220p' audits/build_firm_year_panel_audit.md"
+      "sed -n '1,220p' audits/legacy_film_party_classification_audit.md",
+      "sed -n '1,220p' audits/build_company_year_panel_audit.md"
     ],
     prompts: [
       "Based on the audit files, draft a short note to the PI explaining what is complete and what needs judgment.",
-      "Suggest one additional audit check we should add before scaling this workflow to real public data."
+      "Suggest one additional audit check we should add before scaling this workflow to real state film office, IPUMS, QCEW, and proprietary financial data."
     ],
     checks: [
       "Human review points are explicit.",
@@ -139,7 +139,7 @@ const modules = [
       "git status --short"
     ],
     prompts: [
-      "Create a concise seminar recap: what Codex did, what the human checked, and what would change with real IPUMS/QCEW/proprietary data.",
+      "Create a concise seminar recap: what Codex did, what the human checked, and what would change with real state film office/IPUMS/QCEW/proprietary data.",
       "Turn the audit findings into a three-bullet update email to the fictional PI."
     ],
     checks: [
@@ -151,7 +151,7 @@ const modules = [
 ];
 
 let activeModuleId = modules[0].id;
-const stateKey = "green-credit-buyers-demo-progress";
+const stateKey = "hollywood-film-tax-credit-demo-progress";
 
 function loadProgress() {
   try {
@@ -186,7 +186,7 @@ function renderNav() {
     if (progress[module.id]) button.classList.add("done");
     button.type = "button";
     button.innerHTML = `
-      <span class="module-index">${progress[module.id] ? "OK" : index + 1}</span>
+      <span class="module-index">${progress[module.id] ? "Done" : index + 1}</span>
       <span>
         <span class="module-name">${escapeHtml(module.title)}</span>
         <span class="module-step">${escapeHtml(module.step)}</span>

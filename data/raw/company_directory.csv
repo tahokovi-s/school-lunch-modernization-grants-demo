@@ -1,0 +1,11 @@
+company_id,company_name,name_variants,industry,revenue_2019,revenue_2020,revenue_2021,revenue_2022,revenue_2023,revenue_2024
+C001,BlueWave Insurance,"BlueWave Ins.|Blue Wave Insurance Co.",Insurance,4200,4310,4450,4625,4810,5035
+C002,Meridian Bank,"Meridian National Bank|Meridian Bank NA",Banking,3760,3825,3975,4160,4305,4490
+C003,Silvergate Streaming,"Silvergate Stream|Silvergate Streaming LLC",Streaming Platform,6100,6740,7280,7910,8435,9020
+C004,Harbor Retail Group,"Harbor Retail|Harbor Retail Holdings",Retail,3150,3010,3275,3510,3680,3860
+C005,Cobalt Cloud Services,"Cobalt Cloud|Cobalt Cloud Svcs",Software and Cloud,2450,2635,2890,3180,3525,3890
+C006,Atlas Steel Holdings,"Atlas Steel|Atlas Steel Hldgs.",Metals Manufacturing,2140,2055,2195,2330,2485,2610
+C007,Northstar Foods LLC,"North Star Foods|Northstar Foods",Food Manufacturing,1180,1215,1290,1365,1440,1515
+C008,Apex Auto Group,"Apex Auto|Apex Automotive Group",Automotive,5400,5025,5580,6040,6425,6880
+C009,Starline Studios,"Starline Studio|Starline Pictures",Studio and Distributor,1420,1355,1710,1965,2240,2525
+C010,Redwood Utilities,"Redwood Utility Co.|Redwood Utilities Inc.",Electric Utility,5100,5225,5350,5520,5710,5905

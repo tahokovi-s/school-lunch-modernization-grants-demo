@@ -4,59 +4,78 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW_PATH = ROOT / "data" / "raw" / "legacy_energy_finance_deals.csv"
-OUTPUT_PATH = ROOT / "data" / "processed" / "legacy_party_classifications.csv"
-AUDIT_PATH = ROOT / "audits" / "legacy_party_classification_audit.md"
+RAW_PATH = ROOT / "data" / "raw" / "legacy_film_finance_deals.csv"
+OUTPUT_PATH = ROOT / "data" / "processed" / "legacy_film_party_classifications.csv"
+AUDIT_PATH = ROOT / "audits" / "legacy_film_party_classification_audit.md"
 
 RULES = {
-    "legacy_finance_investor": (
-        "tax equity investor",
-        "legacy finance investor",
+    "legacy_film_finance_investor": (
+        "tax credit investor",
+        "legacy film finance investor",
+        "film finance investor",
         "finance investor",
-        "financial investor",
-        "syndication lender",
-        "senior financing",
-        "provided tax equity capital",
+        "senior production lender",
+        "production lender",
+        "bridge financing",
+        "provided tax capacity",
     ),
-    "project_developer": (
-        "project developer",
-        "developer",
-        "sponsor",
-        "project sponsor",
-        "asset owner",
-        "utility project sponsor",
+    "production_company": (
+        "production company",
+        "producer",
+        "production sponsor",
+        "project producer",
+        "production llc",
     ),
-    "customer_offtaker": (
-        "offtaker",
-        "power purchaser",
+    "studio_distributor": (
+        "studio/distributor",
+        "studio",
+        "distributor",
+        "distributed",
+        "marketed the project",
+    ),
+    "completion_bond_or_payroll_vendor": (
+        "completion bond",
+        "completion bond firm",
+        "bonded delivery",
+        "payroll vendor",
+        "cast and crew payroll",
+        "production services vendor",
+    ),
+    "streaming_or_offtake_customer": (
+        "streaming licensee",
+        "streaming platform customer",
+        "streaming/offtake customer",
+        "offtake customer",
         "customer",
-        "anchor customer",
-        "power purchase agreement",
-        "subscribed",
+        "licensed",
+        "release window",
+        "brand integration customer",
     ),
     "advisor": (
         "advisor",
         "legal advisor",
         "financial advisor",
-        "transaction advisor",
-        "strategy advisor",
-        "outside counsel",
+        "production incentive advisor",
+        "brand strategy advisor",
         "counsel",
+        "consulting",
     ),
 }
 
 AMBIGUOUS_TERMS = (
     "ambiguous",
     "unclear",
-    "possible capital partner",
+    "possible finance participant",
     "prospective",
     "not documented",
+    "finance partner",
+    "strategic partner",
     "capacity unclear",
 )
 
 
 def classify_party(row: pd.Series) -> tuple[str, str]:
-    """Classify one party using transparent text rules."""
+    """Classify one film-finance party using transparent text rules."""
     role_text = str(row.get("party_role_raw", "")).lower()
     note_text = str(row.get("party_note", "")).lower()
     combined_text = f"{role_text} {note_text}"
@@ -113,7 +132,7 @@ def write_audit(classified: pd.DataFrame) -> None:
     for category, keywords in RULES.items():
         rule_lines.append(f"- `{category}`: " + ", ".join(f"`{keyword}`" for keyword in keywords))
 
-    audit = f"""# Legacy Party Classification Audit
+    audit = f"""# Legacy Film Party Classification Audit
 
 ## Source
 
@@ -139,7 +158,7 @@ Ambiguous terms: {", ".join(f"`{term}`" for term in AMBIGUOUS_TERMS)}
 
 ## Teaching Note
 
-This audit is intentionally conservative. Developers, customers, and advisors are not treated as legacy finance investors. Ambiguous cases remain visible for review instead of being forced into a binary indicator.
+This audit is intentionally conservative. Production companies, studios, distributors, completion bond firms, payroll vendors, customers, and advisors are not treated as legacy film-finance investors. Ambiguous finance-partner cases remain visible for review instead of being forced into a binary indicator.
 """
     AUDIT_PATH.write_text(audit, encoding="utf-8")
 
@@ -157,7 +176,7 @@ def main() -> None:
     output_columns = [
         "deal_id",
         "deal_year",
-        "project_name",
+        "project_title",
         "party_name",
         "party_role_raw",
         "party_note",

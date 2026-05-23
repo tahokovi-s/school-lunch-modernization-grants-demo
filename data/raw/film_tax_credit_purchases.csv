@@ -1,0 +1,11 @@
+purchase_id,purchase_year,buyer_name,seller_production,film_title,film_credit_amount_millions,source_note
+P001,2020,Meridian National Bank,Pacific Lantern Pictures,Night Market,6.4,Fictional transferable film credit registry extract
+P002,2021,BlueWave Ins.,Desert Bloom Productions,The Last Diner,11.8,Fictional transferable film credit registry extract
+P003,2021,Harbor Retail Holdings,Starline Pictures,Harbor Lights Holiday,4.9,Fictional transferable film credit registry extract
+P004,2022,Silvergate Stream,Canyon Road Features,Desert Unit,15.5,Fictional transferable film credit registry extract
+P005,2022,North Star Foods,Pacific Lantern Pictures,Kitchen Brigade,3.7,Fictional transferable film credit registry extract
+P006,2023,Apex Automotive Group,Desert Bloom Productions,Switchback,18.2,Fictional transferable film credit registry extract
+P007,2023,BlueWave Insurance,Canyon Road Features,Neon County,8.6,Fictional transferable film credit registry extract
+P008,2024,Cobalt Cloud Svcs,Starline Studios,Server Farm Summer,21.4,Fictional transferable film credit registry extract
+P009,2024,Atlas Steel Hldgs.,Pacific Lantern Pictures,Foundry Moon,5.3,Fictional transferable film credit registry extract
+P010,2024,Redwood Utility Co.,Desert Bloom Productions,Gridlock Hearts,7.1,Fictional transferable film credit registry extract
