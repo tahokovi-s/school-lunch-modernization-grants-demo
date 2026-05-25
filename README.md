@@ -15,7 +15,6 @@ Ask participants to confirm:
 - Paid or institutional access is available for Codex and Claude Code.
 - The Codex app, signed in with a ChatGPT account that includes Codex access.
 - The Claude Code app, signed in with Claude Pro, Max, Team, Enterprise, Console, or equivalent institutional access.
-- The selected Codex skills from the official OpenAI skills catalog: `define-goal`, `openai-docs`, `pdf`, and `jupyter-notebook`.
 - No project folder created yet.
 
 Plan names and usage limits change, so the email links to the current product docs and pricing pages.
@@ -57,12 +56,12 @@ Participants do not need to type these commands during the workshop. The live se
 ## Expected Demo Flow
 
 1. Confirm participants have the Codex app and Claude Code app open and signed in.
-2. Demonstrate `/skills` and install only the selected skills from the official `openai/skills` catalog.
-3. Open the fictional PI email and ask Codex to summarize the assignment.
-4. Inspect the raw data before writing code.
-5. Run the film-finance party classification script and read the audit.
-6. Build the company-year panel and inspect the output.
-7. Use the audit files to discuss where human judgment belongs in agentic workflows.
+2. Open the fictional PI email and ask Codex to summarize the assignment.
+3. Inspect the raw data before writing code.
+4. Run the film-finance party classification script and read the audit.
+5. Build the company-year panel and inspect the output.
+6. Use the audit files to discuss where human judgment belongs in agentic workflows.
+7. If time allows, use Extra Resources to demonstrate `/skills` and the official `openai/skills` catalog.
 
 ## Useful Current References
 

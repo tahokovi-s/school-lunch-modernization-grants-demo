@@ -22,11 +22,6 @@ const modules = [
         guideLabel: "Codex guide"
       },
       {
-        text: "Codex has been asked to install only the selected workshop skills from the official OpenAI skills repo.",
-        guideHref: "setup/skills.html",
-        guideLabel: "Skills guide"
-      },
-      {
         text: "The Claude Code app is installed, opens, and is signed in.",
         guideHref: "setup/claude-code.html",
         guideLabel: "Claude guide"
@@ -36,34 +31,6 @@ const modules = [
         guideHref: "setup/no-project-folder.html",
         guideLabel: "Folder guide"
       }
-    ]
-  },
-  {
-    id: "skills",
-    title: "Install The Workshop Skills",
-    step: "Use only the selected set",
-    tag: "Skills",
-    body: [
-      "Skills are reusable instructions, scripts, and resources that help Codex perform a workflow reliably. This module demonstrates how agents can be customized rather than only prompted from scratch.",
-      "The official OpenAI skills catalog includes many skills for deployment, design, GitHub workflows, Notion, security, and media. For this introductory research workflow, install only four: define-goal, openai-docs, pdf, and jupyter-notebook.",
-      "The goal is a small, inspectable setup. Ask Codex to explain any user-level or Global settings change before it installs anything, then restart Codex before relying on the new skills."
-    ],
-    commandTitle: "Reference Links",
-    promptTitle: "Copy Into Codex",
-    commands: [
-      "https://github.com/openai/skills",
-      "https://developers.openai.com/codex/skills"
-    ],
-    prompts: [
-      "/skills",
-      "Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available.",
-      "After I restart Codex, help me confirm that define-goal, openai-docs, pdf, and jupyter-notebook are available. Do not install or remove anything."
-    ],
-    checks: [
-      "The selected skill names are define-goal, openai-docs, pdf, and jupyter-notebook.",
-      "Codex is told not to install any other skills.",
-      "Codex explains any user-level or Global settings change before installing skills.",
-      "Codex is restarted after any new skill install."
     ]
   },
   {
@@ -189,6 +156,34 @@ const modules = [
       "Human review points are explicit.",
       "No ambiguous case is treated as confirmed investor participation.",
       "The demo ends with a human-readable PI update."
+    ]
+  },
+  {
+    id: "resources",
+    title: "Extra Resources",
+    step: "Save for the end",
+    tag: "Resources",
+    body: [
+      "Use this optional section only if there is time after the core research workflow. It collects the Codex skills material and reference links without making skills installation part of the main setup.",
+      "The official OpenAI skills catalog includes many skills for deployment, design, GitHub workflows, Notion, security, and media. For this workshop, the suggested optional set is define-goal, openai-docs, pdf, and jupyter-notebook.",
+      "If participants try the install flow, Codex should explain any user-level or Global settings change before it installs anything. Restart Codex before relying on newly installed skills."
+    ],
+    commandTitle: "Reference Links",
+    promptTitle: "Optional Codex Prompts",
+    commands: [
+      "https://github.com/openai/skills",
+      "https://developers.openai.com/codex/skills"
+    ],
+    prompts: [
+      "/skills",
+      "Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this optional workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available.",
+      "After I restart Codex, help me confirm that define-goal, openai-docs, pdf, and jupyter-notebook are available. Do not install or remove anything."
+    ],
+    checks: [
+      "The selected optional skill names are define-goal, openai-docs, pdf, and jupyter-notebook.",
+      "Codex is told not to install any other skills.",
+      "Codex explains any user-level or Global settings change before installing skills.",
+      "Codex is restarted after any new skill install."
     ]
   }
 ];
