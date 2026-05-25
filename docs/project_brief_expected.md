@@ -1,4 +1,4 @@
-# Expected Codex Brief
+# Expected Agent Brief From The Assignment Email
 
 ## Research Objective
 

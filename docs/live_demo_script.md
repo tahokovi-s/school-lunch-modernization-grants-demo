@@ -17,17 +17,24 @@ This session is app-only for participants. The operational requirement is access
 
 Open the public GitHub Pages site in the browser. The welcome page links to the training guide, and the guide mirrors the sequence participants will follow side by side with Codex or Claude Code.
 
-## 2. Read The PI Email
+## 2. Turn The Assignment Email Into Project Context
 
-In Codex or Claude Code, open `docs/intro_email.md`.
+Have participants open the fictional assignment email in their inboxes. This is the realistic starting point: a predoc receives a PI-style email before there is a tidy project brief.
 
-Use this prompt:
+Ask Codex or Claude Code to save that email into the project as context:
+
+```text
+I received the fictional PI assignment email for this training. Create or update docs/intro_email.md with the full email text below as project context. Preserve the sender, subject, and body. Do not start coding yet.
+```
+
+After the email has been saved as `docs/intro_email.md`, use this prompt:
+
 
 ```text
 Read docs/intro_email.md. Summarize the research objective, raw inputs, expected output, and judgment calls in a concise RA brief.
 ```
 
-A good agentic workflow starts by restating the assignment before writing code.
+A good agentic workflow starts by preserving and restating the assignment before writing code. If someone cannot access the inbox email during the session, use the copy already in `docs/intro_email.md` as the fallback training handoff.
 
 ## 3. Inspect Raw Data
 

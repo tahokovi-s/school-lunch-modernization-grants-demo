@@ -35,26 +35,29 @@ const modules = [
   },
   {
     id: "handoff",
-    title: "PI Email And Research Handoff",
-    step: "Start from the assignment, not the code",
-    tag: "Handoff",
+    title: "Assignment Email And Project Context",
+    step: "Start from the inbox",
+    tag: "Email",
     body: [
-      "Now move from setup into the fictional research task. Open the PI email and treat it like a real RA request.",
-      "The workflow starts with a messy but plausible handoff about transferable film production tax credits. Ask Codex to restate the task, then turn that brief into an auditable workflow.",
-      "The policy, productions, companies, and data are fictional. The transferable lesson is how to guide an agent through research work with checks and judgment."
+      "The research task starts from an actual email sent to participants' inboxes. Open that assignment email first and treat it like a real predoc handoff.",
+      "Bring the email into the project before coding. Ask Codex or Claude Code to create or update docs/intro_email.md with the email text so the repo has a durable copy of the assignment context.",
+      "Then ask the agent to restate the objective, inputs, expected output, and judgment calls. The policy, productions, companies, and data are fictional; the transferable lesson is how to guide an agent through research work with checks and judgment."
     ],
-    commandTitle: "Open In The App",
+    commandTitle: "Do In The Apps",
     commands: [
-      "docs/intro_email.md",
-      "Ask Codex or Claude Code to read the PI email before editing files."
+      "Open the fictional assignment email from your inbox.",
+      "Add the email text to docs/intro_email.md as project context.",
+      "Ask Codex or Claude Code to summarize the handoff before editing code."
     ],
     prompts: [
+      "I received the fictional PI assignment email for this training. Create or update docs/intro_email.md with the full email text below as project context. Preserve the sender, subject, and body. Do not start coding yet.",
       "Read docs/intro_email.md. Summarize the research objective, raw inputs, expected output, and judgment calls in a concise RA brief.",
       "Before writing code, identify what could go wrong when matching companies across these files."
     ],
     checks: [
+      "The inbox email has been saved into the repo as context.",
       "The buyer-side company-year panel goal is clear.",
-      "Codex has been asked to summarize before coding.",
+      "Codex has summarized the handoff before coding.",
       "The fictional-data boundary is clear."
     ]
   },

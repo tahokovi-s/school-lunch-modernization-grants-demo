@@ -2,7 +2,7 @@
 
 This is a compact, fictional teaching repo for an introductory STAX Lab seminar on using Codex / Claude Code for agentic AI research workflows. The example is Python-first and simulates a realistic predoc assignment at the intersection of empirical accounting, tax, public finance, and entertainment finance.
 
-The session now starts before participants have a project folder. Use `docs/session_invitation_email.md` as the pre-session email, then use the interactive training guide during the live workshop.
+The session now starts before participants have a project folder. Use `docs/session_invitation_email.md` as the pre-session setup email, then start the live workflow from a separate fictional assignment email sent to participants' inboxes.
 
 The research scenario is fictional: a state film incentive program lets movie and streaming productions sell unused production tax credits to companies with enough tax capacity to use them. The task is to build a buyer-side company-year panel showing which companies bought film tax credits and which companies previously participated in legacy film-finance deals.
 
@@ -46,7 +46,7 @@ Participants do not need to type these commands during the workshop. The live se
 ## Files To Inspect Live
 
 - `docs/session_invitation_email.md`: sendable setup email for participants.
-- `docs/intro_email.md`: fictional PI handoff email.
+- `docs/intro_email.md`: repo-local copy of the fictional assignment email after it is brought into the project as context.
 - `data/raw/`: small fictional raw data with company aliases, messy film-finance roles, and ambiguous cases.
 - `src/classify_legacy_film_deal_parties.py`: transparent rule-based classification.
 - `src/build_company_year_panel.py`: company-year panel builder.
@@ -56,7 +56,7 @@ Participants do not need to type these commands during the workshop. The live se
 ## Expected Demo Flow
 
 1. Confirm participants have the Codex app and Claude Code app open and signed in.
-2. Open the fictional PI email and ask Codex to summarize the assignment.
+2. Open the fictional assignment email from participants' inboxes, add it to `docs/intro_email.md` as project context, and ask Codex to summarize the assignment.
 3. Inspect the raw data before writing code.
 4. Run the film-finance party classification script and read the audit.
 5. Build the company-year panel and inspect the output.
