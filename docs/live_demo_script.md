@@ -17,15 +17,31 @@ This session is app-only for participants. The operational requirement is access
 
 Open the public GitHub Pages site in the browser. The welcome page links to the training guide, and the guide mirrors the sequence participants will follow side by side with Codex or Claude Code.
 
-## 2. Turn The Assignment Email Into Project Context
+## 2. Create The Project Root, Then Turn The Assignment Email Into Context
 
-Have participants open the fictional assignment email in their inboxes. This is the realistic starting point: a predoc receives a PI-style email before there is a tidy project brief.
+### 2.1 Create `My_RA_Tasks`
+
+Have participants create a new folder named `My_RA_Tasks` somewhere sensible in their file home, such as Documents, Desktop, or another personal work folder they can find again.
+
+Explain that `My_RA_Tasks` is the project root for the workshop. It is the home folder that will contain the actual workshop project folder and any files the agent creates during the session.
+
+### 2.2 Open `My_RA_Tasks` In Codex
+
+Have participants open Codex, create a new project from an existing folder, and select `My_RA_Tasks`.
+
+### 2.3 Open The Assignment Email
+
+Have participants open the fictional assignment email in their inboxes. This is the realistic starting point for the research task: a predoc receives a PI-style email before there is a tidy project brief.
+
+### 2.4 Bring The Email Into The Codebase
 
 Ask Codex or Claude Code to save that email into the project as context:
 
 ```text
 I received the fictional PI assignment email for this training. Create or update docs/intro_email.md with the full email text below as project context. Preserve the sender, subject, and body. Do not start coding yet.
 ```
+
+### 2.5 Summarize Before Coding
 
 After the email has been saved as `docs/intro_email.md`, use this prompt:
 

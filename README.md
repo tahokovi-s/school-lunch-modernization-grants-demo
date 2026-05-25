@@ -2,7 +2,7 @@
 
 This is a compact, fictional teaching repo for an introductory STAX Lab seminar on using Codex / Claude Code for agentic AI research workflows. The example is Python-first and simulates a realistic predoc assignment at the intersection of empirical accounting, tax, public finance, and entertainment finance.
 
-The session now starts before participants have a project folder. Use `docs/session_invitation_email.md` as the pre-session setup email, then start the live workflow from a separate fictional assignment email sent to participants' inboxes.
+The session now starts before participants have a project folder. Use `docs/session_invitation_email.md` as the pre-session setup email. During the live workflow, participants create a `My_RA_Tasks` folder as their workshop project root, open that folder in Codex, and then work from a separate fictional assignment email sent to their inboxes.
 
 The research scenario is fictional: a state film incentive program lets movie and streaming productions sell unused production tax credits to companies with enough tax capacity to use them. The task is to build a buyer-side company-year panel showing which companies bought film tax credits and which companies previously participated in legacy film-finance deals.
 
@@ -56,12 +56,13 @@ Participants do not need to type these commands during the workshop. The live se
 ## Expected Demo Flow
 
 1. Confirm participants have the Codex app and Claude Code app open and signed in.
-2. Open the fictional assignment email from participants' inboxes, add it to `docs/intro_email.md` as project context, and ask Codex to summarize the assignment.
-3. Inspect the raw data before writing code.
-4. Run the film-finance party classification script and read the audit.
-5. Build the company-year panel and inspect the output.
-6. Use the audit files to discuss where human judgment belongs in agentic workflows.
-7. If time allows, use Extra Resources to demonstrate `/skills` and the official `openai/skills` catalog.
+2. Create `My_RA_Tasks` in a sensible place in the participant's file home, open Codex, create a new project from that existing folder, and select `My_RA_Tasks`.
+3. Open the fictional assignment email from participants' inboxes, add it to `docs/intro_email.md` as project context, and ask Codex or Claude Code to summarize the assignment before coding.
+4. Inspect the raw data before writing code.
+5. Run the film-finance party classification script and read the audit.
+6. Build the company-year panel and inspect the output.
+7. Use the audit files to discuss where human judgment belongs in agentic workflows.
+8. If time allows, use Extra Resources to demonstrate `/skills` and the official `openai/skills` catalog.
 
 ## Useful Current References
 

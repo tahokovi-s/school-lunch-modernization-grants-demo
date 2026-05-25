@@ -35,26 +35,52 @@ const modules = [
   },
   {
     id: "handoff",
-    title: "Assignment Email And Project Context",
-    step: "Start from the inbox",
-    tag: "Email",
+    title: "Project Folder And Assignment Email",
+    step: "Create the root, then start from the inbox",
+    tag: "Start",
     body: [
-      "The research task starts from an actual email sent to participants' inboxes. Open that assignment email first and treat it like a real predoc handoff.",
-      "Bring the email into the project before coding. Ask Codex or Claude Code to create or update docs/intro_email.md with the email text so the repo has a durable copy of the assignment context.",
+      "This module starts by giving the agent a clean, easy-to-find home for workshop files. Then the research task begins from an actual email sent to participants' inboxes, just like a realistic predoc handoff.",
+      "Bring the email into the project before coding. Ask Codex or Claude Code to create or update docs/intro_email.md with the email text so the codebase has a durable copy of the assignment context.",
       "Then ask the agent to restate the objective, inputs, expected output, and judgment calls. The policy, productions, companies, and data are fictional; the transferable lesson is how to guide an agent through research work with checks and judgment."
     ],
-    commandTitle: "Do In The Apps",
-    commands: [
-      "Open the fictional assignment email from your inbox.",
-      "Add the email text to docs/intro_email.md as project context.",
-      "Ask Codex or Claude Code to summarize the handoff before editing code."
+    substepTitle: "Module 2 Substeps",
+    substeps: [
+      {
+        number: "2.1",
+        title: "Create My_RA_Tasks",
+        text: "Create a new folder named My_RA_Tasks somewhere sensible in your file home, such as Documents, Desktop, or another personal work folder you can find again. My_RA_Tasks is the project root for this workshop: it will contain the actual workshop project folder and any files the agent creates during the session."
+      },
+      {
+        number: "2.2",
+        title: "Open My_RA_Tasks In Codex",
+        text: "Open Codex, create a new project from an existing folder, and select My_RA_Tasks. This gives Codex a clear place to set up and work on the training project."
+      },
+      {
+        number: "2.3",
+        title: "Open The Assignment Email",
+        text: "Open the fictional PI assignment email from your inbox. Treat the email as the real starting point for the research task."
+      },
+      {
+        number: "2.4",
+        title: "Save The Email As Project Context",
+        text: "Bring the email into the codebase as docs/intro_email.md. Ask Codex or Claude Code to preserve the sender, subject, and body so the assignment is available inside the project."
+      },
+      {
+        number: "2.5",
+        title: "Summarize Before Coding",
+        text: "Ask Codex or Claude Code to read docs/intro_email.md and summarize the task before writing or changing code."
+      }
     ],
+    commandTitle: "Do In The Apps",
+    commands: [],
     prompts: [
       "I received the fictional PI assignment email for this training. Create or update docs/intro_email.md with the full email text below as project context. Preserve the sender, subject, and body. Do not start coding yet.",
       "Read docs/intro_email.md. Summarize the research objective, raw inputs, expected output, and judgment calls in a concise RA brief.",
       "Before writing code, identify what could go wrong when matching companies across these files."
     ],
     checks: [
+      "My_RA_Tasks has been created in a sensible place in your file home.",
+      "Codex is open with My_RA_Tasks selected as the project root.",
       "The inbox email has been saved into the repo as context.",
       "The buyer-side company-year panel goal is clear.",
       "Codex has summarized the handoff before coding.",
@@ -274,6 +300,28 @@ function renderRows(containerId, rows, className) {
   });
 }
 
+function renderSubsteps(module) {
+  const substeps = module.substeps || [];
+  const band = document.querySelector("#substepBand");
+  const container = document.querySelector("#substepList");
+  document.querySelector("#substepTitle").textContent = module.substepTitle || "Module Substeps";
+  container.innerHTML = "";
+  band.hidden = substeps.length === 0;
+
+  substeps.forEach((substep) => {
+    const row = document.createElement("article");
+    row.className = "substep-card";
+    row.innerHTML = `
+      <span class="substep-number">${escapeHtml(substep.number)}</span>
+      <div>
+        <h4>${escapeHtml(substep.title)}</h4>
+        <p>${escapeHtml(substep.text)}</p>
+      </div>
+    `;
+    container.appendChild(row);
+  });
+}
+
 function renderChecklist(module) {
   const progress = loadProgress();
   const container = document.querySelector("#checklist");
@@ -315,6 +363,7 @@ function renderModule() {
   document.querySelector("#commandTitle").textContent = module.commandTitle || "Agent Actions";
   document.querySelector("#promptTitle").textContent = module.promptTitle || "Prompt Snippets";
   document.querySelector("#moduleBody").innerHTML = module.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
+  renderSubsteps(module);
   commandBand.hidden = commands.length === 0;
   if (commands.length) {
     renderRows("#commandList", commands, "command-row");
