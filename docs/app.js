@@ -4,7 +4,6 @@ const modules = [
     title: "Before Thursday: Setup Checklist",
     step: "Confirm the apps before Thursday",
     tag: "Setup",
-    duration: "5 min",
     body: [
       "Complete this checklist before Thursday, May 28, 2026. This workshop starts in the Codex and Claude Code apps, so participants do not need to run command-line checks or create a project folder ahead of time."
     ],
@@ -44,7 +43,6 @@ const modules = [
     title: "Install The Workshop Skills",
     step: "Use only the selected set",
     tag: "Skills",
-    duration: "8 min",
     body: [
       "Skills are reusable instructions, scripts, and resources that help Codex perform a workflow reliably. This module demonstrates how agents can be customized rather than only prompted from scratch.",
       "The official OpenAI skills catalog includes many skills for deployment, design, GitHub workflows, Notion, security, and media. For this introductory research workflow, install only four: define-goal, openai-docs, pdf, and jupyter-notebook.",
@@ -73,7 +71,6 @@ const modules = [
     title: "PI Email And Research Handoff",
     step: "Start from the assignment, not the code",
     tag: "Handoff",
-    duration: "6 min",
     body: [
       "Now move from setup into the fictional research task. Open the PI email and treat it like a real RA request.",
       "The workflow starts with a messy but plausible handoff about transferable film production tax credits. Ask Codex to restate the task, then turn that brief into an auditable workflow.",
@@ -99,7 +96,6 @@ const modules = [
     title: "Raw Data Inspection",
     step: "Find the mess before automating",
     tag: "Data",
-    duration: "8 min",
     body: [
       "Inspect all three CSVs: film tax credit purchases, legacy film-finance deal parties, and the company directory. The teachable messiness is intentional: aliases, production roles, vendor roles, and ambiguous finance partners.",
       "This module shows why agents need grounded context. Good prompts point Codex to the data shape and ask it to inspect before generating assumptions."
@@ -125,7 +121,6 @@ const modules = [
     title: "Legacy Film-Finance Party Classification",
     step: "Use transparent rules first",
     tag: "Rules",
-    duration: "10 min",
     body: [
       "The classification script deliberately uses keyword rules rather than an API call. That keeps the lesson focused on transparent, reviewable automation.",
       "The script writes both a processed CSV and an audit file. Ambiguous finance-partner rows are kept in the data but quarantined from the investor indicator."
@@ -151,7 +146,6 @@ const modules = [
     title: "Build The Company-Year Panel",
     step: "Turn messy inputs into analysis-ready rows",
     tag: "Panel",
-    duration: "10 min",
     body: [
       "The panel builder reads the company directory, film tax credit purchases, and party classifications. It creates one company-year row for each fictional company from 2019 through 2024.",
       "The final variables are intentionally plain: company name, year, industry, revenue, buyer indicator, legacy investor indicator, and film credit amount."
@@ -177,7 +171,6 @@ const modules = [
     title: "Audit Trails And PI Update",
     step: "Make uncertainty visible",
     tag: "Review",
-    duration: "8 min",
     body: [
       "The audit files are part of the output, not an afterthought. They show row counts, classification counts, unmatched names, and rows that should be reviewed by a human.",
       "End by turning the audit into a PI update. This makes the workflow feel like a real predoc handoff rather than just a code exercise."
@@ -319,7 +312,6 @@ function renderModule() {
   const commandBand = document.querySelector(".command-band");
   const promptBand = document.querySelector(".prompt-band");
   document.querySelector("#moduleTag").textContent = module.tag;
-  document.querySelector("#moduleDuration").textContent = module.duration;
   document.querySelector("#moduleTitle").textContent = module.title;
   document.querySelector("#checklistTitle").textContent = module.checkTitle || "Live Checklist";
   document.querySelector("#commandTitle").textContent = module.commandTitle || "Agent Actions";
