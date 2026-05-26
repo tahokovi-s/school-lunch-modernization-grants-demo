@@ -6,7 +6,7 @@ Hi everyone,
 
 Ahead of the STAX Lab training session on Thursday, May 28, 2026, please take 20-30 minutes to confirm the setup below. You do not need to create a project folder yet. The project workflow will be created and opened during the session.
 
-The workshop shows how to use coding agents for a realistic predoc-style research workflow: receiving an assignment by email, adding that email to a codebase as project context, inspecting messy data, writing small Python scripts, building an auditable panel, and deciding where human judgment belongs.
+The workshop shows how to use coding agents for a realistic predoc-style research workflow: receiving an assignment by email, adding that email to a codebase as project context, inspecting messy data, writing small Python scripts, building an auditable panel, and deciding where human judgment belongs. Please confirm both Claude Code and Codex before the session so you have both available; during Thursday's workshop, we will use Codex exclusively.
 
 Please use the setup-only guide before the session:
 

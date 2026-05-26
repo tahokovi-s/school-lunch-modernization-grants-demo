@@ -5,7 +5,7 @@ const modules = [
     step: "Confirm the apps before Thursday",
     tag: "Setup",
     body: [
-      "Complete this checklist before Thursday, May 28, 2026. This workshop starts in the Codex and Claude Code apps, and Codex needs working Python so it can run the small scripts in the research workflow."
+      "This setup is meant to make sure you have both Claude Code and Codex installed, signed in, and ready. For the workshop on Thursday, we will use Codex exclusively."
     ],
     substepTitle: "Module 1 Setup Steps",
     checkableSubsteps: true,
@@ -60,7 +60,7 @@ const modules = [
       {
         number: "1.4",
         title: "Wait To Create The Project Folder",
-        text: "Do not create the workshop project folder before the live walkthrough. Everyone will create the same root folder together in Module 2.",
+        text: "Do not create the workshop project folder before the live walkthrough. Everyone will create the same root folder together during the workshop.",
         links: [
           {
             label: "Need folder help?",
@@ -695,7 +695,7 @@ function renderModule() {
   document.querySelector("#commandTitle").textContent = module.commandTitle || "Agent Actions";
   document.querySelector("#promptTitle").textContent = module.promptTitle || "Prompt Snippets";
   const setupOnlyNotice = setupOnlyMode
-    ? ["Setup-only view: Modules 2-7 are hidden until the live workshop. Complete this checklist now, then wait to create the project folder or download workshop data."]
+    ? ["This is the setup module for Thursday. Please complete it before the workshop; we will go over the full set of modules together on Thursday."]
     : [];
   document.querySelector("#moduleBody").innerHTML = [...setupOnlyNotice, ...module.body]
     .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
