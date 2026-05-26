@@ -18,16 +18,14 @@
 
       <div class="setup-content">
         <section class="setup-section">
-          <h2>What Success Looks Like</h2>
-          <p>Codex can find Python, run a tiny Python script, report the Python version, and confirm that it can execute code for the STAX training.</p>
-          <p class="success-box">Success means Codex reports that Python is available and that a small script ran correctly.</p>
-        </section>
-
-        <section class="setup-section">
           <h2>Prompt To Give Codex</h2>
           <p>Copy this into Codex during Module 1:</p>
-          <div class="command-list">
-            <code>Please check whether Python is installed and available to you. If it is available, run a tiny Python script that prints the Python version and confirms that 2 + 2 equals 4. Do not modify any project files.</code>
+          <div class="command-row">
+            <div class="prompt-row-head">
+              <span class="substep-label">Python check prompt</span>
+              <button class="copy-button" type="button" data-copy-target="python-check-prompt">Copy</button>
+            </div>
+            <pre id="python-check-prompt" class="prompt-text">Please check whether Python is installed and available to you. If it is available, run a tiny Python script that prints the Python version and confirms that 2 + 2 equals 4. Do not modify any project files.</pre>
           </div>
         </section>
 
@@ -39,11 +37,50 @@
           </div>
         </section>
 
-        <section class="setup-section">
-          <h2>Bring To Setup Clinic</h2>
-          <p>If the check still fails, bring the exact message from Codex to the setup portion of the session. That message is more useful than a screenshot of a blank terminal.</p>
-        </section>
       </div>
     </main>
+    <script>
+      function selectSetupPrompt(target) {
+        const range = document.createRange();
+        range.selectNodeContents(target);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+
+      async function copySetupPrompt(target) {
+        const text = target.textContent.trim();
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return;
+        }
+
+        selectSetupPrompt(target);
+        const copied = document.execCommand("copy");
+        if (!copied) throw new Error("Copy command was not accepted.");
+        window.getSelection().removeAllRanges();
+      }
+
+      document.querySelectorAll("[data-copy-target]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const target = document.getElementById(button.dataset.copyTarget);
+          if (!target) return;
+
+          const original = button.textContent;
+          button.textContent = "Copied";
+
+          try {
+            await copySetupPrompt(target);
+          } catch {
+            button.textContent = "Selected";
+            selectSetupPrompt(target);
+          }
+
+          window.setTimeout(() => {
+            button.textContent = original;
+          }, 1400);
+        });
+      });
+    </script>
   </body>
 </html>
