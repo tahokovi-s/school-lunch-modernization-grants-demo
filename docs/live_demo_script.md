@@ -9,9 +9,16 @@ Before Thursday, May 28, 2026, participants should confirm:
 - Paid or institutional access is available for Codex and Claude Code.
 - The Codex app is installed, opens, and is signed in.
 - The Claude Code app is installed, opens, and is signed in.
+- Python is installed and Codex can run a tiny Python check.
 - No project folder has been created yet.
 
-This session is app-only for participants. The operational requirement is access to the Codex app plus the Claude Code app, not a terminal screenshot.
+This session is app-only for participants. The operational requirement is access to the Codex app plus the Claude Code app, and working Python that Codex can use. Participants do not need to type command-line checks themselves.
+
+Ask participants to copy this into Codex during setup:
+
+```text
+Please check whether Python is installed and available to you. If it is available, run a tiny Python script that prints the Python version and confirms that 2 + 2 equals 4. Then tell me whether you can run Python code for the STAX training. Do not modify any project files.
+```
 
 ## 1. Open The Repo And Site
 
@@ -31,49 +38,119 @@ Have participants open Codex, create a new project from an existing folder, and 
 
 ### 2.3 Open The Assignment Email
 
-Have participants open the fictional assignment email in their inboxes. This is the realistic starting point for the research task: a predoc receives a PI-style email before there is a tidy project brief.
+Have participants open the fictional assignment email in their inboxes. This is the realistic starting point for the research task: a predoc receives a PI-style email before there is a tidy project brief. The email includes a raw-data ZIP attachment named `film_tax_credit_raw_data.zip`.
 
-### 2.4 Bring The Email Into The Codebase
+### 2.4 Create The Email Handoff Summary
 
-Ask Codex or Claude Code to save that email into the project as context:
-
-```text
-I received the fictional PI assignment email for this training. Create or update docs/intro_email.md with the full email text below as project context. Preserve the sender, subject, and body. Do not start coding yet.
-```
-
-### 2.5 Summarize Before Coding
-
-After the email has been saved as `docs/intro_email.md`, use this prompt:
-
+Have participants save or export the email into the project as context. Depending on the email app, use either `docs/intro_email.pdf` or `docs/intro_email.eml`. Then ask the agent to treat the PI email as the source of truth and turn it into a markdown handoff summary:
 
 ```text
-Read docs/intro_email.md. Summarize the research objective, raw inputs, expected output, and judgment calls in a concise RA brief.
+My PI sent me a research assignment by email. I saved that email in the docs folder as either docs/intro_email.pdf or docs/intro_email.eml. Read the saved email artifact as the source of truth for this project and create docs/email_handoff_summary.md. Include the sender, subject, what my PI is asking me to do, the research objective, required inputs or data, expected deliverables, clear action items, open questions, and any assumptions or judgment calls. Do not start coding yet.
 ```
 
-A good agentic workflow starts by preserving and restating the assignment before writing code. If someone cannot access the inbox email during the session, use the copy already in `docs/intro_email.md` as the fallback training handoff.
+### 2.5 Review Before Coding
+
+After `docs/email_handoff_summary.md` exists, use this prompt:
+
+
+```text
+Read docs/email_handoff_summary.md. Before writing code, restate the research objective, raw inputs, expected output, action items, and judgment calls in a concise RA brief. Flag any missing context or open questions.
+```
+
+A good agentic workflow starts by preserving and restating the assignment before writing code. If someone cannot access the inbox email during the session, use the facilitator copy in `docs/intro_email.md` to create `docs/email_handoff_summary.md`.
 
 ## 3. Inspect Raw Data
 
-Ask the agent to inspect the raw files:
+Have participants download the raw-data ZIP attachment from the fictional PI email and save or move it into the project at `data/raw/film_tax_credit_raw_data.zip`. If the folder does not exist yet, participants can ask Codex or Claude Code to create the folder for them inside the app.
+
+Ask the agent to unzip the attachment, explain the extracted folder contents, and inspect the raw data in one clearly staged request:
 
 ```text
-Inspect data/raw/company_directory.csv, data/raw/legacy_film_finance_deals.csv, and data/raw/film_tax_credit_purchases.csv. List the columns, likely keys, obvious aliases, and rows that should not be auto-classified without review.
+I downloaded the PI email attachment and placed it at data/raw/film_tax_credit_raw_data.zip. Please work in stages:
+
+Stage 1: Unzip the attachment into data/raw/.
+Stage 2: Tell me exactly which CSV files were created and whether the original ZIP is still there.
+Stage 3: Explain what each CSV appears to contain and how it might be used in the buyer-side company-year panel.
+Stage 4: Do a preliminary data pass on the extracted CSVs. List the columns, likely keys, obvious company aliases or name variants, messy film-finance roles, ambiguous cases, and specific rows that should not be auto-classified without human review.
+Stage 5: Save your notes as docs/raw_data_preliminary_pass.md.
+
+Keep the explanation beginner-friendly. Stop after the preliminary data pass. Do not write analysis code or classify the rows yet.
 ```
 
-Look for company name variants, film-finance roles, and ambiguous strategic partners before running the classification script.
-
-## 4. Classify Legacy Film-Finance Parties
+Then ask the agent to turn the preliminary pass into a classification rubric:
 
 ```text
-Run src/classify_legacy_film_deal_parties.py from the app, then open audits/legacy_film_party_classification_audit.md and explain which rows require human judgment.
+Based on docs/raw_data_preliminary_pass.md and data/raw/legacy_film_finance_deals.csv, draft docs/legacy_film_classification_rubric.md. The rubric should define these categories: legacy_film_finance_investor, production_company, studio_distributor, completion_bond_or_payroll_vendor, streaming_or_offtake_customer, advisor, and ambiguous. For each category, explain the signals that support it, signals that rule it out, and concrete examples from the CSVs. Be conservative: if a role is unclear, strategic, prospective, or only possibly finance-related, mark it ambiguous for human review rather than forcing it into investor status.
 ```
 
-This script uses transparent keyword rules rather than a model call. That makes it easier to audit and teach.
+Then ask the agent to plan the subagent review team:
+
+```text
+Create docs/legacy_film_subagent_review_plan.md for classifying data/raw/legacy_film_finance_deals.csv with a team of subagent reviewers. Include at least four roles: investor reviewer, non-investor role reviewer, ambiguity reviewer, and reconciliation lead. For each role, explain what evidence it should cite, what mistakes it should guard against, and how disagreements should be resolved. The default rule should be conservative: unresolved uncertainty becomes ambiguous and needs human review.
+```
+
+Look for company name variants, film-finance roles, and ambiguous strategic partners before asking the subagent team to classify rows.
+
+## 4. Classify Legacy Film-Finance Parties With Subagents
+
+```text
+Read docs/legacy_film_classification_rubric.md and docs/legacy_film_subagent_review_plan.md. Before classifying rows, restate the reviewer roles, the allowed party_category values, the conservative default rule, and the output files we need. Do not write or run a classification script.
+```
+
+Then ask Codex or Claude Code to run independent reviewer passes:
+
+```text
+Use the reviewer plan to run independent subagent passes over data/raw/legacy_film_finance_deals.csv. If your environment supports subagents, use them; otherwise use clearly separated reviewer passes.
+
+Stage 1: The investor reviewer identifies rows that clearly support legacy_film_finance_investor and cites exact role or note evidence.
+Stage 2: The non-investor role reviewer identifies rows that should not count as investors because they are production companies, studios/distributors, vendors, customers/offtake partners, brand partners, or advisors.
+Stage 3: The ambiguity reviewer identifies rows that should be ambiguous or need human review, especially strategic partners, possible finance participants, prospective finance partners, and unclear finance partners.
+
+Save the reviewer notes as docs/legacy_film_subagent_review_notes.md. Do not create the final CSV yet.
+```
+
+Then reconcile the reviewers into the processed classification artifact:
+
+```text
+Reconcile docs/legacy_film_subagent_review_notes.md into final row-level classifications. If reviewers disagree, choose the conservative classification and explain why.
+
+Create data/processed/legacy_film_party_classifications.csv with one row for every row in data/raw/legacy_film_finance_deals.csv. Include these columns: deal_id, deal_year, project_title, party_name, party_role_raw, party_note, party_category, classification_reason. Use only these party_category values: legacy_film_finance_investor, production_company, studio_distributor, completion_bond_or_payroll_vendor, streaming_or_offtake_customer, advisor, ambiguous.
+
+Also create audits/legacy_film_party_classification_audit.md. The audit should summarize the reviewer roles, classification counts, rows marked ambiguous, any reviewer disagreements, and rows that need PI review. Do not write a Python classification script for this step.
+```
+
+End by asking the agent to summarize the audit:
+
+```text
+Read audits/legacy_film_party_classification_audit.md and data/processed/legacy_film_party_classifications.csv. Summarize which rows were classified as confirmed legacy finance investors, which rows were marked ambiguous, and which judgment calls should be shown to the PI before using the panel.
+```
+
+This module teaches classification as a judgment-heavy review workflow. The processed CSV is still machine-readable, but the reasoning comes from multiple reviewer perspectives and a visible reconciliation step.
 
 ## 5. Build The Company-Year Panel
 
+First confirm the inputs from the raw data and subagent classification workflow:
+
 ```text
-Run src/build_company_year_panel.py from the app, inspect data/processed/company_year_panel.csv, and open audits/build_company_year_panel_audit.md.
+Before building the company-year panel, confirm that these inputs exist: data/raw/company_directory.csv, data/raw/film_tax_credit_purchases.csv, and data/processed/legacy_film_party_classifications.csv. Then read audits/legacy_film_party_classification_audit.md and summarize how the subagent reviewers created the classification file, which party_category values count as confirmed legacy finance investors, which categories are excluded, and what human-review caveats should carry forward. Do not run the panel builder yet.
+```
+
+Then preview the panel logic before running code:
+
+```text
+Read src/build_company_year_panel.py and explain the panel-building logic in beginner-friendly language. Cover the years included, how company aliases and name variants are matched, how FilmCreditBuyer and FilmCreditAmount are created, how LegacyFilmFinanceInvestor uses data/processed/legacy_film_party_classifications.csv, and how ambiguous or non-investor categories are excluded from the investor indicator. Flag any missing input or risky assumption before running anything.
+```
+
+Ask the agent to build the panel from the app:
+
+```text
+Run src/build_company_year_panel.py from the app. If it fails, explain the error and which input needs attention before changing code. If it succeeds, tell me which files were created or updated and give a short summary of what the panel contains.
+```
+
+Finally inspect the output and audit:
+
+```text
+Inspect data/processed/company_year_panel.csv and audits/build_company_year_panel_audit.md. Give me five sanity checks: one row per company-year, expected years 2019-2024, FilmCreditAmount is zero-filled when no purchase occurred, LegacyFilmFinanceInvestor turns on cumulatively after the first confirmed investor year, and ambiguous legacy film party rows are excluded from the investor indicator. Also list any unmatched names or rows that still need human review.
 ```
 
 The panel is analysis-ready but not judgment-free. The audit file is where the agent hands uncertainty back to the human.

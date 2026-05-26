@@ -145,7 +145,7 @@ def main() -> None:
     if not CLASSIFICATIONS_PATH.exists():
         raise FileNotFoundError(
             "Missing data/processed/legacy_film_party_classifications.csv. "
-            "Run `python src/classify_legacy_film_deal_parties.py` first."
+            "Create it from the Module 4 subagent classification workflow before building the panel."
         )
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)

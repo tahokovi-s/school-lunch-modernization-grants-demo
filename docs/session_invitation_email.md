@@ -8,13 +8,18 @@ Ahead of the STAX Lab training session on Thursday, May 28, 2026, please take 20
 
 The workshop shows how to use coding agents for a realistic predoc-style research workflow: receiving an assignment by email, adding that email to a codebase as project context, inspecting messy data, writing small Python scripts, building an auditable panel, and deciding where human judgment belongs.
 
-During the live session, the facilitator will send or point everyone to a separate fictional PI assignment email. Please wait for the live walkthrough before using that assignment email.
+Please use the setup-only guide before the session:
+
+https://tahokovi-s.github.io/hollywood-film-tax-credit-buyers-demo/setup.html
+
+During the live session, the facilitator will send or point everyone to a separate fictional PI assignment email with a raw-data ZIP attachment. Please wait for the live walkthrough before using that assignment email or downloading the attachment.
 
 ## Setup Checklist
 
 - [ ] Paid or institutional access is available for Codex and Claude Code. Setup help: `docs/setup/access.html`
 - [ ] The Codex app is installed, opens, and is signed in. Setup help: `docs/setup/codex.html`
 - [ ] The Claude Code app is installed, opens, and is signed in. Setup help: `docs/setup/claude-code.html`
+- [ ] Python is installed and Codex can run a tiny Python check. Setup help: `docs/setup/python.html`
 - [ ] No project folder has been created yet. Setup help: `docs/setup/no-project-folder.html`
 
 The public training guide has a "Guide" button next to each checklist item for step-by-step help on macOS and Windows.
@@ -62,6 +67,7 @@ If Codex says one of these skills is already built in or already installed, that
 
 - A laptop with the Codex app and Claude Code app installed.
 - Codex and Claude Code signed in.
+- Python installed and confirmed by Codex.
 - Access to the inbox where the workshop email arrives.
 - No project folder needed before Thursday.
 
