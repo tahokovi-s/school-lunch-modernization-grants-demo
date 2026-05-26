@@ -7,7 +7,7 @@ const modules = [
     body: [
       "This setup is meant to make sure you have both Claude Code and Codex installed, signed in, and ready. For the workshop on Thursday, we will use Codex exclusively."
     ],
-    substepTitle: "Module 1 Setup Steps",
+    substepTitle: "Before Thursday Checklist",
     checkableSubsteps: true,
     substeps: [
       {
@@ -78,18 +78,18 @@ const modules = [
     step: "Create the root, then start from the inbox",
     tag: "Start",
     body: [
-      "Create a clean project root, save the fictional PI email into the codebase as a PDF or .eml file, and ask Codex or Claude Code to turn that email into a markdown handoff summary before any coding begins."
+      "Create a clean workspace, ask Codex to scaffold the dedicated research project codebase inside it, save the PI email into that codebase, and ask Codex to turn that email into a markdown handoff summary before any coding begins."
     ],
-    substepTitle: "Module 2 Substeps",
+    substepTitle: "Module 2 Steps",
     substeps: [
       {
         number: "2.1",
         title: "Create My_RA_Tasks",
-        text: "Create a new folder named My_RA_Tasks somewhere sensible in your file home, such as Documents, Desktop, or another personal work folder you can find again.",
+        text: "Create a new folder named My_RA_Tasks somewhere sensible in your home folder, such as Documents, Desktop, or another personal work folder you can find again.",
         materials: [
           {
             label: "Why this matters",
-            text: "My_RA_Tasks is the project root for this workshop. It will contain the actual workshop project folder and any files the agent creates during the session."
+            text: "My_RA_Tasks is the outer workspace for this workshop. It will contain the actual film_tax_credit_buyers project folder and any files the agent creates before you switch into that project."
           }
         ]
       },
@@ -105,17 +105,52 @@ const modules = [
       },
       {
         number: "2.3",
-        title: "Open The Assignment Email",
-        text: "Open the fictional PI assignment email from your inbox. Treat the email as the real starting point for the research task."
+        title: "Set Up The Research Codebase",
+        text: "Ask Codex to create the actual research project inside My_RA_Tasks, with folders that make the work easy to inspect later.",
+        sequenceNote: "Send these as two separate Codex messages. First copy and run the folder prompt. Wait for Codex to finish. Then copy and run the guide-files prompt. Do not paste both prompts at once.",
+        materials: [
+          {
+            label: "Project folder",
+            text: "film_tax_credit_buyers/"
+          },
+          {
+            label: "Folder map",
+            text: "docs/ for assignment notes, data/original/ for unchanged files from the email, data/analysis_ready/ for cleaned CSVs, scripts/ for Python code, audit_notes/ for judgment notes, and final_outputs/ for final tables or figures."
+          },
+          {
+            label: "Agent instruction files",
+            text: "AGENTS.md for Codex and CLAUDE.md for Claude Code"
+          }
+        ],
+        prompts: [
+          {
+            label: "Create folder prompt",
+            text: "Create a dedicated research project folder inside the current workspace named film_tax_credit_buyers. Set up these folders:\n\n- docs/ for assignment notes, rubrics, and handoff summaries\n- data/original/ for unchanged files downloaded from the PI email\n- data/analysis_ready/ for cleaned CSVs that are ready to use in analysis\n- scripts/ for Python code that Codex writes or runs\n- audit_notes/ for notes explaining checks, assumptions, and judgment calls\n- final_outputs/ for final tables, figures, or exports\n\nAdd .gitkeep placeholder files in empty data, audit_notes, and final_outputs folders if needed.\n\nStop after creating the folders. Do not inspect data, classify rows, write analysis code, or build the panel yet."
+          },
+          {
+            label: "Create guide files prompt",
+            text: "Inside film_tax_credit_buyers, create README.md, AGENTS.md, and CLAUDE.md.\n\nThe README should summarize the research objective, expected original inputs, expected analysis-ready output, and the rule that audit notes are part of the deliverable.\n\nAGENTS.md is the Codex project-instructions file. CLAUDE.md is for Claude Code. Both instruction files should tell coding agents to treat the PI email and supplied data as the source of truth, inspect and summarize inputs before coding, keep outputs auditable, and ask before treating ambiguous film-finance roles as confirmed investors.\n\nStop after creating these starter markdown files. Do not inspect data, classify rows, write analysis code, or build the panel yet."
+          }
+        ]
       },
       {
         number: "2.4",
+        title: "Reopen film_tax_credit_buyers In Codex",
+        text: "Open a new or current Codex project from the existing folder film_tax_credit_buyers so later paths like docs/ and data/original/ refer to the research project, not My_RA_Tasks."
+      },
+      {
+        number: "2.5",
+        title: "Save The Assignment Email",
+        text: "Open the PI assignment email from your inbox. Save or export it into the project docs/ folder using whatever filename your email app gives it, then note the exact filename so you can reference it in Codex with the @ command."
+      },
+      {
+        number: "2.6",
         title: "Create The Email Handoff Summary",
-        text: "After saving the PI's email in the docs folder, ask Codex or Claude Code to read it and create a markdown summary with clear action items.",
+        text: "After saving the PI's email in the docs folder, ask Codex to read it and create a markdown summary with clear action items.",
         materials: [
           {
             label: "Input email",
-            text: "docs/intro_email.pdf or docs/intro_email.eml"
+            text: "The saved email file in docs/, referenced in chat with @"
           },
           {
             label: "Output file",
@@ -125,20 +160,14 @@ const modules = [
         prompts: [
           {
             label: "Prompt to copy",
-            text: "My PI sent me a research assignment by email. I saved that email in the docs folder as either docs/intro_email.pdf or docs/intro_email.eml. Read the saved email artifact as the source of truth for this project and create docs/email_handoff_summary.md. Include the sender, subject, what my PI is asking me to do, the research objective, required inputs or data, expected deliverables, clear action items, open questions, and any assumptions or judgment calls. Do not start coding yet."
+            text: "My PI sent me a research assignment by email. I saved that email in the docs folder.\n\nEmail file to reference with @: @docs/[select the saved assignment email file]\n\nReplace the bracketed text by selecting the actual saved file with @. Do not leave the brackets in the prompt.\n\nRead the saved email artifact as the source of truth for this project and create docs/email_handoff_summary.md. Include the sender, subject, what my PI is asking me to do, the research objective, required inputs or data, expected deliverables, clear action items, open questions, and any assumptions or judgment calls. Do not start coding yet."
           }
         ]
       },
       {
-        number: "2.5",
+        number: "2.7",
         title: "Review Before Coding",
-        text: "Ask Codex or Claude Code to read docs/email_handoff_summary.md and restate the task before writing or changing code.",
-        materials: [
-          {
-            label: "What to look for",
-            text: "A useful summary names the research objective, raw inputs, expected output, and judgment calls before any code changes happen."
-          }
-        ],
+        text: "Ask Codex to read docs/email_handoff_summary.md and restate the task before writing or changing code.",
         prompts: [
           {
             label: "Prompt to copy",
@@ -155,13 +184,15 @@ const modules = [
     commands: [],
     prompts: [],
     checks: [
-      "My_RA_Tasks has been created in a sensible place in your file home.",
-      "Codex is open with My_RA_Tasks selected as the project root.",
-      "The inbox email has been saved or exported into the repo as a PDF or .eml file.",
+      "My_RA_Tasks has been created in a sensible place in your home folder.",
+      "Codex is open with My_RA_Tasks selected long enough to scaffold the nested project.",
+      "Codex has created the dedicated film_tax_credit_buyers project folder with starter folders, README.md, AGENTS.md, and CLAUDE.md.",
+      "Codex is now open with film_tax_credit_buyers selected as the active project root.",
+      "The inbox email has been saved or exported into docs/ and the exact filename is known.",
       "The agent has created docs/email_handoff_summary.md with a summary and action items.",
       "The buyer-side company-year panel goal is clear.",
       "Codex has summarized the handoff before coding.",
-      "The fictional-data boundary is clear."
+      "The PI email and supplied data are treated as the source of truth."
     ]
   },
   {
@@ -173,12 +204,12 @@ const modules = [
       "Before asking the agent to classify anything, start from the raw-data ZIP attachment, extract it into the project, inspect the files, and prepare a conservative rubric for a team of subagent reviewers.",
       "The goal is to make the judgment work visible: aliases, production roles, vendor roles, ambiguous finance partners, and rows that should be reviewed by a human."
     ],
-    substepTitle: "Module 3 Substeps",
+    substepTitle: "Module 3 Steps",
     substeps: [
       {
         number: "3.1",
         title: "Download And Move The ZIP",
-        text: "Download the raw-data ZIP attachment from the fictional PI email. Save or move it into the project's data/raw folder. If that folder does not exist yet, ask Codex or Claude Code to create it for you.",
+        text: "Download the raw-data ZIP attachment from the PI email. Save or move it into the project's data/original folder. If that folder does not exist yet, ask Codex to create it for you.",
         materials: [
           {
             label: "Attachment",
@@ -186,18 +217,18 @@ const modules = [
           },
           {
             label: "Destination",
-            text: "data/raw/film_tax_credit_raw_data.zip"
+            text: "data/original/film_tax_credit_raw_data.zip"
           }
         ]
       },
       {
         number: "3.2",
         title: "Ask Codex For A Staged Data Pass",
-        text: "Give Codex or Claude Code one staged request: extract the ZIP, identify the created files, explain the folder contents, and inspect the raw data before any classification work.",
+        text: "Give Codex one staged request: extract the ZIP, identify the created files, explain the folder contents, and inspect the raw data before any classification work.",
         prompts: [
           {
             label: "Prompt to copy",
-            text: "I downloaded the PI email attachment and placed it at data/raw/film_tax_credit_raw_data.zip. Please work in stages:\n\nStage 1: Unzip the attachment into data/raw/.\nStage 2: Tell me exactly which CSV files were created and whether the original ZIP is still there.\nStage 3: Explain what each CSV appears to contain and how it might be used in the buyer-side company-year panel.\nStage 4: Do a preliminary data pass on the extracted CSVs. List the columns, likely keys, obvious company aliases or name variants, messy film-finance roles, ambiguous cases, and specific rows that should not be auto-classified without human review.\nStage 5: Save your notes as docs/raw_data_preliminary_pass.md.\n\nKeep the explanation beginner-friendly. Stop after the preliminary data pass. Do not write analysis code or classify the rows yet."
+            text: "I downloaded the PI email attachment and placed it at data/original/film_tax_credit_raw_data.zip. Please work in stages:\n\nStage 1: Unzip the attachment into data/original/.\nStage 2: Tell me exactly which CSV files were created and whether the original ZIP is still there.\nStage 3: Explain what each CSV appears to contain and how it might be used in the buyer-side company-year panel.\nStage 4: Do a preliminary data pass on the extracted CSVs. List the columns, likely keys, obvious company aliases or name variants, messy film-finance roles, ambiguous cases, and specific rows that should not be auto-classified without human review.\nStage 5: Save your notes as docs/raw_data_preliminary_pass.md.\n\nKeep the explanation beginner-friendly. Stop after the preliminary data pass. Do not write analysis code or classify the rows yet."
           }
         ]
       },
@@ -214,14 +245,14 @@ const modules = [
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Based on docs/raw_data_preliminary_pass.md and data/raw/legacy_film_finance_deals.csv, draft docs/legacy_film_classification_rubric.md. The rubric should define these categories: legacy_film_finance_investor, production_company, studio_distributor, completion_bond_or_payroll_vendor, streaming_or_offtake_customer, advisor, and ambiguous. For each category, explain the signals that support it, signals that rule it out, and concrete examples from the CSVs. Be conservative: if a role is unclear, strategic, prospective, or only possibly finance-related, mark it ambiguous for human review rather than forcing it into investor status."
+            text: "Based on docs/raw_data_preliminary_pass.md and data/original/legacy_film_finance_deals.csv, draft docs/legacy_film_classification_rubric.md. The rubric should define these categories: legacy_film_finance_investor, production_company, studio_distributor, completion_bond_or_payroll_vendor, streaming_or_offtake_customer, advisor, and ambiguous. For each category, explain the signals that support it, signals that rule it out, and concrete examples from the CSVs. Be conservative: if a role is unclear, strategic, prospective, or only possibly finance-related, mark it ambiguous for human review rather than forcing it into investor status."
           }
         ]
       },
       {
         number: "3.4",
         title: "Plan The Subagent Review Team",
-        text: "Ask Codex or Claude Code to plan the reviewer roles before classification begins.",
+        text: "Ask Codex to plan the reviewer roles before classification begins.",
         materials: [
           {
             label: "Output file",
@@ -231,7 +262,7 @@ const modules = [
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Create docs/legacy_film_subagent_review_plan.md for classifying data/raw/legacy_film_finance_deals.csv with a team of subagent reviewers. Include at least four roles: investor reviewer, non-investor role reviewer, ambiguity reviewer, and reconciliation lead. For each role, explain what evidence it should cite, what mistakes it should guard against, and how disagreements should be resolved. The default rule should be conservative: unresolved uncertainty becomes ambiguous and needs human review."
+            text: "Create docs/legacy_film_subagent_review_plan.md for classifying data/original/legacy_film_finance_deals.csv with a team of subagent reviewers. Include at least four roles: investor reviewer, non-investor role reviewer, ambiguity reviewer, and reconciliation lead. For each role, explain what evidence it should cite, what mistakes it should guard against, and how disagreements should be resolved. The default rule should be conservative: unresolved uncertainty becomes ambiguous and needs human review."
           }
         ]
       }
@@ -240,8 +271,8 @@ const modules = [
     commands: [],
     prompts: [],
     checks: [
-      "The raw-data ZIP attachment has been downloaded into data/raw/.",
-      "Codex or Claude Code has extracted the ZIP, identified the CSV files, explained the folder contents, and saved preliminary notes.",
+      "The raw-data ZIP attachment has been downloaded into data/original/.",
+      "Codex has extracted the ZIP, identified the CSV files, explained the folder contents, and saved preliminary notes.",
       "The classification rubric is conservative and example-backed.",
       "The subagent review plan names reviewer roles and disagreement rules.",
       "Rows needing human review are visible before classification begins."
@@ -253,10 +284,10 @@ const modules = [
     step: "Use reviewer roles for judgment-heavy rows",
     tag: "Rules",
     body: [
-      "This module uses a team of subagent reviewers instead of a keyword-rule script. Each reviewer looks at the same rows from a different angle, then Codex or Claude Code reconciles the results into one auditable classification table.",
-      "The output is still a processed CSV and an audit file. Ambiguous finance-partner rows stay visible and are not counted as confirmed investor participation."
+      "This module uses separate reviewer passes instead of a keyword-rule script. Codex looks at the same rows from different angles, then reconciles the results into one auditable classification table.",
+      "The output is still an analysis-ready CSV and an audit file. Ambiguous finance-partner rows stay visible and are not counted as confirmed investor participation."
     ],
-    substepTitle: "Module 4 Substeps",
+    substepTitle: "Module 4 Steps",
     substeps: [
       {
         number: "4.1",
@@ -276,7 +307,7 @@ const modules = [
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Use the reviewer plan to run independent subagent passes over data/raw/legacy_film_finance_deals.csv. If your environment supports subagents, use them; otherwise use clearly separated reviewer passes.\n\nStage 1: The investor reviewer identifies rows that clearly support legacy_film_finance_investor and cites exact role or note evidence.\nStage 2: The non-investor role reviewer identifies rows that should not count as investors because they are production companies, studios/distributors, vendors, customers/offtake partners, brand partners, or advisors.\nStage 3: The ambiguity reviewer identifies rows that should be ambiguous or need human review, especially strategic partners, possible finance participants, prospective finance partners, and unclear finance partners.\n\nSave the reviewer notes as docs/legacy_film_subagent_review_notes.md. Do not create the final CSV yet."
+            text: "Use the reviewer plan to run independent subagent passes over data/original/legacy_film_finance_deals.csv. If your environment supports subagents, use them; otherwise use clearly separated reviewer passes.\n\nStage 1: The investor reviewer identifies rows that clearly support legacy_film_finance_investor and cites exact role or note evidence.\nStage 2: The non-investor role reviewer identifies rows that should not count as investors because they are production companies, studios/distributors, vendors, customers/offtake partners, brand partners, or advisors.\nStage 3: The ambiguity reviewer identifies rows that should be ambiguous or need human review, especially strategic partners, possible finance participants, prospective finance partners, and unclear finance partners.\n\nSave the reviewer notes as docs/legacy_film_subagent_review_notes.md. Do not create the final CSV yet."
           }
         ]
       },
@@ -287,7 +318,7 @@ const modules = [
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Reconcile docs/legacy_film_subagent_review_notes.md into final row-level classifications. If reviewers disagree, choose the conservative classification and explain why.\n\nCreate data/processed/legacy_film_party_classifications.csv with one row for every row in data/raw/legacy_film_finance_deals.csv. Include these columns: deal_id, deal_year, project_title, party_name, party_role_raw, party_note, party_category, classification_reason. Use only these party_category values: legacy_film_finance_investor, production_company, studio_distributor, completion_bond_or_payroll_vendor, streaming_or_offtake_customer, advisor, ambiguous.\n\nAlso create audits/legacy_film_party_classification_audit.md. The audit should summarize the reviewer roles, classification counts, rows marked ambiguous, any reviewer disagreements, and rows that need PI review. Do not write a Python classification script for this step."
+            text: "Reconcile docs/legacy_film_subagent_review_notes.md into final row-level classifications. If reviewers disagree, choose the conservative classification and explain why.\n\nCreate data/analysis_ready/legacy_film_party_classifications.csv with one row for every row in data/original/legacy_film_finance_deals.csv. Include these columns: deal_id, deal_year, project_title, party_name, party_role_raw, party_note, party_category, classification_reason. Use only these party_category values: legacy_film_finance_investor, production_company, studio_distributor, completion_bond_or_payroll_vendor, streaming_or_offtake_customer, advisor, ambiguous.\n\nAlso create audit_notes/legacy_film_party_classification_audit.md. The audit should summarize the reviewer roles, classification counts, rows marked ambiguous, any reviewer disagreements, and rows that need PI review. Do not write a Python classification script for this step."
           }
         ]
       },
@@ -298,7 +329,7 @@ const modules = [
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Read audits/legacy_film_party_classification_audit.md and data/processed/legacy_film_party_classifications.csv. Summarize which rows were classified as confirmed legacy finance investors, which rows were marked ambiguous, and which judgment calls should be shown to the PI before using the panel."
+            text: "Read audit_notes/legacy_film_party_classification_audit.md and data/analysis_ready/legacy_film_party_classifications.csv. Summarize which rows were classified as confirmed legacy finance investors, which rows were marked ambiguous, and which judgment calls should be shown to the PI before using the panel."
           }
         ]
       }
@@ -308,7 +339,7 @@ const modules = [
     prompts: [],
     checks: [
       "Reviewer roles are visible before classification.",
-      "The processed classification CSV has one row per raw party row.",
+      "The analysis-ready classification CSV has one row per original party row.",
       "Ambiguous rows are not silently forced into investor status.",
       "The audit trail records reviewer disagreements and human-review rows."
     ]
@@ -319,55 +350,60 @@ const modules = [
     step: "Turn messy inputs into analysis-ready rows",
     tag: "Panel",
     body: [
-      "The panel builder reads the company directory, film tax credit purchases, and the subagent-reviewed party classifications. It creates one company-year row for each fictional company from 2019 through 2024.",
+      "The panel builder reads the company directory, film tax credit purchases, and the subagent-reviewed party classifications. It creates one company-year row for each company from 2019 through 2024.",
       "The final variables are intentionally plain: company name, year, industry, revenue, buyer indicator, legacy investor indicator, and film credit amount."
     ],
-    substepTitle: "Module 5 Substeps",
+    substepTitle: "Module 5 Steps",
     substeps: [
       {
         number: "5.1",
         title: "Confirm The Inputs",
-        text: "Before running the panel builder, ask Codex or Claude Code to confirm that the raw files and subagent-reviewed classification artifact are ready.",
+        text: "Before running the panel builder, ask Codex to confirm that the raw files and reviewer-pass classification artifact are ready.",
         materials: [
           {
             label: "Required input",
-            text: "data/raw/company_directory.csv"
+            text: "data/original/company_directory.csv"
           },
           {
             label: "Required input",
-            text: "data/raw/film_tax_credit_purchases.csv"
+            text: "data/original/film_tax_credit_purchases.csv"
           },
           {
             label: "Required input",
-            text: "data/processed/legacy_film_party_classifications.csv"
+            text: "data/analysis_ready/legacy_film_party_classifications.csv"
           }
         ],
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Before building the company-year panel, confirm that these inputs exist: data/raw/company_directory.csv, data/raw/film_tax_credit_purchases.csv, and data/processed/legacy_film_party_classifications.csv. Then read audits/legacy_film_party_classification_audit.md and summarize how the subagent reviewers created the classification file, which party_category values count as confirmed legacy finance investors, which categories are excluded, and what human-review caveats should carry forward. Do not run the panel builder yet."
+            text: "Before building the company-year panel, confirm that these inputs exist: data/original/company_directory.csv, data/original/film_tax_credit_purchases.csv, and data/analysis_ready/legacy_film_party_classifications.csv. Then read audit_notes/legacy_film_party_classification_audit.md and summarize how the reviewer passes created the classification file, which party_category values count as confirmed legacy finance investors, which categories are excluded, and what human-review caveats should carry forward. Do not run the panel builder yet."
           }
         ]
       },
       {
         number: "5.2",
-        title: "Preview The Panel Logic",
-        text: "Have the agent explain the script before running it, especially how subagent classifications flow into the panel.",
+        title: "Create The Panel Script",
+        text: "Have Codex explain the panel-building plan first, then write the Python script in a separate message.",
+        sequenceNote: "Send these as two separate Codex messages. First ask for the plan and wait for the explanation. Then ask Codex to write the script. Do not run the script until step 5.3.",
         prompts: [
           {
-            label: "Prompt to copy",
-            text: "Read src/build_company_year_panel.py and explain the panel-building logic in beginner-friendly language. Cover the years included, how company aliases and name variants are matched, how FilmCreditBuyer and FilmCreditAmount are created, how LegacyFilmFinanceInvestor uses data/processed/legacy_film_party_classifications.csv, and how ambiguous or non-investor categories are excluded from the investor indicator. Flag any missing input or risky assumption before running anything."
+            label: "Explain plan prompt",
+            text: "Before writing code, explain the panel-building logic in beginner-friendly language. The script will read data/original/company_directory.csv, data/original/film_tax_credit_purchases.csv, and data/analysis_ready/legacy_film_party_classifications.csv. It should write data/analysis_ready/company_year_panel.csv and audit_notes/build_company_year_panel_audit.md.\n\nCover the years included, how company aliases and name variants should be matched, how FilmCreditBuyer and FilmCreditAmount should be created, how LegacyFilmFinanceInvestor should use data/analysis_ready/legacy_film_party_classifications.csv, and how ambiguous or non-investor categories should be excluded from the investor indicator. Flag any missing input or risky assumption. Do not write code yet."
+          },
+          {
+            label: "Write script prompt",
+            text: "Now create scripts/build_company_year_panel.py using the plan above. Use clear, beginner-friendly code and comments. The script should read data/original/company_directory.csv, data/original/film_tax_credit_purchases.csv, and data/analysis_ready/legacy_film_party_classifications.csv. It should write data/analysis_ready/company_year_panel.csv and audit_notes/build_company_year_panel_audit.md. Do not run the script yet."
           }
         ]
       },
       {
         number: "5.3",
         title: "Build The Panel",
-        text: "Ask Codex or Claude Code to run the existing panel builder from the app and report the files it creates.",
+        text: "Ask Codex to run the panel builder from the app and report the files it creates.",
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Run src/build_company_year_panel.py from the app. If it fails, explain the error and which input needs attention before changing code. If it succeeds, tell me which files were created or updated and give a short summary of what the panel contains."
+            text: "Run scripts/build_company_year_panel.py from the app. If it fails, explain the error and which input needs attention before changing code. If it succeeds, tell me which files were created or updated and give a short summary of what the panel contains."
           }
         ]
       },
@@ -378,17 +414,17 @@ const modules = [
         materials: [
           {
             label: "Output file",
-            text: "data/processed/company_year_panel.csv"
+            text: "data/analysis_ready/company_year_panel.csv"
           },
           {
             label: "Audit file",
-            text: "audits/build_company_year_panel_audit.md"
+            text: "audit_notes/build_company_year_panel_audit.md"
           }
         ],
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Inspect data/processed/company_year_panel.csv and audits/build_company_year_panel_audit.md. Give me five sanity checks: one row per company-year, expected years 2019-2024, FilmCreditAmount is zero-filled when no purchase occurred, LegacyFilmFinanceInvestor turns on cumulatively after the first confirmed investor year, and ambiguous legacy film party rows are excluded from the investor indicator. Also list any unmatched names or rows that still need human review."
+            text: "Inspect data/analysis_ready/company_year_panel.csv and audit_notes/build_company_year_panel_audit.md. Give me five sanity checks: one row per company-year, expected years 2019-2024, FilmCreditAmount is zero-filled when no purchase occurred, LegacyFilmFinanceInvestor turns on cumulatively after the first confirmed investor year, and ambiguous legacy film party rows are excluded from the investor indicator. Also list any unmatched names or rows that still need human review."
           }
         ]
       }
@@ -415,9 +451,9 @@ const modules = [
     ],
     commandTitle: "Open In The App",
     commands: [
-      "audits/legacy_film_party_classification_audit.md",
-      "audits/build_company_year_panel_audit.md",
-      "data/processed/company_year_panel.csv"
+      "audit_notes/legacy_film_party_classification_audit.md",
+      "audit_notes/build_company_year_panel_audit.md",
+      "data/analysis_ready/company_year_panel.csv"
     ],
     prompts: [
       "Based on the audit files, draft a short note to the PI explaining what is complete and what needs judgment.",
@@ -467,8 +503,9 @@ const setupOnlyMode = Boolean(window.STAX_SETUP_ONLY)
 const visibleModules = setupOnlyMode ? modules.filter((module) => module.id === "setup") : modules;
 
 function getInitialModuleId() {
-  const requestedModule = pageParams.get("module") || window.location.hash.replace("#", "");
-  return visibleModules.some((module) => module.id === requestedModule) ? requestedModule : visibleModules[0].id;
+  const requestedModule = pageParams.get("module");
+  if (visibleModules.some((module) => module.id === requestedModule)) return requestedModule;
+  return moduleIdFromHash() || visibleModules[0].id;
 }
 
 let activeModuleId = getInitialModuleId();
@@ -503,6 +540,25 @@ function domIdForSubstep(module, substep) {
   return `substep-check-${module.id}-${substep.number}`.replace(/[^a-z0-9_-]/gi, "-");
 }
 
+function domIdForStep(module, substep) {
+  return `step-${String(substep.number).replace(/[^a-z0-9]/gi, "")}`;
+}
+
+function currentHashId() {
+  return decodeURIComponent(window.location.hash.replace(/^#/, ""));
+}
+
+function moduleIdFromHash() {
+  const hash = currentHashId();
+  if (!hash) return "";
+  if (visibleModules.some((module) => module.id === hash)) return hash;
+
+  const moduleWithStep = visibleModules.find((module) =>
+    (module.substeps || []).some((substep) => domIdForStep(module, substep) === hash)
+  );
+  return moduleWithStep?.id || "";
+}
+
 function renderNav() {
   const buttons = document.querySelector("#moduleButtons");
   buttons.innerHTML = "";
@@ -512,6 +568,7 @@ function renderNav() {
     button.className = "module-button";
     if (module.id === activeModuleId) button.classList.add("active");
     button.type = "button";
+    if (module.id === activeModuleId) button.setAttribute("aria-current", "page");
     button.innerHTML = `
       <span class="module-index">${index + 1}</span>
       <span>
@@ -520,7 +577,9 @@ function renderNav() {
     `;
     button.addEventListener("click", () => {
       activeModuleId = module.id;
+      history.replaceState(null, "", `#${module.id}`);
       render();
+      window.scrollTo({ top: 0, behavior: "auto" });
     });
     buttons.appendChild(button);
   });
@@ -538,13 +597,37 @@ function renderRows(containerId, rows, className) {
   rows.forEach((text) => {
     const row = document.createElement("div");
     row.className = className;
-    const content = className === "command-row"
-      ? `<code>${escapeHtml(text)}</code>`
-      : `<div class="prompt-text">${escapeHtml(text)}</div>`;
-    row.innerHTML = content;
-    row.appendChild(createCopyButton(text));
+    const label = className === "command-row" ? "Reference" : "Prompt";
+    row.innerHTML = `
+      <div class="prompt-row-head">
+        <span class="substep-label">${label}</span>
+      </div>
+      <pre class="prompt-text">${escapeHtml(text)}</pre>
+    `;
+    row.querySelector(".prompt-row-head").appendChild(createCopyButton(text));
     container.appendChild(row);
   });
+}
+
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  textarea.style.top = "0";
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+  textarea.setSelectionRange(0, textarea.value.length);
+  const copied = document.execCommand("copy");
+  textarea.remove();
+  if (!copied) throw new Error("Copy command was not accepted.");
 }
 
 function createCopyButton(text) {
@@ -553,18 +636,24 @@ function createCopyButton(text) {
   button.type = "button";
   button.textContent = "Copy";
   button.addEventListener("click", async () => {
+    const original = button.textContent;
+    button.textContent = "Copied";
     try {
-      await navigator.clipboard.writeText(text);
-      button.textContent = "Copied";
-      setTimeout(() => {
-        button.textContent = "Copy";
-      }, 1000);
+      await copyTextToClipboard(text);
     } catch {
-      button.textContent = "Copy manually";
-      setTimeout(() => {
-        button.textContent = "Copy";
-      }, 1600);
+      button.textContent = "Text Selected";
+      const promptText = button.closest(".substep-prompt, .prompt-row, .command-row")?.querySelector(".prompt-text");
+      if (promptText) {
+        const range = document.createRange();
+        range.selectNodeContents(promptText);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
     }
+    setTimeout(() => {
+      button.textContent = original;
+    }, 1400);
   });
   return button;
 }
@@ -572,7 +661,12 @@ function createCopyButton(text) {
 function appendSubstepImage(content, image) {
   if (!image || !image.src) return;
 
-  content.closest(".substep-card")?.classList.add("substep-card-with-image");
+  const details = document.createElement("details");
+  details.className = "substep-reference";
+
+  const summary = document.createElement("summary");
+  summary.textContent = "Show visual reference";
+  details.appendChild(summary);
 
   const figure = document.createElement("figure");
   figure.className = "substep-image";
@@ -589,32 +683,52 @@ function appendSubstepImage(content, image) {
     figure.appendChild(caption);
   }
 
-  content.appendChild(figure);
+  details.appendChild(figure);
+  content.appendChild(details);
 }
 
 function renderSubsteps(module) {
   const substeps = module.substeps || [];
   const progress = loadSubstepProgress();
+  const isChecklist = Boolean(module.checkableSubsteps);
   const band = document.querySelector("#substepBand");
   const container = document.querySelector("#substepList");
-  document.querySelector("#substepTitle").textContent = module.substepTitle || "Module Substeps";
+  document.querySelector("#substepTitle").textContent = (module.substepTitle || "Module Steps").replace("Substeps", "Steps");
   container.innerHTML = "";
+  container.classList.toggle("checklist-list", isChecklist);
+  container.dataset.focusMode = isChecklist ? "static" : "scroll";
   band.hidden = substeps.length === 0;
 
   substeps.forEach((substep) => {
     const row = document.createElement("article");
-    row.className = "substep-card";
-    row.innerHTML = `
-      <span class="substep-number">${escapeHtml(substep.number)}</span>
-      <div class="substep-content">
-        <div class="substep-title-row">
-          <h4>${escapeHtml(substep.title)}</h4>
+    row.className = isChecklist ? "substep-card checklist-card" : "substep-card";
+    row.id = domIdForStep(module, substep);
+    if (isChecklist) {
+      row.innerHTML = `
+        <div class="substep-content checklist-content">
+          <div class="checklist-title-row">
+            <div class="checklist-title-copy">
+              <span class="substep-number">Item ${escapeHtml(substep.number)}</span>
+              <h4>${escapeHtml(substep.title)}</h4>
+            </div>
+          </div>
+          <p>${escapeHtml(substep.text)}</p>
         </div>
-        <p>${escapeHtml(substep.text)}</p>
-      </div>
-    `;
+      `;
+    } else {
+      row.innerHTML = `
+        <span class="substep-number">Step ${escapeHtml(substep.number)}</span>
+        <div class="substep-content">
+          <div class="substep-title-row">
+            <h4>${escapeHtml(substep.title)}</h4>
+          </div>
+          <h5>Do</h5>
+          <p>${escapeHtml(substep.text)}</p>
+        </div>
+      `;
+    }
     const content = row.querySelector(".substep-content");
-    const titleRow = row.querySelector(".substep-title-row");
+    const titleRow = row.querySelector(isChecklist ? ".checklist-title-row" : ".substep-title-row");
 
     if (module.checkableSubsteps) {
       const itemKey = substepProgressId(module, substep);
@@ -637,9 +751,13 @@ function renderSubsteps(module) {
       });
 
       const labelText = document.createElement("span");
-      labelText.textContent = "Done";
+      labelText.textContent = isChecklist ? "Mark complete" : "Done";
       checkLabel.append(input, labelText);
-      titleRow.appendChild(checkLabel);
+      if (isChecklist) {
+        titleRow.prepend(checkLabel);
+      } else {
+        titleRow.appendChild(checkLabel);
+      }
     }
 
     appendSubstepImage(content, substep.image);
@@ -653,6 +771,13 @@ function renderSubsteps(module) {
       `;
       content.appendChild(materialRow);
     });
+
+    if (substep.sequenceNote) {
+      const sequenceNote = document.createElement("p");
+      sequenceNote.className = "sequence-note";
+      sequenceNote.innerHTML = `<strong>Prompt order:</strong> ${escapeHtml(substep.sequenceNote)}`;
+      content.appendChild(sequenceNote);
+    }
 
     if ((substep.links || []).length) {
       const linkRow = document.createElement("div");
@@ -672,15 +797,37 @@ function renderSubsteps(module) {
       promptRow.className = "substep-prompt";
       promptRow.innerHTML = `
         <div class="substep-prompt-copy">
-          <span class="substep-label">${escapeHtml(prompt.label)}</span>
-          <div class="prompt-text">${escapeHtml(prompt.text)}</div>
+          <div class="substep-prompt-head">
+            <span class="substep-label">${escapeHtml(prompt.label || "Ask Codex")}</span>
+          </div>
+          <pre class="prompt-text">${escapeHtml(prompt.text)}</pre>
         </div>
       `;
-      promptRow.appendChild(createCopyButton(prompt.text));
+      promptRow.querySelector(".substep-prompt-head").appendChild(createCopyButton(prompt.text));
       content.appendChild(promptRow);
     });
 
     container.appendChild(row);
+  });
+}
+
+function renderModuleChecks(module) {
+  const checks = module.checks || [];
+  const band = document.querySelector("#moduleChecksBand");
+  const container = document.querySelector("#moduleChecksList");
+  if (!band || !container) return;
+
+  container.innerHTML = "";
+  band.hidden = checks.length === 0;
+
+  checks.forEach((check) => {
+    const label = document.createElement("label");
+    label.className = "check-item";
+    label.innerHTML = `
+      <input type="checkbox">
+      <span>${escapeHtml(check)}</span>
+    `;
+    container.appendChild(label);
   });
 }
 
@@ -697,10 +844,19 @@ function renderModule() {
   const setupOnlyNotice = setupOnlyMode
     ? ["This is the setup module for Thursday. Please complete it before the workshop; we will go over the full set of modules together on Thursday."]
     : [];
-  document.querySelector("#moduleBody").innerHTML = [...setupOnlyNotice, ...module.body]
-    .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+  const body = [...setupOnlyNotice, ...module.body];
+  const bodyHtml = body
+    .map((paragraph, index) => {
+      const label = index === 0 ? "Module outcome" : "Context";
+      return `<p><strong>${label}:</strong> ${escapeHtml(paragraph)}</p>`;
+    })
     .join("");
+  const focusHtml = module.step
+    ? `<p><strong>Working focus:</strong> ${escapeHtml(module.step)}</p>`
+    : "";
+  document.querySelector("#moduleBody").innerHTML = `${bodyHtml}${focusHtml}`;
   renderSubsteps(module);
+  renderModuleChecks(module);
   commandBand.hidden = commands.length === 0;
   if (commands.length) {
     renderRows("#commandList", commands, "command-row");
@@ -718,6 +874,114 @@ function renderModule() {
 function render() {
   renderNav();
   renderModule();
+  refreshStepFocus();
 }
+
+let focusFrame = null;
+let focusableSteps = [];
+let focusStepList = null;
+let activeStep = null;
+let anchorStep = null;
+let anchorLockUntil = 0;
+
+function setActiveStep(nextStep) {
+  if (!focusStepList || !nextStep || activeStep === nextStep) return;
+  activeStep = nextStep;
+  focusStepList.classList.add("is-focusing");
+  focusableSteps.forEach((step) => {
+    step.classList.toggle("is-active", step === nextStep);
+  });
+}
+
+function updateFocusedStep() {
+  focusFrame = null;
+  if (!focusableSteps.length) return;
+
+  if (anchorStep && Date.now() < anchorLockUntil) {
+    const rect = anchorStep.getBoundingClientRect();
+    const isAnchorVisible = rect.bottom > 80 && rect.top < window.innerHeight - 80;
+    if (isAnchorVisible) {
+      setActiveStep(anchorStep);
+      return;
+    }
+  }
+
+  const focusLine = window.innerHeight * 0.42;
+  let bestStep = null;
+  let bestDistance = Infinity;
+
+  focusableSteps.forEach((step) => {
+    const rect = step.getBoundingClientRect();
+    const isVisible = rect.bottom > 80 && rect.top < window.innerHeight - 80;
+    if (!isVisible) return;
+
+    const stepCenter = rect.top + rect.height / 2;
+    const distance = Math.abs(stepCenter - focusLine);
+    if (distance < bestDistance) {
+      bestStep = step;
+      bestDistance = distance;
+    }
+  });
+
+  if (bestStep) setActiveStep(bestStep);
+}
+
+function requestFocusUpdate() {
+  if (focusFrame !== null) return;
+  focusFrame = window.requestAnimationFrame(updateFocusedStep);
+}
+
+function focusHashStep({ scroll = false } = {}) {
+  const targetId = currentHashId();
+  if (!targetId) return false;
+  const target = document.getElementById(targetId);
+  if (!target || !focusableSteps.includes(target)) return false;
+
+  anchorStep = target;
+  anchorLockUntil = Date.now() + 900;
+  setActiveStep(target);
+  if (scroll) {
+    target.scrollIntoView({ block: "start", behavior: "auto" });
+  }
+  return true;
+}
+
+function refreshStepFocus() {
+  focusStepList = document.querySelector("#substepList");
+  focusableSteps = Array.from(document.querySelectorAll(".substep-card"));
+  activeStep = null;
+  anchorStep = null;
+
+  if (!focusStepList || !focusableSteps.length) return;
+  focusStepList.classList.remove("is-focusing");
+  focusableSteps.forEach((step) => step.classList.remove("is-active"));
+
+  if (focusStepList.dataset.focusMode === "static") {
+    const target = document.getElementById(currentHashId());
+    if (target && focusableSteps.includes(target)) {
+      target.scrollIntoView({ block: "start", behavior: "auto" });
+    }
+    focusableSteps = [];
+    return;
+  }
+
+  if (!focusHashStep({ scroll: true })) requestFocusUpdate();
+}
+
+window.addEventListener("scroll", requestFocusUpdate, { passive: true });
+window.addEventListener("resize", requestFocusUpdate);
+window.addEventListener("hashchange", () => {
+  const hashModuleId = moduleIdFromHash();
+  if (hashModuleId && hashModuleId !== activeModuleId) {
+    activeModuleId = hashModuleId;
+    render();
+    return;
+  }
+
+  window.setTimeout(() => {
+    focusHashStep({ scroll: true });
+    requestFocusUpdate();
+  }, 80);
+});
 
 render();

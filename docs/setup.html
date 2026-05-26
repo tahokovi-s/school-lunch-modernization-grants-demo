@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>STAX Lab Setup Guide | Agentic Coding Tools for Research Workflows</title>
     <link rel="icon" href="data:,">
-    <link rel="stylesheet" href="styles.css?v=20260526-python-copy">
+    <link rel="stylesheet" href="styles.css?v=20260526-checklist-indent">
   </head>
   <body>
     <header class="topbar">
@@ -31,7 +31,7 @@
         <div id="moduleBody" class="module-body"></div>
 
         <section id="substepBand" class="substep-band" hidden>
-          <h3 id="substepTitle">Module Substeps</h3>
+          <h3 id="substepTitle">Module Steps</h3>
           <div id="substepList" class="substep-list"></div>
         </section>
 
@@ -44,12 +44,17 @@
           <h3 id="promptTitle">Prompt Snippets</h3>
           <div id="promptList"></div>
         </section>
+
+        <section id="moduleChecksBand" class="checklist-band" hidden>
+          <h3>Stop When</h3>
+          <div id="moduleChecksList"></div>
+        </section>
       </section>
     </main>
 
     <script>
       window.STAX_SETUP_ONLY = true;
     </script>
-    <script src="app.js?v=20260526-python-copy"></script>
+    <script src="app.js?v=20260526-checklist-indent"></script>
   </body>
 </html>
