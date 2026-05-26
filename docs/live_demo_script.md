@@ -17,7 +17,7 @@ This session is app-only for participants. The operational requirement is access
 Ask participants to copy this into Codex during setup:
 
 ```text
-Please check whether Python is installed and available to you. If it is available, run a tiny Python script that prints the Python version and confirms that 2 + 2 equals 4. Then tell me whether you can run Python code for the STAX training. Do not modify any project files.
+Please check whether Python is installed and available to you. If it is available, run a tiny Python script that prints the Python version and confirms that 2 + 2 equals 4. Do not modify any project files.
 ```
 
 ## 1. Open The Repo And Site

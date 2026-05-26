@@ -53,7 +53,7 @@ const modules = [
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Please check whether Python is installed and available to you. If it is available, run a tiny Python script that prints the Python version and confirms that 2 + 2 equals 4. Then tell me whether you can run Python code for the STAX training. Do not modify any project files."
+            text: "Please check whether Python is installed and available to you. If it is available, run a tiny Python script that prints the Python version and confirms that 2 + 2 equals 4. Do not modify any project files."
           }
         ]
       },
