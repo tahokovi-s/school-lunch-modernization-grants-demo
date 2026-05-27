@@ -1,0 +1,214 @@
+record_id,record_year,project_title,organization_name,organization_role_raw,organization_note
+R001,2019,Maple Grove Lunch Line Refresh,Maple Grove Elementary,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R002,2019,Maple Grove Lunch Line Refresh,Riverton USD Nutrition Services,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R003,2019,Maple Grove Lunch Line Refresh,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R004,2019,Maple Grove Lunch Line Refresh,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."
+R005,2019,Maple Grove Lunch Line Refresh,BrightBite Foods,meal service vendor,Provided prepared meals or temporary menu service during installation.
+R006,2020,Rivera Salad Bar Launch,Rivera Middle School,school meal program lead,School cafeteria team led the student-facing salad bar launch at the site.
+R007,2020,Rivera Salad Bar Launch,Riverton USD Nutrition Services,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R008,2020,Rivera Salad Bar Launch,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R009,2020,Rivera Salad Bar Launch,Harvest Table Advisors,grant compliance advisor,Advised on grant narrative and reimbursement documentation; did not lead site implementation.
+R010,2020,Rivera Salad Bar Launch,Student Wellness League,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R011,2020,Harborview Cooler Repair,Harborview K-8,school meal program lead,School cafeteria team led the cold storage and produce service workflow at the site.
+R012,2020,Harborview Cooler Repair,Bay City Schools Food Services,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R013,2020,Harborview Cooler Repair,Northstar Refrigeration,refrigeration contractor,Repaired or installed cold storage equipment and temperature controls.
+R014,2020,Harborview Cooler Repair,Metro MealWorks,meal service vendor,Provided prepared meals or temporary menu service during installation.
+R015,2020,Harborview Cooler Repair,KitchenBridge Partners,unclear role,Ambiguous planning mention; scope unclear and not documented as school meal-program leadership.
+R016,2021,Juniper Scratch Cooking Prep,Juniper Ridge Elementary,school meal program lead,School cafeteria team led the scratch-cooking equipment rollout at the site.
+R017,2021,Juniper Scratch Cooking Prep,Cedar Valley SD Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R018,2021,Juniper Scratch Cooking Prep,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R019,2021,Juniper Scratch Cooking Prep,GreenCart Learning,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R020,2021,Juniper Scratch Cooking Prep,Oak & Ladle Consulting,advisor consultant,Designed evaluation materials and survey instruments; did not lead cafeteria operations.
+R021,2021,Sunrise Tray Return Project,Sunrise STEM Academy,school meal program lead,School cafeteria team led the tray return and reusable service workflow at the site.
+R022,2021,Sunrise Tray Return Project,North Valley Public Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R023,2021,Sunrise Tray Return Project,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R024,2021,Sunrise Tray Return Project,GreenCart Learning,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R025,2021,Sunrise Tray Return Project,KitchenBridge Partners,possible implementation partner,Possible support role; capacity unclear and no signed scope in the notes.
+R026,2022,Rosa Parks Cold Bar,Rosa Parks Elementary,school meal program lead,School cafeteria team led the cold storage and produce service workflow at the site.
+R027,2022,Rosa Parks Cold Bar,Metro Unified Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R028,2022,Rosa Parks Cold Bar,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R029,2022,Rosa Parks Cold Bar,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R030,2022,Rosa Parks Cold Bar,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."
+R031,2022,Mission Trails Combi Oven,Mission Trails Middle,school meal program lead,School cafeteria team led the scratch-cooking equipment rollout at the site.
+R032,2022,Mission Trails Combi Oven,Mission USD Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R033,2022,Mission Trails Combi Oven,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R034,2022,Mission Trails Combi Oven,Oak & Ladle Consulting,procurement advisor,Advised on equipment quotes and procurement documentation.
+R035,2022,Mission Trails Combi Oven,SupperLab Collective,unclear role,Ambiguous planning mention; scope unclear and not documented as school meal-program leadership.
+R036,2022,Orchard Hill Fruit Station,Orchard Hill School,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R037,2022,Orchard Hill Fruit Station,Metro Unified Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R038,2022,Orchard Hill Fruit Station,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R039,2022,Orchard Hill Fruit Station,Student Wellness League,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R040,2022,Orchard Hill Fruit Station,KitchenBridge Partners,prospective partner,Prospective partner only; no signed scope and not documented as implementation work.
+R041,2023,Eastside Prep Island,Eastside Community School,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R042,2023,Eastside Prep Island,Mission USD Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R043,2023,Eastside Prep Island,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R044,2023,Eastside Prep Island,GreenCart Learning,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R045,2023,Eastside Prep Island,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."
+R046,2023,Willow Bend Ventilation,Willow Bend Elementary,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R047,2023,Willow Bend Ventilation,Oak River Schools Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R048,2023,Willow Bend Ventilation,AirFlow Kitchen Services,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R049,2023,Willow Bend Ventilation,Oak & Ladle Consulting,procurement advisor,Advised on equipment quotes and procurement documentation.
+R050,2023,Willow Bend Ventilation,SupperLab Collective,possible implementation partner,Possible support role; capacity unclear and no signed scope in the notes.
+R051,2023,South Fork Breakfast Cart,South Fork Elementary,school meal program lead,School cafeteria team led the breakfast and grab-and-go service launch at the site.
+R052,2023,South Fork Breakfast Cart,South Fork SD Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R053,2023,South Fork Breakfast Cart,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R054,2023,South Fork Breakfast Cart,BrightBite Foods,meal service vendor,Provided prepared meals or temporary menu service during installation.
+R055,2022,Lincoln Serving Line,Lincoln High School,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R056,2024,Lincoln Serving Line,Bay City Schools Food Services,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R057,2024,Lincoln Serving Line,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R058,2024,Lincoln Serving Line,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."
+R059,2022,Granite Peak Tray Return,Granite Peak High,school meal program lead,School cafeteria team led the tray return and reusable service workflow at the site.
+R060,2024,Granite Peak Tray Return,Oak River Schools Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R061,2024,Granite Peak Tray Return,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R062,2024,Granite Peak Tray Return,Oak & Ladle Consulting,procurement advisor,Advised on equipment quotes and procurement documentation.
+R063,2022,New Horizons Grab And Go,New Horizons High,school meal program lead,School cafeteria team led the breakfast and grab-and-go service launch at the site.
+R064,2024,New Horizons Grab And Go,South Fork SD Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R065,2024,New Horizons Grab And Go,Metro MealWorks,meal service vendor,Provided prepared meals or temporary menu service during installation.
+R066,2024,New Horizons Grab And Go,KitchenBridge Partners,role not documented,"Named in spreadsheet, but role not documented and no work description is available."
+R067,2022,Prairie View Hot Line,Prairie View High,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R068,2024,Prairie View Hot Line,Prairie County Food Services,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R069,2024,Prairie View Hot Line,AirFlow Kitchen Services,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R070,2024,Prairie View Hot Line,BrightBite Foods,temporary meal service vendor,Provided prepared meals or temporary menu service during installation.
+R071,2023,Bay Meadow Cart Pilot,Bay Meadow Middle,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R072,2024,Bay Meadow Cart Pilot,Coastal Unified Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R073,2024,Bay Meadow Cart Pilot,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R074,2024,Bay Meadow Cart Pilot,SupperLab Collective,unclear role,"Unclear whether this was food supply, advising, or site support; role not documented."
+R075,2019,Aspen Ridge Serving Line Upgrade,Aspen Ridge Elementary,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R076,2019,Aspen Ridge Serving Line Upgrade,Evergreen USD Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R077,2019,Aspen Ridge Serving Line Upgrade,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R078,2019,Aspen Ridge Serving Line Upgrade,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R079,2019,Aspen Ridge Serving Line Upgrade,KitchenBridge Partners,unclear role,Ambiguous planning mention; scope unclear and not documented as school meal-program leadership.
+R080,2020,Brookside Scratch Cooking Launch,Brookside Middle School,school meal program lead,School cafeteria team led the scratch-cooking equipment rollout at the site.
+R081,2020,Brookside Scratch Cooking Launch,Evergreen USD Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R082,2020,Brookside Scratch Cooking Launch,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R083,2020,Brookside Scratch Cooking Launch,Student Wellness League,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R084,2021,Canyon View Cold Storage Reset,Canyon View High,school meal program lead,School cafeteria team led the cold storage and produce service workflow at the site.
+R085,2021,Canyon View Cold Storage Reset,Mesa County Schools Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R086,2021,Canyon View Cold Storage Reset,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R087,2021,Canyon View Cold Storage Reset,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."
+R088,2022,Desert Springs Breakfast Cart Pilot,Desert Springs K-8,school meal program lead,School cafeteria team led the breakfast and grab-and-go service launch at the site.
+R089,2022,Desert Springs Breakfast Cart Pilot,Mesa County Schools Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R090,2022,Desert Springs Breakfast Cart Pilot,Northstar Refrigeration,refrigeration contractor,Repaired or installed cold storage equipment and temperature controls.
+R091,2022,Desert Springs Breakfast Cart Pilot,Oak & Ladle Consulting,procurement advisor,Advised on equipment quotes and procurement documentation.
+R092,2022,Desert Springs Breakfast Cart Pilot,KitchenBridge Partners,prospective partner,Prospective partner only; no signed scope and not documented as implementation work.
+R093,2022,Silver Lake Tray Return Project,Silver Lake Middle,school meal program lead,School cafeteria team led the tray return and reusable service workflow at the site.
+R094,2024,Silver Lake Tray Return Project,Lakeside Unified Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R095,2024,Silver Lake Tray Return Project,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R096,2024,Silver Lake Tray Return Project,GreenCart Learning,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R097,2019,Washington Prep Serving Line Upgrade,Washington Prep High,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R098,2019,Washington Prep Serving Line Upgrade,Capital City Schools Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R099,2019,Washington Prep Serving Line Upgrade,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R100,2019,Washington Prep Serving Line Upgrade,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R101,2019,Washington Prep Serving Line Upgrade,Community Meal Network,role not documented,"Named in spreadsheet, but role not documented and no work description is available."
+R102,2020,Franklin Scratch Cooking Launch,Franklin Elementary,school meal program lead,School cafeteria team led the scratch-cooking equipment rollout at the site.
+R103,2020,Franklin Scratch Cooking Launch,Capital City Schools Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R104,2020,Franklin Scratch Cooking Launch,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R105,2020,Franklin Scratch Cooking Launch,Student Wellness League,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R106,2021,Mountain View Cold Storage Reset,Mountain View K-8,school meal program lead,School cafeteria team led the cold storage and produce service workflow at the site.
+R107,2021,Mountain View Cold Storage Reset,Foothill Public Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R108,2021,Mountain View Cold Storage Reset,Northstar Refrigeration,refrigeration contractor,Repaired or installed cold storage equipment and temperature controls.
+R109,2021,Mountain View Cold Storage Reset,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."
+R110,2023,Meadowbrook Salad Bar Expansion,Meadowbrook Elementary,unclear role,Ambiguous school planning mention; scope unclear and not documented as school meal-program leadership.
+R111,2023,Meadowbrook Salad Bar Expansion,Riverbend Unified Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R112,2023,Meadowbrook Salad Bar Expansion,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R113,2023,Meadowbrook Salad Bar Expansion,Metro MealWorks,meal service vendor,Provided prepared meals or temporary menu service during installation.
+R114,2021,Riverside Arts Tray Return Project,Riverside Arts Middle,school meal program lead,School cafeteria team led the tray return and reusable service workflow at the site.
+R115,2024,Riverside Arts Tray Return Project,Riverbend Unified Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R116,2024,Riverside Arts Tray Return Project,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R117,2024,Riverside Arts Tray Return Project,GreenCart Learning,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R118,2019,Sequoia Serving Line Upgrade,Sequoia High,unclear role,Ambiguous school planning mention; scope unclear and not documented as school meal-program leadership.
+R119,2019,Sequoia Serving Line Upgrade,Redwoods Joint USD Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R120,2019,Sequoia Serving Line Upgrade,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R121,2019,Sequoia Serving Line Upgrade,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R122,2019,Sequoia Serving Line Upgrade,KitchenBridge Partners,unclear role,Ambiguous planning mention; scope unclear and not documented as school meal-program leadership.
+R123,2020,Pinecrest Scratch Cooking Launch,Pinecrest Elementary,school meal program lead,School cafeteria team led the scratch-cooking equipment rollout at the site.
+R124,2020,Pinecrest Scratch Cooking Launch,Redwoods Joint USD Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R125,2020,Pinecrest Scratch Cooking Launch,Northstar Refrigeration,refrigeration contractor,Repaired or installed cold storage equipment and temperature controls.
+R126,2020,Pinecrest Scratch Cooking Launch,Student Wellness League,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R127,2022,Jefferson STEM Breakfast Cart Pilot,Jefferson STEM High,school meal program lead,School cafeteria team led the breakfast and grab-and-go service launch at the site.
+R128,2022,Jefferson STEM Breakfast Cart Pilot,Valley Metro Schools Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R129,2022,Jefferson STEM Breakfast Cart Pilot,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R130,2022,Jefferson STEM Breakfast Cart Pilot,Oak & Ladle Consulting,procurement advisor,Advised on equipment quotes and procurement documentation.
+R131,2022,Jefferson STEM Breakfast Cart Pilot,KitchenBridge Partners,prospective partner,Prospective partner only; no signed scope and not documented as implementation work.
+R132,2023,Blue Harbor Salad Bar Expansion,Blue Harbor Elementary,unclear role,Ambiguous school planning mention; scope unclear and not documented as school meal-program leadership.
+R133,2023,Blue Harbor Salad Bar Expansion,Harbor Unified Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R134,2023,Blue Harbor Salad Bar Expansion,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R135,2023,Blue Harbor Salad Bar Expansion,Metro MealWorks,meal service vendor,Provided prepared meals or temporary menu service during installation.
+R136,2022,Marina Tray Return Project,Marina Middle School,school meal program lead,School cafeteria team led the tray return and reusable service workflow at the site.
+R137,2024,Marina Tray Return Project,Harbor Unified Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R138,2024,Marina Tray Return Project,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R139,2024,Marina Tray Return Project,GreenCart Learning,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R140,2019,Hilltop Serving Line Upgrade,Hilltop Elementary,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R141,2019,Hilltop Serving Line Upgrade,Summit Ridge SD Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R142,2019,Hilltop Serving Line Upgrade,Northstar Refrigeration,refrigeration contractor,Repaired or installed cold storage equipment and temperature controls.
+R143,2019,Hilltop Serving Line Upgrade,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R144,2019,Hilltop Serving Line Upgrade,Community Meal Network,role not documented,"Named in spreadsheet, but role not documented and no work description is available."
+R145,2021,Cottonwood Cold Storage Reset,Cottonwood K-8,school meal program lead,School cafeteria team led the cold storage and produce service workflow at the site.
+R146,2021,Cottonwood Cold Storage Reset,Desert Valley Public Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R147,2021,Cottonwood Cold Storage Reset,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R148,2021,Cottonwood Cold Storage Reset,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."
+R149,2022,Mesa Verde Breakfast Cart Pilot,Mesa Verde Middle,school meal program lead,School cafeteria team led the breakfast and grab-and-go service launch at the site.
+R150,2022,Mesa Verde Breakfast Cart Pilot,Desert Valley Public Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R151,2022,Mesa Verde Breakfast Cart Pilot,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R152,2022,Mesa Verde Breakfast Cart Pilot,Oak & Ladle Consulting,procurement advisor,Advised on equipment quotes and procurement documentation.
+R153,2022,Mesa Verde Breakfast Cart Pilot,SupperLab Collective,possible implementation partner,Possible support role; capacity unclear and no signed scope in the notes.
+R154,2023,Hamilton Salad Bar Expansion,Hamilton Elementary,unclear role,Ambiguous school planning mention; scope unclear and not documented as school meal-program leadership.
+R155,2023,Hamilton Salad Bar Expansion,Central Plains USD Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R156,2023,Hamilton Salad Bar Expansion,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R157,2023,Hamilton Salad Bar Expansion,Metro MealWorks,meal service vendor,Provided prepared meals or temporary menu service during installation.
+R158,2021,Roosevelt Tray Return Project,Roosevelt High School,school meal program lead,School cafeteria team led the tray return and reusable service workflow at the site.
+R159,2024,Roosevelt Tray Return Project,Central Plains USD Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R160,2024,Roosevelt Tray Return Project,Northstar Refrigeration,refrigeration contractor,Repaired or installed cold storage equipment and temperature controls.
+R161,2024,Roosevelt Tray Return Project,GreenCart Learning,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R162,2020,North Shore Scratch Cooking Launch,North Shore Middle,school meal program lead,School cafeteria team led the scratch-cooking equipment rollout at the site.
+R163,2020,North Shore Scratch Cooking Launch,North Shore Schools Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R164,2020,North Shore Scratch Cooking Launch,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R165,2020,North Shore Scratch Cooking Launch,Student Wellness League,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R166,2021,Camino Real Cold Storage Reset,Camino Real Academy,unclear role,Ambiguous school planning mention; scope unclear and not documented as school meal-program leadership.
+R167,2021,Camino Real Cold Storage Reset,Camino USD Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R168,2021,Camino Real Cold Storage Reset,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R169,2021,Camino Real Cold Storage Reset,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."
+R170,2022,Esperanza Breakfast Cart Pilot,Esperanza High School,school meal program lead,School cafeteria team led the breakfast and grab-and-go service launch at the site.
+R171,2022,Esperanza Breakfast Cart Pilot,Camino USD Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R172,2022,Esperanza Breakfast Cart Pilot,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R173,2022,Esperanza Breakfast Cart Pilot,Oak & Ladle Consulting,procurement advisor,Advised on equipment quotes and procurement documentation.
+R174,2022,Esperanza Breakfast Cart Pilot,KitchenBridge Partners,prospective partner,Prospective partner only; no signed scope and not documented as implementation work.
+R175,2023,Sycamore Salad Bar Expansion,Sycamore Elementary,unclear role,Ambiguous school planning mention; scope unclear and not documented as school meal-program leadership.
+R176,2023,Sycamore Salad Bar Expansion,Westfield Public Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R177,2023,Sycamore Salad Bar Expansion,Northstar Refrigeration,refrigeration contractor,Repaired or installed cold storage equipment and temperature controls.
+R178,2023,Sycamore Salad Bar Expansion,Metro MealWorks,meal service vendor,Provided prepared meals or temporary menu service during installation.
+R179,2019,Golden Gate Serving Line Upgrade,Golden Gate Elementary,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R180,2019,Golden Gate Serving Line Upgrade,Metro Bay Unified Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R181,2019,Golden Gate Serving Line Upgrade,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R182,2019,Golden Gate Serving Line Upgrade,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R183,2019,Golden Gate Serving Line Upgrade,Community Meal Network,role not documented,"Named in spreadsheet, but role not documented and no work description is available."
+R184,2020,Mission Bay Scratch Cooking Launch,Mission Bay High,school meal program lead,School cafeteria team led the scratch-cooking equipment rollout at the site.
+R185,2020,Mission Bay Scratch Cooking Launch,Metro Bay Unified Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R186,2020,Mission Bay Scratch Cooking Launch,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R187,2020,Mission Bay Scratch Cooking Launch,Student Wellness League,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R188,2021,Valley Oak Cold Storage Reset,Valley Oak K-8,school meal program lead,School cafeteria team led the cold storage and produce service workflow at the site.
+R189,2021,Valley Oak Cold Storage Reset,Valley Oak SD Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R190,2021,Valley Oak Cold Storage Reset,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R191,2021,Valley Oak Cold Storage Reset,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."
+R192,2022,Oak Meadow Breakfast Cart Pilot,Oak Meadow High,school meal program lead,School cafeteria team led the breakfast and grab-and-go service launch at the site.
+R193,2022,Oak Meadow Breakfast Cart Pilot,Valley Oak SD Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R194,2022,Oak Meadow Breakfast Cart Pilot,Northstar Refrigeration,refrigeration contractor,Repaired or installed cold storage equipment and temperature controls.
+R195,2022,Oak Meadow Breakfast Cart Pilot,Oak & Ladle Consulting,procurement advisor,Advised on equipment quotes and procurement documentation.
+R196,2022,Oak Meadow Breakfast Cart Pilot,SupperLab Collective,possible implementation partner,Possible support role; capacity unclear and no signed scope in the notes.
+R197,2021,East River Tray Return Project,East River Middle,school meal program lead,School cafeteria team led the tray return and reusable service workflow at the site.
+R198,2024,East River Tray Return Project,East River Schools Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R199,2024,East River Tray Return Project,CoolTray Equipment LLC,kitchen equipment vendor,Supplied cafeteria equipment listed in the modernization award.
+R200,2024,East River Tray Return Project,GreenCart Learning,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R201,2019,Cabrillo Science Serving Line Upgrade,Cabrillo Science Academy,school meal program lead,School cafeteria team led the cafeteria modernization workflow at the site.
+R202,2019,Cabrillo Science Serving Line Upgrade,South Coast Unified Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R203,2019,Cabrillo Science Serving Line Upgrade,ChefReady Installers,kitchen installer,Installed kitchen equipment and supported the scheduled training day.
+R204,2019,Cabrillo Science Serving Line Upgrade,FreshFork Cooperative,produce supplier,"Supplied seasonal produce, fruit cups, or salad ingredients."
+R205,2019,Cabrillo Science Serving Line Upgrade,KitchenBridge Partners,unclear role,Ambiguous planning mention; scope unclear and not documented as school meal-program leadership.
+R206,2020,Pacific View Scratch Cooking Launch,Pacific View High,school meal program lead,School cafeteria team led the scratch-cooking equipment rollout at the site.
+R207,2020,Pacific View Scratch Cooking Launch,South Coast Unified Nutrition,district nutrition office,District nutrition office supported procurement and implementation logistics.
+R208,2020,Pacific View Scratch Cooking Launch,CleanPlate Systems,dishwasher vendor,"Supplied dishwasher, tray return, or wash-station equipment."
+R209,2020,Pacific View Scratch Cooking Launch,Student Wellness League,nutrition education partner,"Led student taste tests, wellness lessons, and menu feedback activities."
+R210,2021,Liberty Cold Storage Reset,Liberty Elementary,school meal program lead,School cafeteria team led the cold storage and produce service workflow at the site.
+R211,2021,Liberty Cold Storage Reset,High Desert USD Nutrition,district sponsor,"District office coordinated the application, signatures, and state reporting."
+R212,2021,Liberty Cold Storage Reset,Northstar Refrigeration,refrigeration contractor,Repaired or installed cold storage equipment and temperature controls.
+R213,2021,Liberty Cold Storage Reset,Harvest Table Advisors,grant compliance advisor,"Prepared reimbursement, invoice, and grant closeout documentation."

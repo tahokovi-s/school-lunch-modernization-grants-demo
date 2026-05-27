@@ -9,7 +9,14 @@ __pycache__/
 data/processed/*.csv
 audits/*_audit.md
 outputs/*
+data/analysis_ready/*.csv
+audit_notes/*_audit.md
+final_outputs/*
+tmp/
 
 !data/processed/.gitkeep
 !outputs/.gitkeep
 !audits/README.md
+!data/analysis_ready/.gitkeep
+!final_outputs/.gitkeep
+!audit_notes/README.md

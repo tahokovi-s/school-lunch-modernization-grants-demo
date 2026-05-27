@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "hollywood-film-tax-credit-buyers-demo"
+name = "school-lunch-modernization-grants-demo"
 version = "0.1.0"
-description = "Fictional STAX Lab teaching demo for agentic AI research workflows using film tax credit buyer data."
+description = "Fictional STAX Lab teaching demo for agentic AI research workflows using school lunch modernization grant data."
 requires-python = ">=3.10"
 dependencies = [
     "pandas>=2.0",

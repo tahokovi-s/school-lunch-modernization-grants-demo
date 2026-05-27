@@ -2,17 +2,17 @@
 
 Subject: Setup for STAX Lab Codex / Claude Code training
 
-Hi everyone,
+Hi all,
 
 Ahead of the STAX Lab training session on Thursday, May 28, 2026, please take 20-30 minutes to confirm the setup below. You do not need to create a project folder yet. The project workflow will be created and opened during the session.
 
-The workshop shows how to use coding agents for a realistic predoc-style research workflow: receiving an assignment by email, adding that email to a codebase as project context, inspecting messy data, writing small Python scripts, building an auditable panel, and deciding where human judgment belongs. Please confirm both Claude Code and Codex before the session so you have both available; during Thursday's workshop, we will use Codex exclusively.
+The workshop shows how to use coding agents for a realistic predoc-style research workflow: receiving an assignment by email, adding that email to a codebase as project context, inspecting messy data, writing small Python scripts, building an auditable panel, and deciding where human judgment belongs. Please confirm both Claude Code and Codex before the session so you have both available; during Thursday's workshop, you will use Codex exclusively.
 
 Please use the setup-only guide before the session:
 
-https://tahokovi-s.github.io/hollywood-film-tax-credit-buyers-demo/setup.html
+https://tahokovi-s.github.io/school-lunch-modernization-grants-demo/setup.html
 
-During the live session, the facilitator will send or point everyone to a separate fictional PI assignment email with a raw-data ZIP attachment. Please wait for the live walkthrough before using that assignment email or downloading the attachment.
+During the live session, you will receive or be pointed to a separate PI assignment email with a raw-data ZIP attachment. Please wait for the live walkthrough before using that assignment email or downloading the attachment.
 
 ## Setup Checklist
 
@@ -55,7 +55,7 @@ The optional workshop skills are:
 - `pdf`
 - `jupyter-notebook`
 
-If the facilitator asks the group to try skills at the end of the session, copy this into Codex:
+If the session includes the optional skills exercise at the end, copy this into Codex:
 
 ```text
 Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this optional workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available.
@@ -75,4 +75,4 @@ If any setup step fails, the first block of the session includes time for setup 
 
 Best,
 
-[Facilitator Name]
+[Session Lead Name]

@@ -1,41 +1,38 @@
-# Fictional Predoc Assignment Email
+# Predoc Assignment Email
 
-From: Professor Rebecca Lester-Suarez Serrato <rlss@fictional-stax.example>
-To: STAX Predoc Team <predocs@fictional-stax.example>
-Subject: First pass on film tax credit buyer panel
+From: The Hon. Dr. Sir Jensen Ahokovi, PhD, MA, BA. <jensen@stax.example>
+To: STAX Predoc Team <predocs@stax.example>
+Subject: Possible new project on school lunch modernization grants
 Date: Monday, March 4, 2024 at 8:17 AM
-Attachment: film_tax_credit_raw_data.zip
+Attachment: school_lunch_modernization_raw_data.zip
 
 Hi team,
 
-For the seminar demo this week, I want us to prototype the buyer-side panel for our fictional film tax credit project. Imagine that productions receiving state film incentives can sell unused production tax credits to companies with enough tax capacity to use them. We want to understand which companies buy these credits and whether they had prior exposure to older film-finance deals.
+I have a possible new project that I would like to explore. The state has been giving small modernization grants to schools for cafeteria equipment, kitchen upgrades, and healthier meal infrastructure, but I do not yet have a clean sense of which schools received what.
 
-Could you make a first-pass, auditable company-year file for 2019-2024?
+The broad question is whether we can turn these grant records into an auditable school-year panel. My intuition is that better kitchens, cooler storage, salad bars, and serving-line upgrades may show up in meal participation or healthier menu measures, but I do not know what the raw files will support.
 
-The real version of this project would start by pulling public-style labor-market and industry context from IPUMS and QCEW, then merging those data to proprietary company-level financials and film-credit transaction records. For this training exercise, I attached a ZIP file named `film_tax_credit_raw_data.zip`. Please download it, add it to the project's `data/raw/` folder, and have Codex or Claude Code unzip and inspect it before writing code. The ZIP contains:
+I attached the raw materials I have so far. They are not cleaned or documented beyond what is in the files, so please treat this as exploratory. I expect school and district names, grant records, equipment descriptions, and cafeteria partner role labels to be messy, and some judgment will be needed before we can say anything confidently. The ZIP contains:
 
-- `company_directory.csv`: fictional company directory with industries, aliases, and annual revenue.
-- `film_tax_credit_purchases.csv`: fictional buyer-side film tax credit purchase records.
-- `legacy_film_finance_deals.csv`: fictional legacy film-finance deal parties and role descriptions.
+- `school_directory.csv`: school directory with districts, aliases, grade spans, enrollment, and yearly meal outcomes.
+- `school_lunch_modernization_grant_awards.csv`: grant award records with raw school names, project descriptions, and award amounts.
+- `cafeteria_partner_role_records.csv`: cafeteria partner role records with organization names, raw role labels, and notes.
 
-The key output should be a company-year panel with:
+Could you take a first pass and see whether it is possible to turn this into a school-year file for 2019-2024? I would like something that shows, for each school and year:
 
-- company name
-- year
-- industry
-- revenue in millions
-- indicator for buying film tax credits that year
-- indicator for prior or current legacy film-finance investor participation
-- amount of film tax credits bought that year
+- whether the school received a modernization grant
+- roughly how much it received
+- what its lunch participation and healthy-meal measures look like
+- whether it appears to have led a meal-program modernization effort
 
-Please be conservative when classifying legacy film-finance parties. If a party looks like a production company, studio/distributor, streaming customer, completion bond firm, payroll vendor, advisor, or ambiguous strategic partner, do not count it as a legacy finance investor. I care more about transparent assumptions than about forcing every row into a category.
+Please do not worry about making this perfect on the first pass. I care more about a transparent, auditable workflow: what files are there, how names were matched, which role labels were counted as school meal-program leads, what looked ambiguous, and what should be checked before I rely on the results.
 
-It would be useful if the repo produces an audit note explaining which reviewer criteria were used, which rows were ambiguous, and whether any names failed to match the company directory. That audit note is what I would want to read before trusting the panel.
+If an organization's role sounds like a district office, equipment vendor, food supplier, consultant, nutrition education group, or just a vague strategic partner, please flag it instead of automatically treating it as a school lead. A conservative first pass with clear caveats would be more useful than a polished file that hides the hard calls.
 
 Thanks,
 
-Rebecca Lester-Suarez Serrato
+The Hon. Dr. Sir Jensen Ahokovi, PhD, MA, BA.
 
-Professor of Accounting, Tax, and Public Finance
+Professor of Accounting, Public Policy, and School Meals
 
-Fictional STAX Lab
+STAX Lab

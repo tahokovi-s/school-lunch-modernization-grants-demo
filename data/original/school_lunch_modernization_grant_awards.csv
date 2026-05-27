@@ -1,0 +1,78 @@
+grant_id,award_year,school_name,district_name,grant_program,project_description,grant_amount_thousands,source_note
+G001,2020,Maple Grove Elem.,Riverton Unified,Kitchen Equipment Mini-Grant,Serving line warmer and milk cooler replacement,86,State school meals grant extract
+G002,2021,Rivera MS,Riverton USD,Fresh Meals Prep Grant,Salad bar sneeze guards and prep-table refresh,124,State school meals grant extract
+G003,2021,Harbor View K8,Bay City Schools,Healthy Cafeteria Grant,Walk-in cooler repair and produce display case,98,State school meals grant extract
+G004,2022,Juniper Ridge ES,Cedar Valley SD,Modern Kitchen Grant,Combi oven and sheet-pan storage upgrade,210,State school meals grant extract
+G005,2022,Sunrise Academy,North Valley Public,Modern Kitchen Grant,Dishwasher replacement and reusable tray system,185,State school meals grant extract
+G006,2022,Rosa Parks Elem.,Metro Unified,Healthy Cafeteria Grant,"Cold bar, water station, and scratch-cooking utensils",142,State school meals grant extract
+G007,2023,East Side School,Mission USD,Modern Kitchen Grant,"Prep sink, warming cabinet, and menu display monitors",168,State school meals grant extract
+G008,2023,Willow Bend Elem.,Oak River Schools,Modern Kitchen Grant,Kitchen ventilation and vegetable prep station,196,State school meals grant extract
+G009,2023,South Fork ES,South Fork SD,Fresh Meals Prep Grant,Mobile breakfast cart and cooler bank,112,State school meals grant extract
+G010,2022,Lincoln HS,Bay City Schools,Modern Kitchen Grant,Serving-line redesign and induction warmers,244,State school meals grant extract
+G011,2023,Granite Peak HS,Oak River Schools,Modern Kitchen Grant,"Dishwasher, tray return, and dry storage rebuild",231,State school meals grant extract
+G012,2023,New Horizons HS,South Fork SD,Fresh Meals Prep Grant,Grab-and-go lunch station and produce cooler,155,State school meals grant extract
+G013,2019,Lake Front ES,Prairie County,Kitchen Equipment Mini-Grant,Reach-in refrigerator and breakfast cart,73,State school meals grant extract
+G014,2020,Cedar Vly High,Cedar Valley SD,Fresh Meals Prep Grant,Prep table and hot-holding cabinet,92,State school meals grant extract
+G015,2021,North Creek MS,North Valley Public,Kitchen Equipment Mini-Grant,Milk cooler and service-line rails,84,State school meals grant extract
+G016,2022,Mission Trails MS,Mission USD,Modern Kitchen Grant,Combi oven and scratch-cooking starter kit,204,State school meals grant extract
+G017,2022,Orchard Hill,Metro Unified,Healthy Cafeteria Grant,Salad bar and fruit-washing sink,137,State school meals grant extract
+G018,2023,Chavez Academy,Coastal Unified,Modern Kitchen Grant,Prep island and produce merchandiser,177,State school meals grant extract
+G019,2023,Bay Meadow Mid.,Coastal Unified,Fresh Meals Prep Grant,Refrigerated serving cart and compostable tray pilot,119,State school meals grant extract
+G020,2023,Prairie Vw High,Prairie County,Modern Kitchen Grant,Kitchen hood repair and hot line replacement,206,State school meals grant extract
+G021,2023,Maple Grove Elementary,Riverton USD,Healthy Cafeteria Grant,Second salad bar and student tasting counter,118,State school meals grant extract
+G022,2023,Harborview School,Bay City Schools,Fresh Meals Prep Grant,Breakfast kiosk and cooler expansion,126,State school meals grant extract
+G023,2023,North Creek Middle,North Valley Public,Modern Kitchen Grant,Scratch-cooking equipment and prep training,162,State school meals grant extract
+G024,2024,Pine Hollow Charter,Pine Hollow Charter,Modern Kitchen Grant,Combi oven request from school not in directory,133,State school meals grant extract
+G025,2020,Aspen Ridge Elem.,Evergreen Unified,Kitchen Equipment Mini-Grant,Serving-line warmers and student-facing menu boards,76,State school meals grant extract
+G026,2021,Brookside Middle School,Evergreen USD,Fresh Meals Prep Grant,Scratch-cooking prep tables and produce washing sink,99,State school meals grant extract
+G027,2024,Brookside Middle School,Evergreen USD,Modern Kitchen Grant,Dishwasher replacement and reusable tray station,111,State school meals grant extract
+G028,2022,Canyon View HS,Mesa County Schools,Healthy Cafeteria Grant,Walk-in cooler repair and cold storage monitors,122,State school meals grant extract
+G029,2024,Canyon View High,Mesa County Schools,Modern Kitchen Grant,Ventilation repair and vegetable prep island,139,State school meals grant extract
+G030,2023,Desert Springs K-8,Mesa County Schools,Modern Kitchen Grant,"Salad bar, sneeze guards, and chilled display case",145,State school meals grant extract
+G031,2022,Rivera MS,Riverton USD,Fresh Meals Prep Grant,Second salad bar prep table and student-facing cooler,168,State school meals grant extract
+G032,2022,Silver Lake Middle,Lakeside Unified,Modern Kitchen Grant,Serving-line warmers and student-facing menu boards,187,State school meals grant extract
+G033,2020,Washington Prep HS,Capital City Schools,Healthy Cafeteria Grant,"Combi oven, sheet-pan rack, and staff training day",214,State school meals grant extract
+G034,2021,Franklin Elementary,Capital City Schools,Modern Kitchen Grant,Ventilation repair and vegetable prep island,237,State school meals grant extract
+G035,2022,Mountain View K8,Foothill Public,Kitchen Equipment Mini-Grant,Serving-line warmers and student-facing menu boards,80,State school meals grant extract
+G036,2023,Pioneer High School,Foothill Public,Fresh Meals Prep Grant,Scratch-cooking prep tables and produce washing sink,103,State school meals grant extract
+G037,2020,Pioneer High School,Foothill Public,Modern Kitchen Grant,Dishwasher replacement and reusable tray station,113,State school meals grant extract
+G038,2023,Sunrise Academy,North Valley Public,Modern Kitchen Grant,Reusable tray wash station and serving-line controls,126,State school meals grant extract
+G039,2019,Riverside Arts Middle,Riverbend Unified,Modern Kitchen Grant,"Salad bar, sneeze guards, and chilled display case",149,State school meals grant extract
+G040,2021,Riverside Arts Mid.,Riverbend Unified,Kitchen Equipment Mini-Grant,Serving-line warmers and student-facing menu boards,162,State school meals grant extract
+G041,2021,Pinecrest Elementary,Redwoods Joint USD,Fresh Meals Prep Grant,Mobile breakfast cart and grab-and-go cooler,195,State school meals grant extract
+G042,2024,Pinecrest Elementary,Redwoods Joint USD,Modern Kitchen Grant,Serving-line warmers and student-facing menu boards,189,State school meals grant extract
+G043,2022,Adams Community School,Valley Metro Schools,Healthy Cafeteria Grant,"Combi oven, sheet-pan rack, and staff training day",218,State school meals grant extract
+G044,2023,Jefferson STEM High,Valley Metro Schools,Modern Kitchen Grant,Ventilation repair and vegetable prep island,241,State school meals grant extract
+G045,2023,Lincoln HS,Bay City Schools,Modern Kitchen Grant,Serving-line workflow expansion and induction warmers,84,State school meals grant extract
+G046,2019,Marina Middle School,Harbor Unified,Fresh Meals Prep Grant,Scratch-cooking prep tables and produce washing sink,107,State school meals grant extract
+G047,2022,Marina Middle School,Harbor Unified,Modern Kitchen Grant,Dishwasher replacement and reusable tray station,115,State school meals grant extract
+G048,2020,Hilltop Elem.,Summit Ridge SD,Healthy Cafeteria Grant,Walk-in cooler repair and cold storage monitors,130,State school meals grant extract
+G049,2022,Cottonwood K8,Desert Valley Public,Kitchen Equipment Mini-Grant,Dishwasher replacement and reusable tray station,176,State school meals grant extract
+G050,2024,Cottonwood School,Desert Valley Public,Fresh Meals Prep Grant,Scratch-cooking prep tables and produce washing sink,185,State school meals grant extract
+G051,2023,Mesa Verde Middle,Desert Valley Public,Fresh Meals Prep Grant,Mobile breakfast cart and grab-and-go cooler,199,State school meals grant extract
+G052,2020,Mesa Verde Middle,Desert Valley Public,Modern Kitchen Grant,Serving-line warmers and student-facing menu boards,191,State school meals grant extract
+G053,2022,Granite Peak HS,Oak River Schools,Modern Kitchen Grant,"Tray return, dry storage, and dishwasher staging",222,State school meals grant extract
+G054,2019,Roosevelt High School,Central Plains USD,Modern Kitchen Grant,Ventilation repair and vegetable prep island,245,State school meals grant extract
+G055,2021,Cedar Vly High,Cedar Valley SD,Fresh Meals Prep Grant,"Prep table, hot-holding cabinet, and cooler monitor",88,State school meals grant extract
+G056,2021,North Shore Middle,North Shore Schools,Fresh Meals Prep Grant,Scratch-cooking prep tables and produce washing sink,111,State school meals grant extract
+G057,2024,North Shore Middle,North Shore Schools,Modern Kitchen Grant,Dishwasher replacement and reusable tray station,117,State school meals grant extract
+G058,2023,Esperanza High School,Camino Unified,Modern Kitchen Grant,"Salad bar, sneeze guards, and chilled display case",157,State school meals grant extract
+G059,2022,New Horizons HS,South Fork SD,Fresh Meals Prep Grant,Grab-and-go lunch station and produce cooler,180,State school meals grant extract
+G060,2019,Westfield Middle,Westfield Public,Fresh Meals Prep Grant,Mobile breakfast cart and grab-and-go cooler,203,State school meals grant extract
+G061,2022,Westfield Middle,Westfield Public,Modern Kitchen Grant,Serving-line warmers and student-facing menu boards,193,State school meals grant extract
+G062,2021,Westfield Mid.,Westfield Public,Healthy Cafeteria Grant,Walk-in cooler repair and cold storage monitors,208,State school meals grant extract
+G063,2020,Golden Gate Elem.,Metro Bay Unified,Healthy Cafeteria Grant,"Combi oven, sheet-pan rack, and staff training day",226,State school meals grant extract
+G064,2021,Mission Bay High,Metro Bay Unified,Modern Kitchen Grant,Ventilation repair and vegetable prep island,249,State school meals grant extract
+G065,2022,Valley Oak K8,Valley Oak SD,Kitchen Equipment Mini-Grant,Serving-line warmers and student-facing menu boards,92,State school meals grant extract
+G066,2020,Oak Meadow High,Valley Oak SD,Modern Kitchen Grant,Dishwasher replacement and reusable tray station,119,State school meals grant extract
+G067,2022,Prairie Vw High,Prairie County,Modern Kitchen Grant,Kitchen hood repair and hot line replacement,138,State school meals grant extract
+G068,2019,East River Middle,East River Schools,Modern Kitchen Grant,"Salad bar, sneeze guards, and chilled display case",161,State school meals grant extract
+G069,2020,Cabrillo Science Academy,South Coast Unified,Kitchen Equipment Mini-Grant,Dishwasher replacement and reusable tray station,184,State school meals grant extract
+G070,2021,Pacific View High,South Coast Unified,Fresh Meals Prep Grant,Mobile breakfast cart and grab-and-go cooler,207,State school meals grant extract
+G071,2024,Pacific View High,South Coast Unified,Modern Kitchen Grant,Serving-line warmers and student-facing menu boards,195,State school meals grant extract
+G072,2022,Liberty Elem.,High Desert USD,Healthy Cafeteria Grant,"Combi oven, sheet-pan rack, and staff training day",230,State school meals grant extract
+G073,2024,Liberty ES,High Desert USD,Modern Kitchen Grant,"Salad bar, sneeze guards, and chilled display case",231,State school meals grant extract
+G074,2023,Mission Trails MS,Mission USD,Modern Kitchen Grant,Combi oven workflow expansion and scratch-cooking prep station,253,State school meals grant extract
+G075,2022,Red Clover Charter,Red Clover Charter,Modern Kitchen Grant,Award row intentionally absent from the teaching school directory,129,State school meals grant extract
+G076,2023,Vista Grove Learning Center,Vista Grove Learning Center,Modern Kitchen Grant,Award row intentionally absent from the teaching school directory,141,State school meals grant extract
+G077,2024,Sagebrush County Academy,Sagebrush County,Modern Kitchen Grant,Award row intentionally absent from the teaching school directory,118,State school meals grant extract

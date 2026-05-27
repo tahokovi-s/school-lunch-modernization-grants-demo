@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 350" role="img" aria-labelledby="title desc">
+  <title id="title">Before and after summary of the workflow</title>
+  <desc id="desc">A two-column summary comparing raw inputs with cleaned analysis-ready outputs.</desc>
+  <style>
+    text { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #18212b; }
+    .title { font-size: 24px; font-weight: 800; }
+    .head { font-size: 16px; font-weight: 900; fill: #245f75; text-transform: uppercase; }
+    .mini { font-size: 13px; font-weight: 900; fill: #65717d; text-transform: uppercase; }
+    .body { font-size: 18px; font-weight: 800; }
+    .panel { fill: #f8f7f3; stroke: #deddd5; }
+    .arrow { stroke: #b9802e; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#b9802e"/>
+    </marker>
+  </defs>
+  <rect width="820" height="350" rx="8" fill="#ffffff"/>
+  <text x="32" y="42" class="title">Agentic workflow turns lunch-room mess into usable output</text>
+  <rect x="32" y="68" width="330" height="246" rx="8" class="panel"/>
+  <rect x="456" y="68" width="330" height="246" rx="8" class="panel"/>
+  <text x="42" y="88" class="head">Before</text>
+  <text x="466" y="88" class="head">After</text>
+  <path d="M382 188 C402 170 424 170 444 188" class="arrow"/>
+  <text x="42" y="98" class="mini">Raw grants</text><text x="42" y="120" class="body">77 award rows</text><text x="456" y="98" class="mini">Clean panel</text><text x="456" y="120" class="body">360 school-year rows</text><text x="42" y="152" class="mini">Raw school names</text><text x="42" y="174" class="body">61 distinct strings</text><text x="456" y="152" class="mini">Canonical schools</text><text x="456" y="174" class="body">60 schools repeated yearly</text><text x="42" y="206" class="mini">Raw role labels</text><text x="42" y="228" class="body">213 role observations</text><text x="456" y="206" class="mini">Classified roles</text><text x="456" y="228" class="body">42 school lead rows</text><text x="42" y="260" class="mini">Ambiguous inputs</text><text x="42" y="282" class="body">Need judgment</text><text x="456" y="260" class="mini">Audit output</text><text x="456" y="282" class="body">24 rows preserved for review</text>
+</svg>

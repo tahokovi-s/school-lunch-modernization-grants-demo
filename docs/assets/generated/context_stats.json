@@ -1,0 +1,127 @@
+{
+  "raw": {
+    "schools": 60,
+    "grant_rows": 77,
+    "partner_role_rows": 213,
+    "unique_raw_organization_names": 93,
+    "unique_raw_school_names": 61,
+    "top_raw_partner_roles": [
+      [
+        "school meal program lead",
+        42
+      ],
+      [
+        "district sponsor",
+        26
+      ],
+      [
+        "district nutrition office",
+        22
+      ],
+      [
+        "nutrition education partner",
+        16
+      ],
+      [
+        "kitchen equipment vendor",
+        13
+      ],
+      [
+        "unclear role",
+        12
+      ],
+      [
+        "grant compliance advisor",
+        11
+      ],
+      [
+        "kitchen installer",
+        11
+      ],
+      [
+        "dishwasher vendor",
+        11
+      ],
+      [
+        "produce supplier",
+        10
+      ],
+      [
+        "refrigeration contractor",
+        9
+      ],
+      [
+        "meal service vendor",
+        8
+      ]
+    ]
+  },
+  "clean": {
+    "panel_rows": 360,
+    "schools_per_year": {
+      "2019": 60,
+      "2020": 60,
+      "2021": 60,
+      "2022": 60,
+      "2023": 60,
+      "2024": 60
+    },
+    "years": [
+      "2019",
+      "2020",
+      "2021",
+      "2022",
+      "2023",
+      "2024"
+    ],
+    "role_category_counts": {
+      "school_meal_program_lead": 42,
+      "district_or_state_office": 48,
+      "equipment_or_installation_vendor": 44,
+      "advisor_or_consultant": 20,
+      "food_supplier_or_menu_vendor": 19,
+      "nutrition_education_partner": 16,
+      "ambiguous": 24
+    },
+    "grant_recipients_by_year": {
+      "2019": 6,
+      "2020": 10,
+      "2021": 12,
+      "2022": 19,
+      "2023": 19,
+      "2024": 7
+    },
+    "meal_program_leads_by_year": {
+      "2019": 6,
+      "2020": 14,
+      "2021": 24,
+      "2022": 38,
+      "2023": 42,
+      "2024": 42
+    },
+    "grant_amount_by_year": {
+      "2019": 938.0,
+      "2020": 1431.0,
+      "2021": 1862.0,
+      "2022": 3243.0,
+      "2023": 3078.0,
+      "2024": 1167.0
+    },
+    "average_lunch_participation_by_year": {
+      "2019": 53.1,
+      "2020": 52.2,
+      "2021": 53.7,
+      "2022": 55.7,
+      "2023": 57.3,
+      "2024": 58.7
+    },
+    "average_healthy_meal_score_by_year": {
+      "2019": 56.4,
+      "2020": 57.0,
+      "2021": 59.2,
+      "2022": 61.6,
+      "2023": 64.2,
+      "2024": 66.2
+    }
+  }
+}
