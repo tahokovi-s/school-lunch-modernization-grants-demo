@@ -1553,10 +1553,7 @@ function renderModule() {
   document.querySelector("#moduleTitle").textContent = module.title;
   document.querySelector("#commandTitle").textContent = module.commandTitle || "Agent Actions";
   document.querySelector("#promptTitle").textContent = module.promptTitle || "Prompt Snippets";
-  const setupOnlyNotice = setupOnlyMode
-    ? ["This is the setup module for Thursday. Please complete it before the workshop; the full research workflow starts during the live session."]
-    : [];
-  const body = [...setupOnlyNotice, ...module.body];
+  const body = module.body;
   const bodyHtml = body
     .map((paragraph) => `<p>${formatInlineCodeRefs(paragraph)}</p>`)
     .join("");
