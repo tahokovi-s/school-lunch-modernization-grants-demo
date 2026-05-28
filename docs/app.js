@@ -839,7 +839,6 @@ modules.forEach((module) => {
 
 const pageParams = new URLSearchParams(window.location.search);
 const setupOnlyMode = Boolean(window.STAX_SETUP_ONLY)
-  || window.location.pathname.endsWith("/setup.html")
   || pageParams.get("mode") === "setup"
   || pageParams.get("setup") === "1";
 const visibleModules = setupOnlyMode ? modules.filter((module) => module.id === "setup") : modules;
