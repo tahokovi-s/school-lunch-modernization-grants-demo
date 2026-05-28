@@ -1,0 +1,201 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 5217 >>
+stream
+0 0 0 rg
+BT /F2 14 Tf 1 0 0 1 54.00 742.00 Tm (Workshop Presenter Notes) Tj ET
+BT /F2 11 Tf 1 0 0 1 54.00 724.00 Tm (School Lunch Modernization Grants Demo) Tj ET
+BT /F2 12 Tf 1 0 0 1 54.00 700.00 Tm (Module 1: Setup) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 683.00 Tm (- The workshop starts with a narrow setup goal: everyone knows that Codex, Claude) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 671.00 Tm (  Code, and Python are available before the research workflow begins.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 656.00 Tm (- This opening is not really about the command line. It is about making the tools feel) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 644.00 Tm (  usable and making sure the app can run a small check when the project later needs) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 632.00 Tm (  scripts.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 617.00 Tm (- The tiny Python check is the first low-stakes interaction with Codex. It gives the) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 605.00 Tm (  room a concrete example of the agent running something, reading the result, and) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 593.00 Tm (  explaining what happened.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 578.00 Tm (- The project folder has not been created yet because folder setup is part of the) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 566.00 Tm (  research workflow itself. The session starts from a realistic blank workspace, not) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 554.00 Tm (  from a pre-arranged project.) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 539.00 Tm (Transition: Now that the tools are ready, we can move from setup into a real) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 526.00 Tm (research assignment.) Tj ET
+BT /F2 12 Tf 1 0 0 1 54.00 503.00 Tm (Module 2: PI Email To Project Memory) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 486.00 Tm (- This module turns a loose PI email into a real research project. The important shift) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 474.00 Tm (  is from a message in an inbox to a workspace with source materials, folders, and) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 462.00 Tm (  shared memory.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 447.00 Tm (- My_RA_Tasks is just the outer workspace. The actual research project lives inside) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 435.00 Tm (  it, which keeps the workshop folder simple while still showing how a project root) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 423.00 Tm (  gets created.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 408.00 Tm (- The PI email and raw ZIP are the source materials. The rest of the workshop feels) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 396.00 Tm (  traceable back to those original inputs, not like a disconnected coding exercise.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 381.00 Tm (- The dedicated project folder creates the boundary for the work. Once that folder is) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 369.00 Tm (  the active project root, paths like docs/ and data/original/ have a stable meaning.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 354.00 Tm (- The email goes into docs/ and the unchanged ZIP goes into data/original/. That) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 342.00 Tm (  separation makes the difference between source evidence and generated work visible) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 330.00 Tm (  from the beginning.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 315.00 Tm (- The handoff summary translates the PI's request into the research objective,) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 303.00 Tm (  expected deliverables, open questions, and judgment calls that the project will) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 291.00 Tm (  carry forward.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 276.00 Tm (- The project memory files give future agent turns stable context. They say what the) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 264.00 Tm (  project is, what gets preserved, and where the work stays conservative.) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 249.00 Tm (Transition: We now have the project set up and the PI request anchored. Next we) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 236.00 Tm (inspect the raw data before making any claims.) Tj ET
+BT /F2 12 Tf 1 0 0 1 54.00 213.00 Tm (Module 3: Raw Data And Role Rubric) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 196.00 Tm (- This module is about looking before acting. The panel is not being built yet; the) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 184.00 Tm (  goal is to make the raw evidence understandable.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 169.00 Tm (- The raw ZIP contains several files that need to be inventoried before they become) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 157.00 Tm (  useful. Row counts, file units, and likely relationships matter because they shape) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 145.00 Tm (  every later merge.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 130.00 Tm (- The key research issue is matching. School identifiers, school names, district) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 118.00 Tm (  aliases, and crosswalk support all determine whether the final panel is trustworthy.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 103.00 Tm (- The cafeteria partner roles are where judgment enters the project. Some records) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 91.00 Tm (  clearly look like school meal-program leadership, while others look like vendors,) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 79.00 Tm (  offices, advisors, or vague partners.) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 28.00 Tm (Page 1 of 3) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 4699 >>
+stream
+0 0 0 rg
+BT /F1 9 Tf 1 0 0 1 66.00 742.00 Tm (- The role rubric gives the classification step a conservative standard. It defines) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 730.00 Tm (  what counts as a confirmed school meal-program lead and what remains ambiguous.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 715.00 Tm (- Ambiguity is not a failure of the workflow. It is part of the research record when) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 703.00 Tm (  the evidence is weak, vague, prospective, or unclear.) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 688.00 Tm (Transition: Now we know what the files contain and what our classification rules) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 675.00 Tm (are. Next we apply those rules row by row.) Tj ET
+BT /F2 12 Tf 1 0 0 1 54.00 652.00 Tm (Module 4: Reviewer-Style Classification) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 635.00 Tm (- This module shows how the agent can help with judgment-heavy classification without) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 623.00 Tm (  making the judgment disappear.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 608.00 Tm (- The school-lead perspective looks for strong positive evidence that a school) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 596.00 Tm (  cafeteria team or meal-program team led the modernization effort.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 581.00 Tm (- The non-lead perspective protects the analysis from overcounting. Vendors, district) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 569.00 Tm (  offices, consultants, suppliers, and education partners may be important, but they) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 557.00 Tm (  are not automatically school leads.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 542.00 Tm (- The ambiguity perspective keeps weak or undocumented evidence out of the confirmed) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 530.00 Tm (  category. That matters because one generous classification can turn into a) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 518.00 Tm (  misleading analysis variable.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 503.00 Tm (- The reconciliation step turns several perspectives into one classification file and) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 491.00 Tm (  one audit note. The CSV carries the category, and the audit carries the reasoning.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 476.00 Tm (- The classification file is useful because it is auditable. The human can see which) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 464.00 Tm (  rows were confirmed, which stayed ambiguous, and which cases still need review.) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 449.00 Tm (Transition: Now we have a classification file that can feed the panel, but only) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 436.00 Tm (confirmed lead rows affect the lead indicator.) Tj ET
+BT /F2 12 Tf 1 0 0 1 54.00 413.00 Tm (Module 5: Build A School-Year Panel) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 396.00 Tm (- This module turns the inspected source files and the classification work into the) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 384.00 Tm (  main analysis-ready dataset.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 369.00 Tm (- The panel has one row per school-year from 2019 through 2024. The important build) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 357.00 Tm (  rules are the unit of observation, the year range, crosswalk-based matching, grant) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 345.00 Tm (  timing, and conservative lead status.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 330.00 Tm (- The workflow has a simple rhythm: rules first, script second, run third, inspect) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 318.00 Tm (  fourth. That rhythm keeps the code tied to the research choices instead of hiding) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 306.00 Tm (  them.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 291.00 Tm (- The panel builder creates both a CSV and an audit note because the construction) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 279.00 Tm (  choices matter. Row counts, years, duplicate keys, unmatched names, and timing) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 267.00 Tm (  checks all belong in the record.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 252.00 Tm (- The grant variables turn on in the award year, while grant amount is zero when no) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 240.00 Tm (  award occurred. The timing rule is what keeps the panel from blurring before and) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 228.00 Tm (  after.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 213.00 Tm (- MealProgramLead turns on only after confirmed school-lead evidence. Ambiguous and) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 201.00 Tm (  non-lead partner rows stay excluded from that indicator.) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 186.00 Tm (Transition: Now we have the baseline panel, but the deliverable is not complete) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 173.00 Tm (until we explain what it can and cannot support.) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 28.00 Tm (Page 2 of 3) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 5484 >>
+stream
+0 0 0 rg
+BT /F2 12 Tf 1 0 0 1 54.00 742.00 Tm (Module 6: Prepare The PI Handoff) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 725.00 Tm (- This module turns the data product back into research communication. The work is not) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 713.00 Tm (  finished just because the panel exists.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 698.00 Tm (- The panel review memo explains what was built, what variables exist, how they were) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 686.00 Tm (  constructed, and which caveats still matter.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 671.00 Tm (- The PI update is concise, practical, and honest about uncertainty. It sounds like a) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 659.00 Tm (  research handoff, not like a claim that every data issue has been solved.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 644.00 Tm (- This module shows that a good deliverable is more than a file. It is a file plus a) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 632.00 Tm (  readable account of the judgment calls behind it.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 617.00 Tm (- By the end of the handoff, the PI knows what is ready, what needs review, and what) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 605.00 Tm (  next analysis step is reasonable.) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 590.00 Tm (Transition: The original assignment is complete, and the same workflow can handle) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 577.00 Tm (a follow-up question when time allows.) Tj ET
+BT /F2 12 Tf 1 0 0 1 54.00 554.00 Tm (Module 7: Causal Spec Lab) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 537.00 Tm (- This module is the realistic follow-up: the PI asks a new question and introduces a) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 525.00 Tm (  new data source after the baseline panel exists.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 510.00 Tm (- The same discipline carries forward. The follow-up request becomes source context,) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 498.00 Tm (  the survey extract becomes a new raw input, and the merge has to preserve the) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 486.00 Tm (  baseline panel universe.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 471.00 Tm (- The survey extract needs the same kind of inspection as the earlier raw data. Unit) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 459.00 Tm (  of observation, school-year keys, coverage, missingness, and merge readiness all) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 447.00 Tm (  matter before analysis.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 432.00 Tm (- The econometric plan is where Codex acts as a design partner. It can lay out) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 420.00 Tm (  candidate specifications, name assumptions, and explain which comparisons are) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 408.00 Tm (  descriptive, exploratory, or closer to causal.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 393.00 Tm (- The 2022 scoring change is suggestive, but it is not automatically a clean causal) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 381.00 Tm (  design. A statewide post indicator by itself is not enough for strong causal claims.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 366.00 Tm (- The spec-lab outputs are useful for patterns, estimates, plots, and careful checks.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 354.00 Tm (  The final PI-facing brief separates what the analysis suggests from what remains) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 342.00 Tm (  uncertain.) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 327.00 Tm (Transition: This shows how an organized project can absorb new data and new) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 314.00 Tm (questions without losing the audit trail.) Tj ET
+BT /F2 12 Tf 1 0 0 1 54.00 291.00 Tm (Module 8: Publication-Style Visualizations) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 274.00 Tm (- This module shows that visual work can also be part of an agentic research workflow,) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 262.00 Tm (  not just something that happens after the analysis is over.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 247.00 Tm (- The goal is not a final journal figure in one try. The goal is a serious first draft) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 235.00 Tm (  that makes visual choices explicit enough to inspect and discuss.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 220.00 Tm (- The visualization brief gives the plots a target before code is written. The four) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 208.00 Tm (  visuals cover grant timing, meal outcomes, survey outcomes, and causal-estimate) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 196.00 Tm (  caveats.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 181.00 Tm (- The plotting script turns the expanded panel and spec-lab outputs into SVG drafts) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 169.00 Tm (  after Codex installs the required visualization packages. Because the plots come) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 157.00 Tm (  from code, visual changes remain traceable if the team decides to revise later.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 142.00 Tm (- The teaching moment is visual review. Titles, labels, legends, annotations, spacing,) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 130.00 Tm (  source notes, and clipping are all concrete parts of the research output.) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 115.00 Tm (- The review boundary is important: visual elements can change later, while the) Tj ET
+BT /F1 9 Tf 1 0 0 1 66.00 103.00 Tm (  analysis and causal claims stay the same even when the plot looks polished.) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 88.00 Tm (Transition: This shows that visual work can also be prompted and inspected like) Tj ET
+BT /F2 9 Tf 1 0 0 1 66.00 75.00 Tm (any other research output.) Tj ET
+BT /F1 8 Tf 1 0 0 1 54.00 28.00 Tm (Page 3 of 3) Tj ET
+endstream
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000203 00000 n 
+0000000278 00000 n 
+0000000414 00000 n 
+0000005683 00000 n 
+0000005819 00000 n 
+0000010570 00000 n 
+0000010707 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R >>
+startxref
+16244
+%%EOF
