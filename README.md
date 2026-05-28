@@ -4,9 +4,9 @@ This is a compact teaching repo for an introductory STAX Lab seminar on using Co
 
 The session starts before participants have a project folder. Use `docs/session_invitation_email.md` as the pre-session setup email. During the live workflow, participants create a `My_RA_Tasks` folder as their outer workshop workspace, open that folder in Codex, download the PI assignment materials from the guide, ask Codex to scaffold the dedicated `school_lunch_modernization_grants` codebase inside `My_RA_Tasks`, reopen `school_lunch_modernization_grants` as the active Codex project root, and then turn the saved PI email into project memory before coding.
 
-The research scenario starts from state school lunch modernization grants for cafeteria equipment, kitchen upgrades, cold storage, and healthier meal infrastructure. The task is to build a school-year panel showing which schools received modernization awards, school meal outcomes, and which schools clearly led meal-program modernization efforts.
+The research scenario starts from state school lunch modernization grants for cafeteria equipment, kitchen upgrades, cold storage, and healthier meal infrastructure. The initial task is to build a school-year panel showing which schools received modernization awards, school meal outcomes, and which schools clearly led meal-program modernization efforts. A later PI follow-up introduces an aggregate student survey extract with health and wellbeing outcomes.
 
-No confidential student records or proprietary school files are included in this teaching repo.
+No confidential student records or proprietary school files are included in this teaching repo. The later survey variables are aggregate fictional school-year teaching measures.
 
 ## Before The Session
 
@@ -64,17 +64,31 @@ Participants do not need to type these commands during the workshop. The live se
 - `docs/attachments/school_lunch_modernization_raw_data.zip`: source copy of the raw-data ZIP served by the guide download button.
 - `school_lunch_modernization_grants/docs/email_handoff_summary.md`: agent-created markdown summary and action list produced from the saved assignment email during Module 2.
 - `school_lunch_modernization_grants/data/original/school_lunch_modernization_raw_data.zip`: participant-saved copy of the raw-data ZIP during Module 2, then inspected in Module 3.
-- `data/original/*.csv`: workshop raw data after the agent extracts the ZIP, with school aliases, grant records, messy cafeteria partner roles, unmatched awards, and ambiguous cases.
-- `docs/raw_data_preliminary_pass.md`: agent-created inspection notes from Module 3, including file inventory, likely keys, aliases, messy roles, ambiguous rows, and safety checks.
+- `data/original/*.csv`: workshop raw data after the agent extracts the ZIP, with school aliases, the established-school crosswalk, grant records, messy cafeteria partner roles, unmatched awards, and ambiguous cases.
+- `data/original/established_school_crosswalk.csv`: clean school identity crosswalk used to map observed names and aliases to canonical `school_id` values.
+- `data/original/student_health_wellbeing_survey_extract.csv`: aggregate school-year survey extract introduced by the Module 7 follow-up request, not the initial assignment.
+- `docs/raw_data_preliminary_pass.md`: agent-created inspection notes from Module 3, including file inventory, likely keys, crosswalk support, aliases, messy roles, ambiguous rows, and safety checks.
 - `docs/cafeteria_partner_classification_rubric.md`: compact conservative rubric drafted during Module 3.
 - `docs/cafeteria_partner_subagent_review_plan.md`: compact plan for separate reviewer passes in Module 4.
-- `data/analysis_ready/cafeteria_partner_role_classifications.csv`: subagent-reviewed classification artifact produced during Module 4.
+- `data/analysis_ready/cafeteria_partner_role_classifications.csv` and `audit_notes/cafeteria_partner_role_classification_audit.md`: reviewed classification CSV and audit note produced during Module 4.
 - `scripts/classify_cafeteria_partner_roles.py`: optional deterministic fallback for instructors, not the main participant workflow.
 - `scripts/build_school_year_panel.py`: school-year panel builder.
-- `audit_notes/`: generated audit trails that explain what happened and what still needs human judgment.
-- `data/analysis_ready/school_year_panel.csv`: final teaching output.
+- `audit_notes/`: generated audit notes that preserve unresolved matches, timing assumptions, and human-review cases.
+- `data/analysis_ready/school_year_panel.csv`: baseline panel output with grant, meal, and meal-program lead variables.
+- `data/analysis_ready/school_year_panel_with_survey.csv`: Module 7 enriched panel after the survey extract is merged by `school_id` and `year`.
+- `final_outputs/school_lunch_panel_review.md`: short review of what the completed panel can support and what remains unsettled.
+- `final_outputs/school_lunch_panel_pi_update.md`: concise PI-facing handoff after the panel and audit notes are reviewed.
+- `docs/school_lunch_analysis_handoff_summary.md`: summary of the follow-up request about the 2022 scoring change.
+- `docs/school_lunch_analysis_design_memo.md`: check that the panel can answer the follow-up question and define the first-pass analysis.
+- `scripts/run_school_lunch_first_pass_analysis.py`: first-pass analysis script for the 2022 scoring change.
+- `final_outputs/school_lunch_first_pass_summary.csv`: summary table from the first-pass analysis, including meal outcomes and the later survey outcomes after the Module 7 merge.
+- `final_outputs/school_lunch_first_pass_regression_checks.csv`: regression-check table from the first-pass analysis.
+- `final_outputs/school_lunch_2022_change_plot.svg`: figure from the first-pass analysis.
+- `audit_notes/school_lunch_first_pass_analysis_audit.md`: audit note for the analysis script, outputs, and caveats.
+- `final_outputs/school_lunch_analysis_review.md`: human review memo after inspecting the first-pass outputs and audit.
+- `final_outputs/school_lunch_analysis_pi_update.md`: concise PI-facing update on the 2022 scoring-change analysis.
 
-## Expected Demo Flow
+## Expected Workshop Flow
 
 1. Confirm participants have the Codex app and Claude Code app open and signed in.
 2. Ask Codex to confirm Python is installed and can run a tiny Python script.
@@ -83,11 +97,11 @@ Participants do not need to type these commands during the workshop. The live se
 5. Ask Codex to explain the folder map and scaffold `school_lunch_modernization_grants` inside `My_RA_Tasks`.
 6. Reopen `school_lunch_modernization_grants` as the active project root, move `pi_assignment_email.pdf` into `docs/`, and move the unchanged raw-data ZIP into `data/original/`.
 7. Ask Codex or Claude Code to create `docs/email_handoff_summary.md`, then `README.md`, `AGENTS.md`, and `CLAUDE.md`.
-8. With the raw-data ZIP in `data/original/`, ask Codex or Claude Code to unzip it, run one careful raw-data inspection prompt, draft a compact classification rubric, and plan the separate review passes before classification.
+8. With the raw-data ZIP in `data/original/`, ask Codex or Claude Code to unzip it, run one careful raw-data inspection prompt, draft a compact classification rubric, and plan the separate review passes before classification. The inspection should identify the established-school crosswalk and likely join keys.
 9. Ask Codex or Claude Code to coordinate subagent reviewers for the cafeteria partner role classification, reconcile disagreements conservatively, and write the classification CSV plus audit note.
-10. Build the school-year panel and inspect the output.
-11. Use the audit files to draft the PI update and discuss where human judgment belongs in agentic workflows.
-12. If time allows, use the causal analysis and Extra Resources modules to show how the workflow extends after the panel exists.
+10. Build the baseline school-year panel from the data contract, merging grant, meal, and meal-program lead information, then inspect `data/analysis_ready/school_year_panel.csv` and `audit_notes/build_school_year_panel_audit.md`.
+11. Review the panel and audit notes, create `final_outputs/school_lunch_panel_review.md`, and draft `final_outputs/school_lunch_panel_pi_update.md` for the PI.
+12. If time allows, use `Explore The 2022 Scoring Change` to save and summarize the follow-up request, save the new survey extract, merge it into the baseline panel, check the expanded panel against the question in a design memo, write and run the first-pass analysis, inspect the results and audit, and draft the PI update.
 
 ## Useful Current References
 

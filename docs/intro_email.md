@@ -12,9 +12,10 @@ I have a possible new project that I would like to explore. The state has been g
 
 The broad question is whether we can turn these grant records into an auditable school-year panel. My intuition is that better kitchens, cooler storage, salad bars, and serving-line upgrades may show up in meal participation or healthier menu measures, but I do not know what the raw files will support.
 
-I attached the raw materials I have so far. They are not cleaned or documented beyond what is in the files, so please treat this as exploratory. I expect school and district names, grant records, equipment descriptions, and cafeteria partner role labels to be messy, and some judgment will be needed before we can say anything confidently. The ZIP contains:
+I attached the raw materials I have so far. They are not cleaned or documented beyond what is in the files, so please treat this as exploratory. I expect school and district names, grant records, equipment descriptions, cafeteria partner role labels, and school-name crosswalks to need some judgment before we can say anything confidently. The ZIP contains:
 
 - `school_directory.csv`: school directory with districts, aliases, grade spans, enrollment, and yearly meal outcomes.
+- `established_school_crosswalk.csv`: clean crosswalk from observed school names and aliases to canonical school IDs.
 - `school_lunch_modernization_grant_awards.csv`: grant award records with raw school names, project descriptions, and award amounts.
 - `cafeteria_partner_role_records.csv`: cafeteria partner role records with organization names, raw role labels, and notes.
 
@@ -32,7 +33,3 @@ If an organization's role sounds like a district office, equipment vendor, food 
 Thanks,
 
 The Hon. Dr. Sir Jensen Ahokovi, PhD, MA, BA.
-
-Professor of Accounting, Public Policy, and School Meals
-
-STAX Lab

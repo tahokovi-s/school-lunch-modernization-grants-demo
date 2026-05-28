@@ -47,6 +47,8 @@ Have participants review the PI email and download both files:
 
 If the browser asks where to save them, choose `My_RA_Tasks` for now. The guide page is only the delivery mechanism. Once saved, the email PDF and raw ZIP are the project source materials.
 
+The PI's request plants the baseline outcome domains: meal participation and healthier-meal measures. Do not introduce the later survey outcomes yet; they arrive with the follow-up request after the baseline panel exists.
+
 ### 2.3 Create The Project Folder
 
 Ask Codex to create the dedicated project folder inside `My_RA_Tasks`. The folder map is the main idea:
@@ -98,7 +100,7 @@ Use the saved PI assignment email as the source of truth for this project.
 
 Assignment email: @docs/pi_assignment_email.pdf
 
-Read the saved email artifact and create docs/email_handoff_summary.md. Include the sender, subject, PI request, research objective, required inputs, expected deliverables, action items, open questions, assumptions, and judgment calls.
+Read the saved email artifact and create docs/email_handoff_summary.md. Include the sender, subject, PI request, research objective, required inputs, expected outcome domains, expected deliverables, action items, open questions, assumptions, and judgment calls.
 
 If the email is missing or unreadable, stop and tell me. Do not inspect or unzip the raw data yet.
 ```
@@ -112,7 +114,7 @@ Read @docs/pi_assignment_email.pdf and docs/email_handoff_summary.md. Treat the 
 
 Working in the current project root, create README.md, AGENTS.md, and CLAUDE.md.
 
-README.md should briefly summarize the research objective, expected original inputs, expected analysis-ready output, and the rule that audit notes are part of the deliverable.
+README.md should briefly summarize the research objective, expected original inputs, expected analysis-ready output, outcome domains, and the rule that audit notes are part of the deliverable.
 
 AGENTS.md and CLAUDE.md should tell coding agents to read the email and handoff before coding, preserve raw inputs, inspect before building outputs, keep work auditable, and ask before treating ambiguous cafeteria partner roles as confirmed school leads.
 
@@ -135,6 +137,7 @@ Extract it into data/original/ while preserving the ZIP. Then create docs/raw_da
 - which CSV files are present and their row counts
 - what each CSV appears to contain and its likely unit of observation
 - likely keys and relationships between files
+- how established_school_crosswalk.csv maps raw school names to canonical school_id values
 - school or district aliases that could affect matching
 - cafeteria partner-role cases that may need human judgment
 
@@ -216,49 +219,273 @@ Read audit_notes/cafeteria_partner_role_classification_audit.md and data/analysi
 
 This module teaches classification as a judgment-heavy review workflow. The analysis-ready CSV is still machine-readable, but the reasoning comes from multiple reviewer perspectives and a visible reconciliation step.
 
-## 5. Build The School-Year Panel
+## 5. Build A School-Year Panel
 
-First confirm the inputs from the raw data and subagent classification workflow:
+Start by having the agent review the inputs and state the build contract:
 
 ```text
-Before building the school-year panel, confirm that these inputs exist: data/original/school_directory.csv, data/original/school_lunch_modernization_grant_awards.csv, and data/analysis_ready/cafeteria_partner_role_classifications.csv. Then read audit_notes/cafeteria_partner_role_classification_audit.md and summarize how the subagent reviewers created the classification file, which role_category values count as confirmed school meal-program leads, which categories are excluded, and what human-review caveats should carry forward. Do not run the panel builder yet.
+Before building the school-year panel, inspect these inputs:
+
+- data/original/school_directory.csv
+- data/original/established_school_crosswalk.csv
+- data/original/school_lunch_modernization_grant_awards.csv
+- data/analysis_ready/cafeteria_partner_role_classifications.csv
+- audit_notes/cafeteria_partner_role_classification_audit.md
+
+Summarize the build contract before writing code. The panel should have one row for every school in the directory for each year 2019-2024. Grant indicators and amounts should come from the grant awards file, meal outcomes should come from the directory fields, school-name matching should use the established-school crosswalk, meal-program leadership should come only from confirmed school meal-program lead classifications, and ambiguous or non-lead categories should not turn on the lead indicator.
+
+Also summarize any unmatched names, ambiguous records, or human-review caveats that should carry into the panel audit. Do not write or run the script yet.
 ```
 
-Then ask the agent to create the panel script and explain the logic before running code:
+Then ask the agent to create the panel script:
 
 ```text
-Create scripts/build_school_year_panel.py, but do not run it yet. Before writing the file, explain the panel-building logic in beginner-friendly language. The script should read data/original/school_directory.csv, data/original/school_lunch_modernization_grant_awards.csv, and data/analysis_ready/cafeteria_partner_role_classifications.csv. It should write data/analysis_ready/school_year_panel.csv and audit_notes/build_school_year_panel_audit.md.
+Create scripts/build_school_year_panel.py, but do not run it yet.
 
-Cover the years included, how school aliases and district name variants will be matched, how ModernizationGrantRecipient and ModernizationGrantAmount will be created, how MealProgramLead will use data/analysis_ready/cafeteria_partner_role_classifications.csv, and how ambiguous or non-lead categories will be excluded from the lead indicator. Use clear, beginner-friendly code and comments. Flag any missing input or risky assumption before writing the script.
+The script should read the panel inputs inspected above and write:
+
+- data/analysis_ready/school_year_panel.csv
+- audit_notes/build_school_year_panel_audit.md
+
+Implement the build contract from the inspection step: years 2019-2024, one school-year row per directory school per year, school aliases and district variants handled through the established-school crosswalk, ModernizationGrantRecipient and ModernizationGrantAmount tied to the award year, grant amount set to zero when no award occurred in that school-year, and MealProgramLead turned on cumulatively after the first confirmed school meal-program lead year.
+
+The lead indicator must exclude ambiguous, district/state office, vendor, nutrition education, advisor/consultant, and other non-lead classifications. The audit note should report row counts, duplicate school-year checks, unmatched award or partner names, excluded ambiguous/non-lead rows, and records that still need human review.
 ```
 
-Ask the agent to build the panel:
+Then run it:
 
 ```text
-Run scripts/build_school_year_panel.py. If it fails, explain the error and which input needs attention before changing code. If it succeeds, tell me which files were created or updated and give a short summary of what the panel contains.
+Run scripts/build_school_year_panel.py.
+
+If the script fails, explain whether the issue is an input problem or a code problem before changing anything. If it succeeds, summarize which files were created or updated and the main counts in the panel.
 ```
 
 Finally inspect the output and audit:
 
 ```text
-Inspect data/analysis_ready/school_year_panel.csv and audit_notes/build_school_year_panel_audit.md. Give me five sanity checks: one row per school-year, expected years 2019-2024, ModernizationGrantAmount is zero-filled when no award occurred, MealProgramLead turns on cumulatively after the first confirmed school lead year, and ambiguous cafeteria partner rows are excluded from the lead indicator. Also list any unmatched names or rows that still need human review.
+Inspect data/analysis_ready/school_year_panel.csv and audit_notes/build_school_year_panel_audit.md. Report these checks:
+
+- expected rows equal the number of unique schools times 6 years
+- no duplicate school_id/year rows
+- years are exactly 2019-2024
+- school_id remains in the panel for later source merges
+- ModernizationGrantRecipient and ModernizationGrantAmount turn on only in the correct award year, with zero grant amount when no award occurred
+- MealProgramLead turns on cumulatively after the first confirmed school meal-program lead year
+- ambiguous and non-lead cafeteria partner categories are excluded from MealProgramLead
+- unmatched names and human-review rows are listed in the audit
+
+Flag any failed check or unresolved research judgment before treating the panel as analysis-ready.
 ```
 
 The panel is analysis-ready but not judgment-free. The audit file is where the agent hands uncertainty back to the human.
 
-## 6. Audit Trails And PI Update
+## 6. Prepare The PI Handoff
 
-Use this prompt:
+The panel exists, but the research task is not finished until the uncertainty is readable. Use the completed panel and audit notes to prepare a short PI-facing handoff: what is ready, what remains uncertain, and what should be reviewed before analysis.
+
+Start by asking the agent to review the evidence:
 
 ```text
-Based on the audit files, draft a short note to the PI explaining what is complete and what needs judgment.
+Read data/analysis_ready/school_year_panel.csv, audit_notes/cafeteria_partner_role_classification_audit.md, and audit_notes/build_school_year_panel_audit.md.
+
+Create final_outputs/school_lunch_panel_review.md.
+
+Summarize:
+
+- panel coverage, years, and unit of observation
+- key variables and how they were constructed
+- unmatched names, ambiguous classifications, and human-review cases
+- what the panel is ready to support
+- what should not be treated as settled yet
+
+Do not run regressions or create new variables.
 ```
 
-## 7. Regression Analysis And Causal Inference
+Then draft the PI update:
 
-Use this module only if there is time after the core panel workflow. The follow-up PI email introduces a new question about the 2022 scoring change, and the teaching point is that agents can move quickly from panel data to regressions while humans still own the research design.
+```text
+Using final_outputs/school_lunch_panel_review.md and the audit notes, draft final_outputs/school_lunch_panel_pi_update.md.
 
-Keep the sequence simple: save the follow-up email, summarize the analysis request, ask for a design plan before code, run the provisional analysis suite, inspect the code and results, then draft a cautious PI update. Stress that the output is exploratory and should not be oversold as causal proof.
+Write it as a concise update to the PI. Include:
+
+- what is complete
+- what files were created
+- what the panel can be used for
+- the most important caveats
+- which cases need PI or human review
+- recommended next analysis steps
+
+Keep the tone practical and PI-facing. Do not overstate what the panel can identify.
+```
+
+## 7. Explore The 2022 Scoring Change
+
+Use this module only if there is time after the core panel workflow. The follow-up PI request asks whether the completed panel shows promising first-pass patterns around the 2022 scoring change and introduces a new aggregate student survey extract with health and wellbeing outcomes. Keep the emphasis on the new source, the merge, whether the expanded panel fits the question, what the analysis actually ran, and what still needs human review.
+
+### 7.1 Save And Summarize The Follow-Up Request
+
+Have participants download the follow-up PI request from the guide and save it in `docs/` beside the original assignment email. Have them download `student_health_wellbeing_survey_extract.csv` and save it in `data/original/`. Then ask the agent to summarize the request before any merge or analysis code appears:
+
+```text
+My PI sent a follow-up request about the 2022 school lunch grant scoring change.
+
+Follow-up request: @docs/pi_followup_2022_scoring_change_email.pdf
+Survey extract: data/original/student_health_wellbeing_survey_extract.csv
+
+Read the saved request as the source of truth and create docs/school_lunch_analysis_handoff_summary.md.
+
+Include:
+
+- what changed since the original assignment
+- the 2022 scoring change described in the request
+- the analysis-ready baseline panel file Codex should use
+- the student survey extract to inspect and merge
+- the first-pass questions the PI wants answered, including meal, health, and wellbeing outcomes after the survey merge
+- expected tables, figure, code, audit note, review memo, and PI update
+- assumptions, caveats, and human-review points
+
+Do not inspect results, merge files, write analysis code, or draft the PI update yet.
+```
+
+### 7.2 Inspect The Survey Extract
+
+Before merging the new source, inspect its unit, keys, coverage, and missingness:
+
+```text
+Inspect data/original/student_health_wellbeing_survey_extract.csv.
+
+Create docs/student_survey_extract_inspection.md summarizing:
+
+- row count and unit of observation
+- school_id and year coverage
+- available aggregate health and wellbeing variables
+- duplicate school_id/year keys
+- missing values
+- whether the file can merge to data/analysis_ready/school_year_panel.csv by school_id and year
+
+Do not merge the file yet.
+```
+
+### 7.3 Merge The Survey Extract
+
+Merge the survey file into the completed baseline panel, preserving the original row universe:
+
+```text
+Using docs/student_survey_extract_inspection.md, merge data/original/student_health_wellbeing_survey_extract.csv into data/analysis_ready/school_year_panel.csv by school_id and year.
+
+Create data/analysis_ready/school_year_panel_with_survey.csv and audit_notes/student_survey_merge_audit.md.
+
+The merge must preserve the original panel row count and school-year universe. The audit should report matched rows, unmatched survey rows, panel rows without survey data, duplicate-key handling, missingness by variable, and any caveats for interpreting aggregate wellbeing or mental-health-related measures.
+```
+
+### 7.4 Check The Expanded Panel Against The Question
+
+Before coding, ask for a short design memo that compares the PI's question with the columns and timing in the completed panel:
+
+```text
+Read docs/school_lunch_analysis_handoff_summary.md, data/analysis_ready/school_year_panel_with_survey.csv, audit_notes/student_survey_merge_audit.md, audit_notes/cafeteria_partner_role_classification_audit.md, and audit_notes/build_school_year_panel_audit.md.
+
+Create docs/school_lunch_analysis_design_memo.md.
+
+The memo should cover:
+
+- the exact follow-up question about the 2022 scoring change
+- the panel unit, years, and variables available after the survey merge
+- which meal, health, and wellbeing outcomes can be checked in a first pass
+- how to mark years before and after the 2022 change
+- which comparisons the panel can support
+- which variables, audit caveats, or assumptions are too weak for strong claims
+- how to interpret mental-health-related referral measures cautiously
+- the summary table, regression checks, plot, audit note, review memo, and PI update to create
+
+Do not write or run analysis code yet.
+```
+
+### 7.5 Write And Run The First-Pass Analysis
+
+Use the design memo to make one readable script and the expected outputs:
+
+```text
+Create and run scripts/run_school_lunch_first_pass_analysis.py using docs/school_lunch_analysis_design_memo.md.
+
+The script should:
+
+- load and validate data/analysis_ready/school_year_panel_with_survey.csv
+- construct a 2022-and-later indicator
+- use only variables available in the panel
+- create a first-pass summary table by period and relevant school groups
+- run simple regression checks for grant receipt, grant amount, lunch participation, healthy-meal score, student health index, student wellbeing score, and mental-health referral rate when those variables are available after the survey merge
+- create a plot showing pre/post patterns around the 2022 scoring change
+- write an audit note that names any dropped rows, missing variables, fragile checks, or interpretation limits
+
+Output files:
+
+- final_outputs/school_lunch_first_pass_summary.csv
+- final_outputs/school_lunch_first_pass_regression_checks.csv
+- final_outputs/school_lunch_2022_change_plot.svg
+- audit_notes/school_lunch_first_pass_analysis_audit.md
+
+Implementation rules:
+
+- Use pandas and standard Python first.
+- Use statsmodels only if it is already available; do not install packages without asking.
+- If a check cannot be estimated cleanly, write that limitation into the audit note instead of hiding it.
+- Treat mental-health referral rate as an exploratory school-level survey measure; higher values could reflect greater need, better detection, or better service access.
+- Keep the code beginner-readable.
+
+After running the script, summarize which outputs were created and the main caveats.
+```
+
+### 7.6 Inspect The Results And Audit
+
+Slow down after the script runs. Ask the agent to inspect the code, tables, figure, and audit before anyone writes the PI update:
+
+```text
+Inspect these files:
+
+- scripts/run_school_lunch_first_pass_analysis.py
+- data/analysis_ready/school_year_panel_with_survey.csv
+- audit_notes/student_survey_merge_audit.md
+- final_outputs/school_lunch_first_pass_summary.csv
+- final_outputs/school_lunch_first_pass_regression_checks.csv
+- final_outputs/school_lunch_2022_change_plot.svg
+- audit_notes/school_lunch_first_pass_analysis_audit.md
+
+Create final_outputs/school_lunch_analysis_review.md.
+
+The review memo should summarize:
+
+- what the script ran
+- what the survey merge added
+- whether the output files match docs/school_lunch_analysis_design_memo.md
+- what the summary table and plot show for meal, health, and wellbeing outcomes
+- what the regression checks suggest
+- which results are fragile, missing, or sensitive to panel limits
+- which wellbeing or mental-health-related measures need especially cautious interpretation
+- which code or data assumptions a human should inspect before sharing the update
+
+Do not draft the PI update yet.
+```
+
+### 7.7 Draft The PI Update
+
+End by turning the inspected outputs into a concise PI-facing note:
+
+```text
+Using docs/school_lunch_analysis_handoff_summary.md, docs/school_lunch_analysis_design_memo.md, final_outputs/school_lunch_analysis_review.md, audit_notes/student_survey_merge_audit.md, and audit_notes/school_lunch_first_pass_analysis_audit.md, draft final_outputs/school_lunch_analysis_pi_update.md.
+
+The update should include:
+
+- what follow-up question the PI asked
+- what the survey merge added to the baseline panel
+- what first-pass analysis Codex ran
+- what the summary table, regression checks, and plot suggest for meal, health, and wellbeing outcomes
+- why the results should be treated as preliminary
+- which assumptions or data limitations matter most
+- what a human researcher should review next
+
+Keep the tone concise and PI-facing. Do not describe the results as proof that the scoring change caused the observed patterns.
+```
 
 ## 8. Extra Resources
 

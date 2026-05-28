@@ -5,7 +5,8 @@ import textwrap
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "docs" / "assets" / "generated" / "pi_followup_causal_inference_email.pdf"
+OUT = ROOT / "docs" / "assets" / "generated" / "pi_followup_2022_scoring_change_email.pdf"
+LEGACY_OUT = ROOT / "docs" / "assets" / "generated" / "pi_followup_causal_inference_email.pdf"
 
 PAGE_WIDTH = 612
 PAGE_HEIGHT = 792
@@ -19,17 +20,17 @@ EMAIL = {
     "to": "STAX Predoc Team <predocs@stax.example>",
     "date": "Thursday, March 14, 2024 at 3:42 PM",
     "subject": "Follow-up on the 2022 school lunch grant scoring change",
+    "attachment": "student_health_wellbeing_survey_extract.csv",
     "paragraphs": [
         "Hi team,",
         "Thanks for putting together the school-year panel and the notes. This is very helpful, and I think it may be enough for a first analysis pass.",
-        "One more thing: I confirmed that the state changed the modernization grant scoring in 2022. After the change, applications tied to scratch-cooking equipment, cold storage, and healthier serving-line infrastructure received a clearer priority. That gives us a real policy break to work with.",
-        "If the change had bite, I would expect to see something like more schools receiving grants, larger grant amounts, or improvements in lunch participation and healthy-meal scores after 2022. It may also matter whether schools had already shown meal-program leadership before the scoring change.",
+        "One more thing: I confirmed that the state changed the modernization grant scoring in 2022. After the change, applications tied to scratch-cooking equipment, cold storage, and healthier serving-line infrastructure appear to have received a clearer priority. That may give us a useful timing change to explore, though I do not want to assume it is a clean policy break without checking the panel.",
+        "I also attached a school-year survey extract with aggregate student health and wellbeing measures. Please merge it carefully before using those variables. If the scoring change mattered in practice, I would expect to see something like more schools receiving grants, larger grant amounts, or improvements in lunch participation, healthy-meal scores, and aggregate student health or wellbeing measures after 2022.",
+        "Please be cautious with the wellbeing and mental-health-related measures. A referral rate could reflect need, detection, service access, or reporting practice, so treat those checks as exploratory survey signals rather than proof of a mental-health effect.",
         "Could you take a first pass at whether the panel shows anything along those lines? Please use your judgment about the exact comparisons. Pre/post patterns, plots, and some regression-style checks would be useful, but I do not want to force one specification too early.",
         "I mostly want to know whether there is anything promising here, what the first-pass estimates look like, and what we would need to check before taking the result seriously.",
         "Thanks,",
         "The Hon. Dr. Sir Jensen Ahokovi, PhD, MA, BA.",
-        "Professor of Accounting, Public Policy, and School Meals",
-        "STAX Lab",
     ],
 }
 
@@ -42,12 +43,20 @@ def text_line(x: float, y: float, text: str, font: str = "F1", size: int = 10) -
     return f"BT /{font} {size} Tf 1 0 0 1 {x:.2f} {y:.2f} Tm ({pdf_escape(text)}) Tj ET"
 
 
-def wrap(text: str, width: int = 92) -> list[str]:
+def wrap(text: str, width: int = 101) -> list[str]:
     return textwrap.wrap(text, width=width, break_long_words=False, break_on_hyphens=False)
 
 
+def page_background() -> list[str]:
+    return [
+        "0.97 0.97 0.95 rg 0 0 612 792 re f",
+        "1 1 1 rg 42 42 528 708 re f",
+        "0.87 0.87 0.84 RG 42 42 528 708 re S",
+    ]
+
+
 def build_page_streams() -> list[str]:
-    pages: list[list[str]] = [[]]
+    pages: list[list[str]] = [page_background()]
     y = TOP
 
     def current() -> list[str]:
@@ -55,20 +64,16 @@ def build_page_streams() -> list[str]:
 
     def new_page() -> None:
         nonlocal y
-        pages.append([])
+        pages.append(page_background())
         y = TOP
-        current().append("0.97 0.97 0.95 rg 0 0 612 792 re f")
 
-    def add(text: str, font: str = "F1", size: int = 10, indent: int = 0, gap: int = 14) -> None:
+    def add(text: str, font: str = "F1", size: int = 9, indent: int = 0, gap: int = 12) -> None:
         nonlocal y
         if y < BOTTOM + 30:
             new_page()
         current().append(text_line(LEFT + indent, y, text, font, size))
         y -= gap
 
-    current().append("0.97 0.97 0.95 rg 0 0 612 792 re f")
-    current().append("1 1 1 rg 42 42 528 708 re f")
-    current().append("0.87 0.87 0.84 RG 42 42 528 708 re S")
     current().append("0.49 0.19 0.25 rg")
     add("STAX Lab Follow-Up Email", "F2", 11, gap=20)
     current().append("0.09 0.13 0.17 rg")
@@ -78,13 +83,14 @@ def build_page_streams() -> list[str]:
         ("From", EMAIL["from"]),
         ("To", EMAIL["to"]),
         ("Date", EMAIL["date"]),
+        ("Attach", EMAIL["attachment"]),
     ]
     for label, value in meta_rows:
         current().append("0.39 0.44 0.49 rg")
         current().append(text_line(LEFT, y, f"{label}:", "F2", 9))
         current().append("0.09 0.13 0.17 rg")
-        current().append(text_line(LEFT + 52, y, value, "F1", 10))
-        y -= 15
+        current().append(text_line(LEFT + 52, y, value, "F1", 9))
+        y -= 14
 
     y -= 8
     current().append("0.87 0.87 0.84 RG 54 %.2f m 558 %.2f l S" % (y, y))
@@ -92,8 +98,8 @@ def build_page_streams() -> list[str]:
 
     for paragraph in EMAIL["paragraphs"]:
         for line in wrap(paragraph):
-            add(line, "F1", 10, gap=14)
-        y -= 9
+            add(line, "F1", 9, gap=12)
+        y -= 6
 
     return ["\n".join(page) for page in pages]
 
@@ -140,8 +146,11 @@ def build_pdf(page_streams: list[str]) -> bytes:
 
 def main() -> None:
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_bytes(build_pdf(build_page_streams()))
+    pdf = build_pdf(build_page_streams())
+    OUT.write_bytes(pdf)
+    LEGACY_OUT.write_bytes(pdf)
     print(OUT)
+    print(LEGACY_OUT)
 
 
 if __name__ == "__main__":

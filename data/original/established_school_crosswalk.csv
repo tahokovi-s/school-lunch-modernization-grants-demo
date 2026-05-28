@@ -1,0 +1,233 @@
+school_id,canonical_school_name,district_name,raw_school_name,raw_school_name_normalized,name_source,source_file,source_column,match_rule
+S001,Maple Grove Elementary,Riverton USD,Maple Grove Elementary,maple grove elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S001,Maple Grove Elementary,Riverton USD,Maple Grove Elementary,maple grove elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S001,Maple Grove Elementary,Riverton USD,Maple Grove Elem.,maple grove elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S001,Maple Grove Elementary,Riverton USD,Maple Grove Elem.,maple grove elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S002,Rivera Middle School,Riverton USD,Rivera Middle School,rivera middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S002,Rivera Middle School,Riverton USD,Rivera Middle School,rivera middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S002,Rivera Middle School,Riverton USD,Rivera MS,rivera middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S002,Rivera Middle School,Riverton USD,Rivera MS,rivera middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S003,Cedar Valley High,Cedar Valley SD,Cedar Valley High,cedar valley high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S003,Cedar Valley High,Cedar Valley SD,Cedar Valley HS,cedar valley high,directory_alias,school_directory.csv,name_variants,directory_alias
+S003,Cedar Valley High,Cedar Valley SD,Cedar Vly High,cedar valley high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S004,Juniper Ridge Elementary,Cedar Valley SD,Juniper Ridge Elementary,juniper ridge elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S004,Juniper Ridge Elementary,Cedar Valley SD,Juniper Ridge Elementary,juniper ridge elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S004,Juniper Ridge Elementary,Cedar Valley SD,Juniper Ridge Elem.,juniper ridge elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S004,Juniper Ridge Elementary,Cedar Valley SD,Juniper Ridge ES,juniper ridge elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S005,Harborview K-8,Bay City Schools,Harborview K-8,harborview k 8,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S005,Harborview K-8,Bay City Schools,Harborview K-8,harborview k 8,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S005,Harborview K-8,Bay City Schools,Harbor View K8,harbor view k 8,directory_alias,school_directory.csv,name_variants,directory_alias
+S005,Harborview K-8,Bay City Schools,Harborview School,harborview,directory_alias,school_directory.csv,name_variants,directory_alias
+S005,Harborview K-8,Bay City Schools,Harbor View K8,harbor view k 8,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S005,Harborview K-8,Bay City Schools,Harborview School,harborview,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S006,Lincoln High School,Bay City Schools,Lincoln High School,lincoln high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S006,Lincoln High School,Bay City Schools,Lincoln High School,lincoln high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S006,Lincoln High School,Bay City Schools,Lincoln HS,lincoln high,directory_alias,school_directory.csv,name_variants,directory_alias
+S006,Lincoln High School,Bay City Schools,Lincoln HS,lincoln high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S007,Sunrise STEM Academy,North Valley Public,Sunrise STEM Academy,sunrise stem academy,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S007,Sunrise STEM Academy,North Valley Public,Sunrise STEM Academy,sunrise stem academy,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S007,Sunrise STEM Academy,North Valley Public,Sunrise Academy,sunrise academy,directory_alias,school_directory.csv,name_variants,directory_alias
+S007,Sunrise STEM Academy,North Valley Public,Sunrise STEM,sunrise stem,directory_alias,school_directory.csv,name_variants,directory_alias
+S007,Sunrise STEM Academy,North Valley Public,Sunrise Academy,sunrise academy,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S008,North Creek Middle,North Valley Public,North Creek Middle,north creek middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S008,North Creek Middle,North Valley Public,North Creek MS,north creek middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S008,North Creek Middle,North Valley Public,North Creek MS,north creek middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S009,Rosa Parks Elementary,Metro Unified,Rosa Parks Elementary,rosa parks elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S009,Rosa Parks Elementary,Metro Unified,Rosa Parks Elementary,rosa parks elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S009,Rosa Parks Elementary,Metro Unified,Rosa Parks Elem.,rosa parks elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S009,Rosa Parks Elementary,Metro Unified,Rosa Parks Elem.,rosa parks elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S010,Orchard Hill School,Metro Unified,Orchard Hill School,orchard hill,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S010,Orchard Hill School,Metro Unified,Orchard Hill School,orchard hill,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S010,Orchard Hill School,Metro Unified,Orchard Hill,orchard hill,directory_alias,school_directory.csv,name_variants,directory_alias
+S010,Orchard Hill School,Metro Unified,Orchard Hill Elem.,orchard hill elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S010,Orchard Hill School,Metro Unified,Orchard Hill,orchard hill,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S011,Prairie View High,Prairie County,Prairie View High,prairie view high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S011,Prairie View High,Prairie County,Prairie View High,prairie view high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S011,Prairie View High,Prairie County,Prairie View HS,prairie view high,directory_alias,school_directory.csv,name_variants,directory_alias
+S011,Prairie View High,Prairie County,Prairie Vw High,prairie view high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S012,Lakefront Elementary,Prairie County,Lakefront Elementary,lakefront elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S012,Lakefront Elementary,Prairie County,Lake Front ES,lake front elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S012,Lakefront Elementary,Prairie County,Lakefront Elem.,lakefront elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S012,Lakefront Elementary,Prairie County,Lake Front ES,lake front elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S013,Mission Trails Middle,Mission USD,Mission Trails Middle,mission trails middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S013,Mission Trails Middle,Mission USD,Mission Trails Middle,mission trails middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S013,Mission Trails Middle,Mission USD,Mission Trails MS,mission trails middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S013,Mission Trails Middle,Mission USD,Mission Trails MS,mission trails middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S014,Eastside Community School,Mission USD,Eastside Community School,eastside community,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S014,Eastside Community School,Mission USD,Eastside Community School,eastside community,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S014,Eastside Community School,Mission USD,East Side School,east side,directory_alias,school_directory.csv,name_variants,directory_alias
+S014,Eastside Community School,Mission USD,Eastside Community,eastside community,directory_alias,school_directory.csv,name_variants,directory_alias
+S014,Eastside Community School,Mission USD,East Side School,east side,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S015,Willow Bend Elementary,Oak River Schools,Willow Bend Elementary,willow bend elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S015,Willow Bend Elementary,Oak River Schools,Willow Bend Elementary,willow bend elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S015,Willow Bend Elementary,Oak River Schools,Willow Bend Elem.,willow bend elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S015,Willow Bend Elementary,Oak River Schools,Willow Bend Elem.,willow bend elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S016,Granite Peak High,Oak River Schools,Granite Peak High,granite peak high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S016,Granite Peak High,Oak River Schools,Granite Peak High,granite peak high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S016,Granite Peak High,Oak River Schools,Granite Peak HS,granite peak high,directory_alias,school_directory.csv,name_variants,directory_alias
+S016,Granite Peak High,Oak River Schools,Granite Peak HS,granite peak high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S017,Bay Meadow Middle,Coastal Unified,Bay Meadow Middle,bay meadow middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S017,Bay Meadow Middle,Coastal Unified,Bay Meadow Middle,bay meadow middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S017,Bay Meadow Middle,Coastal Unified,Bay Meadow MS,bay meadow middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S017,Bay Meadow Middle,Coastal Unified,Bay Meadow Mid.,bay meadow middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S018,Chavez Arts Academy,Coastal Unified,Chavez Arts Academy,chavez arts academy,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S018,Chavez Arts Academy,Coastal Unified,Cesar Chavez Arts,cesar chavez arts,directory_alias,school_directory.csv,name_variants,directory_alias
+S018,Chavez Arts Academy,Coastal Unified,Chavez Academy,chavez academy,directory_alias,school_directory.csv,name_variants,directory_alias
+S018,Chavez Arts Academy,Coastal Unified,Chavez Academy,chavez academy,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S019,South Fork Elementary,South Fork SD,South Fork Elementary,south fork elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S019,South Fork Elementary,South Fork SD,South Fork Elementary,south fork elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S019,South Fork Elementary,South Fork SD,South Fork Elem.,south fork elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S019,South Fork Elementary,South Fork SD,South Fork ES,south fork elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S020,New Horizons High,South Fork SD,New Horizons High,new horizons high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S020,New Horizons High,South Fork SD,New Horizons High,new horizons high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S020,New Horizons High,South Fork SD,New Horizon High,new horizon high,directory_alias,school_directory.csv,name_variants,directory_alias
+S020,New Horizons High,South Fork SD,New Horizons HS,new horizons high,directory_alias,school_directory.csv,name_variants,directory_alias
+S020,New Horizons High,South Fork SD,New Horizons HS,new horizons high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S021,Aspen Ridge Elementary,Evergreen USD,Aspen Ridge Elementary,aspen ridge elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S021,Aspen Ridge Elementary,Evergreen USD,Aspen Ridge Elementary,aspen ridge elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S021,Aspen Ridge Elementary,Evergreen USD,Aspen Ridge Elem.,aspen ridge elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S021,Aspen Ridge Elementary,Evergreen USD,Aspen Ridge Elem.,aspen ridge elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S022,Brookside Middle School,Evergreen USD,Brookside Middle School,brookside middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S022,Brookside Middle School,Evergreen USD,Brookside Middle School,brookside middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S022,Brookside Middle School,Evergreen USD,Brookside MS,brookside middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S022,Brookside Middle School,Evergreen USD,Brookside Middle School,brookside middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S023,Canyon View High,Mesa County Schools,Canyon View High,canyon view high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S023,Canyon View High,Mesa County Schools,Canyon View High,canyon view high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S023,Canyon View High,Mesa County Schools,Canyon View HS,canyon view high,directory_alias,school_directory.csv,name_variants,directory_alias
+S023,Canyon View High,Mesa County Schools,Canyon View HS,canyon view high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S024,Desert Springs K-8,Mesa County Schools,Desert Springs K-8,desert springs k 8,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S024,Desert Springs K-8,Mesa County Schools,Desert Springs K-8,desert springs k 8,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S024,Desert Springs K-8,Mesa County Schools,Desert Springs K8,desert springs k 8,directory_alias,school_directory.csv,name_variants,directory_alias
+S024,Desert Springs K-8,Mesa County Schools,Desert Springs School,desert springs,directory_alias,school_directory.csv,name_variants,directory_alias
+S024,Desert Springs K-8,Mesa County Schools,Desert Springs K-8,desert springs k 8,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S025,Oak Terrace Elementary,Lakeside Unified,Oak Terrace Elementary,oak terrace elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S025,Oak Terrace Elementary,Lakeside Unified,Oak Terrace Elem.,oak terrace elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S026,Silver Lake Middle,Lakeside Unified,Silver Lake Middle,silver lake middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S026,Silver Lake Middle,Lakeside Unified,Silver Lake Middle,silver lake middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S026,Silver Lake Middle,Lakeside Unified,Silver Lake MS,silver lake middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S026,Silver Lake Middle,Lakeside Unified,Silver Lake Middle,silver lake middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S027,Washington Prep High,Capital City Schools,Washington Prep High,washington prep high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S027,Washington Prep High,Capital City Schools,Washington Prep High,washington prep high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S027,Washington Prep High,Capital City Schools,Washington Prep HS,washington prep high,directory_alias,school_directory.csv,name_variants,directory_alias
+S027,Washington Prep High,Capital City Schools,Washington Prep HS,washington prep high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S028,Franklin Elementary,Capital City Schools,Franklin Elementary,franklin elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S028,Franklin Elementary,Capital City Schools,Franklin Elementary,franklin elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S028,Franklin Elementary,Capital City Schools,Franklin Elem.,franklin elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S028,Franklin Elementary,Capital City Schools,Franklin Elementary,franklin elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S029,Mountain View K-8,Foothill Public,Mountain View K-8,mountain view k 8,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S029,Mountain View K-8,Foothill Public,Mountain View K-8,mountain view k 8,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S029,Mountain View K-8,Foothill Public,Mountain View K8,mountain view k 8,directory_alias,school_directory.csv,name_variants,directory_alias
+S029,Mountain View K-8,Foothill Public,Mountain View School,mountain view,directory_alias,school_directory.csv,name_variants,directory_alias
+S029,Mountain View K-8,Foothill Public,Mountain View K8,mountain view k 8,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S030,Pioneer High School,Foothill Public,Pioneer High School,pioneer high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S030,Pioneer High School,Foothill Public,Pioneer HS,pioneer high,directory_alias,school_directory.csv,name_variants,directory_alias
+S030,Pioneer High School,Foothill Public,Pioneer High School,pioneer high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S031,Meadowbrook Elementary,Riverbend Unified,Meadowbrook Elementary,meadowbrook elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S031,Meadowbrook Elementary,Riverbend Unified,Meadowbrook Elementary,meadowbrook elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S031,Meadowbrook Elementary,Riverbend Unified,Meadowbrook Elem.,meadowbrook elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S032,Riverside Arts Middle,Riverbend Unified,Riverside Arts Middle,riverside arts middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S032,Riverside Arts Middle,Riverbend Unified,Riverside Arts Middle,riverside arts middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S032,Riverside Arts Middle,Riverbend Unified,Riverside Arts MS,riverside arts middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S032,Riverside Arts Middle,Riverbend Unified,Riverside Arts Middle,riverside arts middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S033,Sequoia High,Redwoods Joint USD,Sequoia High,sequoia high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S033,Sequoia High,Redwoods Joint USD,Sequoia High,sequoia high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S033,Sequoia High,Redwoods Joint USD,Sequoia HS,sequoia high,directory_alias,school_directory.csv,name_variants,directory_alias
+S034,Pinecrest Elementary,Redwoods Joint USD,Pinecrest Elementary,pinecrest elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S034,Pinecrest Elementary,Redwoods Joint USD,Pinecrest Elementary,pinecrest elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S034,Pinecrest Elementary,Redwoods Joint USD,Pinecrest Elem.,pinecrest elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S034,Pinecrest Elementary,Redwoods Joint USD,Pinecrest Elementary,pinecrest elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S035,Adams Community School,Valley Metro Schools,Adams Community School,adams community,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S035,Adams Community School,Valley Metro Schools,Adams Community School,adams community,directory_alias,school_directory.csv,name_variants,directory_alias
+S035,Adams Community School,Valley Metro Schools,Adams Community School,adams community,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S036,Jefferson STEM High,Valley Metro Schools,Jefferson STEM High,jefferson stem high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S036,Jefferson STEM High,Valley Metro Schools,Jefferson STEM High,jefferson stem high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S036,Jefferson STEM High,Valley Metro Schools,Jefferson STEM HS,jefferson stem high,directory_alias,school_directory.csv,name_variants,directory_alias
+S036,Jefferson STEM High,Valley Metro Schools,Jefferson STEM High,jefferson stem high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S037,Blue Harbor Elementary,Harbor Unified,Blue Harbor Elementary,blue harbor elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S037,Blue Harbor Elementary,Harbor Unified,Blue Harbor Elementary,blue harbor elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S037,Blue Harbor Elementary,Harbor Unified,Blue Harbor Elem.,blue harbor elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S038,Marina Middle School,Harbor Unified,Marina Middle School,marina middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S038,Marina Middle School,Harbor Unified,Marina Middle School,marina middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S038,Marina Middle School,Harbor Unified,Marina MS,marina middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S038,Marina Middle School,Harbor Unified,Marina Middle School,marina middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S039,Hilltop Elementary,Summit Ridge SD,Hilltop Elementary,hilltop elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S039,Hilltop Elementary,Summit Ridge SD,Hilltop Elementary,hilltop elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S039,Hilltop Elementary,Summit Ridge SD,Hilltop Elem.,hilltop elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S039,Hilltop Elementary,Summit Ridge SD,Hilltop Elem.,hilltop elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S040,Summit Ridge High,Summit Ridge SD,Summit Ridge High,summit ridge high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S040,Summit Ridge High,Summit Ridge SD,Summit Ridge HS,summit ridge high,directory_alias,school_directory.csv,name_variants,directory_alias
+S041,Cottonwood K-8,Desert Valley Public,Cottonwood K-8,cottonwood k 8,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S041,Cottonwood K-8,Desert Valley Public,Cottonwood K-8,cottonwood k 8,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S041,Cottonwood K-8,Desert Valley Public,Cottonwood K8,cottonwood k 8,directory_alias,school_directory.csv,name_variants,directory_alias
+S041,Cottonwood K-8,Desert Valley Public,Cottonwood School,cottonwood,directory_alias,school_directory.csv,name_variants,directory_alias
+S041,Cottonwood K-8,Desert Valley Public,Cottonwood K8,cottonwood k 8,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S041,Cottonwood K-8,Desert Valley Public,Cottonwood School,cottonwood,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S042,Mesa Verde Middle,Desert Valley Public,Mesa Verde Middle,mesa verde middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S042,Mesa Verde Middle,Desert Valley Public,Mesa Verde Middle,mesa verde middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S042,Mesa Verde Middle,Desert Valley Public,Mesa Verde MS,mesa verde middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S042,Mesa Verde Middle,Desert Valley Public,Mesa Verde Middle,mesa verde middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S043,Hamilton Elementary,Central Plains USD,Hamilton Elementary,hamilton elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S043,Hamilton Elementary,Central Plains USD,Hamilton Elementary,hamilton elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S043,Hamilton Elementary,Central Plains USD,Hamilton Elem.,hamilton elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S044,Roosevelt High School,Central Plains USD,Roosevelt High School,roosevelt high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S044,Roosevelt High School,Central Plains USD,Roosevelt High School,roosevelt high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S044,Roosevelt High School,Central Plains USD,Roosevelt HS,roosevelt high,directory_alias,school_directory.csv,name_variants,directory_alias
+S044,Roosevelt High School,Central Plains USD,Roosevelt High School,roosevelt high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S045,Lakeshore Elementary,North Shore Schools,Lakeshore Elementary,lakeshore elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S045,Lakeshore Elementary,North Shore Schools,Lakeshore Elem.,lakeshore elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S046,North Shore Middle,North Shore Schools,North Shore Middle,north shore middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S046,North Shore Middle,North Shore Schools,North Shore Middle,north shore middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S046,North Shore Middle,North Shore Schools,North Shore MS,north shore middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S046,North Shore Middle,North Shore Schools,North Shore Middle,north shore middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S047,Camino Real Academy,Camino USD,Camino Real Academy,camino real academy,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S047,Camino Real Academy,Camino USD,Camino Real Academy,camino real academy,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S047,Camino Real Academy,Camino USD,Camino Real Academy,camino real academy,directory_alias,school_directory.csv,name_variants,directory_alias
+S047,Camino Real Academy,Camino USD,Camino Real School,camino real,directory_alias,school_directory.csv,name_variants,directory_alias
+S048,Esperanza High School,Camino USD,Esperanza High School,esperanza high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S048,Esperanza High School,Camino USD,Esperanza High School,esperanza high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S048,Esperanza High School,Camino USD,Esperanza HS,esperanza high,directory_alias,school_directory.csv,name_variants,directory_alias
+S048,Esperanza High School,Camino USD,Esperanza High School,esperanza high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S049,Sycamore Elementary,Westfield Public,Sycamore Elementary,sycamore elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S049,Sycamore Elementary,Westfield Public,Sycamore Elementary,sycamore elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S049,Sycamore Elementary,Westfield Public,Sycamore Elem.,sycamore elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S050,Westfield Middle,Westfield Public,Westfield Middle,westfield middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S050,Westfield Middle,Westfield Public,Westfield MS,westfield middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S050,Westfield Middle,Westfield Public,Westfield Middle,westfield middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S051,Golden Gate Elementary,Metro Bay Unified,Golden Gate Elementary,golden gate elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S051,Golden Gate Elementary,Metro Bay Unified,Golden Gate Elementary,golden gate elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S051,Golden Gate Elementary,Metro Bay Unified,Golden Gate Elem.,golden gate elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S051,Golden Gate Elementary,Metro Bay Unified,Golden Gate Elem.,golden gate elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S052,Mission Bay High,Metro Bay Unified,Mission Bay High,mission bay high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S052,Mission Bay High,Metro Bay Unified,Mission Bay High,mission bay high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S052,Mission Bay High,Metro Bay Unified,Mission Bay HS,mission bay high,directory_alias,school_directory.csv,name_variants,directory_alias
+S052,Mission Bay High,Metro Bay Unified,Mission Bay High,mission bay high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S053,Valley Oak K-8,Valley Oak SD,Valley Oak K-8,valley oak k 8,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S053,Valley Oak K-8,Valley Oak SD,Valley Oak K-8,valley oak k 8,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S053,Valley Oak K-8,Valley Oak SD,Valley Oak K8,valley oak k 8,directory_alias,school_directory.csv,name_variants,directory_alias
+S053,Valley Oak K-8,Valley Oak SD,Valley Oak School,valley oak,directory_alias,school_directory.csv,name_variants,directory_alias
+S053,Valley Oak K-8,Valley Oak SD,Valley Oak K8,valley oak k 8,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S054,Oak Meadow High,Valley Oak SD,Oak Meadow High,oak meadow high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S054,Oak Meadow High,Valley Oak SD,Oak Meadow High,oak meadow high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S054,Oak Meadow High,Valley Oak SD,Oak Meadow HS,oak meadow high,directory_alias,school_directory.csv,name_variants,directory_alias
+S054,Oak Meadow High,Valley Oak SD,Oak Meadow High,oak meadow high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S055,Hawthorne Elementary,East River Schools,Hawthorne Elementary,hawthorne elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S055,Hawthorne Elementary,East River Schools,Hawthorne Elem.,hawthorne elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S056,East River Middle,East River Schools,East River Middle,east river middle,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S056,East River Middle,East River Schools,East River Middle,east river middle,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S056,East River Middle,East River Schools,East River MS,east river middle,directory_alias,school_directory.csv,name_variants,directory_alias
+S056,East River Middle,East River Schools,East River Middle,east river middle,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S057,Cabrillo Science Academy,South Coast Unified,Cabrillo Science Academy,cabrillo science academy,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S057,Cabrillo Science Academy,South Coast Unified,Cabrillo Science Academy,cabrillo science academy,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S057,Cabrillo Science Academy,South Coast Unified,Cabrillo Science Academy,cabrillo science academy,directory_alias,school_directory.csv,name_variants,directory_alias
+S057,Cabrillo Science Academy,South Coast Unified,Cabrillo Science School,cabrillo science,directory_alias,school_directory.csv,name_variants,directory_alias
+S057,Cabrillo Science Academy,South Coast Unified,Cabrillo Science Academy,cabrillo science academy,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S058,Pacific View High,South Coast Unified,Pacific View High,pacific view high,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S058,Pacific View High,South Coast Unified,Pacific View High,pacific view high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S058,Pacific View High,South Coast Unified,Pacific View HS,pacific view high,directory_alias,school_directory.csv,name_variants,directory_alias
+S058,Pacific View High,South Coast Unified,Pacific View High,pacific view high,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S059,Liberty Elementary,High Desert USD,Liberty Elementary,liberty elementary,cafeteria_partner_organization_name,cafeteria_partner_role_records.csv,organization_name,curated_observed_name
+S059,Liberty Elementary,High Desert USD,Liberty Elementary,liberty elementary,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S059,Liberty Elementary,High Desert USD,Liberty Elem.,liberty elementary,directory_alias,school_directory.csv,name_variants,directory_alias
+S059,Liberty Elementary,High Desert USD,Liberty Elem.,liberty elementary,grant_award_name,school_lunch_modernization_grant_awards.csv,school_name,curated_observed_name
+S060,High Desert High,High Desert USD,High Desert High,high desert high,canonical_directory_name,school_directory.csv,school_name,exact_canonical
+S060,High Desert High,High Desert USD,High Desert HS,high desert high,directory_alias,school_directory.csv,name_variants,directory_alias

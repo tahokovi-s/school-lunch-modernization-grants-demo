@@ -16,7 +16,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 4334 >>
+<< /Length 4180 >>
 stream
 0.97 0.97 0.95 rg 0 0 612 792 re f
 1 1 1 rg 42 42 528 708 re f
@@ -51,8 +51,8 @@ BT /F1 9 Tf 1 0 0 1 54.00 538.00 Tm (intuition is that better kitchens, cooler s
 BT /F1 9 Tf 1 0 0 1 54.00 526.00 Tm (in meal participation or healthier menu measures, but I do not know what the raw files will support.) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 508.00 Tm (I attached the raw materials I have so far. They are not cleaned or documented beyond what is in the) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 496.00 Tm (files, so please treat this as exploratory. I expect school and district names, grant records,) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 484.00 Tm (equipment descriptions, and cafeteria partner role labels to be messy, and some judgment will be) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 472.00 Tm (needed before we can say anything confidently.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 484.00 Tm (equipment descriptions, cafeteria partner role labels, and school-name crosswalks to need some) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 472.00 Tm (judgment before we can say anything confidently.) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 454.00 Tm (Could you take a first pass and see whether it is possible to turn this into a school-year file for) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 442.00 Tm (2019-2024? I would like something that shows, for each school and year, whether the school received a) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 430.00 Tm (modernization grant, roughly how much it received, what its lunch participation and healthy-meal) Tj ET
@@ -67,8 +67,6 @@ BT /F1 9 Tf 1 0 0 1 54.00 322.00 Tm (treating it as a school lead. A conservativ
 BT /F1 9 Tf 1 0 0 1 54.00 310.00 Tm (a polished file that hides the hard calls.) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 292.00 Tm (Thanks,) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 274.00 Tm (The Hon. Dr. Sir Jensen Ahokovi, PhD, MA, BA.) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 256.00 Tm (Professor of Accounting, Public Policy, and School Meals) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 238.00 Tm (STAX Lab) Tj ET
 endstream
 endobj
 xref
@@ -83,5 +81,5 @@ xref
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-4788
+4634
 %%EOF

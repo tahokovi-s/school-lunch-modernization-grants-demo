@@ -1017,43 +1017,6 @@ code {
   line-height: 1.5;
 }
 
-.recap-item {
-  display: grid;
-  gap: 7px;
-  max-width: 780px;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-}
-
-.recap-item:first-of-type {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.recap-step {
-  color: var(--teal);
-  font-size: 0.76rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.recap-item h4 {
-  margin: 0;
-  color: #18212b;
-  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
-  line-height: 1.2;
-}
-
-.recap-item p {
-  margin: 0;
-  color: #334252;
-  line-height: 1.48;
-}
-
-.recap-item strong {
-  color: #263848;
-}
-
 .sequence-note {
   max-width: 720px;
   margin: 12px 0 0;

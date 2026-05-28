@@ -8,6 +8,7 @@ Build a school-year panel for 2019-2024. The panel should identify which schools
 
 - `data/original/school_lunch_modernization_raw_data.zip`: raw-data ZIP attachment from the PI email.
 - `data/original/school_directory.csv`: extracted CSV with canonical school names, aliases, districts, grade spans, enrollment, and yearly meal outcomes.
+- `data/original/established_school_crosswalk.csv`: extracted CSV mapping observed school names and aliases to canonical school IDs.
 - `data/original/school_lunch_modernization_grant_awards.csv`: extracted CSV with grant awards by raw school name, award year, project description, and amount.
 - `data/original/cafeteria_partner_role_records.csv`: extracted CSV with organization-level cafeteria partner records, role descriptions, and notes.
 
@@ -19,6 +20,7 @@ The expected analysis-ready file is:
 
 Required columns:
 
+- `school_id`
 - `school_name`
 - `year`
 - `district_name`
@@ -39,7 +41,7 @@ Required columns:
 4. Draft a conservative classification rubric for cafeteria partner roles.
 5. Use subagent reviewer roles to classify cafeteria partner records.
 6. Reconcile reviewer disagreements conservatively and quarantine ambiguous partner roles instead of forcing them into school lead status.
-7. Match grant awards and meal-program lead records to the school directory using canonical names and aliases.
+7. Match grant awards and meal-program lead records to canonical school IDs using the established-school crosswalk.
 8. Build one row per school-year from 2019 through 2024.
 9. Write audit files that summarize counts, matching problems, ambiguous rows, reviewer disagreements, and assumptions.
 
@@ -49,4 +51,4 @@ Required columns:
 - District offices, equipment vendors, meal vendors, produce suppliers, education nonprofits, advisors, and consultants should not be counted as school meal-program leads.
 - Alias matching is acceptable for the demo but would need stronger validation before scaling.
 - The meal-program lead indicator is cumulative through the panel year.
-- Real meal-claim files, procurement records, state grant extracts, and student outcome data would require data-use review and documented merge rules.
+- Real meal-claim files, procurement records, state grant extracts, school crosswalks, and student outcome data would require data-use review and documented merge rules.
