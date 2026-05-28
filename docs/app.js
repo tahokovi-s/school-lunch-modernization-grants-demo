@@ -4,8 +4,10 @@ const modules = [
     title: "Before Thursday: Setup Checklist",
     step: "Confirm the apps before Thursday",
     tag: "Setup",
+    plainIntro: true,
     body: [
-      "Use this setup pass to make sure you have both Claude Code and Codex installed, signed in, and ready. During Thursday's workshop, you will work in Codex."
+      "Please use this checklist before Thursday to confirm that Codex, Claude Code, and Python are ready.",
+      "Do not create the workshop project folder yet; we will create it together during the session, then use Codex for the live research workflow."
     ],
     substepTitle: "Before Thursday Checklist",
     checkableSubsteps: true,
@@ -780,7 +782,6 @@ const modules = [
 ];
 
 const moduleNarrativeCopy = {
-  setup: "Think of this first module as clearing the runway. The workshop will move through files, data, scripts, and browser downloads quickly, so your calmest path is to make sure the tools can already open, sign in, and run a tiny check before the live research workflow begins.",
   context: "Move slowly here before creating files. You are learning how to brief and supervise a coding agent: give it source-of-truth context, ask for a plan, review the assumptions, verify the output, and preserve judgment calls in an audit trail.",
   handoff: "Use this as the intake pass. By the end, the source email, raw ZIP, handoff summary, and project memory files should be in the project root, and Module 4 can begin raw-data inspection.",
   "raw-data": "Turn curiosity into evidence before classifying or building anything. Ask the agent to open the raw files, describe what is there, and surface the messy school names and role labels that could otherwise become invisible mistakes.",
