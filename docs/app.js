@@ -268,18 +268,6 @@ const modules = [
       "At this point, the PI email, raw-data ZIP, and project memory are saved in the project. Now open the ZIP and make the raw evidence legible before asking anyone to classify rows.",
       "This pass leaves behind three things: preliminary notes on the raw files, a conservative cafeteria-partner rubric, and a review plan for row-level classification. It does not create cleaned data, row-level classifications, code, or the school-year panel."
     ],
-    contextTitle: "Artifacts From This Pass",
-    contextBlocks: [
-      {
-        type: "miniTable",
-        columns: ["Artifact", "Purpose", "What to check"],
-        rows: [
-          ["docs/raw_data_preliminary_pass.md", "Raw-file inspection notes.", "CSV files, row counts, likely keys, aliases, and messy role labels."],
-          ["docs/cafeteria_partner_classification_rubric.md", "Decision rules for cafeteria partner roles.", "Allowed categories, concrete examples, and ambiguity triggers."],
-          ["docs/cafeteria_partner_subagent_review_plan.md", "Handoff for the role-classification review passes.", "Evidence rules, disagreement handling, and row-count accounting."]
-        ]
-      }
-    ],
     substepTitle: "Module 4 Steps",
     substeps: [
       {
