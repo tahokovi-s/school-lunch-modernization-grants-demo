@@ -56,7 +56,7 @@ If pandas is already available, the two script commands are enough.
 
 Participants do not need to type these commands during the workshop. The live session is run from the Codex and Claude Code apps. In the main teaching flow, Module 4 asks Codex or Claude Code to use reviewer-style classification passes and create `data/analysis_ready/cafeteria_partner_role_classifications.csv` plus an audit note; the Python classifier remains only as an instructor fallback or code-only reproducibility check.
 
-The Codex app showcase moments are built into the workflow: Codex runs the first Python check and reports the terminal result, uses `@` file references for saved PDFs, optionally uses subagents or delegated reviewer passes for judgment-heavy classification, runs verification checks against generated CSVs, installs the required visualization libraries for Module 8, previews SVG plots as chat artifacts and in the in-app browser, and supports element-level plot revision prompts.
+The Codex app showcase moments are built into the workflow: Codex runs the first Python check and reports the terminal result, uses `@` file references for saved PDFs, optionally uses subagents or delegated reviewer passes for judgment-heavy classification, runs verification checks against generated CSVs, installs the required visualization libraries for Module 8, previews SVG plots as chat artifacts and in the in-app browser, and supports element-level plot review.
 
 ## Files To Inspect Live
 
@@ -87,7 +87,7 @@ The Codex app showcase moments are built into the workflow: Codex runs the first
 - `scripts/create_school_lunch_visualization_gallery.py`: reusable plotting script for the visualization gallery.
 - `final_outputs/visualization_gallery/`: grant timing, meal outcomes, survey outcomes, and causal-estimate SVG visualization drafts plus gallery notes.
 - `final_outputs/visualization_gallery/index.html`: participant-created local HTML review page that displays the generated SVGs together for in-app browser inspection.
-- `audit_notes/school_lunch_visualization_gallery_audit.md` and `audit_notes/school_lunch_visualization_review_notes.md`: visual generation audit plus annotated review and revision notes.
+- `audit_notes/school_lunch_visualization_gallery_audit.md`: visual generation audit with package setup, input files, output files, fallbacks, design choices, and interpretation caveats.
 
 ## Expected Workshop Flow
 
@@ -103,7 +103,7 @@ The Codex app showcase moments are built into the workflow: Codex runs the first
 10. Build the baseline school-year panel after restating the build rules in chat, encoding them in `scripts/build_school_year_panel.py`, and preserving the checks and caveats in `audit_notes/build_school_year_panel_audit.md`; then inspect `data/analysis_ready/school_year_panel.csv` and the audit.
 11. Review the panel and audit notes, create `final_outputs/school_lunch_panel_review.md`, and draft `final_outputs/school_lunch_panel_pi_update.md` for the PI.
 12. If time allows, use `Causal Design And Econometric Spec Lab` to save the follow-up request and survey extract, merge the survey outcomes into the baseline panel, have Codex propose candidate econometric designs in chat, run the causal spec runner, preview the event-study SVG, and review one concise PI-facing results brief.
-13. Use `Create Publication-Style Visualizations` to ask Codex to install the required visualization packages and generate grant timing, meal outcomes, survey outcomes, and causal-estimate SVG drafts based on the causal spec lab outputs, then ask Codex to build a simple local HTML viewer for those plots, review specific plot elements in the Codex app, and revise the plots live from those annotations.
+13. Use `Create Publication-Style Visualizations` to ask Codex to install the required visualization packages and generate grant timing, meal outcomes, survey outcomes, and causal-estimate SVG drafts based on the causal spec lab outputs, then ask Codex to build a simple local HTML viewer for those plots and review specific plot elements live in the Codex app.
 
 ## Useful Current References
 

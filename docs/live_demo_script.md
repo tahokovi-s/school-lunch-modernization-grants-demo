@@ -426,7 +426,7 @@ Do not create separate review, audit, or design markdown files. Do not describe 
 
 ## 8. Create Publication-Style Visualizations
 
-Use this module after the causal spec lab if there is time. It is a Codex-app showcase: participants ask for ambitious visualization code, preview the generated SVGs, then write element-level revision notes while looking at the plots in the app.
+Use this module after the causal spec lab if there is time. It is a Codex-app showcase: participants ask for ambitious visualization code, preview the generated SVGs, then discuss element-level visual choices while looking at the plots in the app.
 
 ### 8.1 Write A Visualization Brief
 
@@ -484,9 +484,9 @@ Implementation rules:
 After running the script, show the four SVGs as artifacts or images in the Codex chat so I can view them side by side and use the app's annotation or comment tools. Also open each SVG in the in-app browser or an available local preview tool. Report whether each file rendered and whether any title, label, legend, annotation, or source note looked cramped or clipped.
 ```
 
-### 8.3 Build A Plot Viewer Page
+### 8.3 Build And Review A Plot Viewer Page
 
-Once the SVG drafts exist, have Codex create a simple local HTML page that puts the plots in one review surface:
+Once the SVG drafts exist, have Codex create a simple local HTML page that puts the plots in one review surface, then use that page for the live plot discussion:
 
 ```text
 Create a simple static HTML viewer for the generated Module 8 plots.
@@ -509,57 +509,5 @@ Requirements:
 - preserve the existing SVG filenames and do not change the plotting script, data, estimates, or causal claims
 - if an expected SVG is missing, include a clearly labeled placeholder card for it and list the missing file in the chat response
 
-After creating the page, open final_outputs/visualization_gallery/index.html in the Codex in-app browser or another available local preview. Report whether each embedded plot rendered and whether any title, label, legend, annotation, or source note looked cramped or clipped.
+After creating the page, open final_outputs/visualization_gallery/index.html in the Codex in-app browser or another available local preview. Report whether each embedded plot rendered and whether any title, label, legend, annotation, or source note looked cramped or clipped. Do not revise the plots in this prompt; leave the viewer open so we can review the plot elements live.
 ```
-
-### 8.4 Review And Revise Plot Elements In Codex
-
-Keep the viewer page or generated plots visible, review them with Codex's annotation tools, then use the comments to revise the plotting script live:
-
-```text
-I have reviewed final_outputs/visualization_gallery/index.html and the SVG artifacts in final_outputs/visualization_gallery/ and left comments or annotations on specific plot elements.
-
-Use my comments and the generated SVG files to update scripts/create_school_lunch_visualization_gallery.py, rerun it, and create audit_notes/school_lunch_visualization_review_notes.md.
-
-Make only the plot revisions requested in my comments. Preserve the existing filenames unless my comments explicitly ask for variants. Leave final_outputs/visualization_gallery/index.html unchanged unless captions or links need to reflect the requested revisions.
-
-In the review notes, summarize changes to:
-
-- title and subtitle
-- axis labels, tick labels, and units
-- legends or direct labels
-- 2022 scoring-change marker
-- annotations and arrows
-- color choices and contrast
-- panel spacing and text clipping
-- source notes and caveats
-- print/readability risks
-
-After rerunning, show the revised SVGs as artifacts or images in Codex chat and preview the updated viewer page again in the in-app browser or an available local preview tool. Report whether any text is still cramped or clipped and which visual choices remain subjective. Do not change the underlying analysis or make stronger causal claims.
-```
-
-## 9. Extra Resources
-
-Use this optional section only if there is time after the core research workflow. It covers `/skills`, `$skill-installer`, and the official OpenAI skills catalog:
-
-```text
-https://github.com/openai/skills
-```
-
-Optional workshop skills:
-
-- `define-goal`
-- `openai-docs`
-- `pdf`
-- `jupyter-notebook`
-
-```text
-Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this optional workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available.
-```
-
-Reusable habits:
-
-1. Start by verifying access and app readiness.
-2. Ask the agent to restate the research task before coding.
-3. Treat audits as part of the deliverable.
-4. Use the in-app browser or local preview for generated visual outputs before sharing them.

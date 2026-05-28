@@ -586,7 +586,7 @@ const modules = [
   {
     id: "visualizations",
     title: "Create Publication-Style Visualizations",
-    step: "Four generated plot drafts, then revise them visually",
+    step: "Four generated plot drafts, then inspect them visually",
     tag: "Visuals",
     body: [
       "After the causal spec lab exists, use Codex for a different kind of work: turning the same analysis-ready data, estimates, and causal caveats into polished, reusable visualization code.",
@@ -619,28 +619,13 @@ const modules = [
       },
       {
         number: "8.3",
-        title: "Build A Plot Viewer Page",
-        text: "After the SVG drafts exist, ask Codex to create a simple local HTML page that displays them together so the in-app browser becomes the review surface.",
+        title: "Build And Review A Plot Viewer Page",
+        text: "After the SVG drafts exist, ask Codex to create a simple local HTML page that displays them together, then use that page as the live review surface.",
         materials: [{ label: "Output file", text: "final_outputs/visualization_gallery/index.html" }],
         prompts: [
           {
             label: "Prompt to copy",
-            text: "Create a simple static HTML viewer for the generated Module 8 plots.\n\nUse every generated SVG in final_outputs/visualization_gallery/, including these expected files:\n\n- final_outputs/visualization_gallery/grant_timing_and_exposure.svg\n- final_outputs/visualization_gallery/meal_outcomes_trends.svg\n- final_outputs/visualization_gallery/survey_outcomes_snapshot.svg\n- final_outputs/visualization_gallery/causal_estimates_and_caveats.svg\n\nCreate final_outputs/visualization_gallery/index.html.\n\nRequirements:\n\n- embed each SVG on the page with a short title, caption, and direct link to the raw SVG file\n- keep the page self-contained with inline CSS and no external build tools or network assets\n- make the layout readable on laptop and mobile widths\n- include a short note that these are draft visualization artifacts for review, not new analysis\n- preserve the existing SVG filenames and do not change the plotting script, data, estimates, or causal claims\n- if an expected SVG is missing, include a clearly labeled placeholder card for it and list the missing file in the chat response\n\nAfter creating the page, open final_outputs/visualization_gallery/index.html in the Codex in-app browser or another available local preview. Report whether each embedded plot rendered and whether any title, label, legend, annotation, or source note looked cramped or clipped."
-          }
-        ]
-      },
-      {
-        number: "8.4",
-        title: "Review And Revise Plot Elements In Codex",
-        text: "Review the viewer page or visible SVG artifacts with the app's annotation tools, then have Codex make the requested plot edits while the visual feedback is still concrete.",
-        materials: [
-          { label: "Review surface", text: "final_outputs/visualization_gallery/index.html" },
-          { label: "Output file", text: "audit_notes/school_lunch_visualization_review_notes.md" }
-        ],
-        prompts: [
-          {
-            label: "Prompt to copy",
-            text: "I have reviewed final_outputs/visualization_gallery/index.html and the SVG artifacts in final_outputs/visualization_gallery/ and left comments or annotations on specific plot elements.\n\nUse my comments and the generated SVG files to update scripts/create_school_lunch_visualization_gallery.py, rerun it, and create audit_notes/school_lunch_visualization_review_notes.md.\n\nMake only the plot revisions requested in my comments. Preserve the existing filenames unless my comments explicitly ask for variants. Leave final_outputs/visualization_gallery/index.html unchanged unless captions or links need to reflect the requested revisions.\n\nIn the review notes, summarize changes to:\n\n- title and subtitle\n- axis labels, tick labels, and units\n- legends or direct labels\n- 2022 scoring-change marker\n- annotations and arrows\n- color choices and contrast\n- panel spacing and text clipping\n- source notes and caveats\n- print/readability risks\n\nAfter rerunning, show the revised SVGs as artifacts or images in Codex chat and preview the updated viewer page again in the in-app browser or an available local preview tool. Report whether any text is still cramped or clipped and which visual choices remain subjective. Do not change the underlying analysis or make stronger causal claims."
+            text: "Create a simple static HTML viewer for the generated Module 8 plots.\n\nUse every generated SVG in final_outputs/visualization_gallery/, including these expected files:\n\n- final_outputs/visualization_gallery/grant_timing_and_exposure.svg\n- final_outputs/visualization_gallery/meal_outcomes_trends.svg\n- final_outputs/visualization_gallery/survey_outcomes_snapshot.svg\n- final_outputs/visualization_gallery/causal_estimates_and_caveats.svg\n\nCreate final_outputs/visualization_gallery/index.html.\n\nRequirements:\n\n- embed each SVG on the page with a short title, caption, and direct link to the raw SVG file\n- keep the page self-contained with inline CSS and no external build tools or network assets\n- make the layout readable on laptop and mobile widths\n- include a short note that these are draft visualization artifacts for review, not new analysis\n- preserve the existing SVG filenames and do not change the plotting script, data, estimates, or causal claims\n- if an expected SVG is missing, include a clearly labeled placeholder card for it and list the missing file in the chat response\n\nAfter creating the page, open final_outputs/visualization_gallery/index.html in the Codex in-app browser or another available local preview. Report whether each embedded plot rendered and whether any title, label, legend, annotation, or source note looked cramped or clipped. Do not revise the plots in this prompt; leave the viewer open so we can review the plot elements live."
           }
         ]
       }
@@ -650,8 +635,8 @@ const modules = [
     commands: [],
     recap: [
       "The project now has a visualization layer separate from the causal spec lab. Instead of asking for one basic plot, you asked Codex for reusable plotting code and four concrete visual summaries of the same school lunch panel evidence.",
-      "That mattered because advanced visualization work is often full of small, manual choices: panel layout, direct labels, annotations, treatment markers, color accents, source notes, and margin fixes. The module shows that those choices can be described in a prompt, generated as code, previewed, and revised.",
-      "The key supervision step is visual review inside Codex. Participants should have Codex create a simple plot viewer, look at the generated SVGs in context, annotate exact plot elements, and have Codex revise the reusable plotting script while the visual feedback is still concrete."
+      "That mattered because advanced visualization work is often full of small, manual choices: panel layout, direct labels, annotations, treatment markers, color accents, source notes, and margin fixes. The module shows that those choices can be described in a prompt, generated as code, and previewed visually.",
+      "The key supervision step is visual review inside Codex. Participants should have Codex create a simple plot viewer, look at the generated SVGs in context, and discuss exact plot elements while the visual feedback is concrete."
     ],
     checks: [
       "docs/school_lunch_visualization_brief.md proposes the visual stories, input columns, layouts, style constraints, and caveats.",
@@ -659,41 +644,7 @@ const modules = [
       "final_outputs/visualization_gallery/ contains grant timing, meal outcomes, survey outcomes, and causal-estimate SVG drafts.",
       "audit_notes/school_lunch_visualization_gallery_audit.md records the required package setup, install scope, and import checks.",
       "final_outputs/visualization_gallery/index.html displays the generated SVGs for in-app browser review.",
-      "audit_notes/school_lunch_visualization_review_notes.md records the annotated plot issues and the revisions made.",
-      "The revised SVGs were shown as Codex chat artifacts and previewed through the viewer page before sharing."
-    ]
-  },
-  {
-    id: "resources",
-    title: "Extra Resources",
-    step: "Save for the end",
-    tag: "Resources",
-    body: [
-      "Use this optional section only if there is time after the core research workflow. It collects the Codex skills material and reference links without making skills installation part of the main setup.",
-      "The official OpenAI skills catalog includes many skills for deployment, design, GitHub workflows, Notion, security, and media. For this workshop, the suggested optional set is define-goal, openai-docs, pdf, and jupyter-notebook.",
-      "If you try the install flow, ask Codex to explain any user-level or Global settings change before it installs anything. Restart Codex before relying on newly installed skills."
-    ],
-    commandTitle: "Reference Links",
-    promptTitle: "Optional Codex Prompts",
-    commands: [
-      "https://github.com/openai/skills",
-      "https://developers.openai.com/codex/skills"
-    ],
-    prompts: [
-      "/skills",
-      "Use $skill-installer with https://github.com/openai/skills as the official skills catalog. Install only this optional workshop set if the skills are not already available: define-goal, openai-docs, pdf, and jupyter-notebook. Do not install any other skills. Before changing any user-level or Global Codex settings, explain exactly what you will change and wait for my confirmation. After installation, tell me to restart Codex and show me how to confirm the skills are available.",
-      "After I restart Codex, help me confirm that define-goal, openai-docs, pdf, and jupyter-notebook are available. Do not install or remove anything."
-    ],
-    recap: [
-      "The core research workflow is complete before the optional resources section begins. The remaining links and prompts are for continued learning, especially around Codex skills, rather than requirements for finishing the school lunch project.",
-      "That mattered because extra tooling should not blur the project record. Optional skill installation can be useful, but it should be explicit, limited to the selected skills, and separated from the analysis workflow that produced the panel and PI updates.",
-      "The project state should remain unchanged unless you deliberately install skills. If skills are installed, Codex should explain any user-level or Global settings changes first, install only the selected optional set, and remind you to restart Codex before relying on them."
-    ],
-    checks: [
-      "The selected optional skill names are define-goal, openai-docs, pdf, and jupyter-notebook.",
-      "Codex is told not to install any other skills.",
-      "Codex explains any user-level or Global settings change before installing skills.",
-      "Codex is restarted after any new skill install."
+      "The generated SVGs were shown as Codex chat artifacts and previewed through the viewer page before sharing."
     ]
   }
 ];
@@ -705,8 +656,7 @@ const moduleNarrativeCopy = {
   panel: "The panel build turns the prior judgment work into an inspectable dataset: one school-year row per school, with matching, timing, exclusions, and caveats documented in the audit.",
   audits: "The PI handoff turns the completed panel back into a research conversation. It should separate usable variables from caveats, name unresolved cases, and make clear which meal-program questions are ready for a first pass.",
   "causal-analysis": "Use this as the econometrics showcase. The follow-up adds a survey source, then Codex proposes causal designs, labels identification strength, codes feasible specifications, and keeps the final writeup lean.",
-  visualizations: "This is the visual prompting showcase. Use Codex to generate reusable plotting code for several polished figure styles from the causal spec lab outputs, then review exact plot elements in the app before asking for a focused revision.",
-  resources: "This closing module is optional. Use it as a path to keep learning without making skill installation or extra tooling a requirement for the main research workflow."
+  visualizations: "This is the visual prompting showcase. Use Codex to generate reusable plotting code for several polished figure styles from the causal spec lab outputs, then review exact plot elements in the app while the visual artifacts are open."
 };
 
 const substepNarrativeCopy = {
@@ -735,8 +685,7 @@ const substepNarrativeCopy = {
   "causal-analysis:7.4": "The final brief turns coded results back into PI language. It should separate descriptive patterns, exploratory associations, plausible designs, and assumptions that still need human validation.",
   "visualizations:8.1": "Start by prompting for figure design, not code. The brief should connect available columns and causal spec lab outputs to specific visual stories, layouts, annotations, and caveats.",
   "visualizations:8.2": "This is the one-shot visualization prompt. Ask for required package installation, four polished SVG drafts, and reusable plotting code with instructions concrete enough that Codex can make real layout choices.",
-  "visualizations:8.3": "The viewer page is a practical review surface. It keeps the generated SVGs together, makes the plots easier to inspect in the in-app browser, and gives annotations a stable visual target.",
-  "visualizations:8.4": "The review happens while the plots are visible. Annotate exact plot elements, then let Codex turn those comments into concrete script edits and refreshed artifacts in the same step."
+  "visualizations:8.3": "The viewer page is the practical review surface. It keeps the generated SVGs together, makes the plots easier to inspect in the in-app browser, and gives the live discussion a stable visual target."
 };
 
 modules.forEach((module) => {
@@ -758,6 +707,9 @@ const setupOnlyMode = Boolean(window.STAX_SETUP_ONLY)
   || pageParams.get("mode") === "setup"
   || pageParams.get("setup") === "1";
 const visibleModules = setupOnlyMode ? modules.filter((module) => module.id === "setup") : modules;
+const retiredModuleRedirects = {
+  resources: "visualizations"
+};
 
 function getInitialModuleId() {
   const requestedModule = pageParams.get("module");
@@ -832,6 +784,7 @@ function moduleIdFromHash() {
   const hash = currentHashId();
   if (!hash) return "";
   if (visibleModules.some((module) => module.id === hash)) return hash;
+  if (retiredModuleRedirects[hash]) return retiredModuleRedirects[hash];
 
   const moduleWithStep = visibleModules.find((module) =>
     (module.substeps || []).some((substep) => domIdForStep(module, substep) === hash)
