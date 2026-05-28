@@ -54,54 +54,55 @@ python scripts/build_school_year_panel.py
 
 If pandas is already available, the two script commands are enough.
 
-Participants do not need to type these commands during the workshop. The live session is run from the Codex and Claude Code apps. In the main teaching flow, Module 4 asks Codex or Claude Code to coordinate subagent reviewers and create `data/analysis_ready/cafeteria_partner_role_classifications.csv` plus an audit note; the Python classifier remains only as an instructor fallback or code-only reproducibility check.
+Participants do not need to type these commands during the workshop. The live session is run from the Codex and Claude Code apps. In the main teaching flow, Module 4 asks Codex or Claude Code to use reviewer-style classification passes and create `data/analysis_ready/cafeteria_partner_role_classifications.csv` plus an audit note; the Python classifier remains only as an instructor fallback or code-only reproducibility check.
+
+The Codex app showcase moments are built into the workflow: Codex runs the first Python check and reports the terminal result, uses `@` file references for saved PDFs, optionally uses subagents or delegated reviewer passes for judgment-heavy classification, runs verification checks against generated CSVs, installs visualization libraries when useful, previews SVG plots as chat artifacts and in the in-app browser, and supports element-level plot revision prompts.
 
 ## Files To Inspect Live
 
 - `docs/session_invitation_email.md`: sendable setup email for participants.
-- `school_lunch_modernization_grants/README.md`, `school_lunch_modernization_grants/AGENTS.md`, and `school_lunch_modernization_grants/CLAUDE.md`: participant-created project memory files during Module 2.
+- `school_lunch_modernization_grants/README.md`, `school_lunch_modernization_grants/AGENTS.md`, and `school_lunch_modernization_grants/CLAUDE.md`: participant-created project memory set during Module 2.
 - `school_lunch_modernization_grants/docs/pi_assignment_email.pdf`: participant-saved copy of the PI assignment email downloaded from the guide during Module 2. This repo also includes `docs/intro_email.md` as a facilitator-readable fallback copy.
 - `docs/attachments/school_lunch_modernization_raw_data.zip`: source copy of the raw-data ZIP served by the guide download button.
 - `school_lunch_modernization_grants/docs/email_handoff_summary.md`: agent-created markdown summary and action list produced from the saved assignment email during Module 2.
 - `school_lunch_modernization_grants/data/original/school_lunch_modernization_raw_data.zip`: participant-saved copy of the raw-data ZIP during Module 2, then inspected in Module 3.
 - `data/original/*.csv`: workshop raw data after the agent extracts the ZIP, with school aliases, the established-school crosswalk, grant records, messy cafeteria partner roles, unmatched awards, and ambiguous cases.
 - `data/original/established_school_crosswalk.csv`: clean school identity crosswalk used to map observed names and aliases to canonical `school_id` values.
-- `data/original/student_health_wellbeing_survey_extract.csv`: aggregate school-year survey extract introduced by the Module 7 follow-up request, not the initial assignment.
-- `docs/raw_data_preliminary_pass.md`: agent-created inspection notes from Module 3, including file inventory, likely keys, crosswalk support, aliases, messy roles, ambiguous rows, and safety checks.
-- `docs/cafeteria_partner_classification_rubric.md`: compact conservative rubric drafted during Module 3.
-- `docs/cafeteria_partner_subagent_review_plan.md`: compact plan for separate reviewer passes in Module 4.
+- `data/original/student_health_wellbeing_survey_extract.csv`: aggregate school-year survey extract introduced by the follow-up request, not the initial assignment.
+- `docs/data_intake_and_role_rubric.md`: combined Module 3 data-intake note and conservative role rubric, including file inventory, likely keys, crosswalk support, aliases, allowed role categories, ambiguous rows, and safety checks.
 - `data/analysis_ready/cafeteria_partner_role_classifications.csv` and `audit_notes/cafeteria_partner_role_classification_audit.md`: reviewed classification CSV and audit note produced during Module 4.
 - `scripts/classify_cafeteria_partner_roles.py`: optional deterministic fallback for instructors, not the main participant workflow.
 - `scripts/build_school_year_panel.py`: school-year panel builder.
 - `audit_notes/`: generated audit notes that preserve unresolved matches, timing assumptions, and human-review cases.
 - `data/analysis_ready/school_year_panel.csv`: baseline panel output with grant, meal, and meal-program lead variables.
-- `data/analysis_ready/school_year_panel_with_survey.csv`: Module 7 enriched panel after the survey extract is merged by `school_id` and `year`.
+- `data/analysis_ready/school_year_panel_with_survey.csv`: enriched panel after the survey extract is merged by `school_id` and `year`.
 - `final_outputs/school_lunch_panel_review.md`: short review of what the completed panel can support and what remains unsettled.
 - `final_outputs/school_lunch_panel_pi_update.md`: concise PI-facing handoff after the panel and audit notes are reviewed.
-- `docs/school_lunch_analysis_handoff_summary.md`: summary of the follow-up request about the 2022 scoring change.
-- `docs/school_lunch_analysis_design_memo.md`: check that the panel can answer the follow-up question and define the first-pass analysis.
-- `scripts/run_school_lunch_first_pass_analysis.py`: first-pass analysis script for the 2022 scoring change.
-- `final_outputs/school_lunch_first_pass_summary.csv`: summary table from the first-pass analysis, including meal outcomes and the later survey outcomes after the Module 7 merge.
-- `final_outputs/school_lunch_first_pass_regression_checks.csv`: regression-check table from the first-pass analysis.
-- `final_outputs/school_lunch_2022_change_plot.svg`: figure from the first-pass analysis.
-- `audit_notes/school_lunch_first_pass_analysis_audit.md`: audit note for the analysis script, outputs, and caveats.
-- `final_outputs/school_lunch_analysis_review.md`: human review memo after inspecting the first-pass outputs and audit.
-- `final_outputs/school_lunch_analysis_pi_update.md`: concise PI-facing update on the 2022 scoring-change analysis.
+- `scripts/run_causal_spec_lab.py`: causal design and econometric specification runner.
+- `final_outputs/causal_spec_catalog.csv`: compact catalog of candidate specifications, identification labels, and caveats.
+- `final_outputs/causal_spec_estimates.csv`: estimates or descriptive fallback rows from the causal spec lab.
+- `final_outputs/causal_event_study.svg`: event-study style timing check generated by the spec lab.
+- `final_outputs/causal_results_brief.md`: concise PI-facing interpretation of the causal spec lab outputs.
+- `docs/school_lunch_visualization_brief.md`: Module 8 design brief for publication-style visualization variants.
+- `scripts/create_school_lunch_visualization_gallery.py`: reusable plotting script for the visualization gallery.
+- `final_outputs/visualization_gallery/`: Economist-inspired, AER-style, and policy-brief SVG visualization drafts plus gallery notes.
+- `audit_notes/school_lunch_visualization_gallery_audit.md` and `audit_notes/school_lunch_visualization_review_notes.md`: visual generation audit plus annotated review and revision notes.
 
 ## Expected Workshop Flow
 
 1. Confirm participants have the Codex app and Claude Code app open and signed in.
-2. Ask Codex to confirm Python is installed and can run a tiny Python script.
+2. Ask Codex to confirm Python is installed, run a tiny Python script, and point participants to the in-app terminal result.
 3. Create `My_RA_Tasks` in a sensible place in the participant's file home, then open that folder as the active Codex project.
 4. Review and download the guide's PI assignment email PDF and raw-data ZIP into `My_RA_Tasks`.
 5. Ask Codex to explain the folder map and scaffold `school_lunch_modernization_grants` inside `My_RA_Tasks`.
 6. Reopen `school_lunch_modernization_grants` as the active project root, move `pi_assignment_email.pdf` into `docs/`, and move the unchanged raw-data ZIP into `data/original/`.
-7. Ask Codex or Claude Code to create `docs/email_handoff_summary.md`, then `README.md`, `AGENTS.md`, and `CLAUDE.md`.
-8. With the raw-data ZIP in `data/original/`, ask Codex or Claude Code to unzip it, run one careful raw-data inspection prompt, draft a compact classification rubric, and plan the separate review passes before classification. The inspection should identify the established-school crosswalk and likely join keys.
-9. Ask Codex or Claude Code to coordinate subagent reviewers for the cafeteria partner role classification, reconcile disagreements conservatively, and write the classification CSV plus audit note.
-10. Build the baseline school-year panel from the data contract, merging grant, meal, and meal-program lead information, then inspect `data/analysis_ready/school_year_panel.csv` and `audit_notes/build_school_year_panel_audit.md`.
+7. Ask Codex or Claude Code to create `docs/email_handoff_summary.md`, then create the project-memory set: `README.md`, `AGENTS.md`, and `CLAUDE.md`.
+8. With the raw-data ZIP in `data/original/`, ask Codex or Claude Code to unzip it and create `docs/data_intake_and_role_rubric.md`, a single beginner-facing artifact that combines raw-data inspection, likely keys, crosswalk notes, and the conservative cafeteria-partner role rubric.
+9. Ask Codex or Claude Code to use reviewer-style classification passes in one prompt, using Codex subagents if available, reconcile disagreements conservatively, and write the classification CSV plus audit note.
+10. Build the baseline school-year panel after restating the build rules in chat, encoding them in `scripts/build_school_year_panel.py`, and preserving the checks and caveats in `audit_notes/build_school_year_panel_audit.md`; then inspect `data/analysis_ready/school_year_panel.csv` and the audit.
 11. Review the panel and audit notes, create `final_outputs/school_lunch_panel_review.md`, and draft `final_outputs/school_lunch_panel_pi_update.md` for the PI.
-12. If time allows, use `Explore The 2022 Scoring Change` to save and summarize the follow-up request, save the new survey extract, merge it into the baseline panel, check the expanded panel against the question in a design memo, write and run the first-pass analysis, inspect the results and audit, and draft the PI update.
+12. If time allows, use `Causal Design And Econometric Spec Lab` to save the follow-up request and survey extract, merge the survey outcomes into the baseline panel, have Codex propose candidate econometric designs in chat, run the causal spec runner, preview the event-study SVG, and review one concise PI-facing results brief.
+13. Use `Create Publication-Style Visualizations` to ask Codex for Economist-inspired, AER-style, and policy-brief SVG drafts based on the causal spec lab outputs, then review specific plot elements in the Codex app and revise the plots live from those annotations.
 
 ## Useful Current References
 

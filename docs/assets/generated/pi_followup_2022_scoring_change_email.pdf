@@ -16,7 +16,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 3745 >>
+<< /Length 3787 >>
 stream
 0.97 0.97 0.95 rg 0 0 612 792 re f
 1 1 1 rg 42 42 528 708 re f
@@ -44,7 +44,7 @@ BT /F1 9 Tf 1 0 0 1 106.00 654.00 Tm (student_health_wellbeing_survey_extract.cs
 0.87 0.87 0.84 RG 54 632.00 m 558 632.00 l S
 BT /F1 9 Tf 1 0 0 1 54.00 610.00 Tm (Hi team,) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 592.00 Tm (Thanks for putting together the school-year panel and the notes. This is very helpful, and I think it) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 580.00 Tm (may be enough for a first analysis pass.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 580.00 Tm (may be enough for a more serious specification pass.) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 562.00 Tm (One more thing: I confirmed that the state changed the modernization grant scoring in 2022. After the) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 550.00 Tm (change, applications tied to scratch-cooking equipment, cold storage, and healthier serving-line) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 538.00 Tm (infrastructure appear to have received a clearer priority. That may give us a useful timing change to) Tj ET
@@ -57,11 +57,11 @@ BT /F1 9 Tf 1 0 0 1 54.00 460.00 Tm (measures after 2022.) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 442.00 Tm (Please be cautious with the wellbeing and mental-health-related measures. A referral rate could) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 430.00 Tm (reflect need, detection, service access, or reporting practice, so treat those checks as exploratory) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 418.00 Tm (survey signals rather than proof of a mental-health effect.) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 400.00 Tm (Could you take a first pass at whether the panel shows anything along those lines? Please use your) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 388.00 Tm (judgment about the exact comparisons. Pre/post patterns, plots, and some regression-style checks) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 376.00 Tm (would be useful, but I do not want to force one specification too early.) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 358.00 Tm (I mostly want to know whether there is anything promising here, what the first-pass estimates look) Tj ET
-BT /F1 9 Tf 1 0 0 1 54.00 346.00 Tm (like, and what we would need to check before taking the result seriously.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 400.00 Tm (Could you use your judgment to propose the best feasible comparisons and code them up? I would like) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 388.00 Tm (to see which specifications are only descriptive, which are exploratory, and whether anything like a) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 376.00 Tm (fixed-effects, event-study, or dose-response check is credible enough to inspect.) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 358.00 Tm (I mostly want to know whether there is anything promising here, what the estimates look like under) Tj ET
+BT /F1 9 Tf 1 0 0 1 54.00 346.00 Tm (those specifications, and what we would need to check before taking any result seriously.) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 328.00 Tm (Thanks,) Tj ET
 BT /F1 9 Tf 1 0 0 1 54.00 310.00 Tm (The Hon. Dr. Sir Jensen Ahokovi, PhD, MA, BA.) Tj ET
 endstream
@@ -78,5 +78,5 @@ xref
 trailer
 << /Size 7 /Root 1 0 R >>
 startxref
-4199
+4241
 %%EOF

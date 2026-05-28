@@ -17,7 +17,7 @@ This session is app-only for participants. The operational requirement is access
 Ask participants to copy this into Codex during setup:
 
 ```text
-Please check whether Python is installed and available to you. If it is available, run a tiny Python script that prints the Python version and confirms that 2 + 2 equals 4. Do not modify any project files.
+Please check whether Python is installed and available to you. If it is available, run a tiny Python script that prints the Python version and confirms that 2 + 2 equals 4. Briefly tell me what command or check you ran and where I can see the result in the Codex app. Do not modify any project files.
 ```
 
 ## 1. Open The Repo And Site
@@ -105,14 +105,14 @@ Read the saved email artifact and create docs/email_handoff_summary.md. Include 
 If the email is missing or unreadable, stop and tell me. Do not inspect or unzip the raw data yet.
 ```
 
-### 2.7 Create Project Memory Files
+### 2.7 Create The Project Memory Set
 
-After the handoff summary exists, create the project memory files:
+After the handoff summary exists, create one project-memory set. Frame `README.md`, `AGENTS.md`, and `CLAUDE.md` as shared memory for future agent work, not as three unrelated deliverables:
 
 ```text
 Read @docs/pi_assignment_email.pdf and docs/email_handoff_summary.md. Treat the saved PI email as the source of truth. If the handoff summary conflicts with the email, trust the email and note the mismatch.
 
-Working in the current project root, create README.md, AGENTS.md, and CLAUDE.md.
+Working in the current project root, create the project-memory set: README.md, AGENTS.md, and CLAUDE.md.
 
 README.md should briefly summarize the research objective, expected original inputs, expected analysis-ready output, outcome domains, and the rule that audit notes are part of the deliverable.
 
@@ -121,37 +121,29 @@ AGENTS.md and CLAUDE.md should tell coding agents to read the email and handoff 
 Keep the files concise. Do not inspect or unzip the raw data yet.
 ```
 
-## 3. Inspect Raw Data Before Classification
+## 3. Inspect Raw Data And Draft The Role Rubric
 
-The raw-data ZIP should already be at `data/original/school_lunch_modernization_raw_data.zip`. Use three short prompts: inspect the files, write the role-classification rubric, then prepare the review plan for row-level classification. This pass should leave behind notes and a review plan, not a finished classification.
+The raw-data ZIP should already be at `data/original/school_lunch_modernization_raw_data.zip`. Use one prompt to make the data legible and create one learner-facing artifact: `docs/data_intake_and_role_rubric.md`. This artifact combines raw-data inspection with the conservative cafeteria-partner role rubric. It should not classify every row or build panel outputs.
 
-### 3.1 Inspect The Raw Files
+### 3.1 Create The Data Intake And Role Rubric
 
-Ask the agent to make the raw files legible before any classification work:
+Ask the agent to inspect the source files and write the combined artifact:
 
 ```text
 Inspect the raw-data ZIP at data/original/school_lunch_modernization_raw_data.zip.
 
-Extract it into data/original/ while preserving the ZIP. Then create docs/raw_data_preliminary_pass.md summarizing:
+Extract it into data/original/ while preserving the ZIP. Then create docs/data_intake_and_role_rubric.md.
+
+The artifact should summarize:
 
 - which CSV files are present and their row counts
 - what each CSV appears to contain and its likely unit of observation
 - likely keys and relationships between files
 - how established_school_crosswalk.csv maps raw school names to canonical school_id values
 - school or district aliases that could affect matching
-- cafeteria partner-role cases that may need human judgment
+- cafeteria partner-role fields and cases that may need human judgment
 
-Focus on inspection only for now; classification and panel-building come later.
-```
-
-### 3.2 Write The Role Classification Rubric
-
-Then ask the agent to turn the preliminary pass into a compact classification rubric:
-
-```text
-Using docs/raw_data_preliminary_pass.md and data/original/cafeteria_partner_role_records.csv, draft docs/cafeteria_partner_classification_rubric.md.
-
-Define these allowed role_category values:
+Then include a compact conservative role rubric with these allowed role_category values:
 
 - school_meal_program_lead
 - district_or_state_office
@@ -161,67 +153,49 @@ Define these allowed role_category values:
 - advisor_or_consultant
 - ambiguous
 
-For each category, explain the evidence that supports it, the evidence that rules it out, concrete examples from the CSVs, and triggers for human review. Be conservative: unclear, vague, prospective, or only possibly implementation-related roles should remain ambiguous.
+For each category, explain the evidence that supports it, evidence that rules it out, concrete examples from the CSVs, and triggers for human review. Be conservative: unclear, vague, prospective, or only possibly implementation-related roles should remain ambiguous.
+
+End with the checks the classification step must satisfy: one output row for every original partner-role row, allowed categories only, unresolved uncertainty preserved as ambiguous, and judgment calls surfaced in the audit.
+
+Do not create a classification CSV, panel file, separate role-rubric file, or separate review-plan file yet.
 ```
 
-### 3.3 Prepare The Classification Review Plan
+Before moving on, confirm that `docs/data_intake_and_role_rubric.md` exists, and that no classification CSV or panel file exists yet.
 
-Then ask the agent to plan the review passes that will happen before row-level classification:
+## 4. Classify Cafeteria Partner Roles With Reviewer-Style Passes
 
-```text
-Create docs/cafeteria_partner_subagent_review_plan.md for the row-level classification pass.
-
-Base it on docs/cafeteria_partner_classification_rubric.md and data/original/cafeteria_partner_role_records.csv. Define these four review passes:
-
-- School lead reviewer
-- Non-lead partner reviewer
-- Ambiguity reviewer
-- Reconciliation lead
-
-For each pass, explain what evidence it should cite and what would count as weak evidence. Also explain how disagreements should be reconciled, how unresolved uncertainty should stay in the ambiguous category, and how the final classification should verify that every original row is accounted for.
-```
-
-Before moving on, confirm that `docs/raw_data_preliminary_pass.md`, `docs/cafeteria_partner_classification_rubric.md`, and `docs/cafeteria_partner_subagent_review_plan.md` exist, and that no classification CSV or panel file exists yet.
-
-## 4. Classify Cafeteria Partner Roles With Subagents
+Use the Module 3 artifact as the rubric. The goal is fewer turns: one classification prompt should produce both the machine-readable classification CSV and the audit note, then a short prompt should review the audit. If the Codex app exposes subagents or delegated reviewers, this is the best moment to show them; otherwise use the same reviewer roles inside one agent turn.
 
 ```text
-Read docs/cafeteria_partner_classification_rubric.md and docs/cafeteria_partner_subagent_review_plan.md. Before classifying rows, restate the reviewer roles, the allowed role_category values, the conservative default rule, and the output files we need. Do not write or run a classification script.
-```
+Read docs/data_intake_and_role_rubric.md and data/original/cafeteria_partner_role_records.csv.
 
-Then ask Codex or Claude Code to run independent reviewer passes:
+Classify every row in data/original/cafeteria_partner_role_records.csv using reviewer-style passes inside your work:
 
-```text
-Use the reviewer plan to run independent subagent passes over data/original/cafeteria_partner_role_records.csv. If your environment supports subagents, use them; otherwise use clearly separated reviewer passes.
+Stage 1: A school lead reviewer identifies rows that clearly support school_meal_program_lead and cites exact role or note evidence.
+Stage 2: A non-lead partner reviewer identifies rows that should not count as school leads because they are district offices, equipment vendors, food suppliers, meal vendors, education partners, advisors, or other non-leads.
+Stage 3: An ambiguity reviewer identifies rows that should remain ambiguous or need human review, especially strategic partners, possible implementation partners, prospective kitchen partners, and roles without documented scope.
+Stage 4: A reconciliation pass resolves disagreements conservatively. If evidence is weak or reviewers would disagree, keep the row ambiguous and explain why.
 
-Stage 1: The school lead reviewer identifies rows that clearly support school_meal_program_lead and cites exact role or note evidence.
-Stage 2: The non-lead partner reviewer identifies rows that should not count as school leads because they are district offices, equipment vendors, food suppliers, meal vendors, education partners, or advisors.
-Stage 3: The ambiguity reviewer identifies rows that should be ambiguous or need human review, especially strategic partners, possible implementation partners, prospective kitchen partners, and roles without documented scope.
-
-Save the reviewer notes as docs/cafeteria_partner_subagent_review_notes.md. Do not create the final CSV yet.
-```
-
-Then reconcile the reviewers into the processed classification artifact:
-
-```text
-Reconcile docs/cafeteria_partner_subagent_review_notes.md into final row-level classifications. If reviewers disagree, choose the conservative classification and explain why.
+If the Codex app offers subagents or delegated reviewers in this session, use separate reviewer agents. Otherwise, use clearly separated passes in your own work. In your final chat response, tell me which approach you used.
 
 Create data/analysis_ready/cafeteria_partner_role_classifications.csv with one row for every row in data/original/cafeteria_partner_role_records.csv. Include these columns: record_id, record_year, project_title, organization_name, organization_role_raw, organization_note, role_category, classification_reason. Use only these role_category values: school_meal_program_lead, district_or_state_office, equipment_or_installation_vendor, food_supplier_or_menu_vendor, nutrition_education_partner, advisor_or_consultant, ambiguous.
 
-Also create audit_notes/cafeteria_partner_role_classification_audit.md. The audit should summarize the reviewer roles, classification counts, rows marked ambiguous, any reviewer disagreements, and rows that need PI review. Do not write a Python classification script for this step.
+Also create audit_notes/cafeteria_partner_role_classification_audit.md. The audit should summarize the reviewer-style passes, classification counts, rows marked ambiguous, any disagreements or weak-evidence cases, rows that need PI review, and a check that every original row is accounted for.
+
+Do not write a Python classification script. Do not create a separate review-plan or reviewer-notes artifact.
 ```
 
-End by asking the agent to summarize the audit:
+End with a short audit review prompt:
 
 ```text
 Read audit_notes/cafeteria_partner_role_classification_audit.md and data/analysis_ready/cafeteria_partner_role_classifications.csv. Summarize which rows were classified as confirmed school meal-program leads, which rows were marked ambiguous, and which judgment calls should be shown to the PI before using the panel.
 ```
 
-This module teaches classification as a judgment-heavy review workflow. The analysis-ready CSV is still machine-readable, but the reasoning comes from multiple reviewer perspectives and a visible reconciliation step.
+This module teaches classification as a judgment-heavy review workflow. The analysis-ready CSV is still machine-readable, but the reasoning comes from reviewer perspectives and a visible reconciliation summary.
 
 ## 5. Build A School-Year Panel
 
-Start by having the agent review the inputs and state the build contract:
+Start by having the agent review the inputs and restate the build rules in chat. This module intentionally does not create a separate build-contract markdown artifact; the rules are restated in chat, encoded in `scripts/build_school_year_panel.py`, and preserved in `audit_notes/build_school_year_panel_audit.md`.
 
 ```text
 Before building the school-year panel, inspect these inputs:
@@ -232,9 +206,9 @@ Before building the school-year panel, inspect these inputs:
 - data/analysis_ready/cafeteria_partner_role_classifications.csv
 - audit_notes/cafeteria_partner_role_classification_audit.md
 
-Summarize the build contract before writing code. The panel should have one row for every school in the directory for each year 2019-2024. Grant indicators and amounts should come from the grant awards file, meal outcomes should come from the directory fields, school-name matching should use the established-school crosswalk, meal-program leadership should come only from confirmed school meal-program lead classifications, and ambiguous or non-lead categories should not turn on the lead indicator.
+Summarize the build rules before writing code. The panel should have one row for every school in the directory for each year 2019-2024. Grant indicators and amounts should come from the grant awards file, meal outcomes should come from the directory fields, school-name matching should use the established-school crosswalk, meal-program leadership should come only from confirmed school meal-program lead classifications, and ambiguous or non-lead categories should not turn on the lead indicator.
 
-Also summarize any unmatched names, ambiguous records, or human-review caveats that should carry into the panel audit. Do not write or run the script yet.
+Also summarize any unmatched names, ambiguous records, or human-review caveats that should carry into the panel audit. Do not write or run the script yet, and do not create a separate build-contract markdown file.
 ```
 
 Then ask the agent to create the panel script:
@@ -247,9 +221,9 @@ The script should read the panel inputs inspected above and write:
 - data/analysis_ready/school_year_panel.csv
 - audit_notes/build_school_year_panel_audit.md
 
-Implement the build contract from the inspection step: years 2019-2024, one school-year row per directory school per year, school aliases and district variants handled through the established-school crosswalk, ModernizationGrantRecipient and ModernizationGrantAmount tied to the award year, grant amount set to zero when no award occurred in that school-year, and MealProgramLead turned on cumulatively after the first confirmed school meal-program lead year.
+Implement the build rules restated in chat: years 2019-2024, one school-year row per directory school per year, school aliases and district variants handled through the established-school crosswalk, ModernizationGrantRecipient and ModernizationGrantAmount tied to the award year, grant amount set to zero when no award occurred in that school-year, and MealProgramLead turned on cumulatively after the first confirmed school meal-program lead year.
 
-The lead indicator must exclude ambiguous, district/state office, vendor, nutrition education, advisor/consultant, and other non-lead classifications. The audit note should report row counts, duplicate school-year checks, unmatched award or partner names, excluded ambiguous/non-lead rows, and records that still need human review.
+The lead indicator must exclude ambiguous, district/state office, vendor, nutrition education, advisor/consultant, and other non-lead classifications. The audit note should preserve the build rules and report row counts, duplicate school-year checks, unmatched award or partner names, excluded ambiguous/non-lead rows, and records that still need human review.
 ```
 
 Then run it:
@@ -264,6 +238,8 @@ Finally inspect the output and audit:
 
 ```text
 Inspect data/analysis_ready/school_year_panel.csv and audit_notes/build_school_year_panel_audit.md. Report these checks:
+
+Use quick terminal or Python checks where helpful, and summarize the checks you ran.
 
 - expected rows equal the number of unique schools times 6 years
 - no duplicate school_id/year rows
@@ -318,176 +294,220 @@ Write it as a concise update to the PI. Include:
 Keep the tone practical and PI-facing. Do not overstate what the panel can identify.
 ```
 
-## 7. Explore The 2022 Scoring Change
+## 7. Causal Design And Econometric Spec Lab
 
-Use this module only if there is time after the core panel workflow. The follow-up PI request asks whether the completed panel shows promising first-pass patterns around the 2022 scoring change and introduces a new aggregate student survey extract with health and wellbeing outcomes. Keep the emphasis on the new source, the merge, whether the expanded panel fits the question, what the analysis actually ran, and what still needs human review.
+Use this module after the core panel workflow if there is time for a more ambitious Codex demo. The follow-up PI request asks whether the completed panel shows promising evidence around the 2022 scoring change and introduces a new aggregate student survey extract with health and wellbeing outcomes. Keep the emphasis on Codex as an econometric design-and-code partner: it should reject over-simple causal claims, propose feasible specifications, write runnable code, and leave one concise PI-facing brief.
 
-### 7.1 Save And Summarize The Follow-Up Request
+### 7.1 Prepare The Expanded Panel
 
-Have participants download the follow-up PI request from the guide and save it in `docs/` beside the original assignment email. Have them download `student_health_wellbeing_survey_extract.csv` and save it in `data/original/`. Then ask the agent to summarize the request before any merge or analysis code appears:
+Have participants download the follow-up PI request from the guide and save it in `docs/` beside the original assignment email. Have them download `student_health_wellbeing_survey_extract.csv` and save it in `data/original/`. Then merge and check the survey source without creating another planning memo:
 
 ```text
 My PI sent a follow-up request about the 2022 school lunch grant scoring change.
 
 Follow-up request: @docs/pi_followup_2022_scoring_change_email.pdf
 Survey extract: data/original/student_health_wellbeing_survey_extract.csv
+Baseline panel: data/analysis_ready/school_year_panel.csv
 
-Read the saved request as the source of truth and create docs/school_lunch_analysis_handoff_summary.md.
+Read the follow-up request as the source of truth. Then inspect and merge the survey extract into the baseline panel by school_id and year.
 
-Include:
+Create only this output file:
 
-- what changed since the original assignment
-- the 2022 scoring change described in the request
-- the analysis-ready baseline panel file Codex should use
-- the student survey extract to inspect and merge
-- the first-pass questions the PI wants answered, including meal, health, and wellbeing outcomes after the survey merge
-- expected tables, figure, code, audit note, review memo, and PI update
-- assumptions, caveats, and human-review points
+- data/analysis_ready/school_year_panel_with_survey.csv
 
-Do not inspect results, merge files, write analysis code, or draft the PI update yet.
+Merge rules:
+
+- preserve the baseline panel row count and school-year universe
+- verify school_id/year keys are unique before merging
+- report in chat the survey row count, matched rows, unmatched survey rows, panel rows without survey data, duplicate-key checks, and missingness for student_health_index, student_wellbeing_score, mental_health_referral_rate, and survey_response_count
+- treat mental_health_referral_rate as service contacts per 100 students, not diagnoses
+
+Do not create a handoff summary, inspection memo, design memo, audit note, review memo, or PI update in this step.
 ```
 
-### 7.2 Inspect The Survey Extract
+### 7.2 Have Codex Propose Candidate Designs
 
-Before merging the new source, inspect its unit, keys, coverage, and missingness:
+This is the econometrics showcase. Ask Codex to inspect the expanded panel and classify candidate designs by identification strength before it writes code:
 
 ```text
-Inspect data/original/student_health_wellbeing_survey_extract.csv.
+Act as an applied econometrician and coding partner.
 
-Create docs/student_survey_extract_inspection.md summarizing:
+Inspect these files:
 
-- row count and unit of observation
-- school_id and year coverage
-- available aggregate health and wellbeing variables
-- duplicate school_id/year keys
-- missing values
-- whether the file can merge to data/analysis_ready/school_year_panel.csv by school_id and year
+- @docs/pi_followup_2022_scoring_change_email.pdf
+- data/analysis_ready/school_year_panel_with_survey.csv
+- audit_notes/cafeteria_partner_role_classification_audit.md
+- audit_notes/build_school_year_panel_audit.md
 
-Do not merge the file yet.
+In chat only, propose a compact econometric specification plan for the 2022 scoring-change question.
+
+For each candidate design, include:
+
+- estimand
+- equation or regression formula
+- outcome variables
+- treatment, exposure, or event-time definition
+- comparison group
+- required assumptions
+- whether the design is descriptive, exploratory, or plausibly causal
+- what would make the estimate misleading
+
+Include at least these candidates when feasible:
+
+1. pre/post checks for grant receipt and grant amount
+2. differential-exposure DiD with school and year fixed effects
+3. event-study style checks around first grant award year
+4. exploratory dose-response checks using grant amount
+
+Be explicit that a statewide post-2022 indicator alone is not a clean causal design. Treat student wellbeing and mental-health referral measures cautiously. Do not create any files yet.
 ```
 
-### 7.3 Merge The Survey Extract
+### 7.3 Code And Run The Spec Lab
 
-Merge the survey file into the completed baseline panel, preserving the original row universe:
-
-```text
-Using docs/student_survey_extract_inspection.md, merge data/original/student_health_wellbeing_survey_extract.csv into data/analysis_ready/school_year_panel.csv by school_id and year.
-
-Create data/analysis_ready/school_year_panel_with_survey.csv and audit_notes/student_survey_merge_audit.md.
-
-The merge must preserve the original panel row count and school-year universe. The audit should report matched rows, unmatched survey rows, panel rows without survey data, duplicate-key handling, missingness by variable, and any caveats for interpreting aggregate wellbeing or mental-health-related measures.
-```
-
-### 7.4 Check The Expanded Panel Against The Question
-
-Before coding, ask for a short design memo that compares the PI's question with the columns and timing in the completed panel:
+Turn the chat design plan into one readable script and compact outputs:
 
 ```text
-Read docs/school_lunch_analysis_handoff_summary.md, data/analysis_ready/school_year_panel_with_survey.csv, audit_notes/student_survey_merge_audit.md, audit_notes/cafeteria_partner_role_classification_audit.md, and audit_notes/build_school_year_panel_audit.md.
+Using the econometric specification plan from the previous chat turn, create and run scripts/run_causal_spec_lab.py.
 
-Create docs/school_lunch_analysis_design_memo.md.
+The script should load data/analysis_ready/school_year_panel_with_survey.csv, validate the panel keys, construct needed variables, run all feasible specifications, and write:
 
-The memo should cover:
+- final_outputs/causal_spec_catalog.csv
+- final_outputs/causal_spec_estimates.csv
+- final_outputs/causal_event_study.svg
+- final_outputs/causal_results_brief.md
 
-- the exact follow-up question about the 2022 scoring change
-- the panel unit, years, and variables available after the survey merge
-- which meal, health, and wellbeing outcomes can be checked in a first pass
-- how to mark years before and after the 2022 change
-- which comparisons the panel can support
-- which variables, audit caveats, or assumptions are too weak for strong claims
-- how to interpret mental-health-related referral measures cautiously
-- the summary table, regression checks, plot, audit note, review memo, and PI update to create
+Include at least:
 
-Do not write or run analysis code yet.
-```
+1. pre/post checks for ModernizationGrantRecipient and ModernizationGrantAmount
+2. differential-exposure DiD with school and year fixed effects when feasible
+3. event-study style checks around first grant award year
+4. exploratory dose-response checks using ModernizationGrantAmount
 
-### 7.5 Write And Run The First-Pass Analysis
-
-Use the design memo to make one readable script and the expected outputs:
-
-```text
-Create and run scripts/run_school_lunch_first_pass_analysis.py using docs/school_lunch_analysis_design_memo.md.
-
-The script should:
-
-- load and validate data/analysis_ready/school_year_panel_with_survey.csv
-- construct a 2022-and-later indicator
-- use only variables available in the panel
-- create a first-pass summary table by period and relevant school groups
-- run simple regression checks for grant receipt, grant amount, lunch participation, healthy-meal score, student health index, student wellbeing score, and mental-health referral rate when those variables are available after the survey merge
-- create a plot showing pre/post patterns around the 2022 scoring change
-- write an audit note that names any dropped rows, missing variables, fragile checks, or interpretation limits
-
-Output files:
-
-- final_outputs/school_lunch_first_pass_summary.csv
-- final_outputs/school_lunch_first_pass_regression_checks.csv
-- final_outputs/school_lunch_2022_change_plot.svg
-- audit_notes/school_lunch_first_pass_analysis_audit.md
+Outcome candidates should include lunch_participation_rate, healthy_meal_score, student_health_index, student_wellbeing_score, and mental_health_referral_rate when available.
 
 Implementation rules:
 
-- Use pandas and standard Python first.
-- Use statsmodels only if it is already available; do not install packages without asking.
-- If a check cannot be estimated cleanly, write that limitation into the audit note instead of hiding it.
-- Treat mental-health referral rate as an exploratory school-level survey measure; higher values could reflect greater need, better detection, or better service access.
-- Keep the code beginner-readable.
+- install any Python libraries needed to run the econometric specifications and plot cleanly, using the active project environment rather than system-level installs
+- if a model cannot be estimated cleanly, write a row in the spec catalog explaining why
+- keep the code beginner-readable, with formulas and variable definitions visible
+- label each specification as descriptive, exploratory, or plausibly causal only under stated assumptions
+- treat mental_health_referral_rate as an exploratory service-contact measure, not a diagnosis or proof of mental-health effects
+- keep final_outputs/causal_results_brief.md concise and PI-facing
+- do not create intermediate design, inspection, audit, or review markdown files
 
-After running the script, summarize which outputs were created and the main caveats.
+After running the script, open final_outputs/causal_event_study.svg in the Codex in-app browser or another available local preview. Report in chat which outputs were created, which specifications ran, which packages were installed if any, which specifications were skipped, and whether the figure rendered cleanly.
 ```
 
-### 7.6 Inspect The Results And Audit
+### 7.4 Review The One PI-Facing Results Brief
 
-Slow down after the script runs. Ask the agent to inspect the code, tables, figure, and audit before anyone writes the PI update:
+End by reviewing the single brief the spec runner produced, tightening language where needed without creating another memo:
 
 ```text
-Inspect these files:
+Review final_outputs/causal_results_brief.md against these causal spec lab outputs:
 
-- scripts/run_school_lunch_first_pass_analysis.py
-- data/analysis_ready/school_year_panel_with_survey.csv
-- audit_notes/student_survey_merge_audit.md
-- final_outputs/school_lunch_first_pass_summary.csv
-- final_outputs/school_lunch_first_pass_regression_checks.csv
-- final_outputs/school_lunch_2022_change_plot.svg
-- audit_notes/school_lunch_first_pass_analysis_audit.md
+- final_outputs/causal_spec_catalog.csv
+- final_outputs/causal_spec_estimates.csv
+- final_outputs/causal_event_study.svg
 
-Create final_outputs/school_lunch_analysis_review.md.
+Revise final_outputs/causal_results_brief.md only if needed.
 
-The review memo should summarize:
+The brief should be concise and PI-facing. It should include:
 
-- what the script ran
-- what the survey merge added
-- whether the output files match docs/school_lunch_analysis_design_memo.md
-- what the summary table and plot show for meal, health, and wellbeing outcomes
-- what the regression checks suggest
-- which results are fragile, missing, or sensitive to panel limits
-- which wellbeing or mental-health-related measures need especially cautious interpretation
-- which code or data assumptions a human should inspect before sharing the update
+- the follow-up question about the 2022 scoring change
+- what data were added by the survey merge
+- the specifications Codex ran, in plain English
+- what the estimates and event-study figure suggest for grants, meal outcomes, health, wellbeing, and mental-health referral measures
+- which results are descriptive or exploratory rather than causal
+- why a statewide 2022 change is not automatically a clean causal design
+- what a human researcher should verify next before sharing or extending the analysis
 
-Do not draft the PI update yet.
+Do not create separate review, audit, or design markdown files. Do not describe the results as proof that the scoring change caused the observed patterns.
 ```
 
-### 7.7 Draft The PI Update
+## 8. Create Publication-Style Visualizations
 
-End by turning the inspected outputs into a concise PI-facing note:
+Use this module after the causal spec lab if there is time. It is a Codex-app showcase: participants ask for ambitious visualization code, preview the generated SVGs, then write element-level revision notes while looking at the plots in the app.
+
+### 8.1 Write A Visualization Brief
+
+Start with a design brief so the plotting prompt has a clear target:
 
 ```text
-Using docs/school_lunch_analysis_handoff_summary.md, docs/school_lunch_analysis_design_memo.md, final_outputs/school_lunch_analysis_review.md, audit_notes/student_survey_merge_audit.md, and audit_notes/school_lunch_first_pass_analysis_audit.md, draft final_outputs/school_lunch_analysis_pi_update.md.
+Read data/analysis_ready/school_year_panel_with_survey.csv, final_outputs/causal_spec_catalog.csv, final_outputs/causal_spec_estimates.csv, final_outputs/causal_event_study.svg, and final_outputs/causal_results_brief.md.
 
-The update should include:
+Create docs/school_lunch_visualization_brief.md.
 
-- what follow-up question the PI asked
-- what the survey merge added to the baseline panel
-- what first-pass analysis Codex ran
-- what the summary table, regression checks, and plot suggest for meal, health, and wellbeing outcomes
-- why the results should be treated as preliminary
-- which assumptions or data limitations matter most
-- what a human researcher should review next
+The brief should propose three reusable visualization variants:
 
-Keep the tone concise and PI-facing. Do not describe the results as proof that the scoring change caused the observed patterns.
+1. An Economist-inspired editorial chart set: annotated, direct-labeled, clear 2022 marker, restrained color accents, source note, and no publication logo or official branding.
+2. An AER-style research figure set: print-friendly, simple panels, clear units, grayscale or restrained color, confidence intervals only when supported by the causal spec estimates, and reproducible labels.
+3. A compact policy-brief dashboard: a small set of linked panels for grants, lunch participation, healthy-meal score, available aggregate health or wellbeing measures, and the main causal caveats.
+
+For each variant, specify the intended message, required input columns, panel layout, annotations, style constraints, caveats, and output filenames. Do not write plotting code yet.
 ```
 
-## 8. Extra Resources
+### 8.2 Generate A Visualization Gallery
+
+Then use one ambitious prompt to install helpful visualization libraries if needed, create reusable code, produce several SVG drafts, and show the plots as chat artifacts:
+
+```text
+Using docs/school_lunch_visualization_brief.md, create and run scripts/create_school_lunch_visualization_gallery.py.
+
+The script should use data/analysis_ready/school_year_panel_with_survey.csv and the causal spec lab outputs in final_outputs/ to create a small visualization gallery.
+
+Create these outputs:
+
+- final_outputs/visualization_gallery/economist_inspired_grant_meals.svg
+- final_outputs/visualization_gallery/aer_style_school_lunch_results.svg
+- final_outputs/visualization_gallery/policy_brief_school_lunch_dashboard.svg
+- final_outputs/visualization_gallery/README.md
+- audit_notes/school_lunch_visualization_gallery_audit.md
+
+Visualization requirements:
+
+- Economist-inspired chart set: editorial title, short subtitle, direct labels where possible, one accent color for the 2022 scoring change, source note, and annotations that explain the visual pattern without overclaiming.
+- AER-style figure set: clean research-paper panels, print-readable labels, minimal gridlines, clear units, and uncertainty intervals only if the causal spec estimates support them.
+- Policy-brief dashboard: compact multi-panel view that connects grants, meal outcomes, survey outcomes, and the identification caveats while keeping mental-health-related measures cautious.
+
+Implementation rules:
+
+- Use pandas and matplotlib, and install any helpful data-visualization libraries that would materially improve the gallery, such as seaborn, plotnine, adjustText, or another lightweight PyPI package.
+- Install packages only into the active project environment. Avoid system-level dependencies and avoid large or unrelated packages.
+- Record any installed packages and why they were useful in the visualization gallery audit.
+- Generate SVG files with readable text, stable figure sizes, and enough margin to avoid clipping.
+- Keep the script readable so a researcher can edit titles, labels, colors, and annotations later.
+- Write the audit note with input files used, output files created, packages used or installed, missing-variable fallbacks, visual design choices, and interpretation caveats.
+
+After running the script, show the three SVGs as artifacts or images in the Codex chat so I can view them side by side and use the app's annotation or comment tools. Also open each SVG in the in-app browser or an available local preview tool. Report whether each file rendered and whether any title, label, legend, annotation, or source note looked cramped or clipped.
+```
+
+### 8.3 Review And Revise Plot Elements In Codex
+
+Keep the generated plots visible as chat artifacts, review them with Codex's annotation tools, then use the comments to revise the plotting script live:
+
+```text
+I have reviewed the SVG artifacts in final_outputs/visualization_gallery/ and left comments or annotations on specific plot elements.
+
+Use my comments and the generated SVG files to update scripts/create_school_lunch_visualization_gallery.py, rerun it, and create audit_notes/school_lunch_visualization_review_notes.md.
+
+Make only the plot revisions requested in my comments. Preserve the existing filenames unless my comments explicitly ask for variants.
+
+In the review notes, summarize changes to:
+
+- title and subtitle
+- axis labels, tick labels, and units
+- legends or direct labels
+- 2022 scoring-change marker
+- annotations and arrows
+- color choices and contrast
+- panel spacing and text clipping
+- source notes and caveats
+- print/readability risks
+
+After rerunning, show the revised SVGs as artifacts or images in Codex chat and preview them again in the in-app browser or an available local preview tool. Report whether any text is still cramped or clipped and which visual choices remain subjective. Do not change the underlying analysis or make stronger causal claims.
+```
+
+## 9. Extra Resources
 
 Use this optional section only if there is time after the core research workflow. It covers `/skills`, `$skill-installer`, and the official OpenAI skills catalog:
 
@@ -511,3 +531,4 @@ Reusable habits:
 1. Start by verifying access and app readiness.
 2. Ask the agent to restate the research task before coding.
 3. Treat audits as part of the deliverable.
+4. Use the in-app browser or local preview for generated visual outputs before sharing them.
