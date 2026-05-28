@@ -246,13 +246,7 @@ Inspect data/analysis_ready/school_year_panel.csv and audit_notes/build_school_y
 
 The panel is analysis-ready but not judgment-free. The audit file is where the agent hands uncertainty back to the human.
 
-## 6. Before And After: What The Agentic Workflow Fixed
-
-Use this read-only module as a short debrief after the panel exists. The point is to show the visible difference between the raw assignment materials and the analysis-ready school-year panel without pretending the agent removed human judgment.
-
-Emphasize the payoff in plain English: the workflow created a stable panel shape, preserved unmatched names and ambiguous role rows, and left audit notes that a researcher can inspect before relying on the output.
-
-## 7. Audit Trails And PI Update
+## 6. Audit Trails And PI Update
 
 Use this prompt:
 
@@ -260,13 +254,13 @@ Use this prompt:
 Based on the audit files, draft a short note to the PI explaining what is complete and what needs judgment.
 ```
 
-## 8. Regression Analysis And Causal Inference
+## 7. Regression Analysis And Causal Inference
 
 Use this module only if there is time after the core panel workflow. The follow-up PI email introduces a new question about the 2022 scoring change, and the teaching point is that agents can move quickly from panel data to regressions while humans still own the research design.
 
 Keep the sequence simple: save the follow-up email, summarize the analysis request, ask for a design plan before code, run the provisional analysis suite, inspect the code and results, then draft a cautious PI update. Stress that the output is exploratory and should not be oversold as causal proof.
 
-## 9. Extra Resources
+## 8. Extra Resources
 
 Use this optional section only if there is time after the core research workflow. It covers `/skills`, `$skill-installer`, and the official OpenAI skills catalog:
 

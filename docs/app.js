@@ -422,78 +422,6 @@ const modules = [
     ]
   },
   {
-    id: "payoff",
-    title: "Before And After: What The Agentic Workflow Fixed",
-    tag: "Payoff",
-    readOnly: true,
-    body: [
-      "After the panel build, you can see the payoff directly: messy raw inputs become a structured school-year panel with audit notes that preserve uncertainty.",
-      "Use this read-only module as the bridge between the coding work and the PI-facing update."
-    ],
-    contextTitle: "Payoff Slides",
-    contextSlides: [
-      {
-        title: "Clean Output Snapshot",
-        lead: "The cleaned file now has a stable school-year shape and visible caveats.",
-        blocks: [
-          {
-            type: "statCards",
-            cards: [
-              { label: "Panel Rows", value: "360", note: "60 schools times six years, 2019-2024." },
-              { label: "Grant Total", value: "$11.72M", note: "The panel total excludes four unmatched raw award rows that need audit attention." },
-              { label: "Grant Rows", value: "73", note: "School-year rows where a matched school received a modernization award." },
-              { label: "Meal Lead Rows", value: "166", note: "School-year rows after the first confirmed school lead year." },
-              { label: "Both Signals Rows", value: "55", note: "School-year rows with both grant and meal-program lead indicators on." },
-              { label: "Ambiguous Rows Preserved", value: "24", note: "Ambiguous partner rows remain visible for human review rather than becoming confirmed school leads." }
-            ]
-          }
-        ]
-      },
-      {
-        title: "Before And After",
-        lead: "The workflow changes the shape of the evidence without hiding judgment calls.",
-        blocks: [
-          {
-            type: "figure",
-            src: "assets/generated/before_after_summary.svg?v=20260527-school-lunch",
-            alt: "Two-column summary comparing raw inputs before the workflow and cleaned outputs after the workflow.",
-            caption: "The point is not that the agent magically removes human judgment. The point is that it helps organize the work so the judgment calls are visible."
-          }
-        ]
-      },
-      {
-        title: "Panel Measures By Year",
-        lead: "Every school appears in every year, so year-by-year patterns are easier to inspect.",
-        blocks: [
-          {
-            type: "figure",
-            src: "assets/generated/panel_by_year.svg?v=20260527-school-lunch",
-            alt: "Chart showing grant recipients, meal-program leads, and grant amount by panel year.",
-            caption: "The cleaned panel makes year-by-year comparisons possible because every school appears in every year."
-          }
-        ]
-      },
-      {
-        title: "What Changed",
-        lead: "Use the before/after comparison to explain the value of the workflow.",
-        blocks: [
-          {
-            type: "miniTable",
-            columns: ["Before", "After"],
-            rows: [
-              ["Raw grant records are award-level and use school-name strings.", "The panel is school-year level with matched school names."],
-              ["Missing award years are absent from the raw award file.", "No-award school-years appear with ModernizationGrantAmount set to zero."],
-              ["Raw role labels mix school leads with vendors, suppliers, advisors, education partners, and ambiguous helpers.", "Classified role categories separate confirmed school leads from excluded and ambiguous rows."],
-              ["Unmatched names and ambiguous rows can disappear if no audit is kept.", "Audit notes preserve what still needs human review."]
-            ]
-          }
-        ]
-      }
-    ],
-    commands: [],
-    prompts: []
-  },
-  {
     id: "audits",
     title: "Audit Trails And PI Update",
     step: "Make uncertainty visible",
@@ -552,10 +480,10 @@ const modules = [
         ]
       }
     ],
-    substepTitle: "Module 8 Steps",
+    substepTitle: "Module 7 Steps",
     substeps: [
       {
-        number: "8.1",
+        number: "7.1",
         title: "Download And Save The Follow-Up Email",
         text: "Download the follow-up email PDF and save it into the project docs/ folder, next to the original PI assignment email. Keep track of the exact filename so you can reference it in Codex with the @ command.",
         materials: [
@@ -567,7 +495,7 @@ const modules = [
         ]
       },
       {
-        number: "8.2",
+        number: "7.2",
         title: "Create The Follow-Up Handoff Summary",
         text: "Ask Codex to read the saved follow-up email and turn it into a concise analysis handoff before any regression code is written. The prompt uses the workshop follow-up filename; if yours differs, select your actual file with @ before sending.",
         materials: [
@@ -582,7 +510,7 @@ const modules = [
         ]
       },
       {
-        number: "8.3",
+        number: "7.3",
         title: "Review The Research Design Before Coding",
         text: "Have Codex explain the proposed causal strategies in plain language so the human can inspect the assumptions before the one-shot analysis run.",
         prompts: [
@@ -593,7 +521,7 @@ const modules = [
         ]
       },
       {
-        number: "8.4",
+        number: "7.4",
         title: "One-Shot The Analysis Suite",
         text: "Give Codex one larger analysis request: write the script, run it, and produce tables, figures, and an audit note. The request is broad on purpose, but it still requires transparent outputs.",
         prompts: [
@@ -604,7 +532,7 @@ const modules = [
         ]
       },
       {
-        number: "8.5",
+        number: "7.5",
         title: "Inspect The Code And Results",
         text: "Slow down after the one-shot run. Ask Codex to explain the code, the model choices, and the outputs before treating any estimate as useful.",
         prompts: [
@@ -615,7 +543,7 @@ const modules = [
         ]
       },
       {
-        number: "8.6",
+        number: "7.6",
         title: "Draft The PI Analysis Update",
         text: "Turn the fast analysis pass into a cautious PI-facing update that separates findings from assumptions and caveats.",
         materials: [{ label: "Output file", text: "final_outputs/school_lunch_analysis_pi_update.md" }],
@@ -673,10 +601,9 @@ const moduleNarrativeCopy = {
   handoff: "Use this as the intake pass. By the end, the source email, raw ZIP, handoff summary, and project memory files should be in the project root, and raw-data inspection can begin.",
   "raw-data": "Use this as the data intake pass. Open the saved ZIP, inventory the CSVs, and turn the messy role evidence into rules before classification starts.",
   classification: "This is the judgment-heavy part of the workflow. Use the agent to organize independent reviews, cite row-level evidence, and keep uncertain cases out of the analysis variables instead of pretending ambiguity disappeared.",
-  panel: "The panel build is the payoff for the careful setup. By this point the agent has enough context, raw-file knowledge, and audit constraints to write a small script that turns scattered records into a school-year dataset you can actually inspect.",
-  payoff: "Take a breath after the build and look at the before-and-after view. You can see how scaffolding, inspection, classification, and auditing add up to something more useful than a single generated file.",
+  panel: "The panel build is where the careful setup starts to matter. By this point the agent has enough context, raw-file knowledge, and audit constraints to write a small script that turns scattered records into a school-year dataset you can actually inspect.",
   audits: "The audit handoff brings your judgment back to the center. The files are not just artifacts from the agent; they are evidence about what the agent did, where it used judgment, and what still needs a researcher to decide.",
-  "causal-analysis": "In the final research module, look for both the power and the danger of speed. Once the panel exists, an agent can produce a broad analysis suite quickly, but keep your emphasis on assumptions, timing, model choices, and what should not be oversold.",
+  "causal-analysis": "In the analysis module, look for both the power and the danger of speed. Once the panel exists, an agent can produce a broad analysis suite quickly, but keep your emphasis on assumptions, timing, model choices, and what should not be oversold.",
   resources: "This closing module is optional. Use it as a path to keep learning without making skill installation or extra tooling a requirement for the main research workflow."
 };
 
@@ -703,12 +630,12 @@ const substepNarrativeCopy = {
   "panel:5.2": "Ask for the plan before the script so the code is easier to trust. You should see the matching logic, year range, zero-filling rule, and exclusion rule before the agent writes anything.",
   "panel:5.3": "Running the script is the mechanical part, but it still needs a clear report. Ask the agent to say what it created and what the panel contains instead of leaving you to guess.",
   "panel:5.4": "Use this sanity check to inspect output instead of merely accepting it. Row counts, year coverage, zero-filled amounts, cumulative indicators, and unmatched names are the first things to look at.",
-  "causal-analysis:8.1": "The follow-up email introduces a new research task without replacing the old one. Saving it beside the original assignment lets the agent see how the project evolved from data cleaning into analysis.",
-  "causal-analysis:8.2": "The analysis handoff gives the agent a chance to separate the new policy question from the earlier panel-building work. It also forces the expected outputs and causal caveats into writing before code appears.",
-  "causal-analysis:8.3": "This research-design pause is the most important guardrail in the fast analysis module. It asks the agent to explain outcomes, timing, exposure, comparisons, and assumptions before it produces estimates.",
-  "causal-analysis:8.4": "The one-shot suite is intentionally ambitious so you can see what speed feels like. The prompt still requires transparent outputs, readable code, and caveats when a model is too fragile for the sample data.",
-  "causal-analysis:8.5": "Inspection comes immediately after the fast run. The point is to treat generated regressions as drafts that need interpretation, code review, and skepticism before they become research claims.",
-  "causal-analysis:8.6": "The final update turns analysis back into communication. A good PI note separates descriptive patterns, tentative regression evidence, and the assumptions that would need real validation."
+  "causal-analysis:7.1": "The follow-up email introduces a new research task without replacing the old one. Saving it beside the original assignment lets the agent see how the project evolved from data cleaning into analysis.",
+  "causal-analysis:7.2": "The analysis handoff gives the agent a chance to separate the new policy question from the earlier panel-building work. It also forces the expected outputs and causal caveats into writing before code appears.",
+  "causal-analysis:7.3": "This research-design pause is the most important guardrail in the fast analysis module. It asks the agent to explain outcomes, timing, exposure, comparisons, and assumptions before it produces estimates.",
+  "causal-analysis:7.4": "The one-shot suite is intentionally ambitious so you can see what speed feels like. The prompt still requires transparent outputs, readable code, and caveats when a model is too fragile for the sample data.",
+  "causal-analysis:7.5": "Inspection comes immediately after the fast run. The point is to treat generated regressions as drafts that need interpretation, code review, and skepticism before they become research claims.",
+  "causal-analysis:7.6": "The final update turns analysis back into communication. A good PI note separates descriptive patterns, tentative regression evidence, and the assumptions that would need real validation."
 };
 
 modules.forEach((module) => {

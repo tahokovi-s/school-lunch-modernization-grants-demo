@@ -86,7 +86,7 @@ Participants do not need to type these commands during the workshop. The live se
 8. With the raw-data ZIP in `data/original/`, ask Codex or Claude Code to unzip it, run one careful raw-data inspection prompt, draft a compact classification rubric, and plan the separate review passes before classification.
 9. Ask Codex or Claude Code to coordinate subagent reviewers for the cafeteria partner role classification, reconcile disagreements conservatively, and write the classification CSV plus audit note.
 10. Build the school-year panel and inspect the output.
-11. Use the before-and-after module and audit files to discuss where human judgment belongs in agentic workflows.
+11. Use the audit files to draft the PI update and discuss where human judgment belongs in agentic workflows.
 12. If time allows, use the causal analysis and Extra Resources modules to show how the workflow extends after the panel exists.
 
 ## Useful Current References
