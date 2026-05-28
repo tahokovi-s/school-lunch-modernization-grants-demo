@@ -153,7 +153,7 @@ Keep the files concise. Do not inspect or unzip the raw data yet.
 
 ## 4. Inspect Raw Data Before Classification
 
-The raw-data ZIP from Module 3 should already be at `data/original/school_lunch_modernization_raw_data.zip`. Use three short prompts: inspect the files, write the role-classification rubric, then prepare the Module 5 review plan. The module should leave behind notes and a review plan, not a finished classification.
+The raw-data ZIP should already be at `data/original/school_lunch_modernization_raw_data.zip`. Use three short prompts: inspect the files, write the role-classification rubric, then prepare the review plan for row-level classification. This pass should leave behind notes and a review plan, not a finished classification.
 
 ### 4.1 Inspect The Raw Files
 
@@ -193,12 +193,12 @@ Define these allowed role_category values:
 For each category, explain the evidence that supports it, the evidence that rules it out, concrete examples from the CSVs, and triggers for human review. Be conservative: unclear, vague, prospective, or only possibly implementation-related roles should remain ambiguous.
 ```
 
-### 4.3 Prepare The Module 5 Review Plan
+### 4.3 Prepare The Classification Review Plan
 
-Then ask the agent to plan the review passes that will happen in Module 5:
+Then ask the agent to plan the review passes that will happen before row-level classification:
 
 ```text
-Create docs/cafeteria_partner_subagent_review_plan.md for the Module 5 classification pass.
+Create docs/cafeteria_partner_subagent_review_plan.md for the row-level classification pass.
 
 Base it on docs/cafeteria_partner_classification_rubric.md and data/original/cafeteria_partner_role_records.csv. Define these four review passes:
 
@@ -207,7 +207,7 @@ Base it on docs/cafeteria_partner_classification_rubric.md and data/original/caf
 - Ambiguity reviewer
 - Reconciliation lead
 
-For each pass, explain what evidence it should cite and what would count as weak evidence. Also explain how disagreements should be reconciled, how unresolved uncertainty should stay in the ambiguous category, and how Module 5 should verify that every original row is accounted for.
+For each pass, explain what evidence it should cite and what would count as weak evidence. Also explain how disagreements should be reconciled, how unresolved uncertainty should stay in the ambiguous category, and how the final classification should verify that every original row is accounted for.
 ```
 
 Before moving on, confirm that `docs/raw_data_preliminary_pass.md`, `docs/cafeteria_partner_classification_rubric.md`, and `docs/cafeteria_partner_subagent_review_plan.md` exist, and that no classification CSV or panel file exists yet.
