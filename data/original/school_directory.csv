@@ -1,61 +1,61 @@
 school_id,school_name,name_variants,district_name,grades_served,urbanicity,enrollment_2019,enrollment_2020,enrollment_2021,enrollment_2022,enrollment_2023,enrollment_2024,lunch_participation_rate_2019,lunch_participation_rate_2020,lunch_participation_rate_2021,lunch_participation_rate_2022,lunch_participation_rate_2023,lunch_participation_rate_2024,healthy_meal_score_2019,healthy_meal_score_2020,healthy_meal_score_2021,healthy_meal_score_2022,healthy_meal_score_2023,healthy_meal_score_2024
-S001,Maple Grove Elementary,Maple Grove Elem.|Maple Grove ES,Riverton USD,K-5,Suburban,411,403,397,418,418,423,64,65,68,70,71,71,64,68,73,75,77,78
-S002,Rivera Middle School,Rivera MS|Rivera Mid.,Riverton USD,6-8,Suburban,636,628,622,639,645,651,53,53,55,59,60,60,60,61,65,71,73,74
-S003,Cedar Valley High,Cedar Valley HS|Cedar Vly High,Cedar Valley SD,9-12,Rural,722,714,703,726,733,740,43,43,45,47,48,49,47,48,51,53,54,55
-S004,Juniper Ridge Elementary,Juniper Ridge Elem.|Juniper Ridge ES,Cedar Valley SD,K-5,Rural,320,307,301,321,325,329,56,55,56,59,62,64,66,65,67,71,75,78
-S005,Harborview K-8,Harbor View K8|Harborview School,Bay City Schools,K-8,Urban,546,538,532,553,558,558,58,58,60,63,64,65,56,57,60,64,67,67
-S006,Lincoln High School,Lincoln HS|Lincoln High,Bay City Schools,9-12,Urban,883,875,869,891,892,898,45,44,45,48,51,54,51,51,53,56,61,66
-S007,Sunrise STEM Academy,Sunrise Academy|Sunrise STEM,North Valley Public,K-8,Suburban,472,464,458,476,483,490,57,55,56,59,62,63,56,56,58,63,68,70
-S008,North Creek Middle,North Creek MS|N. Creek Middle,North Valley Public,6-8,Suburban,604,596,585,605,609,613,51,49,50,53,55,56,57,57,59,62,65,65
-S009,Rosa Parks Elementary,Rosa Parks Elem.|Rosa Parks ES,Metro Unified,K-5,Urban,391,378,372,393,398,403,55,53,54,56,59,62,58,58,59,61,66,70
-S010,Orchard Hill School,Orchard Hill Elem.|Orchard Hill,Metro Unified,K-6,Urban,429,421,415,437,443,444,60,59,59,61,64,66,61,61,61,64,68,72
-S011,Prairie View High,Prairie View HS|Prairie Vw High,Prairie County,9-12,Rural,511,503,497,520,522,529,45,44,45,47,51,54,43,43,44,47,53,58
-S012,Lakefront Elementary,Lakefront Elem.|Lake Front ES,Prairie County,K-5,Rural,276,268,262,277,281,285,58,59,60,61,62,62,63,65,68,68,69,70
-S013,Mission Trails Middle,Mission Trails MS|Mission Trls Middle,Mission USD,6-8,Suburban,558,550,539,560,565,570,49,48,49,52,56,59,60,60,61,64,69,74
-S014,Eastside Community School,Eastside Community|East Side School,Mission USD,K-8,Urban,696,683,677,699,705,711,58,57,58,59,61,63,57,57,57,58,61,65
-S015,Willow Bend Elementary,Willow Bend Elem.|Willow Bend ES,Oak River Schools,K-5,Suburban,342,334,328,351,358,360,62,61,61,62,64,66,67,67,67,67,70,74
-S016,Granite Peak High,Granite Peak HS|Granite Pk High,Oak River Schools,9-12,Suburban,765,757,751,771,770,774,46,44,45,47,51,54,47,47,49,52,58,63
-S017,Bay Meadow Middle,Bay Meadow MS|Bay Meadow Mid.,Coastal Unified,6-8,Urban,621,613,607,623,628,633,49,47,48,48,50,53,57,57,58,59,62,67
-S018,Chavez Arts Academy,Cesar Chavez Arts|Chavez Academy,Coastal Unified,K-8,Urban,534,526,515,537,543,549,51,49,50,51,53,55,55,55,56,57,59,61
-S019,South Fork Elementary,South Fork Elem.|South Fork ES,South Fork SD,K-5,Rural,303,290,284,307,314,321,63,61,62,63,64,67,64,63,64,64,67,72
-S020,New Horizons High,New Horizons HS|New Horizon High,South Fork SD,9-12,Rural,456,448,442,462,466,465,45,44,44,46,49,52,44,43,44,46,51,55
-S021,Aspen Ridge Elementary,Aspen Ridge Elem.|Aspen Ridge ES,Evergreen USD,K-5,Suburban,348,340,334,355,355,360,60,61,64,66,67,67,65,69,74,76,77,78
-S022,Brookside Middle School,Brookside MS|Brookside Mid.,Evergreen USD,6-8,Suburban,617,609,603,620,626,632,49,49,51,54,56,56,50,51,55,60,63,64
-S023,Canyon View High,Canyon View HS|Canyon View High,Mesa County Schools,9-12,Rural,751,743,732,755,762,769,48,47,49,52,55,57,48,48,49,53,58,61
-S024,Desert Springs K-8,Desert Springs K8|Desert Springs School,Mesa County Schools,K-8,Rural,464,451,445,465,469,473,57,56,57,58,60,64,63,62,63,65,68,73
-S025,Oak Terrace Elementary,Oak Terrace Elem.|Oak Terrace ES,Lakeside Unified,K-5,Suburban,398,390,384,405,410,410,61,59,59,60,60,60,62,62,62,62,63,63
-S026,Silver Lake Middle,Silver Lake MS|Silver Lake Mid.,Lakeside Unified,6-8,Suburban,571,563,557,579,580,586,51,49,50,52,56,58,59,59,61,64,69,74
-S027,Washington Prep High,Washington Prep HS|Washington Prep High,Capital City Schools,9-12,Urban,840,832,826,844,851,858,40,41,44,46,46,46,47,51,56,58,59,60
-S028,Franklin Elementary,Franklin Elem.|Franklin ES,Capital City Schools,K-5,Urban,474,466,455,475,479,483,62,61,64,68,69,70,65,66,71,75,78,78
-S029,Mountain View K-8,Mountain View K8|Mountain View School,Foothill Public,K-8,Rural,457,444,438,459,464,469,57,55,57,59,62,64,55,54,56,60,64,66
-S030,Pioneer High School,Pioneer HS|Pioneer High,Foothill Public,9-12,Rural,716,708,702,724,730,731,43,43,44,46,46,47,50,50,53,55,56,56
-S031,Meadowbrook Elementary,Meadowbrook Elem.|Meadowbrook ES,Riverbend Unified,K-5,Suburban,430,422,416,439,441,448,57,56,57,58,59,59,59,59,60,61,62,63
-S032,Riverside Arts Middle,Riverside Arts MS|Riverside Arts Mid.,Riverbend Unified,6-8,Urban,658,650,644,659,663,667,55,55,58,59,61,61,57,59,63,66,69,69
-S033,Sequoia High,Sequoia HS|Sequoia High,Redwoods Joint USD,9-12,Rural,737,729,718,739,744,749,46,45,46,47,48,49,43,43,43,44,45,45
-S034,Pinecrest Elementary,Pinecrest Elem.|Pinecrest ES,Redwoods Joint USD,K-5,Rural,275,262,256,278,284,290,59,59,62,65,66,67,62,63,67,71,73,74
-S035,Adams Community School,Adams Community School|Adams Community School School,Valley Metro Schools,K-8,Urban,614,606,600,623,630,632,53,51,51,53,54,56,63,63,63,65,67,69
-S036,Jefferson STEM High,Jefferson STEM HS|Jefferson STEM High,Valley Metro Schools,9-12,Urban,883,875,869,889,888,892,40,38,39,41,43,47,47,47,49,51,55,60
-S037,Blue Harbor Elementary,Blue Harbor Elem.|Blue Harbor ES,Harbor Unified,K-5,Urban,421,413,407,423,428,433,62,60,61,61,62,62,66,66,67,68,69,70
-S038,Marina Middle School,Marina MS|Marina Mid.,Harbor Unified,6-8,Urban,690,682,671,693,699,705,52,52,54,56,58,60,54,55,58,60,63,65
-S039,Hilltop Elementary,Hilltop Elem.|Hilltop ES,Summit Ridge SD,K-5,Rural,268,255,249,272,279,286,59,60,63,65,65,66,66,69,73,76,76,77
-S040,Summit Ridge High,Summit Ridge HS|Summit Ridge High,Summit Ridge SD,9-12,Rural,702,694,688,708,712,711,41,40,40,41,41,41,45,44,45,45,45,45
-S041,Cottonwood K-8,Cottonwood K8|Cottonwood School,Desert Valley Public,K-8,Suburban,591,583,577,598,598,603,60,59,61,64,67,69,61,61,64,68,73,76
-S042,Mesa Verde Middle,Mesa Verde MS|Mesa Verde Mid.,Desert Valley Public,6-8,Suburban,589,581,575,592,598,604,54,54,56,58,60,62,51,53,56,59,63,66
-S043,Hamilton Elementary,Hamilton Elem.|Hamilton ES,Central Plains USD,K-5,Rural,318,310,299,322,329,336,59,58,59,60,61,62,63,63,63,64,65,65
-S044,Roosevelt High School,Roosevelt HS|Roosevelt High,Central Plains USD,9-12,Rural,762,749,743,763,767,771,43,43,46,48,50,50,44,46,50,52,54,55
-S045,Lakeshore Elementary,Lakeshore Elem.|Lakeshore ES,North Shore Schools,K-5,Suburban,370,362,356,377,382,382,57,55,55,56,56,56,63,63,63,63,64,64
-S046,North Shore Middle,North Shore MS|North Shore Mid.,North Shore Schools,6-8,Suburban,639,631,625,647,648,654,56,55,58,61,63,64,60,62,66,71,74,75
-S047,Camino Real Academy,Camino Real Academy|Camino Real School,Camino USD,K-8,Urban,582,574,568,586,593,600,56,54,55,55,56,56,57,57,58,59,60,61
-S048,Esperanza High School,Esperanza HS|Esperanza High,Camino USD,9-12,Urban,851,843,832,852,856,860,43,42,42,44,46,50,52,52,53,55,59,63
-S049,Sycamore Elementary,Sycamore Elem.|Sycamore ES,Westfield Public,K-5,Suburban,430,417,411,432,437,442,58,56,57,58,58,59,61,61,62,62,62,63
-S050,Westfield Middle,Westfield MS|Westfield Mid.,Westfield Public,6-8,Suburban,593,585,579,601,607,608,57,57,59,60,60,60,60,61,64,65,65,66
-S051,Golden Gate Elementary,Golden Gate Elem.|Golden Gate ES,Metro Bay Unified,K-5,Urban,457,449,443,466,468,475,61,62,65,67,68,68,60,64,69,72,73,74
-S052,Mission Bay High,Mission Bay HS|Mission Bay High,Metro Bay Unified,9-12,Urban,805,797,791,806,810,814,43,43,45,49,50,50,50,51,56,61,63,64
-S053,Valley Oak K-8,Valley Oak K8|Valley Oak School,Valley Oak SD,K-8,Rural,479,471,460,481,486,491,54,52,54,57,60,62,54,54,55,59,64,66
-S054,Oak Meadow High,Oak Meadow HS|Oak Meadow High,Valley Oak SD,9-12,Rural,748,735,729,751,757,763,41,40,42,44,46,48,49,50,52,56,58,60
-S055,Hawthorne Elementary,Hawthorne Elem.|Hawthorne ES,East River Schools,K-5,Suburban,356,348,342,365,372,374,64,62,62,63,63,63,58,58,58,58,59,59
-S056,East River Middle,East River MS|East River Mid.,East River Schools,6-8,Suburban,625,617,611,631,630,634,54,54,57,59,61,61,57,59,63,66,69,70
-S057,Cabrillo Science Academy,Cabrillo Science Academy|Cabrillo Science School,South Coast Unified,K-8,Urban,664,656,650,666,671,676,54,55,58,60,60,60,64,68,73,75,76,77
-S058,Pacific View High,Pacific View HS|Pacific View High,South Coast Unified,9-12,Urban,837,829,818,840,846,852,41,40,43,47,48,50,47,48,53,57,60,61
-S059,Liberty Elementary,Liberty Elem.|Liberty ES,High Desert USD,K-5,Rural,336,323,317,340,347,354,64,62,64,66,70,72,66,66,67,71,76,79
-S060,High Desert High,High Desert HS|High Desert High,High Desert USD,9-12,Rural,674,666,660,680,684,683,46,45,45,46,46,46,46,45,46,46,46,46
+S001,Maple Grove Elementary,Maple Grove Elem.|Maple Grove ES,Riverton USD,K-5,Suburban,409,399,406,402,415,423,64.3,61.5,60.6,66.5,66.4,68.5,71.2,70.7,72.4,76.4,78.8,81.5
+S002,Rivera Middle School,Rivera MS|Rivera Mid.,Riverton USD,6-8,Suburban,636,638,631,647,671,671,51.1,50.1,51.4,56.1,56.9,57.1,62.3,61.5,63.6,70.0,72.2,72.2
+S003,Cedar Valley High,Cedar Valley HS|Cedar Vly High,Cedar Valley SD,9-12,Rural,726,717,704,724,724,727,44.9,43.3,43.4,44.8,45.6,45.6,47.9,45.6,49.7,53.0,51.4,52.6
+S004,Juniper Ridge Elementary,Juniper Ridge Elem.|Juniper Ridge ES,Cedar Valley SD,K-5,Rural,315,302,306,316,328,333,58.9,56.3,60.0,64.7,66.4,67.2,61.1,61.7,62.1,71.2,72.3,72.5
+S005,Harborview K-8,Harbor View K8|Harborview School,Bay City Schools,K-8,Urban,542,520,520,538,548,552,56.7,54.0,55.0,61.7,62.2,61.9,56.9,60.0,61.4,66.1,69.9,73.3
+S006,Lincoln High School,Lincoln HS|Lincoln High,Bay City Schools,9-12,Urban,892,893,879,894,924,931,43.3,43.2,42.9,46.4,48.8,50.0,47.1,48.8,51.0,55.6,58.8,62.0
+S007,Sunrise STEM Academy,Sunrise Academy|Sunrise STEM,North Valley Public,K-8,Suburban,477,464,462,472,481,473,55.5,54.2,55.8,56.5,61.9,61.5,60.8,56.9,57.7,65.2,66.8,68.6
+S008,North Creek Middle,North Creek MS|N. Creek Middle,North Valley Public,6-8,Suburban,600,587,581,605,615,610,53.9,52.1,53.3,59.1,56.4,59.2,55.8,57.1,57.9,62.1,62.9,64.6
+S009,Rosa Parks Elementary,Rosa Parks Elem.|Rosa Parks ES,Metro Unified,K-5,Urban,389,378,387,385,392,396,58.5,59.1,60.0,63.2,66.7,68.0,61.4,62.2,63.3,71.6,73.5,72.7
+S010,Orchard Hill School,Orchard Hill Elem.|Orchard Hill,Metro Unified,K-6,Urban,419,415,415,410,430,427,59.6,59.2,58.1,63.4,63.6,65.7,58.5,58.0,60.3,64.7,69.8,69.0
+S011,Prairie View High,Prairie View HS|Prairie Vw High,Prairie County,9-12,Rural,513,510,494,519,525,515,42.3,42.0,41.6,46.0,48.4,49.4,45.1,45.8,49.2,54.9,56.5,58.2
+S012,Lakefront Elementary,Lakefront Elem.|Lake Front ES,Prairie County,K-5,Rural,273,262,265,270,270,281,61.7,61.1,62.4,64.4,67.2,67.3,66.9,67.9,71.4,73.8,72.4,76.5
+S013,Mission Trails Middle,Mission Trails MS|Mission Trls Middle,Mission USD,6-8,Suburban,566,551,556,573,589,600,52.2,50.8,50.8,57.4,58.6,60.0,58.1,60.4,62.5,70.1,73.0,74.1
+S014,Eastside Community School,Eastside Community|East Side School,Mission USD,K-8,Urban,684,682,681,708,710,727,57.2,52.5,54.9,59.2,62.8,62.1,59.1,56.7,59.6,63.7,63.4,66.6
+S015,Willow Bend Elementary,Willow Bend Elem.|Willow Bend ES,Oak River Schools,K-5,Suburban,334,327,328,341,346,345,59.9,59.2,59.8,63.5,66.7,66.8,65.7,66.3,67.3,74.1,74.1,75.3
+S016,Granite Peak High,Granite Peak HS|Granite Pk High,Oak River Schools,9-12,Suburban,758,752,744,783,789,803,42.1,40.7,41.3,48.7,49.7,49.2,51.9,50.3,51.3,58.8,62.5,61.5
+S017,Bay Meadow Middle,Bay Meadow MS|Bay Meadow Mid.,Coastal Unified,6-8,Urban,630,614,607,628,648,664,54.0,53.0,53.1,58.6,60.4,61.0,54.0,53.8,54.3,61.5,63.5,65.2
+S018,Chavez Arts Academy,Cesar Chavez Arts|Chavez Academy,Coastal Unified,K-8,Urban,535,525,523,523,526,530,59.5,58.4,56.8,63.5,66.0,66.7,57.5,61.5,59.1,63.8,67.0,65.7
+S019,South Fork Elementary,South Fork Elem.|South Fork ES,South Fork SD,K-5,Rural,308,291,289,301,302,316,64.3,61.9,61.1,67.5,69.4,66.7,58.4,59.1,60.0,64.2,64.5,67.2
+S020,New Horizons High,New Horizons HS|New Horizon High,South Fork SD,9-12,Rural,454,446,449,460,470,478,40.2,39.8,43.5,47.1,51.4,50.2,44.1,46.0,45.6,53.5,54.3,58.8
+S021,Aspen Ridge Elementary,Aspen Ridge Elem.|Aspen Ridge ES,Evergreen USD,K-5,Suburban,349,340,331,347,339,343,61.9,57.9,59.5,60.8,62.3,62.3,67.3,68.3,69.1,69.9,74.7,72.9
+S022,Brookside Middle School,Brookside MS|Brookside Mid.,Evergreen USD,6-8,Suburban,617,609,607,631,632,649,49.6,49.4,51.0,55.1,54.7,55.5,58.1,61.8,62.1,66.5,70.5,71.6
+S023,Canyon View High,Canyon View HS|Canyon View High,Mesa County Schools,9-12,Rural,744,736,718,731,753,753,45.9,44.4,45.8,50.0,55.6,52.4,48.7,47.0,49.9,55.0,57.8,57.4
+S024,Desert Springs K-8,Desert Springs K8|Desert Springs School,Mesa County Schools,K-8,Rural,470,466,464,475,485,505,53.2,53.4,53.4,60.6,60.5,60.8,56.8,54.9,57.9,64.4,69.3,66.4
+S025,Oak Terrace Elementary,Oak Terrace Elem.|Oak Terrace ES,Lakeside Unified,K-5,Suburban,393,376,377,402,407,409,62.8,59.8,62.7,63.5,66.9,66.8,65.9,65.0,66.6,67.5,70.6,68.9
+S026,Silver Lake Middle,Silver Lake MS|Silver Lake Mid.,Lakeside Unified,6-8,Suburban,562,550,541,571,573,565,59.7,55.4,55.4,62.6,65.3,63.6,62.5,61.9,65.2,71.6,73.5,74.5
+S027,Washington Prep High,Washington Prep HS|Washington Prep High,Capital City Schools,9-12,Urban,824,826,815,831,849,846,43.4,42.1,43.3,45.8,46.9,44.8,49.8,49.3,52.5,54.1,55.5,56.5
+S028,Franklin Elementary,Franklin Elem.|Franklin ES,Capital City Schools,K-5,Urban,473,474,463,455,471,483,62.7,60.6,61.9,62.5,65.4,65.7,65.1,65.0,71.4,70.9,72.2,74.4
+S029,Mountain View K-8,Mountain View K8|Mountain View School,Foothill Public,K-8,Rural,457,453,446,468,470,490,59.8,58.1,59.9,63.0,63.9,65.4,60.2,60.1,59.8,66.9,68.3,67.3
+S030,Pioneer High School,Pioneer HS|Pioneer High,Foothill Public,9-12,Rural,717,708,703,729,738,754,48.7,45.3,48.4,52.5,50.6,53.0,49.9,51.7,50.7,58.2,58.8,60.0
+S031,Meadowbrook Elementary,Meadowbrook Elem.|Meadowbrook ES,Riverbend Unified,K-5,Suburban,437,430,424,445,433,429,63.5,62.4,65.1,65.9,66.7,67.5,63.5,63.2,65.7,65.5,69.9,68.8
+S032,Riverside Arts Middle,Riverside Arts MS|Riverside Arts Mid.,Riverbend Unified,6-8,Urban,653,636,632,651,653,666,54.2,50.5,54.4,56.8,58.7,61.0,60.3,59.1,64.5,65.1,69.5,70.9
+S033,Sequoia High,Sequoia HS|Sequoia High,Redwoods Joint USD,9-12,Rural,735,717,704,707,716,720,42.1,39.2,43.5,44.0,45.5,47.4,51.8,44.7,50.0,52.9,51.7,53.3
+S034,Pinecrest Elementary,Pinecrest Elem.|Pinecrest ES,Redwoods Joint USD,K-5,Rural,272,272,265,266,262,269,59.3,61.8,61.5,65.1,68.1,67.4,68.9,67.5,70.5,72.3,75.0,75.4
+S035,Adams Community School,Adams Community School|Adams Community School School,Valley Metro Schools,K-8,Urban,607,606,590,605,610,623,53.9,53.4,53.4,59.6,58.8,59.0,60.6,62.4,64.2,67.9,71.3,72.0
+S036,Jefferson STEM High,Jefferson STEM HS|Jefferson STEM High,Valley Metro Schools,9-12,Urban,893,866,857,884,893,900,46.9,47.0,45.7,50.8,50.1,51.3,48.2,51.4,50.7,55.7,57.4,59.5
+S037,Blue Harbor Elementary,Blue Harbor Elem.|Blue Harbor ES,Harbor Unified,K-5,Urban,416,414,410,417,426,435,59.9,60.3,59.5,63.1,63.0,63.0,67.8,68.9,69.2,72.4,73.9,73.3
+S038,Marina Middle School,Marina MS|Marina Mid.,Harbor Unified,6-8,Urban,695,684,687,716,747,756,52.3,52.2,54.6,59.2,60.1,61.1,58.7,61.1,61.7,68.7,72.5,71.3
+S039,Hilltop Elementary,Hilltop Elem.|Hilltop ES,Summit Ridge SD,K-5,Rural,263,271,257,264,272,276,62.6,62.1,63.1,62.8,63.4,63.4,64.5,65.6,66.0,70.1,68.4,70.2
+S040,Summit Ridge High,Summit Ridge HS|Summit Ridge High,Summit Ridge SD,9-12,Rural,707,692,684,707,708,724,47.5,44.1,43.7,46.4,46.7,47.4,49.5,50.5,50.6,51.5,52.2,52.3
+S041,Cottonwood K-8,Cottonwood K8|Cottonwood School,Desert Valley Public,K-8,Suburban,595,581,576,583,588,589,60.2,59.3,61.3,65.6,65.3,69.1,62.1,63.0,65.5,71.4,71.9,77.3
+S042,Mesa Verde Middle,Mesa Verde MS|Mesa Verde Mid.,Desert Valley Public,6-8,Suburban,592,575,575,592,598,595,54.2,52.9,52.6,55.7,57.1,58.4,57.8,60.7,62.1,67.7,65.5,70.6
+S043,Hamilton Elementary,Hamilton Elem.|Hamilton ES,Central Plains USD,K-5,Rural,316,319,330,331,339,344,60.4,59.6,59.4,60.1,62.9,62.7,57.3,60.1,63.2,63.0,62.8,64.0
+S044,Roosevelt High School,Roosevelt HS|Roosevelt High,Central Plains USD,9-12,Rural,776,746,750,787,805,805,44.0,46.3,45.6,47.8,51.5,50.0,49.4,52.0,55.5,55.0,56.5,59.5
+S045,Lakeshore Elementary,Lakeshore Elem.|Lakeshore ES,North Shore Schools,K-5,Suburban,360,353,350,354,357,370,63.1,60.1,60.7,60.2,64.5,64.3,63.0,64.3,65.1,68.2,70.9,70.5
+S046,North Shore Middle,North Shore MS|North Shore Mid.,North Shore Schools,6-8,Suburban,650,627,616,621,642,645,54.9,51.3,55.8,58.2,59.3,60.5,62.1,60.5,64.3,67.7,71.6,72.8
+S047,Camino Real Academy,Camino Real Academy|Camino Real School,Camino USD,K-8,Urban,590,579,569,600,597,608,58.2,59.0,58.3,58.9,62.3,61.9,63.1,61.9,64.9,63.5,68.8,67.1
+S048,Esperanza High School,Esperanza HS|Esperanza High,Camino USD,9-12,Urban,849,830,826,846,861,869,47.6,44.2,46.3,48.8,51.3,53.9,52.3,51.8,50.9,57.1,59.9,64.3
+S049,Sycamore Elementary,Sycamore Elem.|Sycamore ES,Westfield Public,K-5,Suburban,430,438,439,441,451,458,65.7,63.9,62.8,64.4,65.4,67.1,61.2,61.7,63.7,63.9,67.5,66.9
+S050,Westfield Middle,Westfield MS|Westfield Mid.,Westfield Public,6-8,Suburban,598,593,583,610,609,613,55.2,53.3,55.3,62.0,61.2,58.6,55.2,58.7,59.2,63.5,66.9,65.4
+S051,Golden Gate Elementary,Golden Gate Elem.|Golden Gate ES,Metro Bay Unified,K-5,Urban,446,450,450,450,467,469,60.1,60.0,60.4,61.2,64.6,66.7,63.5,68.4,70.7,71.1,74.1,71.5
+S052,Mission Bay High,Mission Bay HS|Mission Bay High,Metro Bay Unified,9-12,Urban,801,785,769,814,806,804,44.8,43.9,45.7,47.0,48.2,50.0,47.8,48.6,52.3,55.6,57.4,56.0
+S053,Valley Oak K-8,Valley Oak K8|Valley Oak School,Valley Oak SD,K-8,Rural,472,461,462,485,486,497,55.2,53.0,54.6,60.0,62.2,61.2,58.2,61.6,61.1,64.0,69.8,71.2
+S054,Oak Meadow High,Oak Meadow HS|Oak Meadow High,Valley Oak SD,9-12,Rural,754,744,747,784,785,798,42.6,41.1,41.9,45.2,46.3,48.1,47.7,51.0,52.0,51.9,54.4,55.9
+S055,Hawthorne Elementary,Hawthorne Elem.|Hawthorne ES,East River Schools,K-5,Suburban,351,352,349,365,363,370,64.1,64.6,62.4,65.6,64.0,65.8,67.4,65.6,65.8,70.8,72.3,73.2
+S056,East River Middle,East River MS|East River Mid.,East River Schools,6-8,Suburban,642,623,595,633,624,634,54.1,56.2,55.4,58.2,57.6,57.6,59.3,63.4,64.1,64.1,66.4,63.8
+S057,Cabrillo Science Academy,Cabrillo Science Academy|Cabrillo Science School,South Coast Unified,K-8,Urban,655,663,654,690,694,701,56.1,54.0,56.8,57.0,58.0,55.6,59.8,59.7,61.5,62.2,63.9,63.9
+S058,Pacific View High,Pacific View HS|Pacific View High,South Coast Unified,9-12,Urban,832,815,811,844,854,863,44.0,44.6,44.9,47.3,46.5,48.4,50.6,50.6,51.2,57.1,59.0,60.4
+S059,Liberty Elementary,Liberty Elem.|Liberty ES,High Desert USD,K-5,Rural,335,330,336,341,356,348,57.8,56.6,59.3,60.0,63.9,66.3,63.3,59.4,63.4,67.1,71.4,72.2
+S060,High Desert High,High Desert HS|High Desert High,High Desert USD,9-12,Rural,678,650,651,674,674,672,45.7,45.2,46.1,48.8,48.8,49.7,45.3,48.3,48.8,50.9,53.3,54.9
