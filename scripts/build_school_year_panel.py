@@ -204,7 +204,7 @@ def main() -> None:
     if not CLASSIFICATIONS_PATH.exists():
         raise FileNotFoundError(
             "Missing data/analysis_ready/cafeteria_partner_role_classifications.csv. "
-            "Create it from the subagent classification workflow before building the panel."
+            "Create it from the reviewer-style classification workflow before building the panel."
         )
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)

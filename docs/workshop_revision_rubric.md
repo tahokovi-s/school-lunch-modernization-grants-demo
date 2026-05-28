@@ -27,9 +27,7 @@ Use a full step for actions that create, inspect, or approve meaningful artifact
 
 - saving project materials
 - creating project memory files
-- inspecting raw data
-- drafting a rubric
-- planning reviewer passes
+- creating one data-intake and role-rubric note
 - creating a classification CSV
 - building the panel
 - reviewing an audit note
@@ -122,10 +120,7 @@ Every major step should leave behind something useful:
 
 - markdown handoff summary
 - README / AGENTS / CLAUDE project memory
-- raw-data preliminary pass
-- classification rubric
-- reviewer plan
-- reviewer notes
+- data-intake and role-rubric note
 - analysis-ready CSV
 - script
 - audit note
@@ -153,7 +148,22 @@ Weak verification checks:
 - restating an expected filename after it is already in the prompt
 - checking for outputs that the prompt already explicitly forbids unless there is a real risk of overreach
 
-### 9. Tone Test
+### 9. Codex App Showcase Test
+
+Show Codex app capabilities when they are part of the research work.
+
+Good showcase moments:
+
+- letting Codex run a small terminal check and explain the result
+- using `@` file references for source PDFs and local project files
+- using subagents or delegated reviewer passes for judgment-heavy review when available
+- using the in-app browser or local preview tool to inspect generated visual outputs
+- asking Codex to install the required visualization libraries, generate reusable plotting code, show figures as chat artifacts, and support element-level visual review when the workflow reaches figures
+- using skills only when they help the task at hand
+
+Avoid adding tool demos that do not create, inspect, or verify a meaningful workshop artifact.
+
+### 10. Tone Test
 
 The guide should sound practical, calm, and research-native.
 
@@ -172,7 +182,7 @@ Avoid:
 - copy that implies the audience is being managed
 - copy that implies the agent is incompetent
 
-### 10. Compression Test
+### 11. Compression Test
 
 Before finalizing a change, ask:
 

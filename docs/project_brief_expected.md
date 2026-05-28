@@ -37,13 +37,12 @@ Required columns:
 
 1. Confirm the raw-data ZIP attachment has been saved in `data/original/`.
 2. Unzip the attachment and identify the extracted CSV files.
-3. Inspect raw data and identify school and district name variants.
-4. Draft a conservative classification rubric for cafeteria partner roles.
-5. Use subagent reviewer roles to classify cafeteria partner records.
-6. Reconcile reviewer disagreements conservatively and quarantine ambiguous partner roles instead of forcing them into school lead status.
-7. Match grant awards and meal-program lead records to canonical school IDs using the established-school crosswalk.
-8. Build one row per school-year from 2019 through 2024.
-9. Write audit files that summarize counts, matching problems, ambiguous rows, reviewer disagreements, and assumptions.
+3. Create one data-intake and role-rubric note that identifies school and district name variants, likely keys, and conservative cafeteria partner categories.
+4. Use reviewer-style passes to classify cafeteria partner records and reconcile disagreements conservatively.
+5. Quarantine ambiguous partner roles instead of forcing them into school lead status.
+6. Match grant awards and meal-program lead records to canonical school IDs using the established-school crosswalk.
+7. Build one row per school-year from 2019 through 2024.
+8. Write audit files that summarize counts, matching problems, ambiguous rows, reviewer disagreements, and assumptions.
 
 ## Human Judgment Points
 

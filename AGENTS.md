@@ -54,8 +54,8 @@ Use plain language. A good paragraph usually beats a clever label.
 
 Good examples:
 
-- "This prompt should create `docs/cafeteria_partner_classification_rubric.md`."
-- "The rubric should define the decision rules; the row-level classification table comes later in the classification pass."
+- "This prompt should create `docs/data_intake_and_role_rubric.md`."
+- "The intake note should define the decision rules; the row-level classification table comes later in the classification pass."
 - "Use the saved ZIP at `data/original/school_lunch_modernization_raw_data.zip`."
 
 Avoid:
