@@ -261,22 +261,22 @@ const modules = [
   },
   {
     id: "raw-data",
-    title: "Inspect The Raw Data And Set Review Rules",
-    step: "Prepare evidence before classification",
+    title: "Inspect Raw Data Before Classification",
+    step: "Find the evidence before making categories",
     tag: "Data",
     body: [
-      "Before asking the agent to classify anything, start from the raw-data ZIP attachment, extract it into the project, inspect the files, and prepare conservative rules for separate review passes.",
-      "Keep this module deliberately practical. You are not cleaning the data yet; you are making sure the files are real, the raw evidence is preserved, and the judgment-heavy role labels are visible before Module 5."
+      "Module 3 saved the PI email, raw-data ZIP, and project memory. Now open the ZIP and make the raw evidence legible before asking anyone to classify rows.",
+      "This module leaves behind three things: preliminary notes on the raw files, a conservative cafeteria-partner rubric, and a review plan for Module 5. It does not create cleaned data, row-level classifications, code, or the school-year panel."
     ],
-    contextTitle: "What We're Looking For",
+    contextTitle: "Module 4 Artifacts",
     contextBlocks: [
       {
-        type: "conceptCards",
-        cards: [
-          { label: "Inventory", text: "Which files exist, how many rows they have, and what each one appears to represent." },
-          { label: "Join Logic", text: "Which columns look like keys, where school names or district labels may need matching, and where aliases might matter." },
-          { label: "Judgment Points", text: "Which cafeteria partner roles are clearly not school leads, which may be leads, and which are ambiguous enough to need a rule." },
-          { label: "Carry Forward", text: "What should be written into docs/raw_data_preliminary_pass.md so the rubric and review passes are grounded in evidence." }
+        type: "miniTable",
+        columns: ["Artifact", "Purpose", "What to check"],
+        rows: [
+          ["docs/raw_data_preliminary_pass.md", "Raw-file inspection notes.", "CSV files, row counts, likely keys, aliases, and messy role labels."],
+          ["docs/cafeteria_partner_classification_rubric.md", "Decision rules for cafeteria partner roles.", "Allowed categories, concrete examples, and ambiguity triggers."],
+          ["docs/cafeteria_partner_subagent_review_plan.md", "Handoff for Module 5 reviewer passes.", "Evidence rules, disagreement handling, and row-count accounting."]
         ]
       }
     ],
@@ -284,102 +284,41 @@ const modules = [
     substeps: [
       {
         number: "4.1",
-        title: "Inspect The Raw Data",
-        text: "Use the ZIP saved from Module 3 at data/original/school_lunch_modernization_raw_data.zip. Give Codex one concise action prompt: extract it, identify the files, explain what is there, and inspect the raw data before any classification work.",
-        contextBlocks: [
-          {
-            type: "miniTable",
-            title: "Inspection Output, Not Analysis Output",
-            columns: ["Produce now", "Save for later"],
-            rows: [
-              ["File inventory, columns, row counts, likely keys, aliases, messy role labels, and human-review candidates.", "Analysis code, row-level classifications, cleaned data, and the school-year panel."],
-              ["docs/raw_data_preliminary_pass.md with notes someone else can inspect.", "Final decisions about ambiguous partner roles."]
-            ]
-          },
-          {
-            type: "miniTable",
-            title: "Bad Prompt, Better Prompt",
-            columns: ["Weak prompt", "Better prompt", "Why"],
-            rows: [
-              ["Clean the data and make the panel.", "Inspect the ZIP, list files and columns, identify messy cases, save notes, and stop before coding.", "Keeps one action prompt from swallowing the next three modules."],
-              ["Classify the cafeteria roles.", "Inspect role records, draft conservative category rules, and wait until Module 5 for row-level classification.", "Keeps judgment visible before it becomes data."]
-            ]
-          }
-        ],
+        title: "Inspect The Raw Files",
+        text: "Use the ZIP saved from Module 3 at data/original/school_lunch_modernization_raw_data.zip. This pass should make the files understandable: what is in each CSV, how rows are counted, where joins may happen, and which partner-role cases need human judgment.",
         prompts: [
           {
-            label: "Raw-data inspection prompt",
-            text: "Mode: Execute.\n\nThe raw-data ZIP is at data/original/school_lunch_modernization_raw_data.zip. Please do one first-pass raw-data inspection.\n\nUnzip it into data/original/ and preserve the original ZIP. Then report:\n\n- which CSV files are present and their row counts\n- what each CSV appears to contain\n- likely keys and relationships between files\n- school or district aliases that could affect matching\n- messy cafeteria partner roles, ambiguous cases, and rows that should not be auto-classified\n\nSave notes to docs/raw_data_preliminary_pass.md with sections for file inventory, data structure, classification risks, and open questions.\n\nStop after this inspection pass. Do not clean data, classify rows, write analysis code, or build the panel yet."
+            label: "Raw Data Inspection",
+            text: "Inspect the raw-data ZIP at data/original/school_lunch_modernization_raw_data.zip.\n\nExtract it into data/original/ while preserving the ZIP. Then create docs/raw_data_preliminary_pass.md summarizing:\n\n- which CSV files are present and their row counts\n- what each CSV appears to contain and its likely unit of observation\n- likely keys and relationships between files\n- school or district aliases that could affect matching\n- cafeteria partner-role cases that may need human judgment\n\nFocus on inspection only for now; classification and panel-building come later."
           }
         ]
       },
       {
         number: "4.2",
-        title: "Draft A Classification Rubric",
-        text: "Turn the messy cases into a conservative rubric that the subagent reviewers will use in Module 5.",
-        contextBlocks: [
-          {
-            type: "conceptCards",
-            title: "What The Rubric Must Specify",
-            cards: [
-              { label: "Evidence For Each Category", text: "Use role text, organization names, notes, and record IDs from the CSV examples." },
-              { label: "Rule For Unclear Roles", text: "Strategic, prospective, vague, or possibly implementation-related roles should go to ambiguous human review." },
-              { label: "Rubric-Only Output", text: "Write the decision rules here; leave the row-level classification table for Module 5." }
-            ]
-          },
-          {
-            type: "miniTable",
-            title: "What The Rubric Should Prevent",
-            columns: ["Problem to prevent", "What the rubric should require"],
-            rows: [
-              ["Unsupported category examples", "Each category should cite examples from actual CSV rows."],
-              ["School-name false positives", "A school name alone should not be enough to call the organization a meal-program lead."],
-              ["Ambiguous roles forced into lead status", "Strategic, prospective, vague, or unclear partner roles should remain human-review cases."],
-              ["Row-level classification too early", "The rubric should define rules only; row-level role_category assignments happen in Module 5."]
-            ]
-          }
-        ],
+        title: "Write The Role Classification Rubric",
+        text: "Once the preliminary pass has surfaced messy partner roles, write the rules future reviewers will use. The rubric should define evidence for each category and keep unclear cases visible as ambiguous instead of forcing them into confirmed school lead status.",
         notes: [
-          "This prompt should create docs/cafeteria_partner_classification_rubric.md. The rubric should explain each allowed role category, what evidence supports or rules out that category, examples from the raw CSV, and when a row should be left ambiguous for human review. It should define the decision rules; the row-level classification table comes later in Module 5."
+          "This prompt should create docs/cafeteria_partner_classification_rubric.md. The rubric should define decision rules only; row-level role_category assignments happen in Module 5."
         ],
         prompts: [
           {
-            label: "Rubric prompt",
-            text: "Mode: Execute.\n\nBased on docs/raw_data_preliminary_pass.md and data/original/cafeteria_partner_role_records.csv, draft docs/cafeteria_partner_classification_rubric.md.\n\nThe rubric should define these allowed role_category values:\n\n- school_meal_program_lead\n- district_or_state_office\n- equipment_or_installation_vendor\n- food_supplier_or_menu_vendor\n- nutrition_education_partner\n- advisor_or_consultant\n- ambiguous\n\nFor each category, explain:\n\n- signals that support the category\n- signals that rule it out\n- concrete examples from the CSVs, citing record_id or other row identifiers when available\n- human-review triggers\n\nBe conservative. If a role is unclear, strategic, prospective, vague, or only possibly implementation-related, mark it ambiguous for human review rather than forcing it into school lead status.\n\nStop after writing the rubric. Do not create the final classification CSV, write a classification script, or build the panel yet."
+            label: "Role Rubric",
+            text: "Using docs/raw_data_preliminary_pass.md and data/original/cafeteria_partner_role_records.csv, draft docs/cafeteria_partner_classification_rubric.md.\n\nDefine these allowed role_category values:\n\n- school_meal_program_lead\n- district_or_state_office\n- equipment_or_installation_vendor\n- food_supplier_or_menu_vendor\n- nutrition_education_partner\n- advisor_or_consultant\n- ambiguous\n\nFor each category, explain the evidence that supports it, the evidence that rules it out, concrete examples from the CSVs, and triggers for human review. Be conservative: unclear, vague, prospective, or only possibly implementation-related roles should remain ambiguous."
           }
         ]
       },
       {
         number: "4.3",
-        title: "Plan The Review Passes",
-        text: "Ask Codex to plan the reviewer roles, evidence rules, disagreement handling, and failure checks before classification begins.",
+        title: "Prepare The Module 5 Review Plan",
+        text: "The rubric defines the categories. The review plan defines how separate reviewer passes will apply them and how disagreements become audit notes instead of hidden assumptions.",
         materials: [{ label: "Output file", text: "docs/cafeteria_partner_subagent_review_plan.md" }],
-        contextBlocks: [
-          {
-            type: "miniTable",
-            title: "Review Plan Must Cover",
-            columns: ["Area", "Question"],
-            rows: [
-              ["Evidence", "Which fields should each reviewer cite when making a judgment?"],
-              ["Disagreement", "What happens when one pass sees a school lead and another sees an ambiguous partner?"],
-              ["Verification", "How will the final reviewer check that every original row is accounted for in Module 5?"]
-            ]
-          },
-          {
-            type: "miniTable",
-            title: "Quick Verify Before Module 5",
-            columns: ["Check", "Pass condition"],
-            rows: [
-              ["Notes saved", "docs/raw_data_preliminary_pass.md names files, columns, likely keys, messy roles, and rows needing review."],
-              ["Rubric ready", "docs/cafeteria_partner_classification_rubric.md protects ambiguous cases."],
-              ["Review plan ready", "docs/cafeteria_partner_subagent_review_plan.md names roles, evidence rules, and disagreement rules."]
-            ]
-          }
+        notes: [
+          "Before Module 5, you should have preliminary notes, a rubric, and a review plan, but no row-level classification CSV or school-year panel."
         ],
         prompts: [
           {
-            label: "Review-pass plan prompt",
-            text: "Create docs/cafeteria_partner_subagent_review_plan.md for classifying data/original/cafeteria_partner_role_records.csv with a team of subagent reviewers in Module 5.\n\nInclude at least four roles:\n\n- School lead reviewer\n- Non-lead partner reviewer\n- Ambiguity reviewer\n- Reconciliation lead\n\nFor each role, explain:\n\n- what evidence it should cite\n- what mistakes it should guard against\n- how disagreements should be resolved\n- what failure checks should stop the pass or send a row to human review\n\nThe plan should also specify the expected Module 5 outputs, the allowed role_category values from docs/cafeteria_partner_classification_rubric.md, and a row-count check to confirm every original record is accounted for after reconciliation.\n\nDefault rule: be conservative. If uncertainty remains unresolved, mark the row as ambiguous and needing human review.\n\nStop after writing the review plan. Do not classify rows or create the final CSV yet."
+            label: "Module 5 Review Plan",
+            text: "Create docs/cafeteria_partner_subagent_review_plan.md for the Module 5 classification pass.\n\nBase it on docs/cafeteria_partner_classification_rubric.md and data/original/cafeteria_partner_role_records.csv. Define these four review passes:\n\n- School lead reviewer\n- Non-lead partner reviewer\n- Ambiguity reviewer\n- Reconciliation lead\n\nFor each pass, explain what evidence it should cite and what would count as weak evidence. Also explain how disagreements should be reconciled, how unresolved uncertainty should stay in the ambiguous category, and how Module 5 should verify that every original row is accounted for."
           }
         ]
       }
@@ -388,11 +327,10 @@ const modules = [
     commands: [],
     prompts: [],
     checks: [
-      "Codex extracted the ZIP, identified the CSV files, explained the folder contents, and saved beginner-readable preliminary notes.",
-      "The preliminary notes list columns, row counts, likely keys, school or district aliases, messy role labels, and rows needing human review.",
-      "The classification rubric is conservative, example-backed, and includes an ambiguous category with human-review triggers.",
-      "The review plan names reviewer roles, evidence rules, disagreement rules, and row-count verification before Module 5 classification.",
-      "No analysis code, row-level classification CSV, or school-year panel was created in Module 4."
+      "docs/raw_data_preliminary_pass.md identifies files, row counts, likely keys, aliases, messy role labels, and rows needing review.",
+      "docs/cafeteria_partner_classification_rubric.md defines allowed categories with examples and ambiguity triggers.",
+      "docs/cafeteria_partner_subagent_review_plan.md explains reviewer passes, disagreement handling, and row accounting for Module 5.",
+      "Module 4 has not produced a row-level classification CSV, analysis code, or school-year panel."
     ]
   },
   {
@@ -784,7 +722,7 @@ const modules = [
 const moduleNarrativeCopy = {
   context: "Move slowly here before creating files. You are learning how to brief and supervise a coding agent: give it source-of-truth context, ask for a plan, review the assumptions, verify the output, and preserve judgment calls in an audit trail.",
   handoff: "Use this as the intake pass. By the end, the source email, raw ZIP, handoff summary, and project memory files should be in the project root, and Module 4 can begin raw-data inspection.",
-  "raw-data": "Turn curiosity into evidence before classifying or building anything. Ask the agent to open the raw files, describe what is there, and surface the messy school names and role labels that could otherwise become invisible mistakes.",
+  "raw-data": "Use this as the data intake pass. Open the saved ZIP, inventory the CSVs, and turn the messy role evidence into rules before classification starts.",
   classification: "This is the judgment-heavy part of the workflow. Use the agent to organize independent reviews, cite row-level evidence, and keep uncertain cases out of the analysis variables instead of pretending ambiguity disappeared.",
   panel: "The panel build is the payoff for the careful setup. By this point the agent has enough context, raw-file knowledge, and audit constraints to write a small script that turns scattered records into a school-year dataset you can actually inspect.",
   payoff: "Take a breath after the build and look at the before-and-after view. You can see how scaffolding, inspection, classification, and auditing add up to something more useful than a single generated file.",
@@ -805,9 +743,9 @@ const substepNarrativeCopy = {
   "handoff:3.5": "Now the downloaded materials become part of the project record. Keeping the ZIP unchanged and storing the email in docs/ makes it clear which files are original evidence and which files the agent creates later.",
   "handoff:3.6": "The email handoff summary is the first derived memory file. It asks the agent to translate an informal PI message into action items, open questions, deliverables, and judgment calls before any code exists.",
   "handoff:3.7": "The project memory files give future agent turns stable context. They tell Codex and Claude Code to read the source materials first, inspect before coding, preserve audit notes, and be conservative with ambiguous roles.",
-  "raw-data:4.1": "This inspection pass gives the agent just enough structure: open the ZIP, inventory the files, describe the raw materials, and surface the cases that need rules before anyone starts classifying.",
-  "raw-data:4.2": "In this step, ask Codex to write the rules for classifying cafeteria partner roles before anyone assigns categories to individual rows. The rubric should make clear what counts as a school meal-program lead, what does not, and which cases should stay ambiguous for human review.",
-  "raw-data:4.3": "Planning the review passes before classification keeps the work disciplined. Each reviewer has a different job, so the final classification is less likely to collapse every uncertain partner into the same convenient bucket.",
+  "raw-data:4.1": "Start with a plain inventory of the raw files. The useful output is a note that names the CSVs, row counts, likely keys, aliases, and partner-role cases that need judgment.",
+  "raw-data:4.2": "The rubric is where judgment becomes a rule, not a row-level assignment. It should say which evidence supports each category and when a case should remain ambiguous.",
+  "raw-data:4.3": "The review plan is the handoff to Module 5. It should define the separate passes, how disagreements are handled, and how every original role row will be accounted for.",
   "classification:5.1": "Start classification with a verbal contract. Ask the agent to restate the categories, outputs, and conservative default before touching rows, so you can correct the rules while they are still easy to change.",
   "classification:5.2": "Independent reviewer passes are a simple way to make agent judgment more inspectable. One pass looks for clear school leads, another guards against false positives, and another protects ambiguity.",
   "classification:5.3": "Reconciliation is where the review becomes data. The agent turns notes into a row-level CSV, but it also has to explain disagreements and keep ambiguous records visible in the audit.",

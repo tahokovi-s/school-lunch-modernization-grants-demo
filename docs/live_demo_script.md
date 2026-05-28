@@ -151,75 +151,66 @@ AGENTS.md and CLAUDE.md should tell coding agents to read the email and handoff 
 Keep the files concise. Do not inspect or unzip the raw data yet.
 ```
 
-## 4. Inspect Raw Data
+## 4. Inspect Raw Data Before Classification
 
-The raw-data ZIP from Module 3 should already be at `data/original/school_lunch_modernization_raw_data.zip`. Use a compact, realistic three-prompt flow: one careful raw-data inspection prompt, one rubric prompt, and one review-pass plan prompt. Keep safety in the notes and checks rather than creating extra process scaffolding.
+The raw-data ZIP from Module 3 should already be at `data/original/school_lunch_modernization_raw_data.zip`. Use three short prompts: inspect the files, write the role-classification rubric, then prepare the Module 5 review plan. The module should leave behind notes and a review plan, not a finished classification.
 
-Ask the agent to unzip the attachment, explain the extracted folder contents, and inspect the raw data in one concise request:
+### 4.1 Inspect The Raw Files
+
+Ask the agent to make the raw files legible before any classification work:
 
 ```text
-Mode: Execute.
+Inspect the raw-data ZIP at data/original/school_lunch_modernization_raw_data.zip.
 
-The raw-data ZIP is at data/original/school_lunch_modernization_raw_data.zip. Please do one first-pass raw-data inspection.
-
-Unzip it into data/original/ and preserve the original ZIP. Then report:
+Extract it into data/original/ while preserving the ZIP. Then create docs/raw_data_preliminary_pass.md summarizing:
 
 - which CSV files are present and their row counts
-- what each CSV appears to contain
+- what each CSV appears to contain and its likely unit of observation
 - likely keys and relationships between files
 - school or district aliases that could affect matching
-- messy cafeteria partner roles, ambiguous cases, and rows that should not be auto-classified
+- cafeteria partner-role cases that may need human judgment
 
-Save notes to docs/raw_data_preliminary_pass.md with sections for file inventory, data structure, classification risks, and open questions.
-
-Stop after this inspection pass. Do not clean data, classify rows, write analysis code, or build the panel yet.
+Focus on inspection only for now; classification and panel-building come later.
 ```
 
-Then ask the agent to turn the preliminary pass into a classification rubric:
+### 4.2 Write The Role Classification Rubric
+
+Then ask the agent to turn the preliminary pass into a compact classification rubric:
 
 ```text
-Mode: Execute.
+Using docs/raw_data_preliminary_pass.md and data/original/cafeteria_partner_role_records.csv, draft docs/cafeteria_partner_classification_rubric.md.
 
-Based on docs/raw_data_preliminary_pass.md and data/original/cafeteria_partner_role_records.csv, draft docs/cafeteria_partner_classification_rubric.md.
+Define these allowed role_category values:
 
-The rubric should define these categories: school_meal_program_lead, district_or_state_office, equipment_or_installation_vendor, food_supplier_or_menu_vendor, nutrition_education_partner, advisor_or_consultant, and ambiguous.
+- school_meal_program_lead
+- district_or_state_office
+- equipment_or_installation_vendor
+- food_supplier_or_menu_vendor
+- nutrition_education_partner
+- advisor_or_consultant
+- ambiguous
 
-For each category, explain the signals that support it, signals that rule it out, and concrete examples from the CSVs. Keep the rubric compact but concrete. Be conservative: if a role is unclear, strategic, prospective, or only possibly implementation-related, mark it ambiguous for human review rather than forcing it into school lead status.
-
-Do not classify rows, create the final classification CSV, write analysis code, or build the panel.
+For each category, explain the evidence that supports it, the evidence that rules it out, concrete examples from the CSVs, and triggers for human review. Be conservative: unclear, vague, prospective, or only possibly implementation-related roles should remain ambiguous.
 ```
+
+### 4.3 Prepare The Module 5 Review Plan
 
 Then ask the agent to plan the review passes that will happen in Module 5:
 
 ```text
-Mode: Execute.
+Create docs/cafeteria_partner_subagent_review_plan.md for the Module 5 classification pass.
 
-Create docs/cafeteria_partner_subagent_review_plan.md for classifying data/original/cafeteria_partner_role_records.csv with a team of subagent reviewers in Module 5.
-
-Include at least four roles:
+Base it on docs/cafeteria_partner_classification_rubric.md and data/original/cafeteria_partner_role_records.csv. Define these four review passes:
 
 - School lead reviewer
 - Non-lead partner reviewer
 - Ambiguity reviewer
 - Reconciliation lead
 
-For each role, explain:
-
-- what evidence it should cite
-- what mistakes it should guard against
-- how disagreements should be resolved
-- what failure checks should stop the pass or send a row to human review
-
-The plan should also specify the expected Module 5 outputs, the allowed role_category values from docs/cafeteria_partner_classification_rubric.md, and a row-count check to confirm every original record is accounted for after reconciliation.
-
-Default rule: be conservative. If uncertainty remains unresolved, mark the row as ambiguous and needing human review.
-
-Stop after writing the review plan. Do not classify rows or create the final CSV yet.
+For each pass, explain what evidence it should cite and what would count as weak evidence. Also explain how disagreements should be reconciled, how unresolved uncertainty should stay in the ambiguous category, and how Module 5 should verify that every original row is accounted for.
 ```
 
-Before moving on, do a quick human verify: `docs/raw_data_preliminary_pass.md` exists, the rubric protects ambiguous cases, `docs/cafeteria_partner_subagent_review_plan.md` names roles and disagreement rules, and no classification CSV or panel file exists yet.
-
-Look for school name variants, cafeteria partner roles, and ambiguous strategic partners before asking the subagent team to classify rows. Module 4 should leave behind notes and a review plan, not a finished classification.
+Before moving on, confirm that `docs/raw_data_preliminary_pass.md`, `docs/cafeteria_partner_classification_rubric.md`, and `docs/cafeteria_partner_subagent_review_plan.md` exist, and that no classification CSV or panel file exists yet.
 
 ## 5. Classify Cafeteria Partner Roles With Subagents
 
