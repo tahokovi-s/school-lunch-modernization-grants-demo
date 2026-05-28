@@ -24,43 +24,11 @@ Please check whether Python is installed and available to you. If it is availabl
 
 Open the public GitHub Pages site in the browser. The welcome page links to the training guide, and the guide mirrors the sequence participants will follow side by side with Codex or Claude Code.
 
-## 2. Context Before Coding
-
-Use this module as a short reading pause before anyone creates files. Do not turn it into a taxonomy lecture. The point is to make the research target concrete and give participants one habit they can use immediately.
-
-Say the target in plain English: we are trying to build an auditable school-year panel for school lunch modernization grants. The panel should show grant receipt, grant amounts, meal outcomes, and a conservative `MealProgramLead` indicator.
-
-Then name the problem in the data. The PI email and raw ZIP are the source materials, but the files will not already agree with one another. School names and district labels may not match cleanly. Cafeteria partner-role rows mix school leads, district offices, vendors, advisors, and ambiguous partners. Those distinctions need to stay visible until someone reviews them.
-
-Use the figure to show why the role labels are evidence, not final categories. Then give participants one reusable prompt shape:
-
-```text
-Context: [source-of-truth files, active folder, and research target]
-Next action: [one bounded thing the agent should do now]
-Output: [specific file, checklist, summary, or decision needed]
-Stop before: [work that belongs in a later module]
-Checks: [research risks to verify, such as row counts, aliases, ambiguous roles, or audit notes]
-```
-
-Use the prompt contrast as a quick reference, but keep it practical:
-
-```text
-Bad: Clean the school lunch data and make the panel.
-
-Better: Context: The saved PI email is the source of truth for school_lunch_modernization_grants.
-Next action: summarize the assignment.
-Output: create docs/email_handoff_summary.md with the PI request, required inputs, deliverables, open questions, assumptions, and judgment calls.
-Stop before: unzipping data, classifying cafeteria partner roles, writing code, or building the panel.
-Checks: flag wrong-folder risk, hidden role-classification assumptions, and anything that needs PI review.
-```
-
-End the module with the working habit: before coding, tell the agent what evidence to use, what one artifact to produce, and where to stop.
-
-## 3. From PI Email To Project Memory
+## 2. From PI Email To Project Memory
 
 This module gets participants from an empty outer workspace to a ready project root with the assignment materials and memory files in place. Keep it brisk: the goal is setup plus context, not data inspection.
 
-### 3.1 Create And Open `My_RA_Tasks`
+### 2.1 Create And Open `My_RA_Tasks`
 
 Have participants create a new folder named `My_RA_Tasks` somewhere they can find again, such as Documents, Desktop, or another personal work folder.
 
@@ -68,7 +36,7 @@ Then have them open Codex, create a new project from an existing folder, and sel
 
 Say plainly: `My_RA_Tasks` is the outer workspace. The actual research project folder will be created inside it.
 
-### 3.2 You've Got Mail! PI Email And Source Materials
+### 2.2 You've Got Mail! PI Email And Source Materials
 
 With `My_RA_Tasks` open in Codex, have participants open the PI assignment in the guide. Use the image as a brief arrival cue, then move straight to the email and downloads.
 
@@ -79,7 +47,7 @@ Have participants review the PI email and download both files:
 
 If the browser asks where to save them, choose `My_RA_Tasks` for now. The guide page is only the delivery mechanism. Once saved, the email PDF and raw ZIP are the project source materials.
 
-### 3.3 Create The Project Folder
+### 2.3 Create The Project Folder
 
 Ask Codex to create the dedicated project folder inside `My_RA_Tasks`. The folder map is the main idea:
 
@@ -106,13 +74,13 @@ Add .gitkeep placeholder files in empty data, audit_notes, and final_outputs fol
 Stop after creating the folders. Do not inspect data, unzip files, classify rows, write analysis code, or build the panel. When done, list the created paths and remind me to reopen school_lunch_modernization_grants as the active Codex project root.
 ```
 
-### 3.4 Reopen The Project Folder
+### 2.4 Reopen The Project Folder
 
 After Codex creates the folder, have participants open `school_lunch_modernization_grants` as the active Codex project root before continuing. The rest of the workshop paths are relative to that project.
 
 Do not make this a Codex prompt. Have participants confirm in the app that the folder shown is `school_lunch_modernization_grants`, not `My_RA_Tasks`.
 
-### 3.5 Move Source Materials Into The Project
+### 2.5 Move Source Materials Into The Project
 
 Have participants move or save the downloaded files into the project:
 
@@ -121,7 +89,7 @@ Have participants move or save the downloaded files into the project:
 
 Leave the ZIP unchanged.
 
-### 3.6 Summarize The PI Request
+### 2.6 Summarize The PI Request
 
 Ask Codex to treat the saved PI email as the source of truth and turn it into a markdown handoff summary:
 
@@ -135,7 +103,7 @@ Read the saved email artifact and create docs/email_handoff_summary.md. Include 
 If the email is missing or unreadable, stop and tell me. Do not inspect or unzip the raw data yet.
 ```
 
-### 3.7 Create Project Memory Files
+### 2.7 Create Project Memory Files
 
 After the handoff summary exists, create the project memory files:
 
@@ -151,11 +119,11 @@ AGENTS.md and CLAUDE.md should tell coding agents to read the email and handoff 
 Keep the files concise. Do not inspect or unzip the raw data yet.
 ```
 
-## 4. Inspect Raw Data Before Classification
+## 3. Inspect Raw Data Before Classification
 
 The raw-data ZIP should already be at `data/original/school_lunch_modernization_raw_data.zip`. Use three short prompts: inspect the files, write the role-classification rubric, then prepare the review plan for row-level classification. This pass should leave behind notes and a review plan, not a finished classification.
 
-### 4.1 Inspect The Raw Files
+### 3.1 Inspect The Raw Files
 
 Ask the agent to make the raw files legible before any classification work:
 
@@ -173,7 +141,7 @@ Extract it into data/original/ while preserving the ZIP. Then create docs/raw_da
 Focus on inspection only for now; classification and panel-building come later.
 ```
 
-### 4.2 Write The Role Classification Rubric
+### 3.2 Write The Role Classification Rubric
 
 Then ask the agent to turn the preliminary pass into a compact classification rubric:
 
@@ -193,7 +161,7 @@ Define these allowed role_category values:
 For each category, explain the evidence that supports it, the evidence that rules it out, concrete examples from the CSVs, and triggers for human review. Be conservative: unclear, vague, prospective, or only possibly implementation-related roles should remain ambiguous.
 ```
 
-### 4.3 Prepare The Classification Review Plan
+### 3.3 Prepare The Classification Review Plan
 
 Then ask the agent to plan the review passes that will happen before row-level classification:
 
@@ -212,7 +180,7 @@ For each pass, explain what evidence it should cite and what would count as weak
 
 Before moving on, confirm that `docs/raw_data_preliminary_pass.md`, `docs/cafeteria_partner_classification_rubric.md`, and `docs/cafeteria_partner_subagent_review_plan.md` exist, and that no classification CSV or panel file exists yet.
 
-## 5. Classify Cafeteria Partner Roles With Subagents
+## 4. Classify Cafeteria Partner Roles With Subagents
 
 ```text
 Read docs/cafeteria_partner_classification_rubric.md and docs/cafeteria_partner_subagent_review_plan.md. Before classifying rows, restate the reviewer roles, the allowed role_category values, the conservative default rule, and the output files we need. Do not write or run a classification script.
@@ -248,7 +216,7 @@ Read audit_notes/cafeteria_partner_role_classification_audit.md and data/analysi
 
 This module teaches classification as a judgment-heavy review workflow. The analysis-ready CSV is still machine-readable, but the reasoning comes from multiple reviewer perspectives and a visible reconciliation step.
 
-## 6. Build The School-Year Panel
+## 5. Build The School-Year Panel
 
 First confirm the inputs from the raw data and subagent classification workflow:
 
@@ -278,7 +246,13 @@ Inspect data/analysis_ready/school_year_panel.csv and audit_notes/build_school_y
 
 The panel is analysis-ready but not judgment-free. The audit file is where the agent hands uncertainty back to the human.
 
-## 7. Discuss Human Judgment
+## 6. Before And After: What The Agentic Workflow Fixed
+
+Use this read-only module as a short debrief after the panel exists. The point is to show the visible difference between the raw assignment materials and the analysis-ready school-year panel without pretending the agent removed human judgment.
+
+Emphasize the payoff in plain English: the workflow created a stable panel shape, preserved unmatched names and ambiguous role rows, and left audit notes that a researcher can inspect before relying on the output.
+
+## 7. Audit Trails And PI Update
 
 Use this prompt:
 
@@ -286,7 +260,13 @@ Use this prompt:
 Based on the audit files, draft a short note to the PI explaining what is complete and what needs judgment.
 ```
 
-## 8. Extra Resources
+## 8. Regression Analysis And Causal Inference
+
+Use this module only if there is time after the core panel workflow. The follow-up PI email introduces a new question about the 2022 scoring change, and the teaching point is that agents can move quickly from panel data to regressions while humans still own the research design.
+
+Keep the sequence simple: save the follow-up email, summarize the analysis request, ask for a design plan before code, run the provisional analysis suite, inspect the code and results, then draft a cautious PI update. Stress that the output is exploratory and should not be oversold as causal proof.
+
+## 9. Extra Resources
 
 Use this optional section only if there is time after the core research workflow. It covers `/skills`, `$skill-installer`, and the official OpenAI skills catalog:
 

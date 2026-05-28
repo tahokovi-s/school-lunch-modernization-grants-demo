@@ -84,7 +84,7 @@ Prefer:
 - `Inspection Output, Not Analysis Output`
 - `What The Rubric Must Specify`
 - `What The Rubric Should Prevent`
-- `Quick Verify Before Module 5`
+- `Quick Verify Before Classification`
 
 Avoid vague or meta headers:
 

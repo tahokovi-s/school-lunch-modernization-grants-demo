@@ -51,44 +51,6 @@ const modules = [
     prompts: []
   },
   {
-    id: "context",
-    title: "Context Before Coding",
-    tag: "Context",
-    readOnly: true,
-    body: [
-      "Before anyone creates files, pause for the shape of the research task. We are not asking the agent to \"clean the data\" in one leap. We are trying to build an auditable school-year panel: one row per school per year, with modernization grant receipt, grant amounts, meal outcomes, and clear notes about the judgment calls behind the variables.",
-      "The hard part is not that the agent needs elaborate instructions to find files. The hard part is that the raw materials describe different things. A school directory names schools and districts. Grant records describe awards. Cafeteria partner-role rows mix school leads, district offices, vendors, advisors, and ambiguous partners. If we let those distinctions disappear too early, the final panel may look clean while hiding the decisions that produced it.",
-      "So the habit for this workshop is simple: before asking the agent to act, tell it what evidence to use, what one artifact to produce, and where to stop. The stop point is usually where human judgment begins: matching names, deciding whether a role really indicates school meal-program leadership, or relying on a merged output.",
-      "You do not need to memorize a framework. Just keep one question in mind as we move through the modules: what would I need to inspect before trusting the next file?"
-    ],
-    contextTitle: "What To Notice",
-    contextBlocks: [
-      {
-        type: "figure",
-        src: "assets/generated/raw_role_distribution.svg?v=20260527-school-lunch",
-        alt: "Bar chart of the most common raw cafeteria partner role labels before classification.",
-        caption: "This is why we do not ask for a final `MealProgramLead` variable right away. The role labels are evidence to inspect, not categories to trust automatically."
-      },
-      {
-        type: "miniTable",
-        title: "A Useful Prompt Shape",
-        columns: ["Include", "What it does", "Example"],
-        rows: [
-          ["Evidence", "Anchors the request in something real.", "Use the saved PI email as the source of truth."],
-          ["One action", "Keeps the agent from solving three future steps at once.", "Create the handoff summary."],
-          ["Expected artifact", "Makes the output inspectable.", "Write `docs/email_handoff_summary.md`."],
-          ["Stop point", "Keeps judgment-heavy work visible.", "Do not unzip data, classify rows, write code, or build the panel yet."]
-        ]
-      }
-    ],
-    commands: [],
-    promptTitle: "Two Prompts We Will Reuse",
-    prompts: [
-      "Before changing files, report the active workspace root. Then tell me where the PI email, raw ZIP, handoff summary, scripts, audit notes, analysis-ready data, and final outputs should live. Stop after the folder plan; do not inspect data, unzip files, classify rows, write code, or build the panel.",
-      "When the saved PI email is at docs/pi_assignment_email.pdf, read it as the source of truth and create docs/email_handoff_summary.md with the PI request, required inputs, deliverables, open questions, assumptions, and judgment calls. Do not inspect or unzip the raw data yet."
-    ]
-  },
-  {
     id: "handoff",
     title: "From PI Email To Project Memory",
     step: "Save the source materials and set up project memory",
@@ -98,10 +60,10 @@ const modules = [
       "Start with a clean outer workspace. The PI email and raw ZIP are the source materials; the dedicated project folder and memory files come next.",
       "Do not ask the agent to solve the whole project at once. First preserve the source materials, create the project structure, summarize the assignment, and create project memory before moving to data work."
     ],
-    substepTitle: "Module 3 Steps",
+    substepTitle: "Module 2 Steps",
     substeps: [
       {
-        number: "3.1",
+        number: "2.1",
         title: "Create And Open My_RA_Tasks",
         text: "Create a new folder named My_RA_Tasks somewhere sensible in your home folder. Then open Codex, create a new project from an existing folder, and select My_RA_Tasks.",
         materials: [
@@ -114,7 +76,7 @@ const modules = [
         }
       },
       {
-        number: "3.2",
+        number: "2.2",
         title: "You've Got Mail! PI Email And Source Materials",
         text: "With My_RA_Tasks open in Codex, review the PI email and download both files. If your browser asks where to save them, choose My_RA_Tasks for now. The guide page is only the delivery mechanism; once saved, the email PDF and raw ZIP become the project source materials.",
         contextBlocks: [
@@ -171,7 +133,7 @@ const modules = [
         ]
       },
       {
-        number: "3.3",
+        number: "2.3",
         title: "Create The Project Folder",
         text: "Set up a task-specific project subdirectory inside My_RA_Tasks. Ask Codex to briefly explain the file layout, create only the folders for the research project, then stop.",
         contextBlocks: [
@@ -197,7 +159,7 @@ const modules = [
         ]
       },
       {
-        number: "3.4",
+        number: "2.4",
         title: "Reopen The Project Folder",
         text: "Open a new or current Codex project from the existing folder school_lunch_modernization_grants. From this point on, paths like docs/ and data/original/ should refer to the research project, not My_RA_Tasks.",
         materials: [
@@ -205,7 +167,7 @@ const modules = [
         ]
       },
       {
-        number: "3.5",
+        number: "2.5",
         title: "Move Source Materials Into The Project",
         text: "Move or save the downloaded email PDF into docs/ and the raw-data ZIP into data/original/. Leave the ZIP unchanged and note the exact email filename so you can reference it in Codex with @.",
         materials: [
@@ -214,7 +176,7 @@ const modules = [
         ]
       },
       {
-        number: "3.6",
+        number: "2.6",
         title: "Summarize The PI Request",
         text: "Ask Codex to read the saved PI email and create a concise handoff summary before coding begins. The prompt uses the workshop filename; if your saved email has a different name, use @ to select your actual file before sending.",
         materials: [
@@ -229,7 +191,7 @@ const modules = [
         ]
       },
       {
-        number: "3.7",
+        number: "2.7",
         title: "Create Project Memory Files",
         text: "With the source email and handoff summary inside the project, ask Codex to create the README and agent-instruction files that will anchor future turns. These files are project memory, not analysis output.",
         materials: [
@@ -268,10 +230,10 @@ const modules = [
       "At this point, the PI email, raw-data ZIP, and project memory are saved in the project. Now open the ZIP and make the raw evidence legible before asking anyone to classify rows.",
       "This pass leaves behind three things: preliminary notes on the raw files, a conservative cafeteria-partner rubric, and a review plan for row-level classification. It does not create cleaned data, row-level classifications, code, or the school-year panel."
     ],
-    substepTitle: "Module 4 Steps",
+    substepTitle: "Module 3 Steps",
     substeps: [
       {
-        number: "4.1",
+        number: "3.1",
         title: "Inspect The Raw Files",
         text: "Use the raw ZIP at data/original/school_lunch_modernization_raw_data.zip. This pass should make the files understandable: what is in each CSV, how rows are counted, where joins may happen, and which partner-role cases need human judgment.",
         prompts: [
@@ -282,7 +244,7 @@ const modules = [
         ]
       },
       {
-        number: "4.2",
+        number: "3.2",
         title: "Write The Role Classification Rubric",
         text: "Once the preliminary pass has surfaced messy partner roles, write the rules future reviewers will use. The rubric should define evidence for each category and keep unclear cases visible as ambiguous instead of forcing them into confirmed school lead status.",
         notes: [
@@ -296,7 +258,7 @@ const modules = [
         ]
       },
       {
-        number: "4.3",
+        number: "3.3",
         title: "Prepare The Classification Review Plan",
         text: "The rubric defines the categories. The review plan defines how separate reviewer passes will apply them and how disagreements become audit notes instead of hidden assumptions.",
         materials: [{ label: "Output file", text: "docs/cafeteria_partner_subagent_review_plan.md" }],
@@ -330,10 +292,10 @@ const modules = [
       "Use separate reviewer passes instead of a keyword-rule script. Codex will look at the same rows from different angles, then reconcile the results into one auditable classification table.",
       "The output is still an analysis-ready CSV and an audit file. Ambiguous partner rows stay visible and are not counted as confirmed school meal-program leads."
     ],
-    substepTitle: "Module 5 Steps",
+    substepTitle: "Module 4 Steps",
     substeps: [
       {
-        number: "5.1",
+        number: "4.1",
         title: "Convene The Review Team",
         text: "Ask the agent to read the rubric and review plan, then restate how the subagent classification will work.",
         prompts: [
@@ -341,7 +303,7 @@ const modules = [
         ]
       },
       {
-        number: "5.2",
+        number: "4.2",
         title: "Run Independent Reviewer Passes",
         text: "Have the subagents classify from different perspectives before reconciliation.",
         prompts: [
@@ -352,7 +314,7 @@ const modules = [
         ]
       },
       {
-        number: "5.3",
+        number: "4.3",
         title: "Reconcile And Write Outputs",
         text: "Ask for one conservative row-level classification table and a PI-readable audit trail.",
         prompts: [
@@ -363,7 +325,7 @@ const modules = [
         ]
       },
       {
-        number: "5.4",
+        number: "4.4",
         title: "Review The Audit",
         text: "Make the human judgment points explicit before moving on to the panel builder.",
         prompts: [
@@ -390,10 +352,10 @@ const modules = [
       "The panel builder reads the school directory, modernization grant awards, and the subagent-reviewed partner role classifications. It creates one school-year row for each school from 2019 through 2024.",
       "The final variables are intentionally plain: school name, year, district, grade span, urbanicity, enrollment, lunch participation, healthy-meal score, grant recipient indicator, meal-program lead indicator, and grant amount."
     ],
-    substepTitle: "Module 6 Steps",
+    substepTitle: "Module 5 Steps",
     substeps: [
       {
-        number: "6.1",
+        number: "5.1",
         title: "Confirm The Inputs",
         text: "Before running the panel builder, ask Codex to confirm that the raw files and reviewer-pass classification artifact are ready.",
         materials: [
@@ -409,10 +371,10 @@ const modules = [
         ]
       },
       {
-        number: "6.2",
+        number: "5.2",
         title: "Create The Panel Script",
         text: "Have Codex explain the panel-building plan first, then write the Python script in a separate message.",
-        sequenceNote: "Send these as two separate Codex messages. First ask for the plan and wait for the explanation. Then ask Codex to write the script. Do not run the script until step 6.3.",
+        sequenceNote: "Send these as two separate Codex messages. First ask for the plan and wait for the explanation. Then ask Codex to write the script. Do not run the script until step 5.3.",
         prompts: [
           {
             label: "Explain plan prompt",
@@ -425,7 +387,7 @@ const modules = [
         ]
       },
       {
-        number: "6.3",
+        number: "5.3",
         title: "Build The Panel",
         text: "Ask Codex to run the panel builder and report the files it creates.",
         prompts: [
@@ -433,7 +395,7 @@ const modules = [
         ]
       },
       {
-        number: "6.4",
+        number: "5.4",
         title: "Inspect The Output And Audit",
         text: "End the module by checking the analysis-ready panel and the audit trail before using the file downstream.",
         materials: [
@@ -590,10 +552,10 @@ const modules = [
         ]
       }
     ],
-    substepTitle: "Module 9 Steps",
+    substepTitle: "Module 8 Steps",
     substeps: [
       {
-        number: "9.1",
+        number: "8.1",
         title: "Download And Save The Follow-Up Email",
         text: "Download the follow-up email PDF and save it into the project docs/ folder, next to the original PI assignment email. Keep track of the exact filename so you can reference it in Codex with the @ command.",
         materials: [
@@ -605,7 +567,7 @@ const modules = [
         ]
       },
       {
-        number: "9.2",
+        number: "8.2",
         title: "Create The Follow-Up Handoff Summary",
         text: "Ask Codex to read the saved follow-up email and turn it into a concise analysis handoff before any regression code is written. The prompt uses the workshop follow-up filename; if yours differs, select your actual file with @ before sending.",
         materials: [
@@ -620,7 +582,7 @@ const modules = [
         ]
       },
       {
-        number: "9.3",
+        number: "8.3",
         title: "Review The Research Design Before Coding",
         text: "Have Codex explain the proposed causal strategies in plain language so the human can inspect the assumptions before the one-shot analysis run.",
         prompts: [
@@ -631,7 +593,7 @@ const modules = [
         ]
       },
       {
-        number: "9.4",
+        number: "8.4",
         title: "One-Shot The Analysis Suite",
         text: "Give Codex one larger analysis request: write the script, run it, and produce tables, figures, and an audit note. The request is broad on purpose, but it still requires transparent outputs.",
         prompts: [
@@ -642,7 +604,7 @@ const modules = [
         ]
       },
       {
-        number: "9.5",
+        number: "8.5",
         title: "Inspect The Code And Results",
         text: "Slow down after the one-shot run. Ask Codex to explain the code, the model choices, and the outputs before treating any estimate as useful.",
         prompts: [
@@ -653,7 +615,7 @@ const modules = [
         ]
       },
       {
-        number: "9.6",
+        number: "8.6",
         title: "Draft The PI Analysis Update",
         text: "Turn the fast analysis pass into a cautious PI-facing update that separates findings from assumptions and caveats.",
         materials: [{ label: "Output file", text: "final_outputs/school_lunch_analysis_pi_update.md" }],
@@ -708,8 +670,7 @@ const modules = [
 ];
 
 const moduleNarrativeCopy = {
-  context: "Move slowly here before creating files. You are learning how to brief and supervise a coding agent: give it source-of-truth context, ask for a plan, review the assumptions, verify the output, and preserve judgment calls in an audit trail.",
-  handoff: "Use this as the intake pass. By the end, the source email, raw ZIP, handoff summary, and project memory files should be in the project root, and Module 4 can begin raw-data inspection.",
+  handoff: "Use this as the intake pass. By the end, the source email, raw ZIP, handoff summary, and project memory files should be in the project root, and raw-data inspection can begin.",
   "raw-data": "Use this as the data intake pass. Open the saved ZIP, inventory the CSVs, and turn the messy role evidence into rules before classification starts.",
   classification: "This is the judgment-heavy part of the workflow. Use the agent to organize independent reviews, cite row-level evidence, and keep uncertain cases out of the analysis variables instead of pretending ambiguity disappeared.",
   panel: "The panel build is the payoff for the careful setup. By this point the agent has enough context, raw-file knowledge, and audit constraints to write a small script that turns scattered records into a school-year dataset you can actually inspect.",
@@ -724,30 +685,30 @@ const substepNarrativeCopy = {
   "setup:1.2": "Python is the engine underneath the later workshop steps. Codex can write and run friendly scripts, but it needs a working Python installation before it can unzip files, inspect CSVs, regenerate figures, and build the panel.",
   "setup:1.3": "Let Codex do the technical confirmation in plain language. You get a first low-stakes interaction with the app, and the agent reports what it checked without asking you to memorize terminal commands.",
   "setup:1.4": "Wait on the project folder for now. You will create the same outer workspace during the live walkthrough, which keeps path names less mysterious when the agent starts creating files.",
-  "handoff:3.1": "Start with a plain outer folder before the source materials enter the workflow. Opening My_RA_Tasks in Codex gives the app a workspace while leaving room for the actual research project folder inside it.",
-  "handoff:3.2": "The PI email and raw ZIP are the project evidence. The guide page delivers them, but the saved files become what later agent turns should read and preserve.",
-  "handoff:3.3": "This is the first place to combine planning and action. Have the agent explain the folder logic briefly, create the project folder, and stop before it inspects data or starts making research decisions.",
-  "handoff:3.4": "Once the project folder exists, switch Codex into it and confirm the folder shown in the app. This small move prevents confusion about whether docs/ and data/original/ refer to the outer workspace or the project.",
-  "handoff:3.5": "Now the downloaded materials become part of the project record. Keeping the ZIP unchanged and storing the email in docs/ makes it clear which files are original evidence and which files the agent creates later.",
-  "handoff:3.6": "The email handoff summary is the first derived memory file. It asks the agent to translate an informal PI message into action items, open questions, deliverables, and judgment calls before any code exists.",
-  "handoff:3.7": "The project memory files give future agent turns stable context. They tell Codex and Claude Code to read the source materials first, inspect before coding, preserve audit notes, and be conservative with ambiguous roles.",
-  "raw-data:4.1": "Start with a plain inventory of the raw files. The useful output is a note that names the CSVs, row counts, likely keys, aliases, and partner-role cases that need judgment.",
-  "raw-data:4.2": "The rubric is where judgment becomes a rule, not a row-level assignment. It should say which evidence supports each category and when a case should remain ambiguous.",
-  "raw-data:4.3": "The review plan is the handoff to row-level classification. It should define the separate passes, how disagreements are handled, and how every original role row will be accounted for.",
-  "classification:5.1": "Start classification with a verbal contract. Ask the agent to restate the categories, outputs, and conservative default before touching rows, so you can correct the rules while they are still easy to change.",
-  "classification:5.2": "Independent reviewer passes are a simple way to make agent judgment more inspectable. One pass looks for clear school leads, another guards against false positives, and another protects ambiguity.",
-  "classification:5.3": "Reconciliation is where the review becomes data. The agent turns notes into a row-level CSV, but it also has to explain disagreements and keep ambiguous records visible in the audit.",
-  "classification:5.4": "Reading the audit before building the panel keeps the human in the loop. It makes clear which rows are safe to use, which rows are excluded, and which calls should go back to the PI.",
-  "panel:6.1": "Do not start the panel build until the inputs are known and the classification caveats are fresh. Have the agent check that it has the right raw files and the right analysis-ready classification.",
-  "panel:6.2": "Ask for the plan before the script so the code is easier to trust. You should see the matching logic, year range, zero-filling rule, and exclusion rule before the agent writes anything.",
-  "panel:6.3": "Running the script is the mechanical part, but it still needs a clear report. Ask the agent to say what it created and what the panel contains instead of leaving you to guess.",
-  "panel:6.4": "Use this sanity check to inspect output instead of merely accepting it. Row counts, year coverage, zero-filled amounts, cumulative indicators, and unmatched names are the first things to look at.",
-  "causal-analysis:9.1": "The follow-up email introduces a new research task without replacing the old one. Saving it beside the original assignment lets the agent see how the project evolved from data cleaning into analysis.",
-  "causal-analysis:9.2": "The analysis handoff gives the agent a chance to separate the new policy question from the earlier panel-building work. It also forces the expected outputs and causal caveats into writing before code appears.",
-  "causal-analysis:9.3": "This research-design pause is the most important guardrail in the fast analysis module. It asks the agent to explain outcomes, timing, exposure, comparisons, and assumptions before it produces estimates.",
-  "causal-analysis:9.4": "The one-shot suite is intentionally ambitious so you can see what speed feels like. The prompt still requires transparent outputs, readable code, and caveats when a model is too fragile for the sample data.",
-  "causal-analysis:9.5": "Inspection comes immediately after the fast run. The point is to treat generated regressions as drafts that need interpretation, code review, and skepticism before they become research claims.",
-  "causal-analysis:9.6": "The final update turns analysis back into communication. A good PI note separates descriptive patterns, tentative regression evidence, and the assumptions that would need real validation."
+  "handoff:2.1": "Start with a plain outer folder before the source materials enter the workflow. Opening My_RA_Tasks in Codex gives the app a workspace while leaving room for the actual research project folder inside it.",
+  "handoff:2.2": "The PI email and raw ZIP are the project evidence. The guide page delivers them, but the saved files become what later agent turns should read and preserve.",
+  "handoff:2.3": "This is the first place to combine planning and action. Have the agent explain the folder logic briefly, create the project folder, and stop before it inspects data or starts making research decisions.",
+  "handoff:2.4": "Once the project folder exists, switch Codex into it and confirm the folder shown in the app. This small move prevents confusion about whether docs/ and data/original/ refer to the outer workspace or the project.",
+  "handoff:2.5": "Now the downloaded materials become part of the project record. Keeping the ZIP unchanged and storing the email in docs/ makes it clear which files are original evidence and which files the agent creates later.",
+  "handoff:2.6": "The email handoff summary is the first derived memory file. It asks the agent to translate an informal PI message into action items, open questions, deliverables, and judgment calls before any code exists.",
+  "handoff:2.7": "The project memory files give future agent turns stable context. They tell Codex and Claude Code to read the source materials first, inspect before coding, preserve audit notes, and be conservative with ambiguous roles.",
+  "raw-data:3.1": "Start with a plain inventory of the raw files. The useful output is a note that names the CSVs, row counts, likely keys, aliases, and partner-role cases that need judgment.",
+  "raw-data:3.2": "The rubric is where judgment becomes a rule, not a row-level assignment. It should say which evidence supports each category and when a case should remain ambiguous.",
+  "raw-data:3.3": "The review plan is the handoff to row-level classification. It should define the separate passes, how disagreements are handled, and how every original role row will be accounted for.",
+  "classification:4.1": "Start classification with a verbal contract. Ask the agent to restate the categories, outputs, and conservative default before touching rows, so you can correct the rules while they are still easy to change.",
+  "classification:4.2": "Independent reviewer passes are a simple way to make agent judgment more inspectable. One pass looks for clear school leads, another guards against false positives, and another protects ambiguity.",
+  "classification:4.3": "Reconciliation is where the review becomes data. The agent turns notes into a row-level CSV, but it also has to explain disagreements and keep ambiguous records visible in the audit.",
+  "classification:4.4": "Reading the audit before building the panel keeps the human in the loop. It makes clear which rows are safe to use, which rows are excluded, and which calls should go back to the PI.",
+  "panel:5.1": "Do not start the panel build until the inputs are known and the classification caveats are fresh. Have the agent check that it has the right raw files and the right analysis-ready classification.",
+  "panel:5.2": "Ask for the plan before the script so the code is easier to trust. You should see the matching logic, year range, zero-filling rule, and exclusion rule before the agent writes anything.",
+  "panel:5.3": "Running the script is the mechanical part, but it still needs a clear report. Ask the agent to say what it created and what the panel contains instead of leaving you to guess.",
+  "panel:5.4": "Use this sanity check to inspect output instead of merely accepting it. Row counts, year coverage, zero-filled amounts, cumulative indicators, and unmatched names are the first things to look at.",
+  "causal-analysis:8.1": "The follow-up email introduces a new research task without replacing the old one. Saving it beside the original assignment lets the agent see how the project evolved from data cleaning into analysis.",
+  "causal-analysis:8.2": "The analysis handoff gives the agent a chance to separate the new policy question from the earlier panel-building work. It also forces the expected outputs and causal caveats into writing before code appears.",
+  "causal-analysis:8.3": "This research-design pause is the most important guardrail in the fast analysis module. It asks the agent to explain outcomes, timing, exposure, comparisons, and assumptions before it produces estimates.",
+  "causal-analysis:8.4": "The one-shot suite is intentionally ambitious so you can see what speed feels like. The prompt still requires transparent outputs, readable code, and caveats when a model is too fragile for the sample data.",
+  "causal-analysis:8.5": "Inspection comes immediately after the fast run. The point is to treat generated regressions as drafts that need interpretation, code review, and skepticism before they become research claims.",
+  "causal-analysis:8.6": "The final update turns analysis back into communication. A good PI note separates descriptive patterns, tentative regression evidence, and the assumptions that would need real validation."
 };
 
 modules.forEach((module) => {

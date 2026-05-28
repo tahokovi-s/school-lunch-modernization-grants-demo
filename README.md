@@ -54,21 +54,21 @@ python scripts/build_school_year_panel.py
 
 If pandas is already available, the two script commands are enough.
 
-Participants do not need to type these commands during the workshop. The live session is run from the Codex and Claude Code apps. In the main teaching flow, Module 5 asks Codex or Claude Code to coordinate subagent reviewers and create `data/analysis_ready/cafeteria_partner_role_classifications.csv` plus an audit note; the Python classifier remains only as an instructor fallback or code-only reproducibility check.
+Participants do not need to type these commands during the workshop. The live session is run from the Codex and Claude Code apps. In the main teaching flow, Module 4 asks Codex or Claude Code to coordinate subagent reviewers and create `data/analysis_ready/cafeteria_partner_role_classifications.csv` plus an audit note; the Python classifier remains only as an instructor fallback or code-only reproducibility check.
 
 ## Files To Inspect Live
 
 - `docs/session_invitation_email.md`: sendable setup email for participants.
-- `school_lunch_modernization_grants/README.md`, `school_lunch_modernization_grants/AGENTS.md`, and `school_lunch_modernization_grants/CLAUDE.md`: participant-created project memory files during Module 3.
-- `school_lunch_modernization_grants/docs/pi_assignment_email.pdf`: participant-saved copy of the PI assignment email downloaded from the guide during Module 3. This repo also includes `docs/intro_email.md` as a facilitator-readable fallback copy.
+- `school_lunch_modernization_grants/README.md`, `school_lunch_modernization_grants/AGENTS.md`, and `school_lunch_modernization_grants/CLAUDE.md`: participant-created project memory files during Module 2.
+- `school_lunch_modernization_grants/docs/pi_assignment_email.pdf`: participant-saved copy of the PI assignment email downloaded from the guide during Module 2. This repo also includes `docs/intro_email.md` as a facilitator-readable fallback copy.
 - `docs/attachments/school_lunch_modernization_raw_data.zip`: source copy of the raw-data ZIP served by the guide download button.
-- `school_lunch_modernization_grants/docs/email_handoff_summary.md`: agent-created markdown summary and action list produced from the saved assignment email during Module 3.
-- `school_lunch_modernization_grants/data/original/school_lunch_modernization_raw_data.zip`: participant-saved copy of the raw-data ZIP during Module 3, then inspected in Module 4.
+- `school_lunch_modernization_grants/docs/email_handoff_summary.md`: agent-created markdown summary and action list produced from the saved assignment email during Module 2.
+- `school_lunch_modernization_grants/data/original/school_lunch_modernization_raw_data.zip`: participant-saved copy of the raw-data ZIP during Module 2, then inspected in Module 3.
 - `data/original/*.csv`: workshop raw data after the agent extracts the ZIP, with school aliases, grant records, messy cafeteria partner roles, unmatched awards, and ambiguous cases.
-- `docs/raw_data_preliminary_pass.md`: agent-created inspection notes from Module 4, including file inventory, likely keys, aliases, messy roles, ambiguous rows, and safety checks.
-- `docs/cafeteria_partner_classification_rubric.md`: compact conservative rubric drafted during Module 4.
-- `docs/cafeteria_partner_subagent_review_plan.md`: compact Module 4 plan for separate reviewer passes in Module 5.
-- `data/analysis_ready/cafeteria_partner_role_classifications.csv`: subagent-reviewed classification artifact produced during Module 5.
+- `docs/raw_data_preliminary_pass.md`: agent-created inspection notes from Module 3, including file inventory, likely keys, aliases, messy roles, ambiguous rows, and safety checks.
+- `docs/cafeteria_partner_classification_rubric.md`: compact conservative rubric drafted during Module 3.
+- `docs/cafeteria_partner_subagent_review_plan.md`: compact plan for separate reviewer passes in Module 4.
+- `data/analysis_ready/cafeteria_partner_role_classifications.csv`: subagent-reviewed classification artifact produced during Module 4.
 - `scripts/classify_cafeteria_partner_roles.py`: optional deterministic fallback for instructors, not the main participant workflow.
 - `scripts/build_school_year_panel.py`: school-year panel builder.
 - `audit_notes/`: generated audit trails that explain what happened and what still needs human judgment.
@@ -78,17 +78,16 @@ Participants do not need to type these commands during the workshop. The live se
 
 1. Confirm participants have the Codex app and Claude Code app open and signed in.
 2. Ask Codex to confirm Python is installed and can run a tiny Python script.
-3. Use Module 2 as a short `Context Before Coding` reading pause: start from the school-lunch panel target, show why the raw role labels need judgment, and introduce one bounded prompt pattern before creating files.
-4. Create `My_RA_Tasks` in a sensible place in the participant's file home, then open that folder as the active Codex project.
-5. Review and download the guide's PI assignment email PDF and raw-data ZIP into `My_RA_Tasks`.
-6. Ask Codex to explain the folder map and scaffold `school_lunch_modernization_grants` inside `My_RA_Tasks`.
-7. Reopen `school_lunch_modernization_grants` as the active project root, move `pi_assignment_email.pdf` into `docs/`, and move the unchanged raw-data ZIP into `data/original/`.
-8. Ask Codex or Claude Code to create `docs/email_handoff_summary.md`, then `README.md`, `AGENTS.md`, and `CLAUDE.md`.
-9. With the raw-data ZIP in `data/original/`, ask Codex or Claude Code to unzip it, run one careful raw-data inspection prompt, draft a compact classification rubric, and plan the separate review passes before classification.
-10. Ask Codex or Claude Code to coordinate subagent reviewers for the cafeteria partner role classification, reconcile disagreements conservatively, and write the classification CSV plus audit note.
-11. Build the school-year panel and inspect the output.
-12. Use the audit files to discuss where human judgment belongs in agentic workflows.
-13. If time allows, use Extra Resources to demonstrate `/skills` and the official `openai/skills` catalog.
+3. Create `My_RA_Tasks` in a sensible place in the participant's file home, then open that folder as the active Codex project.
+4. Review and download the guide's PI assignment email PDF and raw-data ZIP into `My_RA_Tasks`.
+5. Ask Codex to explain the folder map and scaffold `school_lunch_modernization_grants` inside `My_RA_Tasks`.
+6. Reopen `school_lunch_modernization_grants` as the active project root, move `pi_assignment_email.pdf` into `docs/`, and move the unchanged raw-data ZIP into `data/original/`.
+7. Ask Codex or Claude Code to create `docs/email_handoff_summary.md`, then `README.md`, `AGENTS.md`, and `CLAUDE.md`.
+8. With the raw-data ZIP in `data/original/`, ask Codex or Claude Code to unzip it, run one careful raw-data inspection prompt, draft a compact classification rubric, and plan the separate review passes before classification.
+9. Ask Codex or Claude Code to coordinate subagent reviewers for the cafeteria partner role classification, reconcile disagreements conservatively, and write the classification CSV plus audit note.
+10. Build the school-year panel and inspect the output.
+11. Use the before-and-after module and audit files to discuss where human judgment belongs in agentic workflows.
+12. If time allows, use the causal analysis and Extra Resources modules to show how the workflow extends after the panel exists.
 
 ## Useful Current References
 
