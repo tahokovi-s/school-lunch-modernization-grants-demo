@@ -387,7 +387,7 @@ Outcome candidates should include lunch_participation_rate, healthy_meal_score, 
 
 Implementation rules:
 
-- install any Python libraries needed to run the econometric specifications and plot cleanly, using the active project environment rather than system-level installs
+- install any Python libraries needed to run the econometric specifications and plot cleanly in the Python environment Codex will use to run the script; user-level or system-level installs are allowed when needed, but ask me before using administrator privileges
 - if a model cannot be estimated cleanly, write a row in the spec catalog explaining why
 - keep the code beginner-readable, with formulas and variable definitions visible
 - label each specification as descriptive, exploratory, or plausibly causal only under stated assumptions
@@ -395,7 +395,7 @@ Implementation rules:
 - keep final_outputs/causal_results_brief.md concise and PI-facing
 - do not create intermediate design, inspection, audit, or review markdown files
 
-After running the script, open final_outputs/causal_event_study.svg in the Codex in-app browser or another available local preview. Report in chat which outputs were created, which specifications ran, which packages were installed if any, which specifications were skipped, and whether the figure rendered cleanly.
+After running the script, open final_outputs/causal_event_study.svg in the Codex in-app browser or another available local preview. Report in chat which outputs were created, which specifications ran, which packages were installed or verified, which specifications were skipped, and whether the figure rendered cleanly.
 ```
 
 ### 7.4 Review The One PI-Facing Results Brief
@@ -437,18 +437,19 @@ Read data/analysis_ready/school_year_panel_with_survey.csv, final_outputs/causal
 
 Create docs/school_lunch_visualization_brief.md.
 
-The brief should propose three reusable visualization variants:
+The brief should propose four reusable publication-style visuals:
 
-1. An Economist-inspired editorial chart set: annotated, direct-labeled, clear 2022 marker, restrained color accents, source note, and no publication logo or official branding.
-2. An AER-style research figure set: print-friendly, simple panels, clear units, grayscale or restrained color, confidence intervals only when supported by the causal spec estimates, and reproducible labels.
-3. A compact policy-brief dashboard: a small set of linked panels for grants, lunch participation, healthy-meal score, available aggregate health or wellbeing measures, and the main causal caveats.
+1. Grant timing and exposure overview: show which schools received modernization grants, when awards arrived, how award amounts or treatment exposure vary, and where the 2022 scoring change belongs in the timeline.
+2. Meal outcomes trend figure: compare lunch participation and healthy-meal score patterns over time, with recipient/nonrecipient or exposure-group comparisons only where the data support them.
+3. Student survey outcomes snapshot: summarize available aggregate health, wellbeing, and mental-health-referral measures cautiously, using labels that make clear these are school-year aggregates and not individual diagnoses.
+4. Causal estimates and caveats figure: turn the causal spec catalog, estimates, and event-study output into a compact research-facing visual summary, using uncertainty intervals only when the estimates file supports them.
 
-For each variant, specify the intended message, required input columns, panel layout, annotations, style constraints, caveats, and output filenames. Do not write plotting code yet.
+For each visual, specify the intended message, required input columns, panel layout, annotations, style constraints, caveats, and exact output filename. Do not write plotting code yet.
 ```
 
 ### 8.2 Generate A Visualization Gallery
 
-Then use one ambitious prompt to install helpful visualization libraries if needed, create reusable code, produce several SVG drafts, and show the plots as chat artifacts:
+Then use one ambitious prompt to install the required visualization packages, create reusable code, produce four SVG drafts, and show the plots as chat artifacts:
 
 ```text
 Using docs/school_lunch_visualization_brief.md, create and run scripts/create_school_lunch_visualization_gallery.py.
@@ -457,40 +458,70 @@ The script should use data/analysis_ready/school_year_panel_with_survey.csv and 
 
 Create these outputs:
 
-- final_outputs/visualization_gallery/economist_inspired_grant_meals.svg
-- final_outputs/visualization_gallery/aer_style_school_lunch_results.svg
-- final_outputs/visualization_gallery/policy_brief_school_lunch_dashboard.svg
+- final_outputs/visualization_gallery/grant_timing_and_exposure.svg
+- final_outputs/visualization_gallery/meal_outcomes_trends.svg
+- final_outputs/visualization_gallery/survey_outcomes_snapshot.svg
+- final_outputs/visualization_gallery/causal_estimates_and_caveats.svg
 - final_outputs/visualization_gallery/README.md
 - audit_notes/school_lunch_visualization_gallery_audit.md
 
 Visualization requirements:
 
-- Economist-inspired chart set: editorial title, short subtitle, direct labels where possible, one accent color for the 2022 scoring change, source note, and annotations that explain the visual pattern without overclaiming.
-- AER-style figure set: clean research-paper panels, print-readable labels, minimal gridlines, clear units, and uncertainty intervals only if the causal spec estimates support them.
-- Policy-brief dashboard: compact multi-panel view that connects grants, meal outcomes, survey outcomes, and the identification caveats while keeping mental-health-related measures cautious.
+- Grant timing and exposure overview: show award timing, recipient status, grant amount or exposure variation when available, a clear 2022 scoring-change marker, direct labels where useful, and a source note.
+- Meal outcomes trend figure: show lunch participation and healthy-meal score trends in readable panels, with recipient/nonrecipient or exposure-group comparisons only when supported by the data.
+- Student survey outcomes snapshot: summarize available aggregate student_health_index, student_wellbeing_score, and mental_health_referral_rate patterns cautiously, avoiding any claim that referral rates prove mental-health effects.
+- Causal estimates and caveats figure: summarize the causal spec estimates, skipped or fragile specifications, and identification caveats in a compact research-facing visual, using confidence intervals only when supported by the estimates file.
 
 Implementation rules:
 
-- Use pandas and matplotlib, and install any helpful data-visualization libraries that would materially improve the gallery, such as seaborn, plotnine, adjustText, or another lightweight PyPI package.
-- Install packages only into the active project environment. Avoid system-level dependencies and avoid large or unrelated packages.
-- Record any installed packages and why they were useful in the visualization gallery audit.
+- Before writing or running plotting code, install the required Python packages in the Python environment Codex will use to run the script: pandas, matplotlib, seaborn, and adjustText. Use a command such as `python -m pip install pandas matplotlib seaborn adjustText`. User-level or system-level installs are allowed when needed to make the script run on this machine. If a package is already installed, verify it with an import check and report it as already present. Do not treat package setup as optional.
+- If an install command fails because of permissions, try the appropriate user-level, virtual-environment, or system-level fix and ask me before using administrator privileges.
+- Use the installed packages in the plotting script, keeping the code beginner-readable so a researcher can edit titles, labels, colors, and annotations later.
+- Record the package setup command, install scope, import-check result, and any package versions you can determine in the visualization gallery audit.
 - Generate SVG files with readable text, stable figure sizes, and enough margin to avoid clipping.
-- Keep the script readable so a researcher can edit titles, labels, colors, and annotations later.
-- Write the audit note with input files used, output files created, packages used or installed, missing-variable fallbacks, visual design choices, and interpretation caveats.
+- Write the audit note with input files used, output files created, packages installed or verified, missing-variable fallbacks, visual design choices, and interpretation caveats.
 
-After running the script, show the three SVGs as artifacts or images in the Codex chat so I can view them side by side and use the app's annotation or comment tools. Also open each SVG in the in-app browser or an available local preview tool. Report whether each file rendered and whether any title, label, legend, annotation, or source note looked cramped or clipped.
+After running the script, show the four SVGs as artifacts or images in the Codex chat so I can view them side by side and use the app's annotation or comment tools. Also open each SVG in the in-app browser or an available local preview tool. Report whether each file rendered and whether any title, label, legend, annotation, or source note looked cramped or clipped.
 ```
 
-### 8.3 Review And Revise Plot Elements In Codex
+### 8.3 Build A Plot Viewer Page
 
-Keep the generated plots visible as chat artifacts, review them with Codex's annotation tools, then use the comments to revise the plotting script live:
+Once the SVG drafts exist, have Codex create a simple local HTML page that puts the plots in one review surface:
 
 ```text
-I have reviewed the SVG artifacts in final_outputs/visualization_gallery/ and left comments or annotations on specific plot elements.
+Create a simple static HTML viewer for the generated Module 8 plots.
+
+Use every generated SVG in final_outputs/visualization_gallery/, including these expected files:
+
+- final_outputs/visualization_gallery/grant_timing_and_exposure.svg
+- final_outputs/visualization_gallery/meal_outcomes_trends.svg
+- final_outputs/visualization_gallery/survey_outcomes_snapshot.svg
+- final_outputs/visualization_gallery/causal_estimates_and_caveats.svg
+
+Create final_outputs/visualization_gallery/index.html.
+
+Requirements:
+
+- embed each SVG on the page with a short title, caption, and direct link to the raw SVG file
+- keep the page self-contained with inline CSS and no external build tools or network assets
+- make the layout readable on laptop and mobile widths
+- include a short note that these are draft visualization artifacts for review, not new analysis
+- preserve the existing SVG filenames and do not change the plotting script, data, estimates, or causal claims
+- if an expected SVG is missing, include a clearly labeled placeholder card for it and list the missing file in the chat response
+
+After creating the page, open final_outputs/visualization_gallery/index.html in the Codex in-app browser or another available local preview. Report whether each embedded plot rendered and whether any title, label, legend, annotation, or source note looked cramped or clipped.
+```
+
+### 8.4 Review And Revise Plot Elements In Codex
+
+Keep the viewer page or generated plots visible, review them with Codex's annotation tools, then use the comments to revise the plotting script live:
+
+```text
+I have reviewed final_outputs/visualization_gallery/index.html and the SVG artifacts in final_outputs/visualization_gallery/ and left comments or annotations on specific plot elements.
 
 Use my comments and the generated SVG files to update scripts/create_school_lunch_visualization_gallery.py, rerun it, and create audit_notes/school_lunch_visualization_review_notes.md.
 
-Make only the plot revisions requested in my comments. Preserve the existing filenames unless my comments explicitly ask for variants.
+Make only the plot revisions requested in my comments. Preserve the existing filenames unless my comments explicitly ask for variants. Leave final_outputs/visualization_gallery/index.html unchanged unless captions or links need to reflect the requested revisions.
 
 In the review notes, summarize changes to:
 
@@ -504,7 +535,7 @@ In the review notes, summarize changes to:
 - source notes and caveats
 - print/readability risks
 
-After rerunning, show the revised SVGs as artifacts or images in Codex chat and preview them again in the in-app browser or an available local preview tool. Report whether any text is still cramped or clipped and which visual choices remain subjective. Do not change the underlying analysis or make stronger causal claims.
+After rerunning, show the revised SVGs as artifacts or images in Codex chat and preview the updated viewer page again in the in-app browser or an available local preview tool. Report whether any text is still cramped or clipped and which visual choices remain subjective. Do not change the underlying analysis or make stronger causal claims.
 ```
 
 ## 9. Extra Resources
